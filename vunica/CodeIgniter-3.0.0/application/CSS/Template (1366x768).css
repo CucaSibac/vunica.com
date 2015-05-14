@@ -1,0 +1,205 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* U ovom dokumente se nalaze stilovi za header, body i footer. */
+
+/*Telo stranice*/
+body{
+	background-color:#D9CCB1;
+	margin:0;
+	padding:0;
+	border-style:none;
+}
+
+
+/*Zaglavlje strane*/
+
+/*Div u kom se nalazi tabela za header*/
+#headerOkvir{
+	width:100%;
+	
+	position:fixed;
+	top:0px;
+	left:0px;
+	
+	border-width:0 0 1px 0;
+	border-color:#605951;
+	border-style:solid;
+	
+	z-index:1;
+}
+
+  /*Tabela header-a*/
+  #header{
+	  width:100%;
+	  height:50px;
+	  background-color:#ACCEC0;
+  }
+
+	  /*Logo na header-u*/
+	  #logoPolje{
+		  width:15%;
+		  padding:4px 6% 3px 0px;
+		  text-align:left;
+		  vertical-align:bottom;
+	  }
+	
+	  #logo{
+		  height:45px;
+	  }
+	  
+		  #logo:hover{
+			  cursor:pointer;
+		  }
+		  
+  
+	  /*Ceger i polje za ceger*/
+	  #cegerPolje{
+		  width:11%;
+		  padding:4px 8% 3px 0px;
+		  text-align:right;
+		  vertical-align:bottom;
+	  }
+	  
+	  #ceger{
+		  height:40px;
+	  }
+	  
+		  #ceger:hover{
+			  cursor:pointer;
+		  }
+
+  /*Polja menija i font*/
+  #poljePrijava{
+	  width:12%;
+	  padding:0px 3% 10px 0px;
+	  text-align:center;
+	  vertical-align:bottom;
+  }
+
+  .poljeMenija{
+	  padding:0px 2% 10px 0px;
+	  text-align:center;
+	  vertical-align:bottom;
+  }
+
+	  .opcijeMenija{
+		  color:#605951;
+		  font-size:18px;
+		  font-family:Tahoma, Geneva, sans-serif;
+	  }
+	  
+		  .opcijeMenija:hover{
+			  cursor:pointer;
+		  }
+	
+	
+	
+/*Telo, tj. sredisnja tabela i div oko nje*/
+#teloOkvir{
+	width:100%;
+	position:relative;
+	z-index:0;
+}
+
+  #telo{
+	  width:76%;
+	  background-color:#FFFEF4;
+	  margin:0 0 0 12%;
+	  z-index:100;
+  }
+
+
+
+
+/*Podnozje*/
+
+/*Div koji se nalazi oko dve tabele footer-a*/
+#footer{
+	width:100%;		
+	position:absolute;
+	bottom:0px;
+	clear:both;
+	z-index:-100;
+}
+
+  /* Vidljivi footer*/
+  #footerDonji{
+	  width:100%;
+	  height:40px;
+	  background-color:#ACCEC0;
+	  
+	  text-align:center;
+	  vertical-align:middle;
+	  
+	  border-width:1px 0 0 0;
+	  border-color:#605951;
+	  border-style:solid;
+	  
+	  color:#FFFEF4;
+	  font-size:18px;
+	  font-family:Tahoma, Geneva, sans-serif;
+  }
+  
+  		.strelica{
+		  width:35px;
+		  padding:2px 35px 3px 35px;
+		}
+
+  
+   /* Nevidljivi footer*/
+   #footerGornji{
+	  width:100%;
+	   
+	  visibility:hidden;
+	  background-color:#ACCEC0;
+	  
+	  border-width:1px 0 0 0;
+	  border-color:#605951;
+	  border-style:none;	  
+  }
+  
+	  /*Klupko u footer-t*/
+	  #klupkoPolje{
+		  
+		  text-align:center;
+		  vertical-align:top;
+		  padding:15px 5% 0 5%;
+	  }
+	
+	  #klupko{
+		  height:45%;
+	  }
+	  
+	  #klupkoTekst{
+		  color:#FFFEF4;
+		  font-size:24px;
+		  font-weight:300;
+		  font-family:Tahoma, Geneva, sans-serif;
+	  }
+	  
+	  /*Polja gornjeg footer-a u kom pise neki tekst*/
+	  .footerPolje{
+		  
+		  text-align:left;
+		  vertical-align:top;
+		  
+		  padding:5% 5% 0 5%;
+		  
+		  color:#605951;
+		  font-size:18px;
+		  font-weight:500;
+		  font-family:Tahoma, Geneva, sans-serif;
+	  }
+	  
+	  /*Link za email adresu sajta*/	  
+	  .footerlink{
+		  color:#61a6ab;
+		  
+		  font-size:18px;
+		  font-weight:500;
+		  font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+		  font-style:italic;
+		  
+		  text-decoration:none;
+	  }

@@ -1,0 +1,150 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Ovo ce biti stil za polje za pretragu koje ce se pojavljivati na strani
+za Strikarnicu i Pijacu. Jos je u izradi.
+*/
+
+/*Div u kom se polje nalazi*/
+#pretraga{
+	
+   background-color: rgba(255, 254, 244, 0.8);
+	border-color:#605951;
+	border-width:2px;
+	border-style:solid;
+	border-radius:0px 30px 30px 0px;
+	width: 80%;
+    float: left;
+	padding-left:8px;
+	
+	
+}
+
+
+
+/*Checkbox podesavanja*/
+.checkbox{
+	width:10%;
+	padding:0 0 0 0;
+	vertical-align:bottom;
+}
+
+		.checkbox:hover{
+			cursor:pointer;	
+		}
+#box{
+    width:24%;
+    font-size: 7px;
+    line-height: 12px;
+    left: -261px;
+    top: 11%; /* change this value to place the menu higher or lower */
+    position: fixed;
+
+	z-index:120;
+	
+	
+}
+
+#tab{
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+   
+}
+
+#tab li span{
+    display: block;
+    padding: 0 5px;
+    position: relative;
+}
+
+#links{
+    
+
+}
+
+.show, .hide{
+    /* we specify the transition length for hiding and showing */
+            transition: margin-left .4s ease-in;
+    -webkit-transition: margin-left .4s ease-in;
+}
+
+.hide{
+    margin-left:0px;
+}
+
+.show{
+  /* margin-left:260px;*/
+}
+
+#w, .bt{
+    cursor: pointer;
+}
+
+#arrow{
+	cursor:pointer;
+}
+
+
+#naslovpretraga{
+	
+	color:#605951;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:25px;
+	
+	border-top-right-radius:30px;
+	
+}
+
+.tekstPoljecena{
+	
+	
+	border:1px solid #605951;/*-----------------------------------------------------------------------------------*/
+	
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#61a6ab;
+	padding:3px;
+	opacity:0.7;
+	outline:none;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+	border-width:3px;
+}
+
+/*proba za dugme*/
+#proba{
+	position:absolute;
+	z-index:100;
+}
+
+
+.dugme1{
+	-webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; 
+
+  color: #fffef4;
+  background: #61a6ab;
+  
+  font-family: Arial;
+  font-size: 20px;
+  text-decoration: none;
+  padding-left:10px;
+	padding-right:10px;
+	padding-top:3px;
+	padding-bottom:3px;
+  margin:5px 5px 5px 5px;
+  
+  border-width:1px;
+  border-color:#605951;
+  border-style:solid;
+}
+
+.dugme1:hover {
+	  background: #d9ccb1;
+	  text-decoration: none;
+	}
+	

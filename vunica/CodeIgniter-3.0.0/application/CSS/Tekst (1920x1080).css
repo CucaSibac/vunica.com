@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Ovde su definisani formati teksta: sivi obicni i naslov, plavi iskoseni i naslov.*/
+
+.tekstObican{
+	color:#605951;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+}
+
+.tekstIskosen{
+	color:#61a6ab;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:18px;
+	font-style:italic;
+}
+
+.naslovObican{
+	color:#605951;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:20px;
+}
+
+.naslovIskosen{
+	color:#61a6ab;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:22px;
+	font-style:italic;
+}

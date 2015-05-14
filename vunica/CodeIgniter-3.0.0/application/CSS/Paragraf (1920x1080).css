@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Ovo dole su stilovi za paragraf koji je uokviren sa dve linije, od kojih gornja linija ima klupko u sredini.*/
+
+/*Ovo je div u kom se sve nalazi.*/
+/*Podesavanje duzine linija zavisi od dimenzija tabele.*/
+.paragraf{
+	width:100%;
+	position:relative;
+	padding:0 0 0 0;
+	text-align:left;
+}
+
+	/*Ovo je stil za liniju.*/
+	.linija{
+		border-width:1px 0 0 0;
+		border-color:#605951;
+		border-style:solid;
+	}
+	
+	/*Ovo je malo klupko izmedju linija.*/
+	.ikonica{
+		width:40px;
+		margin:0 0 0 10px;
+	}
