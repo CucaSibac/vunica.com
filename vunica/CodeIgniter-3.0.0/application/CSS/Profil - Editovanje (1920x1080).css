@@ -4,7 +4,7 @@
 #banerPolje{
 	width:80%;
 	
-	background-image:url(../Slike/Profilna/Baner.jpg);
+	background-image:url(http://localhost/Slike/Profilna/Baner.jpg);
 	background-position:right;
 	
 	padding:4% 0 3% 0;
@@ -73,4 +73,10 @@
     border-radius: 4px;
 
 }
-	
+
+.greska{
+    color:#E13300;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:14px;
+    font-style:italic;
+}	
