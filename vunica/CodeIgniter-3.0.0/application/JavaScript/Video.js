@@ -1,3 +1,4 @@
+/*Tijana Trifunovic, 311/12*/
 //Ovo je za komentar na stranici videa.
 
 function limitText(limitNum) {

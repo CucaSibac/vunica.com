@@ -1,4 +1,5 @@
 // Funkcija koja izvlaci pretragau i vraca je nazad
+/*Tijana Trifunovic, 311/12*/
 function toggle(id) {
     var el = document.getElementById(id);
     var img = document.getElementById("arrow");

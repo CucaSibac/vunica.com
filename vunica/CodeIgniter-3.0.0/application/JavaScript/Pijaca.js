@@ -1,4 +1,5 @@
 //kada se pritisne na opciju datum
+/*Tijana Trifunovic, 311/12*/
 function f1() {
   var p = document.getElementById("id1").className;
   var q = document.getElementById("id2").className;

@@ -1,3 +1,4 @@
+/*Tijana Trifunovic, 311/12*/
 // Funkcije koje otkrivaju u sakrivaju footer
 
 function show(){
