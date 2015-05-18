@@ -3,7 +3,7 @@
 
 class Korisnik extends CI_Model {
     
-    function ucitajKorisnika($nekiArgument){
+    function ucitajKorisnika(){
         $this->db->select('*');
         $this->db->from('korisnik k');
         $this->db->where('k.IDKorisnik', 4);
