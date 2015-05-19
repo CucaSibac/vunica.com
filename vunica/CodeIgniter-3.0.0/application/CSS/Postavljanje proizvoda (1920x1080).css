@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+#postavkaproizvoda{
+	width:70%;
+	margin-left:10%;
+}
+
+.mestoZaSliku{
+	width:50%;
+}
+
+.proizvodSlika{
+	width:380px;
+	height:416px;
+	padding:0 0 0 0;
+	border-width:2px;
+	border-color:#605951;
+	border-style:solid;
+}
+
+.ProizvodOpis{
+	width:80%;
+	height:120px;
+	border:2px solid #605951;/*-----------------------------------------------------------------------------------*/
+	resize:none;
+	text-align: justify;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#605951;
+	padding:3px;
+	opacity:0.7;
+	outline:none;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+	/*background-color: rgba(172, 206, 192, 0.3);*/
+}
+
+.preostalokaraktera{
+	color:#605951;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+}
+
+.tekstPolje{
+	width:200px;	
+	color:#605951;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	border-width:1px;
+	border-color:#605951;
+	border-style:solid;
+	padding:2px;
+}
+	.tekstPolje:focus{		
+		outline:2px solid #61a6ab;
+	}
+	
+.kategorije{
+	width:200px;
+	color:#605951;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	border-width:1px;
+	border-color:#605951;
+	border-style:solid;
+	padding:2px;
+}
+	.kategorije:focus{		
+		outline:2px solid #61a6ab;
+	}
