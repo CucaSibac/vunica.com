@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* Tijana Trifunovic, 311/12 */
 /* CSS Document */
 
 .tekstPoljeKomentar{
@@ -26,7 +25,7 @@
 
 /*Dugme na kraju*/
 .btnUcitajJos {
-	padding:20px 10px 10px 10px;
+	padding:10px 10px 10px 10px;
 	margin:0 1px 0 0;
 	text-decoration:none;
 	text-align:center;
@@ -34,7 +33,7 @@
 	cursor:pointer;
 	background:#fffef4;
 	border-bottom:10px solid #605951;
-	border-top: 1px solid #605951;
+	/*border-top: 1px solid #605951;
 	/*border-left: 1px solid #605951;
 	border-right: 1px solid #605951;*/
 	transition-property:border-bottom .6s linear 0s;
