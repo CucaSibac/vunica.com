@@ -6,21 +6,21 @@
                   <!-- Prazna celija-->
             </td>
             <td id = "logoPolje">
-                <img src="http://localhost/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('Index', '_parent')">
+                <img src="http://localhost/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Index', '_parent')">
             </td>
-            <td width = "8%" class = "poljeMenija" onclick="window.open('Pocetna', '_parent')">
+            <td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pocetna', '_parent')">
                 <font class = "opcijeMenija"> Pocetna </font>
             </td>
             <td width = "1%" class="poljeMenija">
               <font color="#605951" face="Tahoma, Geneva, sans-serif" size="3"> | </font>
             </td>
-			<td width = "8%" class = "poljeMenija" onclick="window.open('Strikarnica', '_parent')">
+			<td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Strikarnica', '_parent')">
                 <font class = "opcijeMenija"> Srikarnica </font>
             </td>
             <td width = "1%" class = "poljeMenija">
               <font color="#605951" face="Tahoma, Geneva, sans-serif" size="3"> | </font>
             </td>
-			<td width = "8%" class = "poljeMenija" onclick="window.open('Pijaca', '_parent')">
+			<td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pijaca', '_parent')">
                 <font class = "opcijeMenija"> Pijaca </font>
             </td>
             <td>
