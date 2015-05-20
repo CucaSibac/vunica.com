@@ -9,15 +9,20 @@
   
     <title>Početna</title>
     
+    <?php 
+       foreach($korisnici as $red){
+       }
+    ?>     
+    
     <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
     
-    <style media="screen and (max-device-width: 1400px)">
-      <?php include '/../CSS/Template (1366x768).css'; ?>
-      <?php include '/../CSS/Pop up (1366x768).css'; ?>
-      <?php include '/../CSS/Tekst (1366x768).css'; ?>
-      <?php include '/../CSS/Dugme (1366x768).css'; ?>
-      <?php include '/../CSS/Pocetna (1366x768).css'; ?>
-      <?php include '/../CSS/Paragraf (1366x768).css'; ?>
+  <style media="screen and (max-device-width: 1400px)">
+  <?php include '/../CSS/Template (1366x768).css'; ?>
+  <?php include '/../CSS/Pop up (1366x768).css'; ?>
+  <?php include '/../CSS/Tekst (1366x768).css'; ?>
+  <?php include '/../CSS/Dugme (1366x768).css'; ?>
+  <?php include '/../CSS/Pocetna (1366x768).css'; ?>
+  <?php include '/../CSS/Paragraf (1366x768).css'; ?>
   </style>
   <style media="screen and (min-device-width: 1401px)">
     <?php include '/../CSS/Template (1920x1080).css'; ?>
@@ -41,7 +46,7 @@
 
 <body onLoad="izracunaj();" onresize="izracunaj();" id="body">
 
-	<!-- Header -->
+    <!-- Header -->
     <div id = "headerOkvir">
       <table id = "header">
           <tr>
@@ -49,7 +54,7 @@
                   <!-- Prazna celija -->
             </td>
             <td id = "logoPolje">
-                <img src="http://localhost/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('http://localhost/vunica/CodeIgniter-3.0.0/index.php/IndexStrana/index', '_parent')">
+                <img src="http://localhost/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('http://localhost/vunica/CodeIgniter-3.0.0/index.php/IndexStrana/index', '_parent')"/>
             </td>
             <td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica/CodeIgniter-3.0.0/index.php/Pocetna/index', '_parent')">
                 <font class = "opcijeMenija"> Početna </font>
@@ -71,16 +76,32 @@
             </td>
             <td id = "poljePrijava">
               <!-- InstanceBeginEditable name="Prijava" -->
-              <font class = "opcijeMenija" style="white-space: nowrap;"> 
-                <font onclick="prikazi_prijavu()">Prijava</font>
-                /
-                <font onclick="prikazi_registraciju()">Registracija</font>
+              <font class = "opcijeMenija" style="white-space: nowrap;">
+                <?php
+                    if(strcmp($red->UserName, "") == 0){
+                ?>
+                    <font onclick="prikazi_prijavu()">Prijava</font>
+                    /
+                    <font onclick="prikazi_registraciju()">Registracija</font>
+                <?php } else{ ?>
+                    <font onclick="window.open('http://localhost/vunica/CodeIgniter-3.0.0/index.php/ProfilEditovanje/index', '_parent')">
+                        <?php
+                            echo $red->UserName;
+                        ?>
+                    </font>
+                    /
+                    <font> Odjava </font>
+                <?php } ?>
               </font> 
               <!-- InstanceEndEditable -->
             </td>
             <td id = "cegerPolje">
               <!-- InstanceBeginEditable name="Ceger" -->
-              <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://localhost/vunica/CodeIgniter-3.0.0/index.php/Ceger/index', '_parent')">  
+              <?php
+                    if(strcmp($red->UserName, "") != 0){
+               ?>
+              <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://localhost/vunica/CodeIgniter-3.0.0/index.php/Ceger/index', '_parent')"/>  
+              <?php }?>
               <!-- InstanceEndEditable -->
             </td>
           </tr>
@@ -260,31 +281,74 @@
       <table id = "telo">
       	<tr>
            <td>
-			  <!-- InstanceBeginEditable name="Body" -->
-              <br/> <br/> <br/> <br/>
+            <!-- InstanceBeginEditable name="Body" -->
+              <br/> <br/> <br/> <br/> <br/> <br/> <br/>
               
-              <p align = "center"> ------- Pocetna strana za admina ------- </p>
+              <?php
+                foreach($korisnici as $red){
+                    if(strcmp($red->Status, "Admin") == 0){
+                        $status = 1;
+                    } 
+                    else{
+                        if(strcmp($red->Pol, "Pletilja") == 0){
+                            $status = 2;
+                        } 
+                        else{
+                            $status = 3;
+                        }
+                    }
+                }  
+              ?>
               
-              <br/> <br/> <br/> 
-
+              <?php $status = 1; ?>
+              
               <!-- Dobrodoslica -->
+              <?php
+              // Ucitava odgovarajuci deo strane prema statusu ulogovane osobe
+                if($status != 0){
+              ?>
+              
               <div width = 100% align = "center">
               	<font class = "naslovObican">
-                	Dobrodosli
+                	Dobrodošli
                 </font>
                 <br/>
                 <font class = "naslovIskosen">
-                	Dragance!
+                	<?php echo $red->UserName ?>
+                </font> 
+               </div>
+              
+              <?php
+                }
+                else{  
+              ?>
+              
+              <div width = 100% align = "center">
+              	<font class = "naslovObican">
+                    ŠTRIKANJE
                 </font>
-               </div>                              
+                <br/>
+                <font class = "naslovIskosen">
+                    je
+                </font> 
+                <br/>
+                <font class = "naslovObican">
+                    UMETNOST
+                </font>
+               </div>
               
-              <br/> <br/> <br/>
+              <?php
+                }  
+              ?>
               
-              <p align = "center"> ------- Ako na dnevnom redu ima nesto: ------- </p>
-              
-              <br/> <br/>
+              <br/> <br/> <br/>            
               
               <!-- Dnevni red -->
+              <?php
+              // Ucitava odgovarajuci deo strane prema statusu ulogovane osobe
+                if($status == 1){
+              ?>
+              
               <table width = "60%" align = "center">
               	<tr>
                 	<td width = "100%">
@@ -318,6 +382,72 @@
                     </td>
                 </tr>
               </table>
+              
+              <?php
+                }  
+                else{ if($status == 2 || $status == 3){
+              ?>
+              
+                <table width = "60%" align = "center">
+                    <tr>
+                     <td width = "100%">
+                        <font class = "tekstObican">
+                            Neki tekst bla bla bla....
+                        </font>
+                        <br/> <br/> 
+                    </td>
+                    </tr>
+                </table>
+              
+              <?php
+                }  
+                else{
+              ?>
+              
+              <!-- Uokviren paragraf -->
+              <br/> <br/>
+              <div class = "paragraf">
+                <!-- Gornja linija -->
+              	<table width = "60%" align = "center">
+                	<tr>
+                    	<td width = "46%">
+                        	<hr width = "100%" class = "linija"/>
+                        </td>
+                        <td width = "8%" align="center">
+                        	<img src = "http://localhost/Slike/Linija/Ikonica.png" class = "ikonica">
+                        </td>
+                        <td width = "46%">
+                        	<hr width = "100%" class = "linija"/>
+                        </td>
+                    </tr>
+                </table>             
+              	<br/> <br/>           
+                <!-- Deo za tekst -->
+                <table width = "60%" align = "center">
+                	<tr>
+                    	<td width = "100%" align = "left">
+                          <!-- Ovde ide tekst -->
+                          
+                          <font class = "tekstObican">
+                              I tako, jednog lepog dana, Teodora se prihvatila svojih igala i pocela da strika. Strikala je i strikala ceo dan i noc. Na kraju je napravila dva lepa dzempercica, jedan par carapa (sa jednorozima) i kapicu za hladne zimske dane. Oh, kako joj je samo taj dan bio ispunjen!
+                          </font>
+                          <br/> <br/> <br/>
+                          <font class = "tekstIskosen">
+                              Ovaj tekst je jako bitan, inace ne bi bio ovako napisan.
+                          </font>
+                          
+                          <!-- Kraj teksta -->
+                		</td>
+                	</tr>
+                </table>       
+                <br/> <br/>   
+                <!-- Donja linija -->
+              	<hr width = "60%" class = "linija"/>
+              </div>           
+              
+              <?php
+                } }
+              ?>
               
               <br/> <br/>
               
@@ -754,36 +884,7 @@
                 </tr>
               </table> 
               
-              
-              
-              <br/> <br/> <br/> <br/>
-              
-              <p align = "center"> ------- Strana za korisnika: ------- </p>
-              
               <br/> <br/> <br/>
-  
-              <!-- Dobrodoslica -->
-              <div width = 100% align = "center">
-                <font class = "naslovObican">
-                    Dobrodosli
-                </font>
-                <br/>
-                <font class = "naslovIskosen">
-                    Cuca200!
-                </font>
-               </div> 
-               
-              <br/> <br/> <br/>        
-              
-              <table width = "60%" align = "center"> 
-              	<tr>
-                	<td>
-                    	<font class = "tekstObican">
-                        	Dobrodosli nazad! Cekali smo vas povratak. Sta danas imate planirano za nas?
-                        </font>
-                    </td>
-                </tr>                    
-              </table>
               
               <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
               

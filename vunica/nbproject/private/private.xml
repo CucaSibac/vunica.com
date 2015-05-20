@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/wamp/www/vunica/CodeIgniter-3.0.0/application/config/autoload.php</file>
-            <file>file:/C:/wamp/www/vunica/CodeIgniter-3.0.0/application/config/routes.php</file>
-            <file>file:/C:/wamp/www/vunica/CodeIgniter-3.0.0/application/controllers/Vunica.php</file>
-            <file>file:/C:/wamp/www/vunica/CodeIgniter-3.0.0/application/config/config.php</file>
-            <file>file:/C:/wamp/www/vunica/CodeIgniter-3.0.0/application/views/Video.php</file>
-            <file>file:/C:/wamp/www/vunica/CodeIgniter-3.0.0/application/models/Vunica_model.php</file>
-            <file>file:/C:/wamp/www/vunica/CodeIgniter-3.0.0/application/config/database.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

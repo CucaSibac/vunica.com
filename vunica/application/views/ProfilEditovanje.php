@@ -47,7 +47,7 @@
 
 <body onLoad="izracunaj();" onresize="izracunaj();" id="body">
 
-	<!-- Header -->
+    <!-- Header -->
     <div id = "headerOkvir">
       <table id = "header">
           <tr>
