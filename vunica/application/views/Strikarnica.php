@@ -58,7 +58,7 @@
                 var loaded_videos = 0;
                 $("#more_button").click(function () {
                     loaded_videos += 8;
-                    $.get("http://localhost/vunica/CodeIgniter-3.0.0/index.php/strikarnica/get_videos/" + loaded_videos, function (data) {
+                    $.get("http://localhost/vunica.com/vunica/index.php/strikarnica/get_videos/" + loaded_videos, function (data) {
                         $("#main_content").append(data);
 
                     });
@@ -97,7 +97,7 @@
                     <td width = "1%" class="poljeMenija">
                         <font color="#605951" face="Tahoma, Geneva, sans-serif" size="3"> | </font>
                     </td>
-                    <td width = "8%" class = "poljeMenija" onclick="window.open('Strikarnica.html', '_parent')">
+                    <td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica.com/vunica/index.php/strikarnica', '_parent')">
                         <font class = "opcijeMenija"> Štrikarnica </font>
                     </td>
                     <td width = "1%" class = "poljeMenija">
@@ -391,7 +391,7 @@
                                                         <br /><font size="2" style="text-transform:none">Kategorija: <?php echo $videos->Kategorija; ?></font>    
                                                         <br /><font size="2" style="text-transform:none">Tezina: <?php echo $videos->Tezina; ?></font></h2>  
                                                     <p><?php echo $videos->Opis; ?></p> 
-                                                    <a href='http://localhost/vunica/CodeIgniter-3.0.0/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
+                                                    <a href='http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
                                                     <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                 </div>  
                                             </div> 
@@ -414,7 +414,7 @@
                                                         <br /><font size="2" style="text-transform:none">Kategorija: <?php echo $videos->Kategorija; ?></font>    
                                                         <br /><font size="2" style="text-transform:none">Tezina: <?php echo $videos->Tezina; ?></font></h2>  
                                                     <p><?php echo $videos->Opis; ?></p> 
-                                                    <a href="http://localhost/vunica/CodeIgniter-3.0.0/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
+                                                    <a href="http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
                                                     <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                 </div>  
                                             </div>  

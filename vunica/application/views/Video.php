@@ -14,44 +14,7 @@
             }
             ?></title>
     <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
-        <!-- NE BRISATI NISTA U OVOM EDIT REGIONU!!!! -->
-        <!--
         
-        
-        <link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="/../CSS/Template (1366x768).css">
-        <link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Template (1920x1080).css">
-        
-        <link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="/../CSS/Pop up (1366x768).css">
-        <link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Pop up (1920x1080).css">
-        
-        <link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="/../CSS/Tekst (1366x768).css">
-        <link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Tekst (1920x1080).css">
-        
-        <link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="/../CSS/Dugme (1366x768).css">
-        <link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Dugme (1920x1080).css">
-      
-            <script src="../JavaScript/PopUp.js"> </script>
-            <script src="../JavaScript/Footer.js"> </script>
-      
-        <!-- NISTA!!!! -->
-
-        <!-- InstanceEndEditable -->
-
-        <!-- InstanceBeginEditable name="Head" -->
-
-        <!-- Ovde ubacivati svoje stilove i skripte -->
-
-        <!-- <link rel="stylesheet" media="screen and (max-device-width: 1400px)"type="text/css" href="../CSS/Paragraf (1366x768).css">
-         <link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Paragraf (1920x1080).css">
-         
-          <link rel="stylesheet" media="screen and (max-device-width: 1400px)"type="text/css" href="../CSS/Video (1366x768).css">
-         <link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Video (1920x1080).css">
-         
-         <script src="../JavaScript/Checkbox.js"> </script>
-             <script src="../JavaScript/Video.js"> </script>
-        -->
-
-        <!-- InstanceEndEditable -->
 
         <style media="screen and (max-device-width: 1400px)">
 <?php include '/../CSS/Template (1366x768).css'; ?>
@@ -92,7 +55,7 @@
                 var loaded_messages = 0;
                 $("#more_button").click(function () {
                     loaded_messages += 3;
-                    $.get("http://localhost/vunica/CodeIgniter-3.0.0/index.php/video/get_messages/" + "<?php
+                    $.get("http://localhost/vunica.com/vunica/index.php/video/get_messages/" + "<?php
 foreach ($podaci as $red) {
     echo $red->IDVideo;
 }
@@ -136,7 +99,7 @@ foreach ($podaci as $red) {
                     <td width = "1%" class="poljeMenija">
                         <font color="#605951" face="Tahoma, Geneva, sans-serif" size="3"> | </font>
                     </td>
-                    <td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica/CodeIgniter-3.0.0/index.php/strikarnica', '_parent')">
+                    <td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica.com/vunica/index.php/strikarnica', '_parent')">
                         <font class = "opcijeMenija"> Štrikarnica </font>
                     </td>
                     <td width = "1%" class = "poljeMenija">

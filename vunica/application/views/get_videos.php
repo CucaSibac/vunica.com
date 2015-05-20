@@ -17,7 +17,7 @@
                                                                 <br /><font size="2" style="text-transform:none">Kategorija: <?php echo $videos->Kategorija; ?></font>    
                                                                 <br /><font size="2" style="text-transform:none">Tezina: <?php echo $videos->Tezina; ?></font></h2>  
                                                             <p><?php echo $videos->Opis; ?></p> 
-                                                            <a href='http://localhost/vunica/CodeIgniter-3.0.0/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
+                                                            <a href='http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
                                                             <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                         </div>  
                                                     </div> 
@@ -40,7 +40,7 @@
                                                                 <br /><font size="2" style="text-transform:none">Kategorija: <?php echo $videos->Kategorija; ?></font>    
                                                                 <br /><font size="2" style="text-transform:none">Tezina: <?php echo $videos->Tezina; ?></font></h2>  
                                                             <p><?php echo $videos->Opis; ?></p> 
-                                                            <a href="http://localhost/vunica/CodeIgniter-3.0.0/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
+                                                            <a href="http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
                                                             <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                         </div>  
                                                     </div>  
