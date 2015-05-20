@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/vunica/CodeIgniter-3.0.0/';
+$config['base_url'] ='http://localhost/vunica.com/vunica/'; //'http://localhost/vunica/CodeIgniter-3.0.0/';
 
 /*
 |--------------------------------------------------------------------------

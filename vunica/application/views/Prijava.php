@@ -1,7 +1,5 @@
-<link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="../CSS/Pop up (1366x768).css">
-<link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Pop up (1920x1080).css">
-
-<div style="width:100%; height:50%;"> dsifhdiu</div>
+<link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="Pop up (1366x768).css">
+<link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="Pop up (1920x1080).css">
 
 <!--Prozor koji potamni-->
     <div id = "prazan" onclick="sakrij_sve()">
@@ -12,7 +10,7 @@
       <div class = "naslovPrijava"> Prijava </div>
       <img src="../Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <!-- InstanceBeginEditable name="PrijavaDiv" -->    
-      <?php echo form_open("vunica/login"); ?>
+      <?php echo form_open("PopUp/login"); ?>
         <table class="tabelaPrijava">
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>

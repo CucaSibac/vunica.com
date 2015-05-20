@@ -21,7 +21,7 @@
     
     	<style media="screen and (max-device-width: 1400px)">
 			<?php include '/../CSS/Template (1366x768).css'; ?>
-			<?php include '/../CSS/Pop up (1366x768).css'; ?>
+			<?php include '/../CSS/Pop up (1366x768).css'; ?>                                              
 			<?php include '/../CSS/Tekst (1366x768).css'; ?>
 			<?php include '/../CSS/Dugme (1366x768).css'; ?>
 			<?php include '/../CSS/Template (1366x768).css'; ?>
@@ -34,7 +34,7 @@
 		<style media="screen and (min-device-width: 1401px)">
 			<?php include '/../CSS/Paragraf (1920x1080).css'; ?>
 			<?php include '/../CSS/Template (1920x1080).css'; ?>
-			<?php include '/../CSS/Pop up (1920x1080).css'; ?>
+			<?php include '/../CSS/Pop up (1920x1080).css'; ?>                                                                       
 			<?php include '/../CSS/Tekst (1920x1080).css'; ?>
 			<?php include '/../CSS/Dugme (1920x1080).css'; ?>
 			<?php include '/../CSS/Video (1920x1080).css'; ?>
@@ -43,7 +43,7 @@
 			<?php include '/../CSS/Postavljanje proizvoda (1920x1080).css'; ?>
 		</style>
 		<script>
-			<?php include('/../JavaScript/PopUp.js');?>
+			<?php include('/../JavaScript/PopUp.js');?>                     
 			<?php include('/../JavaScript/Footer.js');?>
 			<?php include('/../JavaScript/Checkbox.js');?>
 			<?php include('/../JavaScript/Pretraga.js');?>

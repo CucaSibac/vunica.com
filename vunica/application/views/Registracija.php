@@ -1,13 +1,11 @@
-<link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="../CSS/Pop up (1366x768).css">
-<link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Pop up (1920x1080).css">
 
-<!--Prozor za registriovanje-->
+<!--Prozor za registriovanje -->
     <div id="registracija">
       <div class="naslovRegistracija"> Registracija </div>
       <img src="../Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
-      <!-- InstanceBeginEditable name="RegistracijaDiv" -->    
+      <!-- InstanceBeginEditable name="RegistracijaDiv" -->
       <?php echo validation_errors('<p class="error">'); ?>
-	  <?php echo form_open("vunica/registration"); ?>
+	  <?php echo form_open("PopUp/registration"); ?>
         <table class="tabelaRegistracija">
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
@@ -21,7 +19,7 @@
           </tr>
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td colspan="2"><input type="text" name="Ime" id="Ime" placeholder="Ime i prezime" class="inputPopUp" value="<?php echo set_value('Ime'); ?>"/> </td>
+            <td colspan="2"><input type="text" name="ImePrezime" id="ImePrezime" placeholder="Ime i prezime" class="inputPopUp" value="<?php echo set_value('ImePrezime'); ?>"/> </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
           <tr>
@@ -69,4 +67,4 @@
         </table>
       <?php echo form_close(); ?>
       <!-- InstanceEndEditable -->
-    </div>
+    </div> 
