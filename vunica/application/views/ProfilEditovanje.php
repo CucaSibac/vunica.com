@@ -12,8 +12,11 @@
            foreach($korisnici as $red){
               echo $red->UserName;
            }
+           ///Nesto nesto nesto nesto nesot hej
         ?>     
     </title>
+    
+    
     
     <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
     
