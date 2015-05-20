@@ -101,16 +101,16 @@
 		.view {
     width: 350px;
     height: 270px;
-    margin-left: 10px;
-    margin-top: 10px;
+    //margin-left: 10px;
+    //margin-top: 10px;
     float: left;
   
     overflow: hidden;
     position: relative;
     text-align: center;
-    box-shadow: 1px 1px 2px #e6e6e6;
+    //box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
-    background: #fff url(../images/bgimg.jpg) no-repeat center center
+   //background: #fff url(../images/bgimg.jpg) no-repeat center center
 }
 
 .dodajproizvod{
@@ -143,17 +143,21 @@
 	
 }
 .view .mask, .view .content {
-    width: 350px;
-    height: 270px;
+    width: 360px;
+    height: 275px;
     position: absolute;
     overflow: hidden;
-    top: 5px;
-    left: 5px;
+    top: 0px;
+   left:0px;
 }
 .view img {
-    display: block;
-     
-    position: relative
+    //display: block;
+        width: 360px;
+    height: 275px;
+    top: 0px;
+   left:0px;
+    position: absolute;
+    overflow: hidden;
 }
 .view h2 {
     text-transform: uppercase;
