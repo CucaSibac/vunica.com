@@ -6,21 +6,21 @@
                   <!-- Prazna celija-->
             </td>
             <td id = "logoPolje">
-                <img src="../Slike/Vunica/vunica.png" id = "logo" onclick="window.open('Index.html', '_parent')">
+                <img src="http://localhost/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('Index', '_parent')">
             </td>
-            <td width = "8%" class = "poljeMenija" onclick="window.open('Pocetna.html', '_parent')">
+            <td width = "8%" class = "poljeMenija" onclick="window.open('Pocetna', '_parent')">
                 <font class = "opcijeMenija"> Pocetna </font>
             </td>
             <td width = "1%" class="poljeMenija">
               <font color="#605951" face="Tahoma, Geneva, sans-serif" size="3"> | </font>
             </td>
-			<td width = "8%" class = "poljeMenija" onclick="window.open('Strikarnica.html', '_parent')">
-                <font class = "opcijeMenija"> ʴrikarnica </font>
+			<td width = "8%" class = "poljeMenija" onclick="window.open('Strikarnica', '_parent')">
+                <font class = "opcijeMenija"> Srikarnica </font>
             </td>
             <td width = "1%" class = "poljeMenija">
               <font color="#605951" face="Tahoma, Geneva, sans-serif" size="3"> | </font>
             </td>
-			<td width = "8%" class = "poljeMenija" onclick="window.open('Pijaca.html', '_parent')">
+			<td width = "8%" class = "poljeMenija" onclick="window.open('Pijaca', '_parent')">
                 <font class = "opcijeMenija"> Pijaca </font>
             </td>
             <td>
@@ -37,7 +37,7 @@
             </td>
             <td id = "cegerPolje">
               <!-- InstanceBeginEditable name="Ceger" -->
-              <img src="../Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open("Ceger.html")">  
+              <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open("Ceger")">  
               <!-- InstanceEndEditable -->
             </td>
           </tr>

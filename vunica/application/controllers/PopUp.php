@@ -27,7 +27,7 @@ class PopUp extends CI_Controller {
     public function login() {
         $email = $this->input->post('email1');
         $password = ($this->input->post('password1'));
-        $result = $this->vunica_model->login($email, $password);
+        $result = $this->PopUp_model->login($email, $password);
         if($result) echo"uspesno ste obavili akciju";
         else        echo"niste uspesno obavili akciju";
     }
