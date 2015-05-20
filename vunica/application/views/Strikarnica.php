@@ -235,7 +235,7 @@
             <!-- Slogan -->                    
             <tr>
                 <td>
-                    <br/> <br/> <br/> <br/><br/> <br/>
+                    <br/> <br/> <br/> <br/><br/>
 
 
                     <div width = 100% align = "center">
@@ -399,7 +399,7 @@
                                  
                                 <hr width = "100%" class = "linija"/>
                                 <?php
-                                if (count($latest_videos) == 8) {
+                                if (count($latest_videos) >= 8) {
                                     ?>
                                     <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
                                         <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >

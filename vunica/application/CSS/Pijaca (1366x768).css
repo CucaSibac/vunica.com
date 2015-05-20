@@ -33,7 +33,7 @@
 	cursor:pointer;
 	background:#fffef4;
 	border-bottom:10px solid #605951;
-	border-top: 1px solid #605951;
+	//border-top: 1px solid #605951;
 	/*border-left: 1px solid #605951;
 	border-right: 1px solid #605951;*/
 	transition-property:border-bottom .6s linear 0s;
@@ -101,10 +101,12 @@
 /*Ovo je za slike proizvoda*/
 	
 		.view {
-    width: 300px;
-    height: 350px;
+             //padding:26px;
+             
+    width:340px;
+    height: 400px;
     margin: 10px;
-    float: left;
+    
     
     overflow: hidden;
     position: relative;
@@ -115,10 +117,11 @@
 }
 
 .dodajproizvod{
-	 width: 300px;
-    height: 350px;
-    margin: 10px;
-    float: left;
+	  width: 85%;
+    height: 100px;
+    
+    
+    float: none;
 	border:2px dotted #605951;
     overflow: hidden;
     position: relative;
@@ -142,14 +145,16 @@
 	
 }
 .view .mask, .view .content {
-    width: 300px;
-    height: 350px;
+    width: 340px;
+    height: 400px;
     position: absolute;
     overflow: hidden;
     top: 0;
     left: 0
 }
 .view img {
+    width: 340px;
+    height: 400px;
     display: block;
     position: relative
 }
@@ -198,11 +203,11 @@
 	transition: all 0.2s ease-in-out;
 }
 .view-third p { 
-	transform: translateX(300px) rotate(90deg);
+	transform: translateX(340px) rotate(90deg);
 	transition: all 0.2s ease-in-out;
 }
 .view-third a.info { 
-	transform: translateY(350px);
+	transform: translateY(400px);
 	transition: all 0.2s ease-in-out;
 }
 .view-third:hover .mask { 
@@ -227,10 +232,10 @@
 	position:absolute; 
 	right:0; bottom:0; 
 	color:#fffef4;
-	font-size:10px;
+	font-size:15px;
 }
 .view-third .datumNaSlici{
-	transform: translateX(300px);
+	transform: translateX(340px);
 	transition: all 0.4s ease-in-out;
 }
 .view-third:hover .datumNaSlici{
