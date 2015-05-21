@@ -123,7 +123,7 @@
               
               <?php 
                 $attributes = array('id' => 'formaProfilEditovanje');
-                echo form_open("ProfilEditovanje/promeni", $attributes); 
+                echo form_open("ProfilEditovanje/promeni"); 
               ?>
               
                   <table width = "90%" align = "center">                 	
