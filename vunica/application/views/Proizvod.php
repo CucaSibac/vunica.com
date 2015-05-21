@@ -34,10 +34,12 @@
    <!--Kraj ucitavanja css za rezoluciju (1920x1080)-->
    
    <!--Ucitavanje javascript-->
-        <?php include '/../JavaScript/PopUp.js'; ?>
-        <?php include '/../JavaScript/Footer.js'; ?>
-        <?php include '/../JavaScript/Checkbox.js'; ?>
-        <?php include '/../JavaScript/PlusMinus.js'; ?>
+        <script>
+           <?php include('/../JavaScript/PopUp.js'); ?>
+           <?php include('/../JavaScript/Footer.js'); ?>
+           <?php include('/../JavaScript/Checkbox.js'); ?>
+           <?php include ('/../JavaScript/PlusMinus.js'); ?>
+        </script>
    <!--Krajucitavanja javascript-->
 
   <!-- InstanceEndEditable -->
