@@ -2,11 +2,13 @@
 
 class IndexStrana extends CI_Controller {
     
-    function index(){
-        
-        $this->load->view('IndexStrana');
+    public function __construct() {
+        parent::__construct();
     }
     
+    function index(){  
+        $this->load->view('IndexStrana');
+    }   
     
 }
 

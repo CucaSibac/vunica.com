@@ -148,7 +148,8 @@
                             </font>
                             <br/> <br/>
                             <font class = "tekstObican"> Godine: </font>
-                            <input id = "godine" name = "godine" class = "tekstForme" type = "text" size = "10" maxlength = "10"
+                            <input id = "godine" name = "godine" class = "tekstForme" type = "text" maxlength = "10"
+                                   size = "<?php echo strlen($this->session->Godine);?>"
                                    placeholder="<?php echo $this->session->Godine; ?>"/>
                             <div id = "greskaGodine">
                                 <br/>
@@ -197,7 +198,8 @@
                             </select>
                             <br/> <br/>
                             <font class = "tekstObican"> Lokacija: </font>
-                            <input id = "lokacija" name = "lokacija" class = "tekstForme" type = "text" size = "30" maxlength = "30"
+                            <input id = "lokacija" name = "lokacija" class = "tekstForme" type = "text" maxlength = "30"
+                                   size = "<?php echo strlen($this->session->Lokacija);?>"
                                    placeholder = "<?php echo $this->session->Lokacija; ?>"/>
                             <br/> <br/> <br/> <br/>
                             <input class = "dugme" type = "submit" value = "Promeni sliku"/>
@@ -216,7 +218,8 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <br/> <br/>
-                            <input id = "imeprezime" name = "imeprezime" class = "tekstForme" type = "text" size = "20" maxlength = "20"
+                            <input id = "imeprezime" name = "imeprezime" class = "tekstForme" type = "text" maxlength = "20"
+                                   size = "<?php echo strlen($this->session->ImePrezime);?>"
                                    placeholder="<?php echo $this->session->ImePrezime; ?>"/>
                             <br/> <br/>
                         </td>
@@ -226,7 +229,8 @@
                             <font class = "tekstObican"> E-mail adresa: </font>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <input id = "email" name = "email" class = "tekstForme" type = "text" size = "40" maxlength = "40"
+                            <input id = "email" name = "email" class = "tekstForme" type = "text" maxlength = "40"
+                                   size = "<?php echo strlen($this->session->Email);?>"
                                    placeholder="<?php echo $this->session->Email; ?>"/>
                         </td>
                     </tr>
@@ -236,7 +240,8 @@
                             <br/>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <input id = "emailPotvrda" name = "emailPotvrda" class = "tekstForme" type = "text" size = "40" maxlength = "40"
+                            <input id = "emailPotvrda" name = "emailPotvrda" class = "tekstForme" type = "text" maxlength = "40"
+                                   size = "<?php echo strlen($this->session->Email);?>"
                                    placeholder="<?php echo $this->session->Email; ?>"/>
                             <br/>
                         </td>
@@ -254,7 +259,7 @@
                             <font class = "tekstObican"> Lozinka: </font>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <input id = "lozinka" name = "lozinka" class = "tekstForme" type = "password" size = "40" maxlength = "40"
+                            <input id = "lozinka" name = "lozinka" class = "tekstForme" type = "password" size = "25" maxlength = "40"
                                    placeholder="<?php echo $this->session->Lozinka; ?>"/>
                         </td>
                     </tr>
@@ -264,7 +269,7 @@
                             <br/>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <input id = "lozinkaPotvrda" name = "lozinkaPotvrda" class = "tekstForme" type = "password" size = "40" maxlength = "40"
+                            <input id = "lozinkaPotvrda" name = "lozinkaPotvrda" class = "tekstForme" type = "password" size = "25" maxlength = "40"
                                    placeholder="<?php echo $this->session->Lozinka; ?>"/>
                             <br/>
                         </td>
