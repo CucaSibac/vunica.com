@@ -62,6 +62,11 @@
 
         <!-- Telo strane -->
         <div id = "teloOkvir">
+            <?php echo validation_errors('<p class="error">'); ?>
+            <?php 
+              $attributes = array('style' => 'height: 100%;', 'id' => 'PostavljanjeProizvoda');
+              echo form_open("PostavljanjeProizvoda/postaviProizvod", $attributes); 
+            ?>
             <table id = "telo">
                 <tr>
                     <td>
@@ -156,6 +161,8 @@
                                         Postavljanjem ovog proizvoda pristajete na: <a href="#" class="linkPopUp"> Ugovor </a> 
                                     </font> 
                                     <br/><br/><br/><br/>
+                                    <input type="file"/>
+                                    <input type="submit" value="submit" />
                                 </td>
                             </tr>                                                                       
                         </table>         
@@ -163,6 +170,7 @@
                     </td>
                 </tr>
             </table>
+            <?php echo form_close(); ?>
         </div>
 
     </body>

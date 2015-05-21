@@ -15,5 +15,9 @@ class PostavljanjeProizvoda extends CI_Controller {
     function index() {
         $this->load->view('PostavljanjeProizvoda');
     }
+    
+    function postaviProizvod(){
+        echo 'cao';
+    }
 
 }

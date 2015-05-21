@@ -18,23 +18,28 @@ class PopUp_model extends CI_Model {
         $this->db->insert('korisnik', $data);
     }
 
-    function login($email, $sifra) {     
+    function login($email, $sifra) { 
+        $this->db->from("korisnik");
         $this->db->where("Email", $email);
-        $this->db->where("Sifra", $sifra);
-       
-        $query = $this->db->get("korisnik");
+        $this->db->where("Sifra", $sifra);       
+        $query = $this->db->get();
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $rows) {          
                 //add all data to session
                 $date = array(                 
                     'DatumPoslednjegLogovanja' => (date("Y.m.d"))
-                );             
+                ); 
+                $this->db->from("korisnik");
                 $this->db->where("IDKorisnik", $rows->IDKorisnik);
                 $this->db->update("korisnik",$date);
                 $newdata = array(
                     'IDKorisnik' => $rows->IDKorisnik,
                     'UserName' => $rows->UserName,
+                    'ImePrezime' => $rows->ImePrezime,
+                    'Status' => $rows->Status,
+                    'Slika' => $rows->Slika,
                     'Email' => $rows->Email,
+                    'Opis' => $rows->Opis,
                     'logged_in' => TRUE,
                 );
             }
@@ -48,8 +53,12 @@ class PopUp_model extends CI_Model {
     {
         $newdata = array(
         'IDKorisnik'   =>'',
-        'UserName'  =>'',
+        'UserName'  =>'',      
+        'ImePrezime' =>'',
+        'Status' => '',
+        'Slika' => 'http://localhost/Slike/Profilna/Nedefinisano.jpg',
         'Email'     => '',
+        'Opis'     => '',
         'logged_in' => FALSE,
         );
         $this->session->unset_userdata($newdata );
