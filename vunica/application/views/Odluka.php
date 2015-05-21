@@ -15,9 +15,9 @@
           </tr>   
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="window.open('Pijaca.html', '_parent')"> Nastavi</div> <br /></td>
+            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pijaca', '_parent')"> Nastavi</div> <br /></td>
             <td class="celijaDugmePopUp" align="right">            
-            <div class="dugmePopUp" onclick="window.open('Ceger.html', '_parent')"> Plati</div><br /></td>
+            <div class="dugmePopUp" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Ceger', '_parent')"> Plati</div><br /></td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr> 
                             
