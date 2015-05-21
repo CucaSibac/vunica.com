@@ -31,5 +31,9 @@ class PopUp extends CI_Controller {
         if($result) echo"uspesno ste obavili akciju";
         else        echo"niste uspesno obavili akciju";
     }
+    
+    public function logout(){
+        $this->PopUp_model->logout();
+    }
 
 }
