@@ -222,31 +222,15 @@
                     <tr>
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                             <br/> <br/>
-                            <font class = "tekstObican"> Ime: </font>
-                            <br/>
-                        </td>
-                        <td width = "50%" align = "left"  style = "padding:0 0 1% 0;">
-                            <br/> <br/>
-                            <input id = "ime" class = "tekstForme" type = "text" size = "20" maxlength = "20"
-                                   value="<?php 
-                                           foreach($korisnici as $red){
-                                              echo $red->Ime;
-                                           }  
-                                          ?>
-                            "/>
-                            <br/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
-                            <font class = "tekstObican"> Prezime: </font>
+                            <font class = "tekstObican"> Ime i prezime: </font>
                             <br/> <br/>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
+                            <br/> <br/>
                             <input id = "prezime" class = "tekstForme" type = "text" size = "20" maxlength = "20"
                                    value="<?php 
                                            foreach($korisnici as $red){
-                                              echo $red->Prezime;
+                                              echo $red->ImePrezime;
                                            }  
                                           ?>
                             "/>
