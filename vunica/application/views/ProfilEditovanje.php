@@ -120,13 +120,16 @@
               
               <!-- Forma sa podacima -->
               
-              <form id = "profilEditovanje" action="ProfilEditovanje.php" method="post">
+              <?php 
+                $attributes = array('id' => 'formaProfilEditovanje');
+                echo form_open("ProfilEditovanje/promeni", $attributes); 
+              ?>
               
                   <table width = "90%" align = "center">                 	
                     <tr>
                         <td width = "50%" align = "center">
-                        	</br> </br>
-                            <img id = "profilnaSlika" src="<?php echo $this->session->Slika;?>"/>
+                            </br> </br>
+                            <img id = "profilnaSlika" name = "profilnaSlika" src="<?php echo $this->session->Slika;?>"/>
                         </td>
                         <td width = "50%" align = "left" valign = "middle">
                             <font class = "naslovObican"> 
@@ -145,7 +148,7 @@
                             </font>
                             <br/> <br/>
                             <font class = "tekstObican"> Godine: </font>
-                            <input id = "godine" class = "tekstForme" type = "text" size = "10" maxlength = "10"
+                            <input id = "godine" name = "godine" class = "tekstForme" type = "text" size = "10" maxlength = "10"
                                    placeholder="<?php echo $this->session->Godine; ?>"/>
                             <div id = "greskaGodine">
                                 <br/>
@@ -153,7 +156,7 @@
                             </div>
                             <br/> <br/>
                             <font class = "tekstObican" size = "30"> Pol: </font>
-                            <select id = "pol" class = "tekstForme">
+                            <select id = "pol" name = "pol" class = "tekstForme">
                               <?php
                                     $opt = 0;
                                     if(strcmp($this->session->Pol, "Musko") == 0){
@@ -170,21 +173,21 @@
                                         }
                                     }  
                               ?>
-                              <option value = "musko"
+                              <option value = "musko" name = "musko"
                                 <?php
                                     if($opt == 1){
                                 ?>        
                                     selected    
                                 <?php } ;?>
                               > Musko </option>
-                              <option value = "zensko"
+                              <option value = "zensko" name = "zensko"
                                 <?php
                                     if($opt == 2){
                                 ?>        
                                     selected    
                                 <?php } ;?>
                               > Zensko </option>
-                              <option value = "nedefinisano"
+                              <option value = "nedefinisano" name = "nedefinisano"
                                  <?php
                                     if($opt == 3){
                                 ?>        
@@ -194,10 +197,11 @@
                             </select>
                             <br/> <br/>
                             <font class = "tekstObican"> Lokacija: </font>
-                            <input id = "lokacija" class = "tekstForme" type = "text" size = "30" maxlength = "30"
+                            <input id = "lokacija" name = "lokacija" class = "tekstForme" type = "text" size = "30" maxlength = "30"
                                    placeholder = "<?php echo $this->session->Lokacija; ?>"/>
                             <br/> <br/> <br/> <br/>
-                            <a href = "#" class = "dugme"> Promeni sliku </a>
+                            <input class = "dugme" type = "submit" value = "Promeni sliku"/>
+                            <input class = "dugme" type = "submit" value = "Obrisi sliku"/>
                             <div id = "greskaGodine">
                                 <br/>
                                 <font class = "greska"> Molim Vas, selektujte validan fajl! </font>
@@ -212,7 +216,7 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <br/> <br/>
-                            <input id = "imeprezime" name = "ime prezime" class = "tekstForme" type = "text" size = "20" maxlength = "20"
+                            <input id = "imeprezime" name = "imeprezime" class = "tekstForme" type = "text" size = "20" maxlength = "20"
                                    placeholder="<?php echo $this->session->ImePrezime; ?>"/>
                             <br/> <br/>
                         </td>
@@ -222,7 +226,7 @@
                             <font class = "tekstObican"> E-mail adresa: </font>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <input id = "email" class = "tekstForme" type = "text" size = "40" maxlength = "40"
+                            <input id = "email" name = "email" class = "tekstForme" type = "text" size = "40" maxlength = "40"
                                    placeholder="<?php echo $this->session->Email; ?>"/>
                         </td>
                     </tr>
@@ -232,7 +236,7 @@
                             <br/>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <input id = "emailPotvrda" class = "tekstForme" type = "text" size = "40" maxlength = "40"
+                            <input id = "emailPotvrda" name = "emailPotvrda" class = "tekstForme" type = "text" size = "40" maxlength = "40"
                                    placeholder="<?php echo $this->session->Email; ?>"/>
                             <br/>
                         </td>
@@ -250,7 +254,7 @@
                             <font class = "tekstObican"> Lozinka: </font>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <input id = "lozinka" class = "tekstForme" type = "password" size = "40" maxlength = "40"
+                            <input id = "lozinka" name = "lozinka" class = "tekstForme" type = "password" size = "40" maxlength = "40"
                                    placeholder="<?php echo $this->session->Lozinka; ?>"/>
                         </td>
                     </tr>
@@ -260,7 +264,7 @@
                             <br/>
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <input id = "lozinkaPotvrda" class = "tekstForme" type = "password" size = "40" maxlength = "40"
+                            <input id = "lozinkaPotvrda" name = "lozinkaPotvrda" class = "tekstForme" type = "password" size = "40" maxlength = "40"
                                    placeholder="<?php echo $this->session->Lozinka; ?>"/>
                             <br/>
                         </td>
@@ -277,7 +281,7 @@
                         <td colspan = "2" width = "100%" align = "center">
                             <font class = "tekstObican"> O meni: </font>
                             <br/> <br/> 
-                            <textarea id = "limitedtextarea" class = "tekstPolje" maxlength = "400" onKeyDown = "limitText(400);" onKeyUp = "limitText(400);"
+                            <textarea id = "limitedtextarea" name = "opis" class = "tekstPolje" maxlength = "400" onKeyDown = "limitText(400);" onKeyUp = "limitText(400);"
                                       placeholder = "<?php echo $this->session->Opis; ?>"></textarea>
                             <br/>
                             <font class="tekstObican">
@@ -288,14 +292,16 @@
                             </font>
                             
                             <br/> <br/> <br/> <br/> <br/>
-                            <a href = "http://localhost/vunica.com/vunica/index.php//ProfilEditovanje/promeni" target = "_parent" class = "dugme"> Sacuvaj </a>
-                            <a href = "http://localhost/vunica.com/vunica/index.php//Profil/ibdex" target = "_parent" class = "dugme"> Odustani </a>
+                            <input class = "dugme" type = "submit" value = "Sacuvaj"/>
+                            <input class = "dugme" type = "submit" value = "Odustani"/>
                         </td>
                     </tr>   
                   </table>
                   
+                  <?php echo form_close(); ?>
+                  
                   <br/> <br/> <br/> <br/> <br/>  <br/> 
-              </form>
+              
               <!-- InstanceEndEditable -->
      		</td>
           </tr>
