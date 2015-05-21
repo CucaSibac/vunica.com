@@ -9,8 +9,8 @@
   
     <title>
         <?php
-            if($UserName != ''){
-                echo $UserName;
+            if($this->session->UserName != ''){
+                echo $this->session->UserName;
             }
             else{
                 echo "Editovanje profila";
@@ -69,20 +69,23 @@
               <br/> <br/> <br/> <br/> <br/>
               
               <?php
-                foreach($korisnici as $red){
-                    if(strcmp($red->Status, "Admin") == 0){
-                        $status = 1;
+                $status = 0;
+                if(strcmp($this->session->Status, 'Admin') == 0){
+                    $status = 1;
+                } 
+                else{
+                    if(strcmp($this->session->Status, 'Pletilja') == 0){
+                        $status = 2;
                     } 
                     else{
-                        if(strcmp($red->Pol, "Pletilja") == 0){
-                            $status = 2;
-                        } 
-                        else{
+                        if(strcmp($this->session->Status, 'Klupko') == 0){
                             $status = 3;
-                        }
+                        } 
                     }
-                }  
+                } 
               ?>
+              
+              <!-- Baner -->
               
               <?php if($status == 3){?>
                             
@@ -114,50 +117,36 @@
               
               <?php } ?>
               
+              
+              <!-- Forma sa podacima -->
+              
               <form id = "profilEditovanje" action="ProfilEditovanje.php" method="post">
               
                   <table width = "90%" align = "center">                 	
                     <tr>
                         <td width = "50%" align = "center">
                         	</br> </br>
-                            <img id = "profilnaSlika" 
-                                src="<?php 
-                                       foreach($korisnici as $red){
-                                          echo $red->Slika;
-                                       }  
-                                      ?>
-                            ">
+                            <img id = "profilnaSlika" src="<?php echo $this->session->Slika;?>"/>
                         </td>
                         <td width = "50%" align = "left" valign = "middle">
                             <font class = "naslovObican"> 
-                                <?php 
-                                   foreach($korisnici as $red){
-                                      echo $red->UserName;
-                                   }  
-                                ?>
+                                <?php echo $this->session->UserName; ?>
                             </font>
                         	</br> </br> <br/>
                             <font class = "tekstObican"> Status: </font>
                             <font class = "tekstIskosen">
                                 <?php 
-                                   foreach($korisnici as $red){
                                       if($status == 1){echo "Administrator";}
                                       else{
                                           if($status == 2){echo "Klub pletilja";}
                                           else{echo "Klub 5 klupka";}
-                                      }
-                                   }  
+                                      }  
                                 ?>
                             </font>
                             <br/> <br/>
                             <font class = "tekstObican"> Godine: </font>
                             <input id = "godine" class = "tekstForme" type = "text" size = "10" maxlength = "10"
-                                   value="<?php 
-                                           foreach($korisnici as $red){
-                                              echo $red->Godine;
-                                           }  
-                                          ?>
-                            "/>
+                                   placeholder="<?php echo $this->session->Godine; ?>"/>
                             <div id = "greskaGodine">
                                 <br/>
                                 <font class = "greska"> Molim Vas, ispravno unesite Vase godine! </font>
@@ -166,19 +155,20 @@
                             <font class = "tekstObican" size = "30"> Pol: </font>
                             <select id = "pol" class = "tekstForme">
                               <?php
-                                foreach($korisnici as $red){
-                                    if(strcmp($red->Pol, "Musko") == 0){
+                                    $opt = 0;
+                                    if(strcmp($this->session->Pol, "Musko") == 0){
                                         $opt = 1;
                                     } 
                                     else{
-                                        if(strcmp($red->Pol, "Zensko") == 0){
+                                        if(strcmp($this->session->Pol, "Zensko") == 0){
                                             $opt = 2;
                                         } 
                                         else{
-                                            $opt = 3;
+                                            if(strcmp($this->session->Pol, "Nedefinisano") == 0){
+                                                $opt = 3;
+                                            } 
                                         }
-                                    }
-                                }  
+                                    }  
                               ?>
                               <option value = "musko"
                                 <?php
@@ -205,12 +195,7 @@
                             <br/> <br/>
                             <font class = "tekstObican"> Lokacija: </font>
                             <input id = "lokacija" class = "tekstForme" type = "text" size = "30" maxlength = "30"
-                                   value="<?php 
-                                             foreach($korisnici as $red){
-                                                echo $red->Lokacija;
-                                             }  
-                                         ?>
-                             "/>
+                                   placeholder = "<?php echo $this->session->Lokacija; ?>"/>
                             <br/> <br/> <br/> <br/>
                             <a href = "#" class = "dugme"> Promeni sliku </a>
                             <div id = "greskaGodine">
@@ -227,13 +212,8 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <br/> <br/>
-                            <input id = "prezime" class = "tekstForme" type = "text" size = "20" maxlength = "20"
-                                   value="<?php 
-                                           foreach($korisnici as $red){
-                                              echo $red->ImePrezime;
-                                           }  
-                                          ?>
-                            "/>
+                            <input id = "imeprezime" name = "ime prezime" class = "tekstForme" type = "text" size = "20" maxlength = "20"
+                                   placeholder="<?php echo $this->session->ImePrezime; ?>"/>
                             <br/> <br/>
                         </td>
                     </tr>
@@ -243,12 +223,7 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <input id = "email" class = "tekstForme" type = "text" size = "40" maxlength = "40"
-                                   value="<?php 
-                                           foreach($korisnici as $red){
-                                              echo $red->Email;
-                                           }  
-                                          ?>
-                            "/>
+                                   placeholder="<?php echo $this->session->Email; ?>"/>
                         </td>
                     </tr>
                     <tr>
@@ -258,12 +233,7 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <input id = "emailPotvrda" class = "tekstForme" type = "text" size = "40" maxlength = "40"
-                                   value="<?php 
-                                           foreach($korisnici as $red){
-                                              echo $red->Email;
-                                           }  
-                                          ?>
-                            "/>
+                                   placeholder="<?php echo $this->session->Email; ?>"/>
                             <br/>
                         </td>
                     </tr>
@@ -281,12 +251,7 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <input id = "lozinka" class = "tekstForme" type = "password" size = "40" maxlength = "40"
-                                   value="<?php 
-                                           foreach($korisnici as $red){
-                                              echo $red->Sifra;
-                                           }  
-                                          ?>
-                            "/>
+                                   placeholder="<?php echo $this->session->Lozinka; ?>"/>
                         </td>
                     </tr>
                     <tr>
@@ -296,12 +261,7 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <input id = "lozinkaPotvrda" class = "tekstForme" type = "password" size = "40" maxlength = "40"
-                                   value="<?php 
-                                           foreach($korisnici as $red){
-                                              echo $red->Sifra;
-                                           }  
-                                          ?>
-                            "/>
+                                   placeholder="<?php echo $this->session->Lozinka; ?>"/>
                             <br/>
                         </td>
                     </tr>
@@ -318,12 +278,7 @@
                             <font class = "tekstObican"> O meni: </font>
                             <br/> <br/> 
                             <textarea id = "limitedtextarea" class = "tekstPolje" maxlength = "400" onKeyDown = "limitText(400);" onKeyUp = "limitText(400);"
-                              placeholder = "<?php 
-                                           foreach($korisnici as $red){
-                                              echo $red->Opis;
-                                           }  
-                                          ?>      
-                            "></textarea>
+                                      placeholder = "<?php echo $this->session->Opis; ?>"></textarea>
                             <br/>
                             <font class="tekstObican">
                             	Preostalo karaktera: 
