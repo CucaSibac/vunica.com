@@ -4,7 +4,7 @@
 <!--Prozor za prijavu proizvoda-->
  <div id = "prijavaProizvoda">
       <div class = "naslovPrijavaProizvoda"> Prijava proizvoda </div>
-      <img src="../Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
+      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <form style="height:100%;" name="prijavaProizvoda" action="prijavaProizvoda.php" method = "post">
         <table class="tabelaPrijavaProizvoda">
           <tr>

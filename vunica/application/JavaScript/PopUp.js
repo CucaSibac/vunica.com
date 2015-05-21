@@ -19,24 +19,15 @@ function prikazi_registraciju() {
 }
 
 function prikazi_prijavu_proizvoda() {
-	sakrij();
+	sakrij_sve();
 	document.getElementById('prazan').style.display = "block";
 	document.getElementById('prijavaProizvoda').style.visibility = "visible";
 }
 
 function prikazi_odluku(){
-	sakrij();
+	sakrij_sve();
 	document.getElementById('prazan').style.display = "block";
 	document.getElementById('odluka').style.visibility = "visible";
-}
-
-
-function obavi_kupovinu(){
-	alert("Čestitamo! Uspešno ste obavili kupovinu.");
-}
-
-function obrisan(){
-	alert("Vaš profil je uspešno obrisan. Nažalost više niste naš korisnik.");
 }
 
 function sakrij_sve(){
@@ -45,11 +36,23 @@ function sakrij_sve(){
 	document.getElementById('zaboravljenaLozinka').style.visibility = "hidden";
 	document.getElementById('registracija').style.visibility = "hidden";
 	document.getElementById('obavestenje').style.visibility = "hidden";
+        document.getElementById('prijavaProizvoda').style.visibility = "hidden";
+        document.getElementById('odluka').style.visibility = "hidden";
+        
 }
 
-function sakrij() {
+/*function sakrij() {
 	document.getElementById('prazan').style.display = "none";
 	document.getElementById('prijavaProizvoda').style.visibility = "hidden";
+}*/
+
+
+function obavi_kupovinu(){
+	alert("Čestitamo! Uspešno ste obavili kupovinu.");
+}
+
+function obrisan(){
+	alert("Vaš profil je uspešno obrisan. Nažalost više niste naš korisnik.");
 }
 
 function prijavi_proizvod(){

@@ -53,15 +53,6 @@
        include ("Footer.php");
     ?>
 
-    
-    
-    <!--Prozor koji potamni-->
-    <div id = "prazan" onclick="sakrij_sve()">
-    </div>
-
-      <!-- InstanceEndEditable -->
-
-  
     <!-- Telo strane -->
     <div id = "teloOkvir">
       <table id = "telo">
@@ -79,7 +70,7 @@
   <tr>
     <td rowspan="3" align="left" width="40%">
     &nbsp; &nbsp;
-    <img src="../Slike/Pijaca/slika.jpg" width="350px">
+    <img src="http://localhost/Slike/Pijaca/slika.jpg" width="350px"> 
     </td>
     <td height="80%">
     <br /> <br /> <br /> <br /> 
