@@ -5,7 +5,7 @@
 <!--Prozor za povratak lozinke-->
    <div id="zaboravljenaLozinka">
       <div class="naslovZL"> Zaboravili ste lozinku? </div>
-      <img src="../Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
+      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <!-- InstanceBeginEditable name="ZLDiv" -->    
       <form style="height:100%;" name="zaboravljenaLozinka" action="ZaboravljenaLozinka.php" method = "post">
         <table class="tabelaZL">
