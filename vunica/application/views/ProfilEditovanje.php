@@ -9,12 +9,9 @@
   
     <title>
         <?php 
-            if(isset($userdata)){
-                echo $userdata['UserName'];
-            }
-            else{
-                echo "Editovanje profila";
-            }
+           foreach($korisnici as $red){
+              echo $red->UserName;
+           }
         ?>     
     </title>
     
