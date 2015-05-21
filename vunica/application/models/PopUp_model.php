@@ -73,7 +73,6 @@ class PopUp_model extends CI_Model {
         );
         $this->session->unset_userdata($newdata );
         $this->session->sess_destroy();
-        $this->index();
     }
 
 }
