@@ -10,7 +10,10 @@
       <div class = "naslovPrijava"> Prijava </div>
       <img src="../Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <!-- InstanceBeginEditable name="PrijavaDiv" -->    
-      <?php echo form_open("PopUp/login"); ?>
+      <?php 
+        $attributes = array('style' => 'height: 100%;', 'id' => 'formaPrijava');
+        echo form_open("PopUp/login", $attributes); 
+      ?>
         <table class="tabelaPrijava">
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
@@ -29,7 +32,7 @@
           </tr>                
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="prijavi_se()"> Prijavi se!</div> </td>
+            <td class="celijaDugmePopUp"> <div  class="dugmePopUp" onclick="document.forms['formaPrijava'].submit()"> Prijavi se!</div></td>
             <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij_sve()"> Odustani</div></td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>               
@@ -47,9 +50,10 @@
               Nemate profil?
               <a href="javascript:prikazi_registraciju()" class="linkPopUp"> Registrujte se </a>
             </td>
-            <td class="praznaCelijaPopUp"><input type="submit" class="" value="Sign in" /></td>
+            <td class="praznaCelijaPopUp"></td>
           </tr>    
         </table>
       <?php echo form_close(); ?>
       <!-- InstanceEndEditable -->
     </div>
+    

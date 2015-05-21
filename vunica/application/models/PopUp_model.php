@@ -21,7 +21,7 @@ class PopUp_model extends CI_Model {
     function login($email, $sifra) {     
         $this->db->where("Email", $email);
         $this->db->where("Sifra", $sifra);
-
+       
         $query = $this->db->get("korisnik");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $rows) {          

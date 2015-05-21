@@ -5,7 +5,10 @@
       <img src="../Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <!-- InstanceBeginEditable name="RegistracijaDiv" -->
       <?php echo validation_errors('<p class="error">'); ?>
-	  <?php echo form_open("PopUp/registration"); ?>
+	  <?php 
+            $attributes = array('style' => 'height: 100%;', 'id' => 'formaRegistracija');
+            echo form_open("PopUp/registration", $attributes); 
+          ?>
         <table class="tabelaRegistracija">
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
@@ -38,7 +41,7 @@
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
           <tr>
-            <td class="praznaCelijaPopUp"></td>
+            <td class="praznaCelijaPopUp"></td>       
             <td colspan="2"><input type="password" name="con_password" id="con_password" placeholder="Potvrda lozinke" class="inputPopUp" value="<?php echo set_value('con_password'); ?>"/> </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
@@ -52,14 +55,14 @@
           </tr> 
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="registruj_se()"> Registruj se!</div> </td>
+            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="document.forms['formaRegistracija'].submit()"> Registruj se!</div> </td>
             <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij_sve()"> Odustani</div></td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
-            <input type="submit" value="Submit" />
+            Vec imate nalog?
             <a href="javascript:prikazi_prijavu()" class="linkPopUp"> Prijavite se</a>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
