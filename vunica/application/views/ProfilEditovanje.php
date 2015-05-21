@@ -8,11 +8,14 @@
     <!-- Teodora Aleksic, 391/12 -->
   
     <title>
-        <?php 
-           foreach($korisnici as $red){
-              echo $red->UserName;
-           }
-        ?>     
+        <?php
+            if($UserName != ''){
+                echo $UserName;
+            }
+            else{
+                echo "Editovanje profila";
+            }
+        ?>
     </title>
     
     <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
