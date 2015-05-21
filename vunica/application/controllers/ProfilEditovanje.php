@@ -2,22 +2,17 @@
 
 class ProfilEditovanje extends CI_Controller {
     
-    private $podaci;
-    private $kopija;
+    public function __construct() {
+        parent::__construct();
+    }
     
     function index(){
-        $this->load->model('Korisnik');
-        $this->podaci['korisnici'] = $this->Korisnik->ucitajKorisnika();
-        
-        $this->kopija = $this->podaci;
-        
-        $this->load->view('ProfilEditovanje', $this->podaci);
+        $this->load->view('ProfilEditovanje');
     }
     
-    function promeni(){
-
-        
-    }
-    
+    function promeni(){ 
+        $nesto = $this->input->post('godine');
+        echo $nesto;
+    }  
     
 }

@@ -7,14 +7,9 @@
   
     <!-- Teodora Aleksic, 391/12 -->
   
-    <title>Početna</title>
+    <title>Početna</title>     
     
-    <?php 
-       foreach($korisnici as $red){
-       }
-    ?>     
-    
-    <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
+   <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
     
   <style media="screen and (max-device-width: 1400px)">
   <?php include '/../CSS/Template (1366x768).css'; ?>
@@ -64,22 +59,21 @@
               <br/> <br/> <br/> <br/> <br/> <br/> <br/>
               
               <?php
-                foreach($korisnici as $red){
-                    if(strcmp($red->Status, "Admin") == 0){
-                        $status = 1;
+                $status = 0;
+                if(strcmp($this->session->Status, 'Admin') == 0){
+                    $status = 1;
+                } 
+                else{
+                    if(strcmp($this->session->Status, 'Pletilja') == 0){
+                        $status = 2;
                     } 
                     else{
-                        if(strcmp($red->Pol, "Pletilja") == 0){
-                            $status = 2;
-                        } 
-                        else{
+                        if(strcmp($this->session->Status, 'Klupko') == 0){
                             $status = 3;
-                        }
+                        } 
                     }
-                }  
+                } 
               ?>
-              
-              <?php $status = 1; ?>
               
               <!-- Dobrodoslica -->
               <?php
@@ -93,7 +87,7 @@
                 </font>
                 <br/>
                 <font class = "naslovIskosen">
-                	<?php echo $red->UserName ?>
+                	<?php echo $this->session->UserName; ?>
                 </font> 
                </div>
               

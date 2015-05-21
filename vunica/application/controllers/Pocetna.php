@@ -4,13 +4,13 @@ class Pocetna extends CI_Controller {
     
     private $podaci;
     
-    function index(){
-        $this->load->model('Korisnik');
-        $this->podaci['korisnici'] = $this->Korisnik->ucitajKorisnika();
-        
-        $this->load->view('Pocetna', $this->podaci);
+    public function __construct() {
+        parent::__construct();
     }
     
+    function index(){
+        $this->load->view('Pocetna');
+    }  
     
 }
 
