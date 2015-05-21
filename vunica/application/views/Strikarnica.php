@@ -124,7 +124,7 @@
                                     <td  width="80%" style = "padding:4% 0 2% 4%;">
                                         <img id = "Opcija 1" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 1')">
                                             <font class="tekstObican">
-                                                Pocetnicka
+                                                Laka
                                             </font>
                                     </td>
                                 </tr>
@@ -146,7 +146,7 @@
                                     <td  width="80%" style = "padding:4% 0 2% 4%;">
                                         <img id = "Opcija 3" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 3')">
                                             <font class="tekstObican">
-                                                Master
+                                                Teska
                                             </font>
                                     </td>
                                 </tr>
