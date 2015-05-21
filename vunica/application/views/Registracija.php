@@ -2,7 +2,7 @@
 <!--Prozor za registriovanje -->
     <div id="registracija">
       <div class="naslovRegistracija"> Registracija </div>
-      <img src="../Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
+      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <!-- InstanceBeginEditable name="RegistracijaDiv" -->
       <?php echo validation_errors('<p class="error">'); ?>
 	  <?php 
