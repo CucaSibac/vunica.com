@@ -68,6 +68,7 @@
               
               <br/> <br/> <br/> <br/> <br/>
               
+              <!-- Odredjivanje statusa korisnika -->
               <?php
                 $status = 0;
                 if(strcmp($this->session->Status, 'Admin') == 0){
@@ -129,13 +130,21 @@
                     <tr>
                         <td width = "50%" align = "center">
                             </br> </br>
+                        
+                            <!-- Profilna slika -->
                             <img id = "profilnaSlika" name = "profilnaSlika" src="<?php echo $this->session->Slika;?>"/>
+                        
                         </td>
                         <td width = "50%" align = "left" valign = "middle">
+                            
+                            <!-- UserName -->
                             <font class = "naslovObican"> 
                                 <?php echo $this->session->UserName; ?>
                             </font>
-                        	</br> </br> <br/>
+                            
+                            </br> </br> <br/>
+                            
+                            <!-- Status -->
                             <font class = "tekstObican"> Status: </font>
                             <font class = "tekstIskosen">
                                 <?php 
@@ -146,17 +155,37 @@
                                       }  
                                 ?>
                             </font>
+                            
                             <br/> <br/>
+                            
+                            <!-- Godine -->
                             <font class = "tekstObican"> Godine: </font>
-                            <input id = "godine" name = "godine" class = "tekstForme" type = "text" maxlength = "10"
+                            <?php
+                                $duzina = strlen($this->session->Godine);
+                                $parametri = array(
+                                        'name'          => 'godine',
+                                        'id'            => 'godine',
+                                        'placeholder'   => $this->session->Godine,
+                                        'maxlength'     => '10',
+                                        'size'          => $duzina,
+                                        'class'         => 'tekstForme'
+                                );
+                                echo form_input($parametri);
+                            ?>
+<!--                            <input id = "godine" name = "godine" class = "tekstForme" type = "text" maxlength = "10"
                                    size = "<?php echo strlen($this->session->Godine);?>"
-                                   placeholder="<?php echo $this->session->Godine; ?>"/>
+                                   placeholder="<?php echo $this->session->Godine; ?>"/>-->
+                            
                             <div id = "greskaGodine">
                                 <br/>
                                 <font class = "greska"> Molim Vas, ispravno unesite Vase godine! </font>
                             </div>
+                            
                             <br/> <br/>
+                            
+                            <!-- Pol -->
                             <font class = "tekstObican" size = "30"> Pol: </font>
+  
                             <select id = "pol" name = "pol" class = "tekstForme">
                               <?php
                                     $opt = 0;
@@ -196,21 +225,30 @@
                                 <?php } ;?>   
                               > Nedefinisano </option>
                             </select>
+                            
                             <br/> <br/>
+                            
+                            <!-- Lokacija -->
                             <font class = "tekstObican"> Lokacija: </font>
                             <input id = "lokacija" name = "lokacija" class = "tekstForme" type = "text" maxlength = "30"
                                    size = "<?php echo strlen($this->session->Lokacija);?>"
                                    placeholder = "<?php echo $this->session->Lokacija; ?>"/>
+                            
                             <br/> <br/> <br/> <br/>
+                            
+                            <!-- Menjanje slike -->
                             <input class = "dugme" type = "submit" value = "Promeni sliku"/>
                             <input class = "dugme" type = "submit" value = "Obrisi sliku"/>
+                            
                             <div id = "greskaGodine">
                                 <br/>
                                 <font class = "greska"> Molim Vas, selektujte validan fajl! </font>
                             </div>
+                            
                         </td>
                     </tr>
                     <tr>
+                        <!-- Ime i prezime -->
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                             <br/> <br/>
                             <font class = "tekstObican"> Ime i prezime: </font>
@@ -225,6 +263,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!-- E-mail adresa -->
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                             <font class = "tekstObican"> E-mail adresa: </font>
                         </td>
@@ -235,6 +274,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!-- Potvrda E-mail adrese -->
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                             <font class = "tekstObican"> Potvrda adrese: </font>
                             <br/>
@@ -246,6 +286,7 @@
                             <br/>
                         </td>
                     </tr>
+                      
                     <tr id = "greskaEmail">
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                         </td>
@@ -254,7 +295,9 @@
                             <br/> <br/>   
                         </td>
                     </tr>
+                      
                     <tr>
+                        <!-- Lozinka -->
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                             <font class = "tekstObican"> Lozinka: </font>
                         </td>
@@ -264,6 +307,7 @@
                         </td>
                     </tr>
                     <tr>
+                        <!-- Potvrda lozinke -->
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                             <font class = "tekstObican"> Potvrda lozinke: </font>
                             <br/>
@@ -274,6 +318,7 @@
                             <br/>
                         </td>
                     </tr>
+                      
                     <tr id = "greskaLozinka">
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                         </td>
@@ -282,7 +327,9 @@
                             <br/> <br/> <br/>   
                         </td>
                     </tr>
+                      
                     <tr>
+                        <!-- Opis -->
                         <td colspan = "2" width = "100%" align = "center">
                             <font class = "tekstObican"> O meni: </font>
                             <br/> <br/> 
