@@ -203,3 +203,20 @@ body{
 		  
 		  text-decoration:none;
 	  }
+          
+.odjava{
+    background-color: #ACCEC0;
+
+    color:#605951;
+    font-size:18px;
+    font-family:Tahoma, Geneva, sans-serif;
+    
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;             
+}
+
+    .odjava{
+        cursor: pointer;
+    }
