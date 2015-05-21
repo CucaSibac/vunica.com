@@ -12,20 +12,25 @@ class PopUp_model extends CI_Model {
             'UserName' => $this->input->post('UserName'),
             'Email' => $this->input->post('Email'),
             'Sifra' => ($this->input->post('Sifra')),
-            'DatumPoslednjegLogovanja' => (date("Y.m.d"))
+            'DatumPoslednjegLogovanja' => (date("Y.m.d")),
+            'Slika' => ('http://localhost/Slike/Profilna/Nedefinisano.jpg'),
         );
         $this->db->insert('korisnik', $data);
     }
 
-    function login($email, $sifra) {
-        //$this->db->from('korisnik k');
+    function login($email, $sifra) {     
         $this->db->where("Email", $email);
         $this->db->where("Sifra", $sifra);
 
         $query = $this->db->get("korisnik");
         if ($query->num_rows() > 0) {
-            foreach ($query->result() as $rows) {
+            foreach ($query->result() as $rows) {          
                 //add all data to session
+                $date = array(                 
+                    'DatumPoslednjegLogovanja' => (date("Y.m.d"))
+                );             
+                $this->db->where("IDKorisnik", $rows->IDKorisnik);
+                $this->db->update("korisnik",$date);
                 $newdata = array(
                     'IDKorisnik' => $rows->IDKorisnik,
                     'UserName' => $rows->UserName,
@@ -37,6 +42,19 @@ class PopUp_model extends CI_Model {
             return true;
         }
         return false;
+    }
+    
+    public function logout()
+    {
+        $newdata = array(
+        'IDKorisnik'   =>'',
+        'UserName'  =>'',
+        'Email'     => '',
+        'logged_in' => FALSE,
+        );
+        $this->session->unset_userdata($newdata );
+        $this->session->sess_destroy();
+        $this->index();
     }
 
 }
