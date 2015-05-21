@@ -15,6 +15,7 @@ class PopUp_model extends CI_Model {
             'DatumPoslednjegLogovanja' => (date("Y.m.d")),
             'Slika' => ('http://localhost/Slike/Profilna/Nedefinisano.jpg'),
         );
+        $this->session->set_userdata($data);
         $this->db->insert('korisnik', $data);
     }
 

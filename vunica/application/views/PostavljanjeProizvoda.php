@@ -65,7 +65,7 @@
             <?php echo validation_errors('<p class="error">'); ?>
             <?php 
               $attributes = array('id' => 'PostavljanjeProizvoda'); 
-              echo form_open("PostavljanjeProizvoda/postaviProizvod", $attributes); 
+              echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
             ?>
             <table id = "telo">
                 <tr>
@@ -161,7 +161,7 @@
                                         Postavljanjem ovog proizvoda pristajete na: <a href="#" class="linkPopUp"> Ugovor </a> 
                                     </font> 
                                     <br/><br/><br/><br/>
-                                    <input type="file"/> <?php echo $this->session->UserName; ?>
+                                    <input type="file" name="userfile" size="20"/> <?php echo $this->session->UserName; ?>
                                     <input type="submit" value="submit" />
                                 </td>
                             </tr>                                                                       
@@ -170,7 +170,7 @@
                     </td>
                 </tr>
             </table>
-            <?php echo form_close(); ?>
+            </form>
         </div>
         
         
