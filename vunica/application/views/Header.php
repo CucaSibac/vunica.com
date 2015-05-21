@@ -26,26 +26,34 @@
             <td>
                 <!-- Prazna celija bez zadate sirine -->
             </td>
-            <td id = "poljePrijava">
-              <font class = "opcijeMenija" style="white-space: nowrap;">
-                  <?php if($this->session->UserName != ''){ ?>
-                      <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil', '_parent')">
-                           <?php echo $this->session->UserName; ?>
-                      </font>
-                      /
-                      <?php 
-                        $attributes = array('id' => 'formaOdjava');
-                        echo form_open("PopUp/logout", $attributes); 
-                      ?>
-                        <input class = "odjava" type = "submit" value = "Odjava"/>
-                      <?php echo form_close();?>
-                  <?php }else{ ?>
+            
+            <?php if($this->session->UserName != ''){ ?>
+            <td id = "poljePrijava" style="width: 7%; text-align: right;">
+                <font class = "opcijeMenija">
+                    <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil', '_parent')">
+                        <?php echo $this->session->UserName; ?>
+                    </font>
+                    /
+                </font>
+            </td>
+            <td id = "poljePrijava" style="width: 5%; text-align: left; padding-right: 3%;">
+                <?php 
+                    $attributes = array('id' => 'formaOdjava');
+                    echo form_open("PopUp/logout", $attributes); 
+                ?>
+                    <input class = "odjava" type = "submit" value = "Odjava"/>
+                <?php echo form_close();?>
+            </td>
+            <?php }else{ ?>
+            <td id = "poljePrijava" style="width: 12%; text-align: center; padding-right: 3%;">
+              <font class = "opcijeMenija">
                     <font onclick="prikazi_prijavu()">Prijava</font>
                     /
                     <font onclick="prikazi_registraciju()">Registracija</font>
-                  <?php } ?>
               </font> 
             </td>
+            <?php } ?>
+            
             <td id = "cegerPolje">
               <?php if($this->session->UserName != ''){ ?>
                 <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Ceger', '_parent')"/>  
