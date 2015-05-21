@@ -11,7 +11,8 @@ class ProfilEditovanje extends CI_Controller {
     }
     
     function promeni(){ 
-        //$this->session->Opis = $this->input->post('lokacija');
+        $nesto = $this->input->post('godine');
+        echo $nesto;
     }  
     
 }
