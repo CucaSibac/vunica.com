@@ -25,10 +25,12 @@ class PopUp extends CI_Controller {
     }
 
     public function login() {
+        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '' ;
+        echo $refering_url;
         $email = $this->input->post('email1');
         $password = ($this->input->post('password1'));
         $result = $this->PopUp_model->login($email, $password);
-        if($result) echo"uspesno ste obavili akciju";
+        if($result) redirect($refering_url, 'refresh');
         else        echo"niste uspesno obavili akciju";
     }
     
