@@ -35,7 +35,9 @@ class PopUp extends CI_Controller {
     }
     
     public function logout(){
+        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '' ;
         $this->PopUp_model->logout();
+        redirect($refering_url, 'refresh');
     }
 
 }
