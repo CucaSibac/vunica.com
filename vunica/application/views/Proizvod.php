@@ -21,6 +21,7 @@
             <?php include '/../CSS/Tekst (1366x768).css'; ?>
             <?php include '/../CSS/Dugme (1366x768).css'; ?>
             <?php include '/../CSS/Paragraf (1366x768).css'; ?>
+            <?php include '/../CSS/Video (1366x768).css'; ?>
         </style>
    <!--Kraj ucitavanja css za rezoluciju (1366x768)-->
    
@@ -31,6 +32,7 @@
             <?php include '/../CSS/Tekst (1920x1080).css'; ?>
             <?php include '/../CSS/Dugme (1920x1080).css'; ?>
             <?php include '/../CSS/Paragraf (1920x1080).css'; ?>
+            <?php include '/../CSS/Video (1920x1080).css'; ?>
         </style>
    <!--Kraj ucitavanja css za rezoluciju (1920x1080)-->
    
@@ -43,7 +45,34 @@
         </script>
    <!--Krajucitavanja javascript-->
 
-  
+        <script src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+        
+        <!-- OVO JE ZA DUGME UCITAJ JOS!!--> 
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var num_messages = <?= $num_messagesp ?>;
+                var loaded_messages = 0;
+                $("#more_button").click(function () {
+                    loaded_messages += 3;
+                    $.get("http://localhost/vunica.com/vunica/index.php/proizvod/get_messages/" + "
+                        <?php
+                        foreach ($podacip as $red) {
+                        echo $red->IDProizvod;
+                        }
+                        ?>" + "/" + loaded_messages, function (data) {
+                        $("#main_content").append(data);
+
+                    });
+
+                    if (loaded_messages >= num_messages - 3)
+                    {
+                        $("#more_button").hide();
+                        //alert('hide');
+                    }
+                });
+            })
+        </script> 
         
 </head>
 
@@ -181,6 +210,13 @@
         <a  class="dugme" style="cursor: pointer;" onclick="odustani()"> Odustani </a> 
     </td>
   </tr>
+                       
+  <?php
+    if (empty($latest_messagesp)) {
+                                                
+    } else {
+    ?>
+                       
   <tr  >
     <td colspan="2"><br /> <br /> <br />
         <table width = "100%" align = "center">
@@ -198,7 +234,43 @@
         </table> 
      </td>
   </tr> 
-
+                       
+  <tr >
+    
+    <td colspan="2" align="center" >
+        <div id="main_content"><br/>
+            <?php
+               foreach ($latest_messagesp as $message) {
+            ?>
+        
+           <div class="view view-third" align="left" >  
+              <a class="komentarDatum">
+                  <?php echo $message->Vreme; ?>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <?php echo $message->Datum; ?>
+              </a>
+              <font class="tekstObicanAutorKomentar"><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
+              <br /><br />
+              <font class="tekstIskosenTekstKomentar"><?php echo $message->Tekst; ?></font>
+              <br/> <br/>
+              <a href="#" class="prijaviKomentar">Prijavi komentar</a>
+           </div>  
+           <br /><br />
+        <?php } ?>
+        </div>
+        <hr width = "100%" class = "linija"/>
+        <?php
+            if(count($latest_messagesp)==3){
+        ?>
+            <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
+               <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
+               <i >Ucitaj jos</i>
+               </a>
+            </div>
+        <?php } ?>
+    </td>
+  </tr>
+  <?php } ?>
                        
 </table>
                 <br/> <br/>  
