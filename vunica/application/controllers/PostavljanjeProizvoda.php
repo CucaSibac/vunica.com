@@ -92,7 +92,7 @@ class PostavljanjeProizvoda extends CI_Controller {
                         //echo $url;
                         $data = array('slika' => $url);   
                         
-                        //$this->load->view('PostavljanjeProizvoda', $data);
+                        $this->load->view('PostavljanjeProizvoda', $data);
                 }
         }
         
