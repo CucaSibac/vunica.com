@@ -7,7 +7,8 @@
   
   <!-- InstanceBeginEditable name="doctitle" -->
   
-    <title>Proizvod</title>
+  <title> Proizvod
+  </title>
     
     <!-- NE BRISATI NISTA U OVOM EDIT REGIONU!!!! -->
     
@@ -42,7 +43,8 @@
         </script>
    <!--Krajucitavanja javascript-->
 
-  <!-- InstanceEndEditable -->
+  
+        
 </head>
 
 <body onLoad="izracunaj();" onresize="izracunaj();" id="body">
@@ -66,19 +68,41 @@
                    
                    <table align="center" border="0" width="70%">
   <th colspan="2" align="left"> &nbsp; &nbsp;<font class = "naslovObican">
-                	IME PROIZVODA
+                <?php
+            foreach ($podacip as $red) {
+                ?>
+                <?php
+                echo $red->Naziv;
+            }
+            ?>
                 </font> <br /> <br /> <br />
                 </th>
   <tr>
     <td rowspan="3" align="left" width="40%">
     &nbsp; &nbsp;
-    <img src="http://localhost/Slike/Pijaca/slika.jpg" width="350px"> 
+    <img src="<?php
+                foreach ($podacip as $red) {
+              ?>
+              <?php
+                echo $red->Slika;
+                }
+              ?>" 
+    width="320px"/> 
     </td>
     <td height="80%">
     <br /> <br /> <br /> <br /> 
     <p><font class = "tekstObican">Trenutni broj artikala u vašem cegeru je:</font>
     <br />
-    <img src="../Slike/Brojevi/broj0.jpg" width="80px" />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    <font class="naslovObican">
+    <?php
+        foreach ($podacip as $red) {
+    ?>
+    <?php
+           echo $red->BrojArtikala;
+        }
+    ?>
+    </font>
     </p>
     </td>
   </tr>  
@@ -102,13 +126,37 @@
     <td colspan="2">
     
       <p> &nbsp; &nbsp; <font class="naslovObican"> Cena:</font>
-         <font class="tekstObican"> 100 EUR </font>
+         <font class="tekstObican"> 
+            <?php
+              foreach ($podacip as $red) {
+            ?>
+            <?php
+                 echo $red->BrojArtikala;
+              }
+            ?> EUR 
+         </font>
       </p>
       <p> &nbsp; &nbsp; <font class="naslovObican">Status:</font>
-         <font class="tekstObican">Još 100 komada u magacinu.</font>
+         <font class="tekstObican">Još 
+             <?php
+        foreach ($podacip as $red) {
+    ?>
+    <?php
+           echo $red->BrojArtikala;
+        }
+    ?>
+             komada u magacinu.</font>
       </p>
       <p> &nbsp; &nbsp; <font class="naslovObican">Opis proizvoda:</font>
-         <font class="tekstObican">Kravata od najfinije vunice za bešanje. Cena povoljna. Odličan kvalitet. Ručno rađena.</font>
+          <font class="tekstObican">
+              <?php
+        foreach ($podacip as $red) {
+    ?>
+    <?php
+           echo $red->Opis;
+        }
+    ?>
+          </font>
       </p>
     </td>
   </tr>
@@ -150,32 +198,8 @@
         </table> 
      </td>
   </tr> 
-  <tr >
-     <td colspan="2" align="center" >
-        <div id="main_content"> <br/>
-            <?php foreach ($latest_messages as $message) { ?>
-            <div class="view view-third" align="left" >  
-            <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
-            <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
-            <br /><br />
-            <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
-            <a href="#" class="prijaviKomentar">Prijavi komentar</a>
-            </div>  <br /><br />
-            <?php } ?>
-        </div>
-        <hr width = "100%" class = "linija"/>
-        <?php if(count($latest_messages)==3){ ?>
-        <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
-            <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
-                <i >
-                  Ucitaj jos
-                </i>
-            </a>
-        </div>
-        <?php } ?>
-     </td>
-  </tr>
-  <?php  ?>
+
+                       
 </table>
                 <br/> <br/>  
                 <br/> 
