@@ -17,10 +17,10 @@ class Proizvod extends CI_Controller {
         $this->load->view('Proizvod', $nizp);
     }
 
-    function get_messagesp($vredn, $offset ) {
-        $this->load->model('Video_model');
+    function get_messages($vredn, $offset ) {
+        $this->load->model('Proizvod_model');
         $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($vredn, $offset);
-        $this->load->view('get_messagesp', $nizp);
+        $this->load->view('get_messages', $nizp);
     }
 }
 
