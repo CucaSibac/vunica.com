@@ -96,10 +96,10 @@
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
     <font class="naslovObican">
     <?php
-        foreach ($podacip as $red) {
+        foreach ($ucegeru as $red) {
     ?>
     <?php
-           echo $red->BrojArtikala;
+           echo $red->Kolicina;
         }
     ?>
     </font>
@@ -175,10 +175,10 @@
   </tr>
   <tr>
     <td align="center">
-        &nbsp; &nbsp;<a class="dugme" onclick="postavi()" > Postavi </a> 
+        &nbsp; &nbsp;<a class="dugme" style="cursor: pointer;" onclick="postavi()" > Postavi </a> 
     </td>
     <td align="center"> 
-        <a  class="dugme"  onclick="odustani()"> Odustani </a> 
+        <a  class="dugme" style="cursor: pointer;" onclick="odustani()"> Odustani </a> 
     </td>
   </tr>
   <tr  >
