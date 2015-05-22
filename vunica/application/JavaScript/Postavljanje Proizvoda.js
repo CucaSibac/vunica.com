@@ -31,3 +31,8 @@ function mouseup()
 {
   mouse =false;
 }
+
+function option(x){
+    document.getElementById("opt").value = x;
+    //alert(document.getElementById("opt").value);
+}
