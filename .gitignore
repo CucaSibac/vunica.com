@@ -42,6 +42,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Ignore NetBeans Project Info
+nbproject/*
+
 project-root-directory/
 + build/
 + dist/
