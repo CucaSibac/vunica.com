@@ -118,6 +118,64 @@
     &nbsp; &nbsp;
     </td>
   </tr>
+  <tr>
+      <td colspan="2" align="center">
+          <br /><br /><textarea  maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify;" placeholder="Napisite komentar" class="tekstPoljeKomentar" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
+                                            <font class="preostalokaraktera">Preostalo karaktera: <font id="ostatak">400</font></font>
+ 
+      </td>                       
+  </tr>
+  <tr>
+    <td align="center">
+        &nbsp; &nbsp;<a class="dugme" onclick="postavi()" > Postavi </a> 
+    </td>
+    <td align="center"> 
+        <a  class="dugme"  onclick="odustani()"> Odustani </a> 
+    </td>
+  </tr>
+  <tr  >
+    <td colspan="2"><br /> <br /> <br />
+        <table width = "100%" align = "center">
+            <tr >
+               <td width = "46%">
+                    <hr width = "100%" class = "linija"/>
+               </td>
+               <td width = "8%" align="center">
+                   <img src = "http://localhost/Slike/Linija/Ikonica.png" class = "ikonica"></img>
+               </td>
+               <td width = "46%">
+                    <hr width = "100%" class = "linija"/>
+               </td>
+            </tr>
+        </table> 
+     </td>
+  </tr> 
+  <tr >
+     <td colspan="2" align="center" >
+        <div id="main_content"> <br/>
+            <?php foreach ($latest_messages as $message) { ?>
+            <div class="view view-third" align="left" >  
+            <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
+            <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
+            <br /><br />
+            <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
+            <a href="#" class="prijaviKomentar">Prijavi komentar</a>
+            </div>  <br /><br />
+            <?php } ?>
+        </div>
+        <hr width = "100%" class = "linija"/>
+        <?php if(count($latest_messages)==3){ ?>
+        <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
+            <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
+                <i >
+                  Ucitaj jos
+                </i>
+            </a>
+        </div>
+        <?php } ?>
+     </td>
+  </tr>
+  <?php  ?>
 </table>
                 <br/> <br/>  
                 <br/> 
