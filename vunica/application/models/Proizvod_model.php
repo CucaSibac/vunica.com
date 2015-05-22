@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 /* 
@@ -7,8 +6,8 @@
  * and open the template in the editor.
  */
 
-=======
-<?php
+
+
 
 class Proizvod_model extends CI_Model{
 
@@ -57,5 +56,3 @@ class Proizvod_model extends CI_Model{
 	return $query;
     }
 }
-
->>>>>>> origin/master

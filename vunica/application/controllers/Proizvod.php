@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 class Proizvod extends CI_Controller {
@@ -8,9 +7,6 @@ class Proizvod extends CI_Controller {
         $this->load->view('Proizvod');
     }
 }
-
-=======
-<?php
 
 /*
  * potrebno je pored &vredn koja predstavlja IDProizvod staviti i $vrednk koji predstavlja IDKorisnik
@@ -35,5 +31,3 @@ class Proizvod extends CI_Controller {
         $this->load->view('get_messages', $nizp);
     }
 }
-
->>>>>>> origin/master
