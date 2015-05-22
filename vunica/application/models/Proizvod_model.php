@@ -17,6 +17,21 @@ class Proizvod_model extends CI_Model{
         return $nizp;
     }
     
+    function dohvatiKolicinu($vredn){
+        $this->db->select('*');
+        $this->db->from('kupovinapojedinacno');
+        //potrebno je postaviti i proveru korisnika po IDKorisnik ali to nakon sto je korisnik ulogovan
+        $this->db->where('IDProizvod', $vredn);
+        
+        $upit = $this->db->get();
+        if($upit->num_rows() > 0) {
+            foreach ($upit->result() as $red){
+                $nizp[] = $red;
+            }
+        }
+        return $nizp;
+    }
+    
     function get_messagesp($vredn, $offset = 0 ){
         $this->db->where('IDProizvod', $vredn);
         $this->db->order_by('IDKomentar', 'desc');
