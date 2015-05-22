@@ -44,6 +44,7 @@
 <?php include('/../JavaScript/PopUp.js'); ?>
 <?php include('/../JavaScript/Footer.js'); ?>
 <?php include('/../JavaScript/Checkbox.js'); ?>
+<?php include('/../JavaScript/Postavljanje Proizvoda.js'); ?>
         </script>
 
         <!-- InstanceEndEditable -->
@@ -62,11 +63,7 @@
 
         <!-- Telo strane -->
         <div id = "teloOkvir">
-            <?php echo validation_errors('<p class="error">'); ?>
-            <?php 
-              $attributes = array('id' => 'PostavljanjeProizvoda'); 
-              echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
-            ?>
+            
             <table id = "telo">
                 <tr>
                     <td>
@@ -82,25 +79,27 @@
                         <table id="postavkaproizvoda" border="0">
                             <tr>
                                 <td align="center" class="mestoZaSliku"> 
-                                    <div class="proizvodSlika">&nbsp;</div>
+                                    <div id = "PSlika" class="proizvodSlika">
+                                        <img class="ProSlika"  src="<?php echo $slika;?>"/>
+                                    </div>
                                 </td>
                                 <td>
                                     <table style="width:100%;" border="0">
                                         <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Naziv </td>
-                                            <td style="width:60%;"> <input class="tekstPolje" type="text" /> </td>
+                                            <td style="width:60%;"> <input class="tekstPolje" type="text" name="ProNaziv" value="<?php echo set_value('ProNaziv'); ?>"/> </td>
                                         </tr>
                                         <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Cena </td>
-                                            <td style="width:60%;"> <input class="tekstPolje" type="text" /> </td>
+                                            <td style="width:60%;"> <input class="tekstPolje" type="text" name="ProCena" value="<?php echo set_value('ProCena'); ?>"/> </td>
                                         </tr>
                                         <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Kategorija </td>
                                             <td style="width:60%;"> 
-                                                <select class="kategorije">
-                                                    <option value="1"> kat 1</option>
-                                                    <option value="2"> kat 2</option>
-                                                    <option value="3"> kat 3</option>
+                                                <select class="kategorije" name="ProKat">
+                                                    <option value="1" <?php echo set_select('ProKat', '1', TRUE); ?>> kat 1</option>
+                                                    <option value="2" <?php echo set_select('ProKat', '2'); ?>> kat 2</option>
+                                                    <option value="3" <?php echo set_select('ProKat', '2'); ?>> kat 3</option>
                                                 </select>
                                             </td>
                                         </tr>
@@ -113,7 +112,7 @@
                                                             <a class="dugme" href="javascript:postavljanjeKolicine('-')" onmousedown="mousedown('-')" onmouseup="mouseup()"> - </a> 
                                                         </td>
                                                         <td width="30px" align="center">
-                                                            <font class="tekstObican" id="kolicina">1</font>
+                                                            <font class="tekstObican" id="kolicina" name="ProKol" value="<?php echo set_value('ProKol'); ?>">1</font>
                                                         </td>
                                                         <td>
                                                             <a class="dugme" href="javascript:postavljanjeKolicine('+')" onmousedown="mousedown('+')" onmouseup="mouseup()"> + </a>
@@ -122,11 +121,18 @@
                                                 </table>
                                             </td>
                                         </tr>
+                                        <?php echo validation_errors('<p class="error">'); ?>
+                                        <?php 
+                                          $attributes = array('id' => 'PostavljanjeProizvoda', 'font',""); 
+                                          echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
+                                        ?>
                                         <tr style="height:100px">
-                                            <td colspan="2" valign="bottom">
-                                                <a class="dugme" href="#"> Postavi sliku </a>
+                                            <td colspan="2" valign="bottom">                                               
+                                                <input type="file" name="userfile" class="dugme" size="20"/>
+                                                <input type="submit" value="Postavi sliku" class="dugme"/>
                                             </td>
-                                        </tr>                   
+                                        </tr>  
+                                        </form>
                                     </table>         
                                 </td>
                             </tr>
@@ -160,9 +166,7 @@
                                     <font style="margin-left:10%;"> 
                                         Postavljanjem ovog proizvoda pristajete na: <a href="#" class="linkPopUp"> Ugovor </a> 
                                     </font> 
-                                    <br/><br/><br/><br/>
-                                    <input type="file" name="userfile" size="20"/> <?php echo $this->session->UserName; ?>
-                                    <input type="submit" value="submit" />
+                                    <br/><br/><br/><br/>                                    
                                 </td>
                             </tr>                                                                       
                         </table>         
@@ -170,7 +174,6 @@
                     </td>
                 </tr>
             </table>
-            </form>
         </div>
         
         
