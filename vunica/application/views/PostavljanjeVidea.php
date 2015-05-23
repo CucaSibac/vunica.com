@@ -81,13 +81,13 @@
               ?>
               <table id="postavkaVidea" border="0">
                 <tr>
-                  <td colspan="2">
-                    <video id="demo" width="100%" controls><sourec  src="<?php echo video;?>" /></video>
+                  <td colspan="2"> 
+                    <video width="100%" src="<?php echo $video;?>" controls></video> 
                   </td>
                 </tr>
                  <tr>
                   <td colspan="2" align="center">
-                    <br/> <br/>
+                    <br/> <br/><?php echo $video;?>
                     <input type="file" class="dugme"  name="userfile" onchange="option('1');document.forms['PostavljanjeVidea'].submit();" value="Ucitaj video"/>                 
                     <br/> <br/> <br/>
                   </td>
@@ -97,7 +97,7 @@
                     <font class = "tekstObican"> Naziv videa </font>
                   </td>
                   <td align="center" width="50%">
-                    <input type="text" class="tekstPolje" />
+                    <input type="text" class="tekstPolje" name="vidNaziv" value="<?php echo set_value('vidNaziv'); ?>"/>
                   </td>
                 </tr>
                 </tr>
@@ -108,10 +108,10 @@
                   </td>
                   <td align="center" width="50%">
 				    <br/> 
-                    <select class="kategorije">
-                      <option value="1"> </option>
-                      <option value="2"> </option>
-                      <option value="3"> </option>
+                    <select class="kategorije" name="vidKat">
+                      <option value="1" <?php echo set_select('vidKat', '1', TRUE); ?>>1</option>
+                      <option value="2" <?php echo set_select('vidKat', '2'); ?>>2</option>
+                      <option value="3" <?php echo set_select('vidKat', '3'); ?>>3</option>
                     </select>
                   </td>
                 </tr>
@@ -121,17 +121,17 @@
                 </td>
                 <td align="center" width="50%">
 				  <br/> 
-                  <select class="kategorije">
-                    <option value="1"> Laka</option>
-                    <option value="2"> Srednja</option>
-                    <option value="3"> Teska</option>
+                  <select class="kategorije" name="vidTez">
+                    <option value="Laka" <?php echo set_select('vidTez', 'Laka', TRUE); ?>> Laka</option>
+                    <option value="Srednja"  <?php echo set_select('vidTez', 'Srednja'); ?>> Srednja</option>
+                    <option value="Teska" <?php echo set_select('vidTez', 'Teska'); ?>> Teska</option>
                   </select>
                 </td>
               </tr>
               <tr>
                   <td colspan="2" align="center">
 				   </br>
-                   <textarea  maxlength="400" placeholder="Napisite opis" class="videoOpis" id="opisVidea" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);"></textarea>
+                   <textarea  maxlength="400" placeholder="Napisite opis" class="videoOpis" name="vidOpis" id="opisVidea" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);"><?php echo set_value('vidOpis'); ?></textarea>
 				  </td>
 				</tr>
                 <tr>

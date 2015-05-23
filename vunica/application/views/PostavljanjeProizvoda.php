@@ -137,7 +137,7 @@
                             <tr>
                                 <td colspan="2" align="center">
                                     <br/><br/><br/><br/><br/><br/>
-                                    <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ></textarea>
+                                    <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ><?php echo set_value('ProOpis'); ?></textarea>
                                 </td>
                             </tr>
                             <tr>
