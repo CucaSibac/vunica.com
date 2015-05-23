@@ -199,7 +199,8 @@
 
               <br/> 
               
-              <table align="center" border="0" width="70%">
+              <table align="center" border="1" width="70%">
+                  <?php if($status == 2 || $status == 1){?> 
                 <tr>
                   <td align="center" width="50%">
                     <font class="tekstBold">Moji videi</font>
@@ -208,8 +209,19 @@
                     <font class="tekstBold">Moji proizvodi</font>
                   </td>
                 </tr>
+                  <?php } ?>
+                  
+                  <?php if($status == 3){?> 
                 <tr>
-                  <td align="center">
+                    <td colspan="2" align="center">
+                        <font class="tekstBold">Moji videi</font>
+                    </td>  
+                </tr>
+                  <?php } ?>
+                
+                  <?php if($status == 2 || $status == 1){?> 
+                <tr>
+                  <td align="center" width="50%">
                   <br />
                      <video width="90%" controls> <source src="http://localhost/Video/Omca.mp4" type="video/mp4"></video>
                      <p align="left">
@@ -223,9 +235,29 @@
                      <a href="#"><font class="dugme">Obriši video</font></a>
                      </p>
                   </td>
-                  <td align="center" valign="top">
+                  <td align="center" valign="top" width="50%">
                   <br />
                     <font class="tekstObican">Trenutno nemate svojih proizvoda.</font>
+                  </td>
+                </tr>
+                  <?php } ?>
+                <tr>
+                    <td colspan="2" align="center">
+                  <br />
+                     <video width="50%" controls> <source src="http://localhost/Video/Omca.mp4" type="video/mp4"></video>
+                     <p align="left">
+                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                     <font class="tekstBold">Naziv videa</font>
+                     <br />
+                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                     <a href="#"><font class="tekstObican">Detaljnije...</font></a>
+                     <br /> <br />
+                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                     <a href="#"><font class="dugme">Obriši video</font></a>
+                     </p>
                   </td>
                 </tr>
               </table>
