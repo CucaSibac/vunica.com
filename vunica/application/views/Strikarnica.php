@@ -50,7 +50,7 @@
 
         <script src="http://www.google.com/jsapi"></script>
         <script type="text/javascript">google.load("jquery", "1.3.2");
-            
+
         </script>
         <!-- OVO JE ZA DUGME UCITAJ JOS!!-->
         <script type="text/javascript">
@@ -73,122 +73,362 @@
 
             });
 
-            
+
+
+
+
+            //Ovo je kod za pretragu za prvu opciju (Laka tezina)
             $(document).ready(function () {
-                $("#Opcija1").click(function () {
+                $('#Opcija1').click(function () {
                     $src1 = $("#Opcija1").attr("src");
-                    if ($src1 == "http://localhost/Slike/Checkbox/Checkbox 2.png") {
-                        <?php $this->session->set_userdata('Laka', 'Cekirano'); ?>
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Laka", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions1"
+                        }).done(function () {
+                        });
                     } else {
-                        alert("Unset");
-                       <?php $this->session->unset_userdata('Laka'); ?>
+                        sessionStorage.setItem("Laka", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions1"
+                        }).done(function () {
+                        });
                     }
-
                 });
             });
- $(document).ready(function () {
-                $("#Opcija2").click(function () {
-                    $src2 = $("#Opcija2").attr("src");
-                    if ($src2 == "http://localhost/Slike/Checkbox/Checkbox 2.png") {
-                        <?php $this->session->set_userdata('Srednja', 'Cekirano'); ?>
-                    } else {
-                        <?php $this->session->unset_userdata('Srednja'); ?>
-                    }
-
-                });
-            });
-            
             $(document).ready(function () {
-                $("#Opcija3").click(function () {
-                    $src3 = $("#Opcija3").attr("src");
-                    if ($src3 == "http://localhost/Slike/Checkbox/Checkbox 2.png") {
-                        <?php $this->session->set_userdata('Teska', 'Cekirano'); ?>
-                    } else {
-                        <?php $this->session->unset_userdata('Teska'); ?>
-                    }
-
-                });
+                $sId = sessionStorage.Laka;
+                if ($sId === "Cekirano") {
+                    $('#Opcija1').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
             });
-            
+
+
+
+            //Ovo je kod za pretragu za drugu opciju (Srednja tezina)
             $(document).ready(function () {
-                $("#Opcija4").click(function () {
-                    $src4 = $("#Opcija4").attr("src");
-                    if ($src4 == "http://localhost/Slike/Checkbox/Checkbox 2.png") {
-                        <?php $this->session->set_userdata('Garderoba', 'Cekirano'); ?>
+                $('#Opcija2').click(function () {
+                    $src1 = $("#Opcija2").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Srednja", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions2"
+                        }).done(function () {
+                        });
                     } else {
-                        <?php $this->session->unset_userdata('Garderoba'); ?>
+                        sessionStorage.setItem("Srednja", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions2"
+                        }).done(function () {
+                        });
                     }
-
                 });
             });
-            
             $(document).ready(function () {
-                $("#Opcija5").click(function () {
-                    $src5 = $("#Opcija5").attr("src");
-                    if ($src5 == "http://localhost/Slike/Checkbox/Checkbox 2.png") {
-                        <?php $this->session->set_userdata('Dodaci', 'Cekirano'); ?>
-                    } else {
-                        <?php $this->session->unset_userdata('Dodaci'); ?>
-                    }
-
-                });
+                $sId = sessionStorage.Srednja;
+                if ($sId === "Cekirano") {
+                    $('#Opcija2').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
             });
-            
+
+
+//Ovo je kod za pretragu za trecu opciju (Teska tezina)
             $(document).ready(function () {
-                $("#Opcija6").click(function () {
-                    $src6 = $("#Opcija6").attr("src");
-                    if ($src6 == "http://localhost/Slike/Checkbox/Checkbox 2.png") {
-                        <?php $this->session->set_userdata('Igracke', 'Cekirano'); ?>
+                $('#Opcija3').click(function () {
+                    $src1 = $("#Opcija3").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Teska", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions3"
+                        }).done(function () {
+                        });
                     } else {
-                        <?php $this->session->unset_userdata('Igracke'); ?>
+                        sessionStorage.setItem("Teska", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions3"
+                        }).done(function () {
+                        });
                     }
-
                 });
             });
-            
             $(document).ready(function () {
-                $("#Opcija7").click(function () {
-                    $src7 = $("#Opcija7").attr("src");
-                    if ($src7 == "http://localhost/Slike/Checkbox/Checkbox 2.png") {
-                        <?php $this->session->set_userdata('Ostalo', 'Cekirano'); ?>
-                    } else {
-                        <?php $this->session->unset_userdata('Ostalo'); ?>
-                    }
+                $sId = sessionStorage.Teska;
+                if ($sId === "Cekirano") {
+                    $('#Opcija3').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
 
+
+            //Ovo je kod za pretragu za cetvrtu opciju (Kategorija Garderoba)
+            $(document).ready(function () {
+                $('#Opcija4').click(function () {
+                    $src1 = $("#Opcija4").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Garderoba", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions4"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Garderoba", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions4"
+                        }).done(function () {
+                        });
+                    }
                 });
             });
-            
-        $(document).ready(function () {
-                $("#i1").click(function () {
-                    $inner1 = $("#i1").html();
-                    if($inner1 == "Datum") {
-                        <?php $this->session->set_userdata('Datum', 'Najnovije'); ?>
-                       <?php $this->session->unset_userdata('Naziv'); ?>
-        }   else if ($inner1 == "Najnovije") {
-            <?php $this->session->set_userdata('Datum', 'Najstarije'); ?>
-                 
-        }   else {
-            <?php $this->session->unset_userdata('Datum'); ?>
-        }
+            $(document).ready(function () {
+                $sId = sessionStorage.Garderoba;
+                if ($sId === "Cekirano") {
+                    $('#Opcija4').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+
+
+            //Ovo je kod za pretragu za petu opciju (Kategorija Dodaci)
+            $(document).ready(function () {
+                $('#Opcija5').click(function () {
+                    $src1 = $("#Opcija5").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Dodaci", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions5"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Dodaci", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions5"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Dodaci;
+                if ($sId === "Cekirano") {
+                    $('#Opcija5').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+
+
+
+            //Ovo je kod za pretragu za sestu opciju (Kategorija Igracke)
+            $(document).ready(function () {
+                $('#Opcija6').click(function () {
+                    $src1 = $("#Opcija6").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Igracke", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions6"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Igracke", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions6"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Igracke;
+                if ($sId === "Cekirano") {
+                    $('#Opcija6').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+
+
+            //Ovo je kod za pretragu za sedmu opciju (Kategorija Ostalo)
+            $(document).ready(function () {
+                $('#Opcija7').click(function () {
+                    $src1 = $("#Opcija7").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Ostalo", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions7"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Ostalo", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions7"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Ostalo;
+                if ($sId === "Cekirano") {
+                    $('#Opcija7').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+
+
+
+            //Ovo je za opciju sortiranja po datumu.
+            $(document).ready(function () {
+                $('#id1').click(function () {
+                    $src1 = $("#i1").html();
                     
+                    if ($src1 === "Datum") {
+                        sessionStorage.setItem("Datum", "Najnovije");
+                        sessionStorage.setItem("Naziv", "");
+                        $('#id1').attr("class", "active");
+                        $('#i1').html("Najnovije");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessionsD1"
+                        }).done(function () {
+                        });
+                    } else if ($src1 === "Najnovije") {
+                        sessionStorage.setItem("Datum", "Najstarije");
+                        sessionStorage.setItem("Naziv", "");
+                        $('#id1').attr("class", "dblclick");
+                        $('#i1').html("Najstarije");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessionsD2"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessionsD"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Datum;
+                if ($sId === "Najnovije") {
+                    $('#id1').attr("class", "active");
+                    $('#i1').html("Najnovije");
+
+                  
+                } else if ($sId === "Najstarije") {
+                    $('#id1').attr("class", "dblclick");
+                    $('#i1').html("Najstarije");
+
+                    
+                } else {
+                    $('#id1').attr("class", "btn");
+                    $('#i1').html("Datum");
+
+                    
+
+                }
+            });
+            
+            
+            
+            //Ovo je za opciju sortiranja po nazivu.
+            $(document).ready(function () {
+                $('#id2').click(function () {
+                    $src1 = $("#i2").html();
+                    
+                    if ($src1 === "Naziv") {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "A-Z");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "active");
+                        $('#i2').html("A-Z");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessionsN1"
+                        }).done(function () {
+                        });
+                    } else if ($src1 === "A-Z") {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "Z-A");
+                        $('#id1').attr("class", "");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "dblclick");
+                        $('#i2').html("Z-A");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessionsN2"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessionsN"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Naziv;
+                if ($sId === "A-Z") {
+                    
+
+                        $('#id2').attr("class", "active");
+                        $('#i2').html("A-Z");
+                } else if ($sId === "Z-A") {
                    
-                });
+
+                        $('#id2').attr("class", "dblclick");
+                        $('#i2').html("Z-A");
+                } else {
+                   
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+
+                }
             });
-$(document).ready(function () {
-                $("#i2").click(function () {
-                    $inner2 = $("#i2").html();
-                    if($inner2 == "Naziv") {
-                         <?php $this->session->set_userdata('Naziv', 'A-Z'); ?>
-                                     <?php $this->session->unset_userdata('Datum'); ?>
-                    }   else if ($inner2 == "A-Z") {
-                        <?php $this->session->set_userdata('Naziv', 'Z-A'); ?>
-                    } else {
-                        <?php $this->session->unset_userdata('Naziv'); ?>
-                    }
-                    
-                });
-            });
-           
 
         </script>
         <!-- OVO JE KRAJ ZA DUGME UCITAJ JOS!!-->
@@ -383,7 +623,7 @@ $(document).ready(function () {
 
                         <div class="button-group-navigation" target="_blank" align="center">
                             <li >
-                                <a id="id1"class="btn" style="display:block;width:100px"  onClick="f1()" >
+                                <a id="id1"class="btn" style="display:block;width:100px"  href="" >
                                     <i id="i1" class="" >
                                         Datum
                                     </i>
@@ -391,7 +631,7 @@ $(document).ready(function () {
                             </li>
                             &ensp;&ensp;&ensp;
                             <li>
-                                <a id="id2"class="btn" style="display:block;width:100px"  onClick="f2()">
+                                <a id="id2"class="btn" style="display:block;width:100px" href="">
                                     <i id="i2" class="">
                                         Naziv
                                     </i>

@@ -68,6 +68,41 @@
                     }
                 });
             })
+            
+            //Ovo je kod za pretragu za prvu opciju (Cena od)
+            $(document).ready(function () {
+                $('#Opcija1').click(function () {
+                    $src1 = $("#Opcija1").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Laka", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions1"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Laka", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions1"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Laka;
+                if ($sId === "Cekirano") {
+                    $('#Opcija1').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+            
+            
+            
+            
+            
+            
         </script>
         <!-- OVO JE KRAJ ZA DUGME UCITAJ JOS!!-->
 

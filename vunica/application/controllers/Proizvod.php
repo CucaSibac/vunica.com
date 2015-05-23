@@ -1,12 +1,5 @@
 <?php
 
-class Proizvod extends CI_Controller {
-    
-    function index(){
-        //$this->load->model('Proizvod_model');
-        $this->load->view('Proizvod');
-    }
-}
 
 /*
  * potrebno je pored &vredn koja predstavlja IDProizvod staviti i $vrednk koji predstavlja IDKorisnik

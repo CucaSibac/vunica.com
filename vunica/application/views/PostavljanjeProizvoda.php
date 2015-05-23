@@ -75,7 +75,11 @@
                         </div>                              
 
                         <br/> <br/> <br/> <br/> </br>
-
+                        <?php echo validation_errors('<p class="error">'); ?>
+                        <?php 
+                            $attributes = array('name' => 'PostavljanjeProizvoda', 'font' => ""); 
+                            echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
+                        ?>
                         <table id="postavkaproizvoda" border="0">
                             <tr>
                                 <td align="center" class="mestoZaSliku"> 
@@ -109,37 +113,31 @@
                                                 <table style="margin-left:6%;">
                                                     <tr>
                                                         <td>
-                                                            <a class="dugme" href="javascript:postavljanjeKolicine('-')" onmousedown="mousedown('-')" onmouseup="mouseup()"> - </a> 
+                                                            <a class="dugme" onmousedown="mousedown('-')" onmouseup="mouseup()"> - </a> 
                                                         </td>
                                                         <td width="30px" align="center">
                                                             <font class="tekstObican" id="kolicina" name="ProKol" value="<?php echo set_value('ProKol'); ?>">1</font>
                                                         </td>
                                                         <td>
-                                                            <a class="dugme" href="javascript:postavljanjeKolicine('+')" onmousedown="mousedown('+')" onmouseup="mouseup()"> + </a>
+                                                            <a class="dugme"  onmousedown="mousedown('+')" onmouseup="mouseup()"> + </a>
                                                         </td> 
                                                     </tr>
                                                 </table>
                                             </td>
                                         </tr>
-                                        <?php echo validation_errors('<p class="error">'); ?>
-                                        <?php 
-                                          $attributes = array('id' => 'PostavljanjeProizvoda', 'font',""); 
-                                          echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
-                                        ?>
+                                        
                                         <tr style="height:100px">
                                             <td colspan="2" valign="bottom">                                               
-                                                <input type="file" name="userfile" class="dugme" size="20"/>
-                                                <input type="submit" value="Postavi sliku" class="dugme"/>
+                                                <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" size="20"/>                                   
                                             </td>
                                         </tr>  
-                                        </form>
                                     </table>         
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2" align="center">
                                     <br/><br/><br/><br/><br/><br/>
-                                    <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);"></textarea>
+                                    <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -149,8 +147,9 @@
                                 </td>
                             </tr>               
                             <tr>
-                                <td align="center">
-                                    <a class="dugme" href="#"> Postavi proizvod </a>
+                                <td align="center">  
+                                    <a class="dugme"  onclick="option('2');document.forms['PostavljanjeProizvoda'].submit();"> Postavi proizvod</a>
+                                    <!--<input type="submit" onclick="option('2')" value="Postavi proizvod" class="dugme"/> -->
                                 </td>
                                 <td align="center">
                                     <a class="dugme" href="#"> odustani</a>
@@ -169,7 +168,10 @@
                                     <br/><br/><br/><br/>                                    
                                 </td>
                             </tr>                                                                       
-                        </table>         
+                        </table>  
+                        <input type="hidden" name="ProKol" id="ProKol" value="<?php echo set_value('ProKol',1); ?>" />
+                        <input type="hidden" name="opt" id="opt" value="<?php echo set_value('opt'); ?>" />
+                        </form>
                         <!-- InstanceEndEditable -->
                     </td>
                 </tr>

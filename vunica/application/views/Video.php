@@ -273,16 +273,8 @@ foreach ($podaci as $red) {
                                 </table>
                                 </div>
 
-<?php echo $this->session->Laka; ?>
-  <?php   echo $this->session->Srednja; ?>
-    <?php echo $this->session->Teska; ?>
-<?php     echo $this->session->Garderoba;?> 
-    <?php echo $this->session->Dodaci; ?>
-<?php     echo $this->session->Igracke; ?>
- <?php    echo $this->session->Ostalo;?> 
-   <?php  echo $this->session->Datum; ?>
-    <?php echo $this->session->Naziv; 
-?>
+
+ 
 
                                 
 
