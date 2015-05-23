@@ -18,8 +18,8 @@ function prikazi_registraciju() {
 	document.getElementById('registracija').style.visibility = "visible";
 }
 
-function prikazi_prijavu_proizvoda() {
-	sakrij();
+function prikazi_prijavu_proizvoda() {	
+        sakrij();      
 	document.getElementById('prazan').style.display = "block";
 	document.getElementById('prijavaProizvoda').style.visibility = "visible";
 }
