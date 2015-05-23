@@ -160,26 +160,16 @@
                             
                             <!-- Godine -->
                             <font class = "tekstObican"> Godine: </font>
-                            <?php
-                                $duzina = strlen($this->session->Godine);
-                                $parametri = array(
-                                        'name'          => 'godine',
-                                        'id'            => 'godine',
-                                        'placeholder'   => $this->session->Godine,
-                                        'maxlength'     => '10',
-                                        'size'          => $duzina,
-                                        'class'         => 'tekstForme'
-                                );
-                                echo form_input($parametri);
-                            ?>
-<!--                            <input id = "godine" name = "godine" class = "tekstForme" type = "text" maxlength = "10"
+                            <input id = "godine" name = "godine" class = "tekstForme" type = "text" maxlength = "10"
                                    size = "<?php echo strlen($this->session->Godine);?>"
-                                   placeholder="<?php echo $this->session->Godine; ?>"/>-->
+                                   placeholder="<?php echo $this->session->Godine; ?>"/>
                             
+                            <?php if($Godine != 0){ ?>
                             <div id = "greskaGodine">
                                 <br/>
                                 <font class = "greska"> Molim Vas, ispravno unesite Vase godine! </font>
                             </div>
+                            <?php } ?>
                             
                             <br/> <br/>
                             
@@ -203,21 +193,21 @@
                                         }
                                     }  
                               ?>
-                              <option value = "musko" name = "musko"
+                              <option value = "Musko" name = "musko"
                                 <?php
                                     if($opt == 1){
                                 ?>        
                                     selected    
                                 <?php } ;?>
                               > Musko </option>
-                              <option value = "zensko" name = "zensko"
+                              <option value = "Zensko" name = "zensko"
                                 <?php
                                     if($opt == 2){
                                 ?>        
                                     selected    
                                 <?php } ;?>
                               > Zensko </option>
-                              <option value = "nedefinisano" name = "nedefinisano"
+                              <option value = "Nedefinisano" name = "nedefinisano"
                                  <?php
                                     if($opt == 3){
                                 ?>        
@@ -240,10 +230,12 @@
                             <input class = "dugme" type = "submit" value = "Promeni sliku"/>
                             <input class = "dugme" type = "submit" value = "Obrisi sliku"/>
                             
+                            <?php if($Slika != 0){ ?>
                             <div id = "greskaGodine">
                                 <br/>
                                 <font class = "greska"> Molim Vas, selektujte validan fajl! </font>
                             </div>
+                            <?php } ?>
                             
                         </td>
                     </tr>
@@ -291,8 +283,14 @@
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
+                            <?php if($Email == 1){ ?>
                             <font class = "greska"> Molim Vas, ispravno unesite novu e-mail adresu! </font>
-                            <br/> <br/>   
+                            <br/> <br/>  
+                            <?php } ?>
+                            <?php if($Email == 2){ ?>
+                            <font class = "greska"> Uneli ste vec postojecu e-mail adresu! </font>
+                            <br/> <br/>  
+                            <?php } ?>
                         </td>
                     </tr>
                       
@@ -323,8 +321,10 @@
                         <td width = "50%" align = "right" style = "padding:0 3% 1% 0;">
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
-                            <font class = "greska"> Molim Vas, ispravno unesite novu lozinku! </font>
+                            <?php if($Lozinka != 0){ ?>
+                            <font class = "greska"> Molim Vas, ispravno unesite novu lozinku (minimalno 4 karaktera)! </font>
                             <br/> <br/> <br/>   
+                            <?php } ?>
                         </td>
                     </tr>
                       
