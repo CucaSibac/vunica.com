@@ -68,15 +68,15 @@ class Pijaca_model extends CI_Model {
             $this->db->where_in('Kategorija', $kategorija);
         }
         
-        if ($Datum == "Najstarije") {
+        if ($PDatum == "Najstarije") {
             $this->db->order_by('Datum', 'asc');
-        } else if ($Naziv == "A-Z") {
+        } else if ($PNaziv == "A-Z") {
             $this->db->order_by('Naziv', 'asc');
-        } else if($Naziv == "Z-A" ) {
+        } else if($PNaziv == "Z-A" ) {
             $this->db->order_by('Naziv', 'desc');
-        } else if($Cena == "Najvisa") {
+        } else if($PCena == "Najvisa") {
             $this->db->order_by('Cena', 'desc');
-        } else if ($Cena == "Najniza") {
+        } else if ($PCena == "Najniza") {
             $this->db->order_by('Cena', 'asc');
         } else{
             $this->db->order_by('Datum', 'desc');
@@ -152,15 +152,15 @@ class Pijaca_model extends CI_Model {
             $this->db->where_in('Kategorija', $kategorija);
         }
         
-        if ($Datum == "Najstarije") {
+        if ($PDatum == "Najstarije") {
             $this->db->order_by('Datum', 'asc');
-        } else if ($Naziv == "A-Z") {
+        } else if ($PNaziv == "A-Z") {
             $this->db->order_by('Naziv', 'asc');
-        } else if($Naziv == "Z-A" ) {
+        } else if($PNaziv == "Z-A" ) {
             $this->db->order_by('Naziv', 'desc');
-        } else if($Cena == "Najvisa") {
+        } else if($PCena == "Najvisa") {
             $this->db->order_by('Cena', 'desc');
-        } else if ($Cena == "Najniza") {
+        } else if ($PCena == "Najniza") {
             $this->db->order_by('Cena', 'asc');
         } else{
             $this->db->order_by('Datum', 'desc');
