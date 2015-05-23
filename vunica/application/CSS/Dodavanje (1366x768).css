@@ -5,14 +5,14 @@
 }
 
 .dodajproizvod{
-	 width: 350px;
-    height: 220px;
+	width: 350px;
+        height: 220px;
     /*margin: 10px; */
-    float: left;
+        float: left;
 	border:2px dotted #605951;
-    overflow: hidden;
-    text-align: center;
-    cursor: default;   
+        overflow: hidden;
+        text-align: center;
+        cursor: default;   
 	text-align:center;
         text-valign:middle;
 	cursor:pointer;
@@ -21,6 +21,9 @@
 	text-transform:uppercase;
 	font-family:Tahoma, Geneva, sans-serif;
 	text-decoration:none;
+}
+.dodajproizvod:hover{
+	 background-color: rgba(172, 206, 192, 0.3);
 }
 
 .dodajvideo{
@@ -42,9 +45,6 @@
 	text-decoration:none;
 }
 
-.dodajproizvod:hover{
-	background-color: rgba(172, 206, 192, 0.3);		
-}
 
 .dodajvideo:hover{
         background-color: rgba(172, 206, 192, 0.3);
