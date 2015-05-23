@@ -82,7 +82,7 @@
               <table id="postavkaVidea" border="0">
                 <tr>
                   <td colspan="2"> 
-                    <video width="100%" src="<?php echo $video;?>" controls></video> 
+                    <video style="width:100%;"  src="<?php echo $video;?>" controls></video> 
                   </td>
                 </tr>
                  <tr>

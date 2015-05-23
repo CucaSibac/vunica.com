@@ -43,6 +43,7 @@ class PostavljanjeVidea extends CI_Controller {
     
     public function sacuvaj(){
         echo $this->PostavljanjeVidea_model->ubaci_video();
+        $this->load->view('Strikarnica');    
     }
     
     function adresa($url) {
