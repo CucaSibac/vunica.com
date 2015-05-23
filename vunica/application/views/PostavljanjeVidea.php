@@ -82,13 +82,13 @@
               <table id="postavkaVidea" border="0">
                 <tr>
                   <td colspan="2">
-                    <video id="demo" width="100%" controls></video>
+                    <video id="demo" width="100%" controls><sourec  src="<?php echo video;?>" /></video>
                   </td>
                 </tr>
                  <tr>
                   <td colspan="2" align="center">
                     <br/> <br/>
-                    <a class="dugme"  onclick="option('2');document.forms['PostavljanjeVidea'].submit();"> Ucitaj video</a>                 
+                    <input type="file" class="dugme"  name="userfile" onchange="option('1');document.forms['PostavljanjeVidea'].submit();" value="Ucitaj video"/>                 
                     <br/> <br/> <br/>
                   </td>
                 </tr>
@@ -143,7 +143,7 @@
                 </tr>
                  <tr>
                   <td align="center" width="50%">
-                    <a class="dugme" href="#"> Postavi video </a>
+                    <a class="dugme"  onclick="option('2');document.forms['PostavljanjeVidea'].submit();"> Postavi video</a>                   
                   </td>
                   <td align="center" width="50%">
                     <a class="dugme" href="#"> Odustani </a>
