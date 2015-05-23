@@ -89,8 +89,9 @@ class PostavljanjeProizvoda extends CI_Controller {
                         echo $this->input->post('ProKol');*/
                        // echo $this->upload->data('full_path');                     
                         $url = $this->adresa($this->upload->data('full_path'));
-                        echo $url;
-                        $data = array('slika' => $url);                      
+                        //echo $url;
+                        $data = array('slika' => $url);   
+                        
                         $this->load->view('PostavljanjeProizvoda', $data);
                 }
         }
@@ -104,6 +105,10 @@ class PostavljanjeProizvoda extends CI_Controller {
                if($i != $duzina -1) $novi_url .= '/';
            }
            return 'http://localhost/' . $novi_url;
+        }
+        
+        function sacuvaj(){
+            echo "cao";
         }
             
   } 

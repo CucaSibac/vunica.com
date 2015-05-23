@@ -75,7 +75,11 @@
                         </div>                              
 
                         <br/> <br/> <br/> <br/> </br>
-
+                        <?php echo validation_errors('<p class="error">'); ?>
+                        <?php 
+                            $attributes = array('name' => 'PostavljanjeProizvoda', 'font' => ""); 
+                            echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
+                        ?>
                         <table id="postavkaproizvoda" border="0">
                             <tr>
                                 <td align="center" class="mestoZaSliku"> 
@@ -121,18 +125,12 @@
                                                 </table>
                                             </td>
                                         </tr>
-                                        <?php echo validation_errors('<p class="error">'); ?>
-                                        <?php 
-                                          $attributes = array('id' => 'PostavljanjeProizvoda', 'font',""); 
-                                          echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
-                                        ?>
+                                        
                                         <tr style="height:100px">
                                             <td colspan="2" valign="bottom">                                               
-                                                <input type="file" name="userfile" class="dugme" size="20"/>
-                                                <input type="submit" value="Postavi sliku" class="dugme"/>
+                                                <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" size="20"/>                                   
                                             </td>
                                         </tr>  
-                                        </form>
                                     </table>         
                                 </td>
                             </tr>
@@ -149,8 +147,9 @@
                                 </td>
                             </tr>               
                             <tr>
-                                <td align="center">
-                                    <a class="dugme" href="#"> Postavi proizvod </a>
+                                <td align="center">  
+                                    <a class="dugme"  onclick="option('2');document.forms['PostavljanjeProizvoda'].submit();"> Postavi proizvod</a>
+                                    <!--<input type="submit" onclick="option('2')" value="Postavi proizvod" class="dugme"/> -->
                                 </td>
                                 <td align="center">
                                     <a class="dugme" href="#"> odustani</a>
@@ -169,7 +168,9 @@
                                     <br/><br/><br/><br/>                                    
                                 </td>
                             </tr>                                                                       
-                        </table>         
+                        </table>  
+                        <input type="hidden" name="opt" id="opt" value="<?php echo set_value('opt'); ?>" />
+                        </form>
                         <!-- InstanceEndEditable -->
                     </td>
                 </tr>
