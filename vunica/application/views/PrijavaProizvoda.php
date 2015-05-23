@@ -4,7 +4,7 @@
 <!--Prozor za prijavu proizvoda-->
  <div id = "prijavaProizvoda">
       <div class = "naslovPrijavaProizvoda"> Prijava proizvoda </div>
-      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
+      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij()"/>
       <form style="height:100%;" name="prijavaProizvoda" action="prijavaProizvoda.php" method = "post">
         <table class="tabelaPrijavaProizvoda">
           <tr>
@@ -26,7 +26,7 @@
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="prijavi_proizvod()"> Da</div> <br /></td>
-            <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij_sve()"> Ne</div><br /></td>
+            <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij()"> Ne</div><br /></td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr> 
                             
