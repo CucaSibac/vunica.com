@@ -74,7 +74,11 @@
 			  <!-- InstanceBeginEditable name="Body" -->                                         
               
               <br/> <br/> <br/> <br/> </br>
-              
+              <?php echo validation_errors('<p class="error">'); ?>
+              <?php 
+                $attributes = array('name' => 'PostavljanjeVidea', 'font' => ""); 
+                echo form_open_multipart("PostavljanjeVidea/postavljanje_video", $attributes); 
+              ?>
               <table id="postavkaVidea" border="0">
                 <tr>
                   <td colspan="2">
@@ -83,9 +87,9 @@
                 </tr>
                  <tr>
                   <td colspan="2" align="center">
-                    <br/> </br>
-                    <a class="dugme" href="#"> Ucitaj video </a>
-                    <br/> </br> </br>
+                    <br/> <br/>
+                    <a class="dugme"  onclick="option('2');document.forms['PostavljanjeVidea'].submit();"> Ucitaj video</a>                 
+                    <br/> <br/> <br/>
                   </td>
                 </tr>
                  <tr>
@@ -151,6 +155,8 @@
      		</td>
           </tr>
      	</table>
+        <input type="hidden" name="opt1" id="opt1" value="<?php echo set_value('opt1'); ?>" />
+     </form>
      </div>
    
    
