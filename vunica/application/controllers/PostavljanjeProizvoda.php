@@ -141,7 +141,10 @@ class PostavljanjeProizvoda extends CI_Controller {
      function sacuvaj() {    
         $url =$this->session->userdata('proSlika');
         echo $url;
-        $date = array('slika' => $url); //http://localhost/Slike/Pop-up/Putaca 3.png
+        $date = array('slika' => $url); 
+        echo $this->input->post('ProOpis') ;
+        echo $this->input->post('ProKol') ;
+        $this->PostavljanjeProizvoda_model->ubaci_proizvod();
         //$this->load->view('PostavljanjeProizvoda', $date);
     }
     

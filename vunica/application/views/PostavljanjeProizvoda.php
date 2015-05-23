@@ -113,13 +113,13 @@
                                                 <table style="margin-left:6%;">
                                                     <tr>
                                                         <td>
-                                                            <a class="dugme" href="javascript:postavljanjeKolicine('-')" onmousedown="mousedown('-')" onmouseup="mouseup()"> - </a> 
+                                                            <a class="dugme" onmousedown="mousedown('-')" onmouseup="mouseup()"> - </a> 
                                                         </td>
                                                         <td width="30px" align="center">
                                                             <font class="tekstObican" id="kolicina" name="ProKol" value="<?php echo set_value('ProKol'); ?>">1</font>
                                                         </td>
                                                         <td>
-                                                            <a class="dugme" href="javascript:postavljanjeKolicine('+')" onmousedown="mousedown('+')" onmouseup="mouseup()"> + </a>
+                                                            <a class="dugme"  onmousedown="mousedown('+')" onmouseup="mouseup()"> + </a>
                                                         </td> 
                                                     </tr>
                                                 </table>
@@ -137,7 +137,7 @@
                             <tr>
                                 <td colspan="2" align="center">
                                     <br/><br/><br/><br/><br/><br/>
-                                    <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);"></textarea>
+                                    <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -169,6 +169,7 @@
                                 </td>
                             </tr>                                                                       
                         </table>  
+                        <input type="hidden" name="ProKol" id="ProKol" value="<?php echo set_value('ProKol',1); ?>" />
                         <input type="hidden" name="opt" id="opt" value="<?php echo set_value('opt'); ?>" />
                         </form>
                         <!-- InstanceEndEditable -->

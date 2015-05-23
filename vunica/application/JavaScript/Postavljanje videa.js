@@ -2,7 +2,7 @@
 
 var kolicina = 1;
 var mouse = false;
-
+/*
 function preostalo(kap){
 	document.getElementById("preostalo").innerHTML = kap - document.getElementById("opisVidea").value.length;
 }
@@ -30,4 +30,4 @@ function mousedown(operacija)
 function mouseup()
 {
   mouse =false;
-}
+}*/
