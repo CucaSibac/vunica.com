@@ -20,7 +20,7 @@
              <?php include '/../CSS/Dugme (1366x768).css'; ?>
              <?php include '/../CSS/Paragraf (1366x768).css'; ?>
              <?php include '/../CSS/Video (1366x768).css'; ?>
-             <?php include '/../CSS/Dodavanje (1366x768).css'; ?>
+             
         </style>
 
         <style media="screen and (min-device-width: 1401px)">
@@ -30,6 +30,7 @@
              <?php include '/../CSS/Tekst (1920x1080).css'; ?>
              <?php include '/../CSS/Dugme (1920x1080).css'; ?>
              <?php include '/../CSS/Video (1920x1080).css'; ?>
+             <?php include '/../CSS/Dodavanje (1366x768).css'; ?>
         </style>
         <script>
              <?php include('/../JavaScript/PopUp.js'); ?>
@@ -114,38 +115,37 @@
                 <tr>
                   <td rowspan="3" width="35%" align="center">
                   <br /><br />
-                    <img width="250px" src="http://localhost/Slike/Profilna/Slika.png" />
+                    <img width="250px" src="<?php echo $this->session->Slika;?>" />
                   </td>
                   <td height="25%">
                   <br /><br />
-                  <font class="naslovObican">Nadimak</font>
+                  <font class="naslovObican"><?php echo $this->session->UserName;?></font>
                   <br /> <br />
-                  <font class="tekstObican">Ime Prezime</font>
+                  <font class="tekstObican"><?php echo $this->session->ImePrezime;?></font>
                   </td>
                 </tr>
                 <tr>
                   <td height="25%">
                   <br />
                   <font class="tekstBold">Godine: </font>
-                  <font class="tekstObican">15</font>
+                  <font class="tekstObican"><?php echo $this->session->Godine;?></font>
                   <br /> <br />
                   <font class="tekstBold">Status: </font>
-                  <font class="tekstObican">Klub 5 klupka</font>
+                  <font class="tekstObican"><?php echo $this->session->Status;?></font>
                   </td>
                 </tr>
                 <tr>
                   <td height="50%" valign="top">
                   <br />
                   <font class="tekstBold">O meni: </font>
-                  <font class="tekstObican">Volim da štrikam. 
-                  Štrikanje me opušsta. Imam svoju kolekciju štrikanih omči od najfinije vunice. Omče su moja strast!</font>
+                  <font class="tekstObican"><?php echo $this->session->Opis;?></font>
                   <br /><br />
                   </td>
                 </tr>
                 <tr>
                   <td align="center">
                   <br />
-                  <a href="#" onclick="window.open('Profil - Editovanje.html', '_parent')" class="dugme">Izmeni profil</a>
+                  <a href="#" onclick="window.open('http://localhost/vunica.com/vunica/index.php/ProfilEditovanje', '_parent')" class="dugme">Izmeni profil</a>
                   <a href="#" onclick="obrisan()" class="dugme">Obriši profil</a>
                   <br /><br />
                   </td>
@@ -153,28 +153,47 @@
 
               </table>
               <br />
+              <?php if($status == 2 || $status == 1){?> 
               <table align="center" border="0" width="50%">
-                <tr>
-                  <td width="50%" align="center">
-                  <p align="center"
-                    <a href="#"><div class="dodajvideo" align="center" >  
-			        <br /> <br />
-			        Dodaj<br />video
-		            </div></a>
-                  </p>
-                  </td>
+                  <tr>
+                      <td width="50%" align="center">
+                          <div class="dodajvideo">
+                              <br/><br/>
+                              Dodaj
+                              <br/>
+                              video
+                              <br/>
+                          </div>
+                      </td>
+                      <td width="50%" align="center">
+                          <div class="dodajproizvod">
+                              <br/><br/>
+                              Dodaj
+                              <br/>
+                              proizvod
+                              <br/>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+              <?php } ?>
                   
-                   <td width="50%" align="center">
-                  <p align="center"
-                    <a href="#"><div class="dodajproizvod" align="center" >  
-			        <br /> <br />
-			        Dodaj<br />proizvod
-		            </div></a>
-                  </p>
+              <?php if($status == 3){?> 
+              <table align="center" border="0" width="29%">
+                <tr>
+                  <td align="center">
+                      <div class="dodajvideo">
+                        <br/><br/>
+                        Dodaj
+                        <br/>
+                        video
+                        <br/>
+                     </div>
                   </td>
                 </tr>
-                
               </table>
+              <?php } ?>
+              
               <br />
               <hr width = "74%" class = "linija"/>
 
