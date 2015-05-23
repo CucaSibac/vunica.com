@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+.mis{
+    cursor:pointer;
+}
+
+.dodajproizvod{
+	  width: 85%;
+    height: 100px;
+    
+    
+    float: none;
+	border:2px dotted #605951;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;   
+	text-align:center;
+	cursor:pointer;
+	color:#605951;
+	font-size:30px;
+	text-transform:uppercase;
+	font-family:Tahoma, Geneva, sans-serif;
+	text-decoration:none;
+	vertical-align:middle;
+}
+.dodajproizvod:hover{
+	/*background-color: rgba(217, 204, 177, 0.5);*/	
+	/*background-color: rgba(96, 89, 81, 0.5);	*/
+	/*background-color: rgba(255, 254, 244, 0.5);	*/
+	/*background-color: rgba(97, 166, 171, 0.5);	*/
+	background-color: rgba(172, 206, 192, 0.3);	
+	
+}
+
+.dodajvideo{
+	 width: 350px;
+      height: 220px;
+    /*margin: 10px; */
+    float: left;
+	border:2px dotted #605951;
+    overflow: hidden;
+    text-align: center;
+    cursor: default;   
+	text-align:center;
+
+	cursor:pointer;
+	color:#605951;
+	font-size:30px;
+	text-transform:uppercase;
+	font-family:Tahoma, Geneva, sans-serif;
+	text-decoration:none;
+}
+
+.dodajvideo:hover{
+        background-color: rgba(172, 206, 192, 0.3);
+}
