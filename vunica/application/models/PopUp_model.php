@@ -75,5 +75,19 @@ class PopUp_model extends CI_Model {
         $this->session->unset_userdata($newdata );
         $this->session->sess_destroy();
     }
+    
+    public function zl($email){
+        $this->db->from("korisnik");
+        $this->db->where("Email", $email);           
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $rows) {
+                return $rows->Sifra;
+            }       
+        }  
+        else{
+            return "";
+        }
+    }
 
 }

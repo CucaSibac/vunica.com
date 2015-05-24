@@ -39,5 +39,30 @@ class PopUp extends CI_Controller {
         $this->PopUp_model->logout();
         redirect($refering_url, 'refresh');
     }
+    
+    public function zl(){      
+        $podaci = $this->PopUp_model->zl($this->input->post('zlEmail'));
+        if($podaci != ''){
+            $this->load->library('email');
+            
+           $config['protocol'] = 'smtp';
+            $config['smtp_host'] = 'ssl://smtp.gmail.com';   //examples: ssl://smtp.googlemail.com, myhost.com
+            $config['smtp_user'] = 'andricgmilos@gmail.com';
+            $config['smtp_pass'] = '****'; //HAHAHA
+            $config['smtp_port'] = '465';
+            $this->email->initialize($config);
+                    
+            $this->email->from('andricgmilos@gmail.com', 'Your Name');
+            $this->email->to('milosgandric@gmail.com');          
+            $this->email->subject('Email Test');
+            $this->email->message('Testing the email class.');	
+            $this->email->send();
+            echo "poslato";
+        }
+        else{
+            
+        }
+
+    }
 
 }
