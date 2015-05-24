@@ -39,7 +39,13 @@ class ProfilEditovanje extends CI_Controller {
 
     public function index(){
         $this->resetujGreske();
-        $this->load->view('ProfilEditovanje', $this->greske);
+        
+        if($this->session->UserName != ''){
+            $this->load->view('ProfilEditovanje', $this->greske);
+        }
+        else{
+            $this->load->view('GreskaStrana');
+        }
     }
     
     public function promeni(){ 
@@ -66,7 +72,12 @@ class ProfilEditovanje extends CI_Controller {
             $this->greske['Email'] = 2;
         }
         
-        $this->load->view('ProfilEditovanje', $this->greske);
+        if($this->session->UserName != ''){
+            $this->load->view('ProfilEditovanje', $this->greske);
+        }
+        else{
+            $this->load->view('GreskaStrana');
+        }
     }  
     
     protected function proveraGodine(){
