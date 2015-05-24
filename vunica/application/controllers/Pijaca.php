@@ -24,13 +24,22 @@ class Pijaca extends CI_Controller {
         $niz['latest_proizvod'] = $this->Pijaca_model->get_proizvod($offset);
         $this->load->view('get_proizvod', $niz);
     }
-    function sessionsCod($value) {
+    function sessionsCod() {
+         $value = $this->input->post('value');
         $this->session->set_userdata('CenaOd', $value );
     }
     function unsessionsCod() {
          $this->session->set_userdata('CenaOd', "");
     }
     
+    
+     function sessionsCdo() {
+         $value = $this->input->post('value');
+        $this->session->set_userdata('CenaDo', $value );
+    }
+    function unsessionsCdo() {
+         $this->session->set_userdata('CenaDo', "");
+    }
     
     function sessions1() {
         $this->session->set_userdata('Vunica', "Cekirano");

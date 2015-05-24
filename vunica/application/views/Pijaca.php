@@ -68,17 +68,19 @@
                     }
                 });
             });
-            var dummy = 700;
+            
             //Ovo je kod za pretragu za cenu od
             $(document).ready(function () {
                 $('#manji').change(function () {
                     $src1 = $("#manji").attr("value");
+                    var value = $("#manji").val();
                     if ($src1 !== "") {
                         sessionStorage.setItem("CenaOd", $src1);
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsCod",
-                            data: {value : 700}
+                            data: {'value' : value},
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsCod"
+                            
 
             }).done(function () {
                         });
@@ -99,6 +101,43 @@
                     $('#box').attr("class", "show");
                 }
             });
+            
+            //Ovo je kod za pretragu za cenu do
+            $(document).ready(function () {
+                $('#veci').change(function () {
+                    $src1 = $("#veci").attr("value");
+                    var value = $("#veci").val();
+                    if ($src1 !== "") {
+                        sessionStorage.setItem("CenaDo", $src1);
+                        $.ajax({
+                            type: "POST",
+                            data: {'value' : value},
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsCdo"
+                            
+
+            }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("CenaDo", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessionsCdo"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.CenaDo;
+                if ($sId !== "") {
+                    $('#veci').attr("value", $sId);
+                    $('#box').attr("class", "show");
+                }
+            });
+            
+            
+            
+            
             
             
             //Ovo je kod za pretragu za materijal vunica

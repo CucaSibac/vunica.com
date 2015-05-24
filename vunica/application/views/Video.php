@@ -277,7 +277,7 @@ foreach ($podaci as $red) {
  
 
                                 
-<?php $this->session->unset_userdata('CenaOd'); ?>
+
                                 </body>
 
                                 <!-- InstanceEnd -->
