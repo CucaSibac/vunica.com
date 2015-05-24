@@ -27,7 +27,7 @@ class Pijaca extends CI_Controller {
     function sessionsCod($value) {
         $this->session->set_userdata('CenaOd', $value );
     }
-    function unsessionsCpd() {
+    function unsessionsCod() {
          $this->session->set_userdata('CenaOd', "");
     }
     
