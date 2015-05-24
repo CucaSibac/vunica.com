@@ -67,43 +67,511 @@
                         //alert('hide');
                     }
                 });
-            })
-            
-            //Ovo je kod za pretragu za prvu opciju (Cena od)
+            });
+            var dummy = 700;
+            //Ovo je kod za pretragu za cenu od
             $(document).ready(function () {
-                $('#Opcija1').click(function () {
-                    $src1 = $("#Opcija1").attr("src");
-                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
-                        sessionStorage.setItem("Laka", "Cekirano");
+                $('#manji').change(function () {
+                    $src1 = $("#manji").attr("value");
+                    if ($src1 !== "") {
+                        sessionStorage.setItem("CenaOd", $src1);
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions1"
-                        }).done(function () {
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsCod",
+                            data: {value : 700}
+
+            }).done(function () {
                         });
                     } else {
-                        sessionStorage.setItem("Laka", "");
+                        sessionStorage.setItem("CenaOd", "");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions1"
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessionsCod"
                         }).done(function () {
                         });
                     }
                 });
             });
             $(document).ready(function () {
-                $sId = sessionStorage.Laka;
+                $sId = sessionStorage.CenaOd;
+                if ($sId !== "") {
+                    $('#manji').attr("value", $sId);
+                    $('#box').attr("class", "show");
+                }
+            });
+            
+            
+            //Ovo je kod za pretragu za materijal vunica
+            $(document).ready(function () {
+                $('#Opcija1').click(function () {
+                    $src1 = $("#Opcija1").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Vunica", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessions1"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Vunica", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessions1"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Vunica;
                 if ($sId === "Cekirano") {
                     $('#Opcija1').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
                     $('#box').attr("class", "show");
                 }
             });
             
+            //Ovo je kod za pretragu za materijal konci
+            $(document).ready(function () {
+                $('#Opcija2').click(function () {
+                    $src1 = $("#Opcija2").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Konci", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessions2"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Konci", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessions2"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Konci;
+                if ($sId === "Cekirano") {
+                    $('#Opcija2').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+
+
+            //Ovo je kod za pretragu za materijal igle
+            $(document).ready(function () {
+                $('#Opcija3').click(function () {
+                    $src1 = $("#Opcija3").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("Igle", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessions3"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Igle", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessions3"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Igle;
+                if ($sId === "Cekirano") {
+                    $('#Opcija3').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+            
+            //Ovo je kod za pretragu za materijal ostalo iz materijala
+            $(document).ready(function () {
+                $('#Opcija4').click(function () {
+                    $src1 = $("#Opcija4").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("MatOstalo", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessions4"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("MatOstalo", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessions4"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.MatOstalo;
+                if ($sId === "Cekirano") {
+                    $('#Opcija4').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+            
+            
+            //Ovo je kod za pretragu za Garderobu 
+            $(document).ready(function () {
+                $('#Opcija5').click(function () {
+                    $src1 = $("#Opcija5").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("PGarderoba", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessions5"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("PGarderoba", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessions5"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.PGarderoba;
+                if ($sId === "Cekirano") {
+                    $('#Opcija5').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+            
+            
+            //Ovo je kod za pretragu za dodatke 
+            $(document).ready(function () {
+                $('#Opcija6').click(function () {
+                    $src1 = $("#Opcija6").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("PDodaci", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessions6"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("PDodaci", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessions6"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.PDodaci;
+                if ($sId === "Cekirano") {
+                    $('#Opcija6').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
+
+
+            //Ovo je kod za pretragu za igracke 
+            $(document).ready(function () {
+                $('#Opcija7').click(function () {
+                    $src1 = $("#Opcija7").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("PIgracke", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessions7"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("PIgracke", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessions7"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.PIgracke;
+                if ($sId === "Cekirano") {
+                    $('#Opcija7').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
             
             
             
+            //Ovo je kod za pretragu za ostalo iz gotovih proizvoda 
+            $(document).ready(function () {
+                $('#Opcija8').click(function () {
+                    $src1 = $("#Opcija8").attr("src");
+                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                        sessionStorage.setItem("POstalo", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessions8"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("POstalo", "");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessions8"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.POstalo;
+                if ($sId === "Cekirano") {
+                    $('#Opcija8').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#box').attr("class", "show");
+                }
+            });
             
             
-        </script>
+            
+            //Ovo je za opciju sortiranja po datumu.
+            $(document).ready(function () {
+                $('#id1').click(function () {
+                    $src1 = $("#i1").html();
+                    
+                    if ($src1 === "Datum") {
+                        sessionStorage.setItem("Datum", "Najnovije");
+                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Cena", "");
+                        $('#id1').attr("class", "active");
+                        $('#i1').html("Najnovije");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+                        $('#id3').attr("class", "btn");
+                        $('#i3').html("Cena");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsD1"
+                        }).done(function () {
+                        });
+                    } else if ($src1 === "Najnovije") {
+                        sessionStorage.setItem("Datum", "Najstarije");
+                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Cena", "");
+                        $('#id1').attr("class", "dblclick");
+                        $('#i1').html("Najstarije");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+                        $('#id3').attr("class", "btn");
+                        $('#i3').html("Cena");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsD2"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Cena", "");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+                        $('#id3').attr("class", "btn");
+                        $('#i3').html("Cena");
+
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessionsD"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Datum;
+                if ($sId === "Najnovije") {
+                    $('#id1').attr("class", "active");
+                    $('#i1').html("Najnovije");
+
+                  
+                } else if ($sId === "Najstarije") {
+                    $('#id1').attr("class", "dblclick");
+                    $('#i1').html("Najstarije");
+
+                    
+                } else {
+                    $('#id1').attr("class", "btn");
+                    $('#i1').html("Datum");
+
+                    
+
+                }
+            });
+        
+        
+        //Ovo je za opciju sortiranja po nazivu.
+            $(document).ready(function () {
+                $('#id2').click(function () {
+                    $src1 = $("#i2").html();
+                    
+                    if ($src1 === "Naziv") {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "A-Z");
+                        sessionStorage.setItem("Cena", "");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "active");
+                        $('#i2').html("A-Z");
+                        $('#id3').attr("class", "btn");
+                        $('#i3').html("Cena");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsN1"
+                        }).done(function () {
+                        });
+                    } else if ($src1 === "A-Z") {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "Z-A");
+                        sessionStorage.setItem("Cena", "");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "dblclick");
+                        $('#i2').html("Z-A");
+                        $('#id3').attr("class", "btn");
+                        $('#i3').html("Cena");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsN2"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Cena", "");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+                        $('#id3').attr("class", "btn");
+                        $('#i3').html("Cena");
+
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessionsN"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Naziv;
+                if ($sId === "A-Z") {
+                    $('#id2').attr("class", "active");
+                    $('#i2').html("A-Z");
+
+                  
+                } else if ($sId === "Z-A") {
+                    $('#id2').attr("class", "dblclick");
+                    $('#i2').html("Z-A");
+
+                    
+                } else {
+                    $('#id2').attr("class", "btn");
+                    $('#i2').html("Naziv");
+                }
+            });
+            
+            //Ovo je za opciju sortiranja po ceni.
+            $(document).ready(function () {
+                $('#id3').click(function () {
+                    $src1 = $("#i3").html();
+                    
+                    if ($src1 === "Cena") {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Cena", "Najvisa");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+                        $('#id3').attr("class", "active");
+                        $('#i3').html("Najvisa");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsC1"
+                        }).done(function () {
+                        });
+                    } else if ($src1 === "Najvisa") {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Cena", "Najniza");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("");
+                        $('#id3').attr("class", "dblclick");
+                        $('#i3').html("Najniza");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsC2"
+                        }).done(function () {
+                        });
+                    } else {
+                        sessionStorage.setItem("Datum", "");
+                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Cena", "");
+                        $('#id1').attr("class", "btn");
+                        $('#i1').html("Datum");
+
+                        $('#id2').attr("class", "btn");
+                        $('#i2').html("Naziv");
+                        $('#id3').attr("class", "btn");
+                        $('#i3').html("Cena");
+
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Pijaca/unsessionsC"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+            $(document).ready(function () {
+                $sId = sessionStorage.Cena;
+                if ($sId === "Najvisa") {
+                    $('#id3').attr("class", "active");
+                    $('#i3').html("Najvisa");
+
+                  
+                } else if ($sId === "Najniza") {
+                    $('#id3').attr("class", "dblclick");
+                    $('#i3').html("Najniza");
+
+                    
+                } else {
+                    $('#id3').attr("class", "btn");
+                    $('#i3').html("Cena");
+                }
+            });
+ 
+ 
+            </script>
         <!-- OVO JE KRAJ ZA DUGME UCITAJ JOS!!-->
 
 
@@ -156,7 +624,7 @@
                                         </td>
                                         <td width="90%"colspan="2">
                                             <font class="tekstObican">
-                                                Od:&nbsp;<input id="manji" type="text" size="4" min="0" onchange="uslovMin();" class="tekstPoljecena"/>&nbsp;€
+                                                Od:&nbsp;<input id="manji" type="text" size="4" min="0" onchange="uslovMin();" class="tekstPoljecena" />&nbsp;€
                                             </font>
                                         </td>
                                     </tr>
@@ -195,7 +663,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija 1" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class="checkbox" onclick="check('Opcija 1')">
+                                            <img id = "Opcija1" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class="checkbox" onclick="check('Opcija1')">
                                                 <font class="tekstObican">
                                                     Vunica
                                                 </font>
@@ -209,7 +677,7 @@
 
                                         </td>
                                         <td width="80%"  style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija 2" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 2')">
+                                            <img id = "Opcija2" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija2')">
                                                 <font class="tekstObican">
                                                     Konci
                                                 </font>
@@ -223,7 +691,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija 3" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 3')">
+                                            <img id = "Opcija3" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija3')">
                                                 <font class="tekstObican">
                                                     Igle
                                                 </font>
@@ -237,9 +705,9 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0% 2% 4%;">
-                                            <img id = "Opcija 4" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 4')">
+                                            <img id = "Opcija4" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija4')">
                                                 <font class="tekstObican">
-                                                    Ostalo
+                                                    Ostali materijali
                                                 </font>
                                         </td>
                                     </tr>
@@ -261,7 +729,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0% 2% 4%;">
-                                            <img id = "Opcija 5" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 5')">
+                                            <img id = "Opcija5" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija5')">
                                                 <font class="tekstObican">
                                                     Garderoba
                                                 </font>
@@ -275,7 +743,7 @@
 
                                         </td>
                                         <td  width="80%"  style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija 6" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 6')">
+                                            <img id = "Opcija6" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija6')">
                                                 <font class="tekstObican">
                                                     Dodaci
                                                 </font>
@@ -289,7 +757,7 @@
 
                                         </td>
                                         <td  width="80%"  style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija 7" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 7')">
+                                            <img id = "Opcija7" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija7')">
                                                 <font class="tekstObican">
                                                     Igracke
                                                 </font>
@@ -303,7 +771,7 @@
 
                                         </td>
                                         <td width="80%"  style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija 8" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija 8')">
+                                            <img id = "Opcija8" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija8')">
                                                 <font class="tekstObican">
                                                     Ostalo
                                                 </font>
@@ -315,7 +783,7 @@
                                         </td>
                                         <tr>
                                             <td  align="center" width="70%" colspan="3" style = "padding:3% 3% 3% 3%;">
-                                                <a href="#" class="dugme1"> 
+                                                <a href="http://localhost/vunica.com/vunica/index.php/pijaca" class="dugme1"> 
                                                     Trazi 
                                                 </a> 
                                             </td>
@@ -378,7 +846,7 @@
 
                                                 <div class="button-group-navigation" target="_blank" align="center">
                                                     <li >
-                                                        <a id="id1"class="btn" style="display:block;width:100px" href="#" onClick="f1()" >
+                                                        <a id="id1"class="btn" style="display:block;width:100px" href=""  >
                                                             <i id="i1" class="" >
                                                                 Datum
                                                             </i>
@@ -386,7 +854,7 @@
                                                     </li>
                                                     &ensp;&ensp;&ensp;
                                                     <li>
-                                                        <a id="id2"class="btn" style="display:block;width:100px" href="#" onClick="f2()">
+                                                        <a id="id2"class="btn" style="display:block;width:100px" href="" >
                                                             <i id="i2" class="">
                                                                 Naziv
                                                             </i>
@@ -394,7 +862,7 @@
                                                     </li>
                                                     &ensp;&ensp;&ensp;
                                                     <li>
-                                                        <a id="id3"class="btn" style="display:block;width:100px" href="#" onClick="f3()">
+                                                        <a id="id3"class="btn" style="display:block;width:100px" href="" >
                                                             <i id="i3" class="">
                                                                 Cena
                                                             </i>

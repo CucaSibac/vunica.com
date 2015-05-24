@@ -26,43 +26,38 @@ class Pijaca_model extends CI_Model {
         $Materijali = array();
         
         //Proverava da li su podesene cene
-        if ($CenaOd != 0) {
+        if ($CenaOd != "") {
             $this->db->where('Cena >=', $CenaOd);
         }
-        if ($CenaDo != 0) {
+        if ($CenaDo != "") {
             $this->db->where('Cena <=', $CenaDo);
         }
         
         
         //Proverava da li su neki od materijala cekirani, i ako jesu, selektuje cekirane
         if ($Vunica == "Cekirano") {
-            array_push($Materijali, "Vunica");
+            array_push($kategorija, "Vunica");
         }
         if ($Konci == "Cekirano") {
-            array_push($Materijali, "Konci");
+            array_push($kategorija, "Konci");
         }
         if ($Igle == "Cekirano") {
-            array_push($Materijali, "Igle");
+            array_push($kategorija, "Igle");
         }
         if ($MatOstalo == "Cekirano") {
-            array_push($Materijali, "MatOstalo");
+            array_push($kategorija, "Ostali materijali");
         }
-        if(count($Materijali)>0) {
-            $this->db->where_in('Kategorija', $Materijali);
-        }
-        
-        //Proverava da li su neke od kategorija cekirane, i ako jesu, selektuje cekirane
         if ($PGarderoba == "Cekirano") {
-            array_push($kategorija, "PGarderoba");
+            array_push($kategorija, "Garderoba");
         }
         if ($PDodaci == "Cekirano") {
-            array_push($kategorija, "PDodaci");
+            array_push($kategorija, "Dodaci");
         }
         if ($PIgracke == "Cekirano") {
-            array_push($kategorija, "PIgracke");
+            array_push($kategorija, "Igracke");
         }
         if ($POstalo == "Cekirano") {
-            array_push($kategorija, "POstalo");
+            array_push($kategorija, "Ostalo");
         }
         if(count($kategorija)>0) {
             $this->db->where_in('Kategorija', $kategorija);
@@ -106,8 +101,7 @@ class Pijaca_model extends CI_Model {
         $PCena = $this->session->PCena;
         
        
-        $kategorija = array();
-        $Materijali = array();
+        $kategorija = [];
         
         //Proverava da li su podesene cene
         if ($CenaOd != 0) {
@@ -120,33 +114,28 @@ class Pijaca_model extends CI_Model {
         
         //Proverava da li su neki od materijala cekirani, i ako jesu, selektuje cekirane
         if ($Vunica == "Cekirano") {
-            array_push($Materijali, "Vunica");
+            array_push($kategorija, "Vunica");
         }
         if ($Konci == "Cekirano") {
-            array_push($Materijali, "Konci");
+            array_push($kategorija, "Konci");
         }
         if ($Igle == "Cekirano") {
-            array_push($Materijali, "Igle");
+            array_push($kategorija, "Igle");
         }
         if ($MatOstalo == "Cekirano") {
-            array_push($Materijali, "MatOstalo");
+            array_push($kategorija, "Ostali materijali");
         }
-        if(count($Materijali)>0) {
-            $this->db->where_in('Kategorija', $Materijali);
-        }
-        
-        //Proverava da li su neke od kategorija cekirane, i ako jesu, selektuje cekirane
         if ($PGarderoba == "Cekirano") {
-            array_push($kategorija, "PGarderoba");
+            array_push($kategorija, "Garderoba");
         }
         if ($PDodaci == "Cekirano") {
-            array_push($kategorija, "PDodaci");
+            array_push($kategorija, "Dodaci");
         }
         if ($PIgracke == "Cekirano") {
-            array_push($kategorija, "PIgracke");
+            array_push($kategorija, "Igracke");
         }
         if ($POstalo == "Cekirano") {
-            array_push($kategorija, "POstalo");
+            array_push($kategorija, "Ostalo");
         }
         if(count($kategorija)>0) {
             $this->db->where_in('Kategorija', $kategorija);
