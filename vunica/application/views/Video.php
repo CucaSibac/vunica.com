@@ -159,7 +159,7 @@ $usersession = $this->session->userdata('UserName');
             $(document).ready(function () {
                 $('#kategorija').click(function () {
                     $src = $.trim($('#kategorija').html());
-                    alert($src);
+                   
 
                     if ($src === 'Garderoba') {
                         sessionStorage.setItem("Garderoba", "Cekirano");

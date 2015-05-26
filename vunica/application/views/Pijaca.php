@@ -960,7 +960,34 @@
 
                                                         <td  align = "center" >
                                                             <br/>
-                                                            <a href="http://localhost/vunica.com/vunica/index.php/PostavljanjeProizvoda" style="text-decoration: none;  "><div class="dodajproizvod"  >  
+                                                            
+                                                             <script>
+
+        <?php 
+        $status = $this->session->userdata('Status');
+        if ($this->session->UserName != '' && $status !== "Klupko") { ?> //ako je ulogovan a nije klupko
+                                                                </script>
+                                                                <a href="http://localhost/vunica.com/vunica/index.php/PostavljanjeProizvoda" style="text-decoration: none;  ">
+                                                                <script>
+                                                                    
+        <?php } else if ($this->session->UserName != '' && $status === "Klupko") { ?> // ako je klupko
+                                                                </script>
+                                                                    <a  style="text-decoration: none;"  href="http://localhost/vunica.com/vunica/index.php/PostaniPremijum" >
+                                                                <script>
+        
+        <?php } else { ?> //ako gost pristupa sajtu
+                                                                </script>
+                                                                <a onclick="prikazi_registraciju()" style="text-decoration: none;  "> 
+                                                                <script>
+        <?php } ?>
+
+                                                                //< a  class = "prijaviKomentar" > Prijavi komentar < /a>
+
+                                                            </script>
+                                                            
+                                                            
+                                                            
+                                                            <div class="dodajproizvod"  >  
 
                                                                     <p style="text-align: center">  Dodaj proizvod</p>
                                                                 </div> </a><div class="mask"> </div>

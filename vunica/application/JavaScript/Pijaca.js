@@ -80,3 +80,8 @@ function f3() {
 	  document.getElementById("i3").innerHTML = "Cena";  
   }
 }
+
+
+function klupko() {
+    alert("nece da moze");
+}
