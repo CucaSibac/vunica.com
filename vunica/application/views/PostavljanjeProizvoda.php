@@ -74,8 +74,7 @@
 
                         </div>                              
 
-                        <br/> <br/> <br/> <br/> </br>
-                        <?php echo validation_errors('<p class="error">'); ?>
+                        <br/> <br/> <br/> <br/> </br>                       
                         <?php 
                             $attributes = array('name' => 'PostavljanjeProizvoda', 'font' => ""); 
                             echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 

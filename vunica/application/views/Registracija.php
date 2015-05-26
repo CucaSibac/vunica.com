@@ -3,8 +3,7 @@
     <div id="registracija">
       <div class="naslovRegistracija"> Registracija </div>
       <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
-      <!-- InstanceBeginEditable name="RegistracijaDiv" -->
-      <?php echo validation_errors('<p class="error">'); ?>
+      <!-- InstanceBeginEditable name="RegistracijaDiv" -->     
 	  <?php 
             $attributes = array('style' => 'height: 100%;', 'id' => 'formaRegistracija');
             echo form_open("PopUp/registration", $attributes); 
@@ -17,33 +16,51 @@
           </tr>
            <tr>
             <td class="praznaCelijaPopUp"></td>
-            <?php echo validation_errors(); ?>
-            <td colspan="2"><input type="text" name="UserName" id="UserName" placeholder="Korisnicko ime" class="inputPopUp" value="<?php echo set_value('UserName'); ?>"/> </td>
+            <!--<?php echo validation_errors(); ?>-->
+            <td colspan="2">
+                <input type="text" name="UserName" id="UserName" placeholder="Korisnicko ime" class="inputPopUp" value="<?php echo set_value('UserName'); ?>"/>             
+                <?php echo form_error('UserName'); ?>
+            </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
           <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td colspan="2"><input type="text" name="ImePrezime" id="ImePrezime" placeholder="Ime i prezime" class="inputPopUp" value="<?php echo set_value('ImePrezime'); ?>"/> </td>
-            <td class="praznaCelijaPopUp">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="praznaCelijaPopUp"></td>
-            <td colspan="2"><input type="text" name="Email" id="Email" placeholder="E-mail adresa" class="inputPopUp" value="<?php echo set_value('Email'); ?>"/> </td>
-            <td class="praznaCelijaPopUp">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td colspan="2"><input type="text" name="EmailPotvrda" id="email4" placeholder="Potvrda e-mail adrese" class="inputPopUp" value="<?php echo set_value('EmailPotvrda'); ?>"/> </td>
+            <td colspan="2">
+                <input type="text" name="ImePrezime" id="ImePrezime" placeholder="Ime i prezime" class="inputPopUp" value="<?php echo set_value('ImePrezime'); ?>"/>
+                <?php echo form_error('ImePrezime'); ?>
+            </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
           <tr>
             <td class="praznaCelijaPopUp"></td>
-            <td colspan="2"><input type="password" name="Sifra" id="Sifra" placeholder="Lozinka" class="inputPopUp" value="<?php echo set_value('Sifra'); ?>"/> </td>
+            <td colspan="2">
+                <input type="text" name="Email" id="Email" placeholder="E-mail adresa" class="inputPopUp" value="<?php echo set_value('Email'); ?>"/> 
+                <?php echo form_error('Email'); ?>
+            </td>
+            <td class="praznaCelijaPopUp">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="praznaCelijaPopUp">&nbsp;</td>
+            <td colspan="2">
+                <input type="text" name="EmailPotvrda" id="email4" placeholder="Potvrda e-mail adrese" class="inputPopUp" value="<?php echo set_value('EmailPotvrda'); ?>"/> 
+                <?php echo form_error('EmailPotvrda'); ?>
+            </td>
+            <td class="praznaCelijaPopUp">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="praznaCelijaPopUp"></td>
+            <td colspan="2">
+                <input type="password" name="Sifra" id="Sifra" placeholder="Lozinka" class="inputPopUp" value="<?php echo set_value('Sifra'); ?>"/> 
+                <?php echo form_error('password'); ?>
+            </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
           <tr>
             <td class="praznaCelijaPopUp"></td>       
-            <td colspan="2"><input type="password" name="con_password" id="con_password" placeholder="Potvrda lozinke" class="inputPopUp" value="<?php echo set_value('con_password'); ?>"/> </td>
+            <td colspan="2">
+                <input type="password" name="con_password" id="con_password" placeholder="Potvrda lozinke" class="inputPopUp" value="<?php echo set_value('con_password'); ?>"/>
+                <?php echo form_error('con_password'); ?>
+            </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
            <tr>
