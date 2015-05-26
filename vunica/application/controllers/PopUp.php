@@ -19,7 +19,8 @@ class PopUp extends CI_Controller {
 
         if ($this->form_validation->run() == TRUE) {
             $this->PopUp_model->dodaj_korisnika();
-            echo "uspesno ste se registrovali";
+            $date = array('slika' => '');
+            $this->load->view('PostavljanjeProizvoda',$date);
         } else
             echo"niste se registrovali";
     }
@@ -37,7 +38,8 @@ class PopUp extends CI_Controller {
     public function logout(){
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '' ;
         $this->PopUp_model->logout();
-        redirect($refering_url, 'refresh');
+        if ($refering_url == 'http://localhost/vunica.com/vunica/index.php/PopUp/registration') redirect('http://localhost/vunica.com/vunica/index.php/Pocetna' , 'refresh');
+        else redirect($refering_url, 'refresh');
     }
     
     public function zl(){      
