@@ -162,10 +162,10 @@
 
 #registracija{
 	width:22%;
-	height:60%;
+	//height:60%;
 	top:10%;
 	left:39%;
-	position:fixed;
+	position:absolute;//position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -175,8 +175,8 @@
 
 .naslovRegistracija{
 	width:100%;
-	height:5.8%;
-	font-size:2.25vh;
+	height:32px;//height:5.8%;
+	font-size:23px;//font-size:2.25vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	text-align:center;
 	color:#fffef4;
@@ -187,10 +187,24 @@
 
 .tabelaRegistracija{
 	width:100%;
-	height:94.2%;
-	font-size:1.75vh;
+	//height:94.2%;
+	font-size:17px;//font-size:1.75vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;	
+}
+
+.textRed{
+    height:35px; 
+}
+
+.inputRed{
+    height:60px; 
+}
+
+.error{
+    font-size: 14px;
+    height: 25px;
+    margin-top:4px;
 }
 
 /* komponente za obavestenje */
@@ -315,8 +329,8 @@
 	}
 	
 .slikaPopUp{
-	width:3vh;
-	height:3vh;
+	width:30px;//width:3vh;
+	height:30px;//height:3vh;
 	position:absolute;
 	right:0vh;
 	top:0vh;
