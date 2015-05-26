@@ -209,5 +209,12 @@ class Video extends CI_Controller {
         $this->session->unset_userdata('PCena');
         $this->session->set_userdata('Ostalo', "Cekirano");
     }
+    
+    public function komentar() {
+        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '' ;
+        $this->load->model('Video_model');
+        $this->Video_model->novikomentar();
+        redirect($refering_url, 'refresh');
+    }
 
 }
