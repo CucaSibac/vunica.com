@@ -13,8 +13,8 @@
                 echo $red->Naziv;
             }
             ?></title>
-    <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
-        
+        <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
+
 
         <style media="screen and (max-device-width: 1400px)">
 <?php include '/../CSS/Template (1366x768).css'; ?>
@@ -70,7 +70,131 @@ foreach ($podaci as $red) {
                         //alert('hide');
                     }
                 });
-            })
+            });
+<?php
+foreach ($podaci as $red) {
+    $user = $red->UserName;
+}
+$status = "Admin";
+?>
+
+
+
+            $(document).ready(function () {
+
+                //ovaj deo je za prijavu odnosno brisanje vide-a
+<?php if ($this->session->UserName != '' && $this->session->UserName == $user) { ?>
+                    $('#prijaviobrisi').html("Obrisi video");
+                    //$('#prijaviobrisi').click(obrisi); PREPRAVITI
+<?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
+                    $('#prijaviobrisi').html("Obrisi video");
+<?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
+                    //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
+<?php } else { ?>
+                    $('#prijaviobrisi').click(prikazi_registraciju);
+<?php } ?>
+            });
+            sessionStorage.setItem("Teska", "");
+            sessionStorage.setItem('Laka', "");
+            sessionStorage.setItem('Srednja', "");
+            sessionStorage.setItem('Teska', "");
+            sessionStorage.setItem('Garderoba', "");
+            sessionStorage.setItem('Dodaci', "");
+            sessionStorage.setItem('Igracke', "");
+            sessionStorage.setItem('Ostalo', "");
+            sessionStorage.setItem('Datum', "");
+            sessionStorage.setItem('Naziv', "");
+
+
+            sessionStorage.setItem('CenaOd', "");
+            sessionStorage.setItem('CenaDo', "");
+            sessionStorage.setItem('Vunica', "");
+            sessionStorage.setItem('Konci', "");
+            sessionStorage.setItem('Igle', "");
+            sessionStorage.setItem('MatOstalo', "");
+            sessionStorage.setItem('PGarderoba', "");
+            sessionStorage.setItem('PDodaci', "");
+            sessionStorage.setItem('PIgracke', "");
+            sessionStorage.setItem('POstalo', "");
+            sessionStorage.setItem('PDatum', "");
+            sessionStorage.setItem('PNaziv', "");
+            sessionStorage.setItem('PCena', "");
+
+
+
+
+            $(document).ready(function () {
+                $('#tezina').click(function () {
+                    $src = $.trim($('#tezina').html());
+
+
+                    if ($src === 'Laka') {
+                        sessionStorage.setItem("Laka", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall1"
+                        }).done(function () {
+                        });
+                    } else if ($src === 'Srednja') {
+                        sessionStorage.setItem("Srednja", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall2"
+                        }).done(function () {
+                        });
+                    } else if ($src === 'Teska') {
+                        sessionStorage.setItem("Teska", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall3"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                $('#kategorija').click(function () {
+                    $src = $.trim($('#kategorija').html());
+                    alert($src);
+
+                    if ($src === 'Garderoba') {
+                        sessionStorage.setItem("Garderoba", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall4"
+                        }).done(function () {
+                        });
+                    } else if ($src === 'Dodaci') {
+                        sessionStorage.setItem("Dodaci", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall5"
+                        }).done(function () {
+                        });
+                    } else if ($src === 'Igracke') {
+                        sessionStorage.setItem("Igracke", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall6"
+                        }).done(function () {
+                        });
+                    }
+                    else if ($src === 'Ostalo') {
+                        sessionStorage.setItem("Ostalo", "Cekirano");
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall7"
+                        }).done(function () {
+                        });
+                    }
+                });
+            });
+
+
+
+
+
         </script>
 
 
@@ -83,204 +207,228 @@ foreach ($podaci as $red) {
 
     <body onresize="izracunaj();" onmouseover="izracunaj();" onload="izracunaj()" id="body">
 
-         <?php
-		include("Header.php");
-		include("Obavestenje.php");
-		include("Prijava.php");
-		include("Registracija.php");
-		include("Zaboravljena lozinka.php");
-		include("Footer.php");
-	?>	
-        
+        <?php
+        include("Header.php");
+        include("Obavestenje.php");
+        include("Prijava.php");
+        include("Registracija.php");
+        include("Zaboravljena lozinka.php");
+        include("Footer.php");
+        ?>	
 
-    
 
-    <!-- Telo strane -->
-    <div id = "teloOkvir">
-        <table id = "telo">
-            <tr>
-                <td>
-                    <!-- InstanceBeginEditable name="Body" -->
-                    <br/> <br/> <br/> <br/> <br /><br />
 
-                    <!-- Slogan -->
-                    <div width = "60%" align = "center" height="30%">
-                        <font class = "naslovObican" style ="text-transform: uppercase;">
-                            <?php
-                            foreach ($podaci as $red) {
-                                ?>
+
+        <!-- Telo strane -->
+        <div id = "teloOkvir">
+            <table id = "telo">
+                <tr>
+                    <td>
+                        <!-- InstanceBeginEditable name="Body" -->
+                        <br/> <br/> <br/> <br/> <br /><br />
+
+                        <!-- Slogan -->
+                        <div width = "60%" align = "center" height="30%">
+                            <font class = "naslovObican" style ="text-transform: uppercase;">
                                 <?php
-                                echo $red->Naziv;
-                            }
-                            ?>
-                        </font>
-                    </div>
-                    <br />
-                    <table id="video" width="60%" align="center" border="0" cellspacing="10">
-                        <tr>
-                            <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="#" class="linkovi"><?php
-                                        foreach ($podaci as $red) {
-                                            ?>
-                                            <?php
-                                            echo $red->UserName;
-                                        }
-                                        ?></a></font>
-                            </td>
-                            <td width="50%" align="right"><font class="tekstObican">Datum: <a href="#" class="linkovi"><?php
-                                        foreach ($podaci as $red) {
-                                            ?>
-                                            <?php
-                                            echo $red->Datum;
-                                        }
-                                        ?></a></font>
-                            </td>
-                        </tr> 
-                        <tr>
-                            <td colspan="2" align="center"> <video width="100%" controls> <source src="http://localhost/Video/Omca.mp4" type="video/mp4"></video></td>
-                        </tr>  
-                        <tr>
-                            <td colspan="2" align="left"><font class="tekstObican" style="text-justify:auto">Kratak opis:</font></td>
-                        </tr>   
-                        <tr>
-                            <td colspan="2" align="left" style="text-align: justify;"><font class="tekstIskosen" style="text-align: justify;"><?php
-                                    foreach ($podaci as $red) {
-                                        ?>
-                                        <?php
-                                        echo $red->Opis;
-                                    }
-                                    ?></font></td>
-                        </tr>
-                        <tr>
-                            <td colspan="1" align="left">
-                                <br /><font class="tekstObican">Tezina: <a href="#" class="linkovi"><?php
-                                        foreach ($podaci as $red) {
-                                            ?>
-                                            <?php
-                                            echo $red->Tezina;
-                                        }
-                                        ?></a></font>
+                                foreach ($podaci as $red) {
+                                    ?>
+                                    <?php
+                                    echo $red->Naziv;
+                                }
+                                ?>
+                            </font>
+                        </div>
+                        <br />
+                        <!-- Kraj slogana -->
 
-                            </td><td align="right">
-                                <br /><font class="tekstObican">Kategorija: <a href="#" class="linkovi"><?php
-                                        foreach ($podaci as $red) {
-                                            ?>
-                                            <?php
-                                            echo $red->Kategorija;
-                                        }
-                                        ?></a></font>
-                            </td>
-                            <tr>     
-                                <tr>
-                                    <td colspan="2" align="right">
-
-
-                                        <a href="#" class="prijaviVideo" > Prijavi video </a>    
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" align="center">
-                                        <br /><textarea  maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify;" placeholder="Napisite komentar" class="tekstPoljeKomentar" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
-                                            <font class="preostalokaraktera">Preostalo karaktera: <font id="ostatak">400</font></font>
-
-                                            <tr>
-                                                <td align="center">  
-                                                    <a class="dugme" onclick="postavi()" > Postavi </a> 
-                                                </td>
-                                                <td align="center"> <a  class="dugme"  onclick="odustani()"> Odustani </a> 
-                                                </td>
-                                            </tr>
-
-                                            <?php
-                                            if (empty($latest_messages)) {
-                                                
-                                            } else {
+                        <table id="video" width="60%" align="center" border="0" cellspacing="10">
+                            <tr>
+                                <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="" class="linkovi"><?php
+                                            foreach ($podaci as $red) {
                                                 ?>
-                                                <tr  >
-                                                    <td colspan="2">
-                                                        <br />
-                                                        <br /><br />
-                                                        <table width = "100%" align = "center">
-                                                            <tr >
-                                                                <td width = "46%">
-                                                                    <hr width = "100%" class = "linija"/>
-                                                                </td>
-                                                                <td width = "8%" align="center">
-                                                                    <img src = "http://localhost/Slike/Linija/Ikonica.png" class = "ikonica">
-                                                                </td>
-                                                                <td width = "46%">
-                                                                    <hr width = "100%" class = "linija"/>
-                                                                </td>
-                                                            </tr>
-                                                        </table> 
+                                                <?php
+                                                echo $red->UserName;
+                                            }
+                                            ?></a></font>
+                                </td>
+                                <td width="50%" align="right"><font class="tekstObican">Datum: <a class="linkovi" style="cursor: default"><?php
+                                            foreach ($podaci as $red) {
+                                                ?>
+                                                <?php
+                                                echo $red->Datum;
+                                            }
+                                            ?></a></font>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td colspan="2" align="center"> <video width="100%" controls> <source src="http://localhost/Video/Omca.mp4" type="video/mp4"></video></td>
+                            </tr>  
+                            <tr>
+                                <td colspan="2" align="left"><font class="tekstObican" style="text-justify:auto">Kratak opis:</font></td>
+                            </tr>   
+                            <tr>
+                                <td colspan="2" align="left" style="text-align: justify;"><font class="tekstIskosen" style="text-align: justify;"><?php
+                                        foreach ($podaci as $red) {
+                                            ?>
+                                            <?php
+                                            echo $red->Opis;
+                                        }
+                                        ?></font></td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" align="left">
+                                    <br /><font class="tekstObican">Tezina: <a href="http://localhost/vunica.com/vunica/index.php/Strikarnica" id="tezina" class="linkovi"><?php
+                                            foreach ($podaci as $red) {
+                                                ?>
+                                                <?php
+                                                echo $red->Tezina;
+                                            }
+                                            ?></a></font>
+
+                                </td><td align="right">
+                                    <br /><font class="tekstObican">Kategorija: <a href="http://localhost/vunica.com/vunica/index.php/Strikarnica"i id="kategorija" class="linkovi"><?php
+                                            foreach ($podaci as $red) {
+                                                ?>
+                                                <?php
+                                                echo $red->Kategorija;
+                                            }
+                                            ?></a></font>
+                                </td>
+                                <tr>     
+                                    <tr>
+                                        <td colspan="2" align="right">
+
+
+                                            <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>    
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <br /><textarea  maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify;" placeholder="Napisite komentar" class="tekstPoljeKomentar" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
+                                                <font class="preostalokaraktera">Preostalo karaktera: <font id="ostatak">400</font></font>
+
+                                                <tr>
+                                                    <td align="center">  
+                                                        <a class="dugme" onclick="postavi()" > Postavi </a> 
                                                     </td>
-                                                </tr> 
-                                                <tr >
-                                                    <td colspan="2" align="center" >
-                                                        <div id="main_content">
-                                                               <br/>
-                                                            <?php
-                                                            foreach ($latest_messages as $message) {
-                                                                ?>
-
-
-                                                                <div class="view view-third" align="left" >  
-                                                                    <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
-                                                                    <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
-                                                                    <br /><br />
-                                                                    <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
-                                                                    <a href="#" class="prijaviKomentar">Prijavi komentar</a>
-                                                                </div>  <br /><br />
-
-    <?php } ?>
-
-
-                                                         
-                                                        </div>
-                                                        <hr width = "100%" class = "linija"/>
-                                                        <?php
-                                            if(count($latest_messages)==3){
-                                                                ?>
-                                                    <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
-                                                        <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
-                                                            <i >
-                                                                Ucitaj jos
-                                                            </i>
-                                                        </a>
-                                                    </div>
-                                            <?php } ?>
+                                                    <td align="center"> <a  class="dugme"  onclick="odustani()"> Odustani </a> 
                                                     </td>
                                                 </tr>
 
-<?php } ?>
-                                            
+                                                <?php
+                                                if (empty($latest_messages)) {
                                                     
-                                           
+                                                } else {
+                                                    ?>
+                                                    <tr  >
+                                                        <td colspan="2">
+                                                            <br />
+                                                            <br /><br />
+                                                            <table width = "100%" align = "center">
+                                                                <tr >
+                                                                    <td width = "46%">
+                                                                        <hr width = "100%" class = "linija"/>
+                                                                    </td>
+                                                                    <td width = "8%" align="center">
+                                                                        <img src = "http://localhost/Slike/Linija/Ikonica.png" class = "ikonica">
+                                                                    </td>
+                                                                    <td width = "46%">
+                                                                        <hr width = "100%" class = "linija"/>
+                                                                    </td>
+                                                                </tr>
+                                                            </table> 
+                                                        </td>
+                                                    </tr> 
+                                                <!--Komentari i ucitaj jos-->
+                                                    <tr >
+                                                        <td colspan="2" align="center" >
+                                                            <div id="main_content">
+                                                                <br/>
+                                                                <?php
+                                                                foreach ($latest_messages as $message) {
+                                                                    ?>
 
 
-                                            </table>
-                                            <br/>
+                                                                    <div class="view view-third" align="left" >  
+                                                                        <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
+                                                                        <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
+                                                                        <br /><br />
+                                                                        <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
+                                                                        <?php $userkom = $message->UserName; ?>
+                                                                        <script>
+
+        <?php if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
+                                                                            </script>
+                                                                            <a  class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                            <script>
+                                                                                //$('#prijaviobrisi').click(obrisi); PREPRAVITI
+        <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
+                                                                            </script>
+                                                                            <a  class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                            <script>
+        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
+                                                                            </script>
+                                                                            <a  class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                            <script>
+                                                                                //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
+        <?php } else { ?> //ako gost pristupa sajtu
+                                                                            </script>
+                                                                            <a onclick="prikazi_registraciju()" class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                            <script>
+        <?php } ?>
+
+                                                                            //< a  class = "prijaviKomentar" > Prijavi komentar < /a>
+
+                                                                        </script>
+                                                                    </div>  <br /><br />
+
+                                                                <?php } ?>
+
+
+                                                                <!--Donja linija i ucitaj jos-->
+                                                            </div>
+                                                            <hr width = "100%" class = "linija"/>
+                                                            <?php
+                                                            if (count($latest_messages) == 3) {
+                                                                ?>
+                                                                <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
+                                                                    <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
+                                                                        <i >
+                                                                            Ucitaj jos
+                                                                        </i>
+                                                                    </a>
+                                                                </div>
+                                                            <?php } ?>
+                                                            <!--Kraj donje linije i ucitaj jos-->
+                                                             
+                                                        </td>
+                                                    </tr>
+<!--Kraj komentara i ucitaj jos-->
+                                                <?php } ?>
 
 
 
 
-                                            </div>           
-                                            <br/> <br/> <br/> <br/>  
+                                                </table>
+                                                <br/><br/> <br/> <br/> <br/>        
+                                                
+                                        </td>
+                                    </tr>
+                                    </table>
+                                    </div>
 
-                                            <!-- InstanceEndEditable -->
-                                    </td>
-                                </tr>
-                                </table>
-                                </div>
+                                    <!--Kraj tela strane-->
 
 
- 
 
-                                
 
-                                </body>
-
-                                <!-- InstanceEnd -->
-                                </html>
+                                    </body>
+                                    <!-- InstanceEnd -->
+                                    </html>
 
 
