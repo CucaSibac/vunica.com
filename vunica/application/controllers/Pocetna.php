@@ -20,15 +20,16 @@ class Pocetna extends CI_Controller {
         
         // Dohvate date podatke iz baze
         $this->podaci['Prijave'] = $this->dohvatiPrijave();
-        $this->podaci['Korisnici'] = $this->dohvatiPrijave();
-        $this->podaci['Videi'] = $this->dohvatiPrijave();
-        $this->podaci['Proizvodi'] = $this->dohvatiPrijave();
+        $this->podaci['Korisnici'] = $this->dohvatiKorisnike();
+        $this->podaci['Videi'] = $this->dohvatiVidee();
+        $this->podaci['Proizvodi'] = $this->dohvatiProizvode();
         
         $this->load->view('Pocetna', $this->podaci);
     }
     
     protected function dohvatiPrijave(){
-        return NULL;
+        $this->load->model('Prijave');
+        return $this->Prijave->ucitavanjePrijava();
     }
     
     protected function dohvatiKorisnike(){
@@ -43,5 +44,18 @@ class Pocetna extends CI_Controller {
         return NULL;
     }
     
+    /* Funkcije koje sluze za manipulisanje prijavama */
+    
+    public function ucitajPrijave(){
+        
+    }
+
+    public function pogledajMaterijal(){
+        
+    }
+    
+    public function obrisiPrijavu(){
+        
+    }
 }
 

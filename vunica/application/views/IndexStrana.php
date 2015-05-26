@@ -82,9 +82,22 @@
                           <font size = "+3"> vunica.com </font>
                       </td>
                       <td class = "stavka" align = "center" valign = "middle">
-                        <font onclick = "prikazi_prijavu()"> Prijava </font>
-                        <font> / </font>
-                        <font onclick = "prikazi_registraciju()"> Registracija </font>
+                        <?php if($this->session->UserName != ''){ ?>
+                            <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil', '_parent')">
+                            <?php echo $this->session->UserName; ?>
+                            </font>
+                            /
+                            <?php 
+                            $attributes = array('id' => 'formaOdjava');
+                            echo form_open("PopUp/logout", $attributes); 
+                            ?>
+                            <input id = "odjava" type = "submit" value = "Odjava"/>
+                            <?php echo form_close();?>
+                        <?php }else{ ?>
+                            <font onclick = "prikazi_prijavu()"> Prijava </font>
+                            <font> / </font>
+                            <font onclick = "prikazi_registraciju()"> Registracija </font>
+                        <?php } ?>
                       </td>
                   </tr>
                 </table>     
