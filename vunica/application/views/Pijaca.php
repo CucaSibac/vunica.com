@@ -635,6 +635,7 @@
         include("Registracija.php");
         include("Zaboravljena lozinka.php");
         include("Footer.php");
+        include("Upozorenje.php");
         ?>	
 
 
