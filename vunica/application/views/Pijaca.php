@@ -73,6 +73,7 @@
             $(document).ready(function () {
                 $('#manji').change(function () {
                     $src1 = $("#manji").attr("value");
+               
                     var value = $("#manji").val();
                     if ($src1 !== "") {
                         sessionStorage.setItem("CenaOd", $src1);
@@ -96,16 +97,19 @@
             });
             $(document).ready(function () {
                 $sId = sessionStorage.CenaOd;
-                if ($sId !== "") {
+                
+               if( $sId !== undefined && $sId !==""){
                     $('#manji').attr("value", $sId);
-                    $('#box').attr("class", "show");
-                }
+                   $('#box').attr("class", "show");
+        }
+                
             });
             
             //Ovo je kod za pretragu za cenu do
             $(document).ready(function () {
                 $('#veci').change(function () {
                     $src1 = $("#veci").attr("value");
+               
                     var value = $("#veci").val();
                     if ($src1 !== "") {
                         sessionStorage.setItem("CenaDo", $src1);
@@ -129,7 +133,8 @@
             });
             $(document).ready(function () {
                 $sId = sessionStorage.CenaDo;
-                if ($sId !== "") {
+               
+                if ($sId !== undefined && $sId !=="") {
                     $('#veci').attr("value", $sId);
                     $('#box').attr("class", "show");
                 }
@@ -673,7 +678,7 @@
                                         </td>
                                         <td width="90%" colspan="2">
                                             <font class="tekstObican">
-                                                Do:&nbsp;<input id="veci" type="text" size="4" min="0" onchange="uslovMax();" class="tekstPoljecena"/>&nbsp;€
+                                                Do:&nbsp;<input id="veci" type="text" size="4" min="0" onchange="uslovMax();" class="tekstPoljecena" />&nbsp;€
                                             </font>
                                         </td>
                                     </tr>

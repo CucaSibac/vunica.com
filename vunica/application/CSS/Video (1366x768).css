@@ -152,6 +152,7 @@
 	font-size:16px;
 	text-decoration:none;
 	font-weight:600;
+        cursor: pointer;
 	}
 .prijaviKomentar{
 	display: inline-block;
@@ -162,6 +163,7 @@
 	bottom:0;
 	right:0;
 	font-size:12px;
+         cursor: pointer;
 }
 
 .komentarDatum {
@@ -180,7 +182,7 @@
     text-decoration: none;
     color: #605951;
     text-transform: uppercase;
-
+    cursor: pointer;
 	font-size:16px;
 }
 
