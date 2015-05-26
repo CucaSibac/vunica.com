@@ -23,8 +23,10 @@ class PopUp extends CI_Controller {
             $this->load->view('PostavljanjeProizvoda',$date);
         } else           
             //header("location:javascript://history.go(-1)");
-            echo validation_errors();
-            echo "<a href='javascript:history.go(-1);javascript:prikazi_registraciju();' class='dugme'>Vrati se nazad</a>";
+            //echo validation_errors();
+            $date = array('slika' => '');
+            $this->load->view('PostavljanjeProizvoda',$date);
+            //echo "<a href='javascript:history.go(-1);javascript:prikazi_registraciju();' class='dugme'>Vrati se nazad</a>";
     }
 
     public function login() {
