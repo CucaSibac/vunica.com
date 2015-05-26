@@ -42,4 +42,11 @@ class Obrisi extends CI_Controller {
         $this->Obrisi_model->obrisiProizvod($vrednost);
         redirect($refering_url, 'refresh');
     }
+    
+    public function obrisiKorisnika($vrednost) {
+        $refering_url = 'http://localhost/vunica.com/vunica/index.php/pocetna';
+        $this->load->model('Obrisi_model');
+        $this->Obrisi_model->obrisiKorisnika($vrednost);
+        redirect($refering_url, 'refresh');
+    }
 }

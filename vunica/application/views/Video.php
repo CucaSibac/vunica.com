@@ -206,6 +206,7 @@ $usersession = $this->session->userdata('UserName');
         include("Registracija.php");
         include("Zaboravljena lozinka.php");
         include("Footer.php");
+        include("Upozorenje.php");
         ?>	
 
 
@@ -293,11 +294,14 @@ $usersession = $this->session->userdata('UserName');
 
 
                                            
-                                            <?php if ($this->session->UserName != '' && $this->session->UserName == $user) { ?>
-                                            <a  id="prijaviobrisi" href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/<?php echo $idVideo; ?>" class="prijaviVideo" > Obrisi video </a>   
+                                            <?php
+                                            
+                                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$idVideo" ;
+                                            if ($this->session->UserName != '' && $this->session->UserName == $user) { ?>
+                                            <a  id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi video </a>   
                                                 
                                             <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
-                                                 <a onclick="" id="prijaviobrisi" href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/<?php echo $idVideo; ?>" class="prijaviVideo" > Obrisi video </a>   
+                                                 <a onclick="" id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi video </a>   
                                             <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
                                                <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
                                             <?php } else { ?>
@@ -390,14 +394,16 @@ if (empty($latest_messages)) {
         <?php $userkom = $message->UserName; ?>
                                                             <script>
 
-                                                            <?php if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
+                                                            <?php 
+                                                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/$message->IDKomentar" ;
+                                                            if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
                                                                 </script>
-                                                                <a href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/<?php echo $message->IDKomentar; ?>" class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
                                                                 <script>
                                                                   
         <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
                                                                 </script>
-                                                                <a href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/<?php echo $idkomentar ?>" class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
                                                                 <script>
         <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
                                                                 </script>
