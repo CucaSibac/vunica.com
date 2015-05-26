@@ -54,7 +54,7 @@
     overflow: hidden;
     position: relative;
     text-align: center;
-    box-shadow: 1px 1px 1px 1px #e6e6e6;
+    box-shadow: 1px 1px 2px 2px #e6e6e6;
     cursor: default;
     background-color:#fffef4;
 }
