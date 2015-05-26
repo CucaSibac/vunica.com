@@ -34,4 +34,15 @@ class Video_model extends CI_Model {
 	return $query;
     }
     
+    
+    function novikomentar() {
+        $data = array (
+            'UserName' => ($this->input->post('UserName')),
+                    'Datum' => (date("Y.m.d")),
+                    'Vreme' => (date("H:i:s")),
+                    'Tekst' => ($this->input->post('Tekst')),
+                    'IDVideo' => ($this->input->post('IDVideo'))
+    );
+        $this->db->insert('komentarvideo', $data);
+    }
 }

@@ -33,22 +33,30 @@
                 <td width = "100%">
                     <font class = "tekstObican"> Prijave: </font>
                     <a href = "#Prijave" class = "link">
-                        <font class="tekstIskosen"> 3 </font>
+                        <font class="tekstIskosen">
+                            <?php echo count($Prijave); ?>
+                        </font>
                     </a>
                     <br/>
                     <font class = "tekstObican"> Korisnike: </font>
                     <a href = "#Korisnici" class = "link">
-                        <font class="tekstIskosen"> 2 </font>
+                        <font class="tekstIskosen">
+                            <?php echo count($Korisnici); ?>
+                        </font>
                     </a>
                     <br/>
                     <font class = "tekstObican"> Videe: </font>
                     <a href = "#Videi" class = "link">
-                        <font class="tekstIskosen"> 5 </font>
+                        <font class="tekstIskosen"> 
+                            <?php echo count($Videi); ?>
+                        </font>
                     </a>
                     <br/>
                     <font class = "tekstObican"> Proizvode: </font>
                     <a href = "#Proizvodi" class = "link">
-                        <font class="tekstIskosen"> 4</font>
+                        <font class="tekstIskosen"> 
+                            <?php echo count($Proizvodi); ?>
+                        </font>
                     </a>
                 </td>
             </tr>
@@ -90,8 +98,13 @@
         </td>
       </tr>
       
-      <?php if(1){include 'PocetnaPrijave.php';}
-            else{
+      <?php 
+        if($Prijave != NULL){       
+          foreach($Prijave as $red){
+              include 'PocetnaPrijave.php';
+          }
+        }
+        else{
       ?>
       
       <tr>
@@ -105,9 +118,14 @@
       <?php } ?>
 
       <tr>
-            <td colspan = "2" width = "100%" align = "center">
+        <td colspan = "2" width = "100%" align = "center">
             <br/> <br/>
-            <a class = "dugme"> Ucitaj starije </a>
+            <?php 
+                //$attributes = array('id' => 'formaProfilEditovanje');
+                echo form_open("Pocetna/ucitajPrijave"); 
+            ?>
+            <input type = "submit" class = "dugme" value = "Ucitaj starije"/>
+            <?php echo form_close(); ?>
             <br/> <br/> <br/>
         </td>
       </tr>

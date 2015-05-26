@@ -685,7 +685,19 @@
 
                                 <td  align = "center" >
                                     <br/>
-                                    <a href="http://localhost/vunica.com/vunica/index.php/PostavljanjeVidea" style="text-decoration: none;  "><div class="dodajproizvod"  >  
+                                    <script>
+                                                    <?php
+                                                    if ($this->session->UserName != '' ) { ?>//ako je korisnik prijavljen
+                                                                </script>
+                                                                <a href="http://localhost/vunica.com/vunica/index.php/PostavljanjeVidea" style="text-decoration: none;  "> 
+                                                                <script>
+                                                                  
+        <?php } else { ?> //ako gost pristupa sajtu
+                                                                </script>
+                                                                <a onclick="prikazi_registraciju()" style="text-decoration: none;  " > 
+                                                                <script>
+        <?php } ?> </script>                   
+                                    <div class="dodajproizvod"  >  
 
                                             <p style="text-align: center">  Dodaj video</p>
                                         </div> </a><div class="mask"> </div>

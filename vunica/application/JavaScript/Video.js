@@ -14,14 +14,7 @@ function odustani() {
 	document.getElementById("ostatak").innerHTML = "400";
 }
 //upozorenje ukoliko smo nesto napisali u prostoru za komentar, a komentar nismo objavili pre napustanja stranice
-window.onbeforeunload = function(event) {
-			
-			if (hasData()) {
-				return "Niste objavili svoj komentar!"; // Very important
-			
-			}
-		}
-		
+
 function hasData() {
 			var someThing = document.getElementById("limitedtextarea");
 			

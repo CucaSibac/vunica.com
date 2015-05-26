@@ -74,26 +74,18 @@ foreach ($podaci as $red) {
 <?php
 foreach ($podaci as $red) {
     $user = $red->UserName;
+    $idVideo = $red->IDVideo;
 }
 $status = "Admin";
+$usersession = $this->session->userdata('UserName');
 ?>
 
 
 
-            $(document).ready(function () {
 
-                //ovaj deo je za prijavu odnosno brisanje vide-a
-<?php if ($this->session->UserName != '' && $this->session->UserName == $user) { ?>
-                    $('#prijaviobrisi').html("Obrisi video");
-                    //$('#prijaviobrisi').click(obrisi); PREPRAVITI
-<?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
-                    $('#prijaviobrisi').html("Obrisi video");
-<?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
-                    //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
-<?php } else { ?>
-                    $('#prijaviobrisi').click(prikazi_registraciju);
-<?php } ?>
-            });
+
+
+
             sessionStorage.setItem("Teska", "");
             sessionStorage.setItem('Laka', "");
             sessionStorage.setItem('Srednja', "");
@@ -156,7 +148,7 @@ $status = "Admin";
             $(document).ready(function () {
                 $('#kategorija').click(function () {
                     $src = $.trim($('#kategorija').html());
-                    alert($src);
+
 
                     if ($src === 'Garderoba') {
                         sessionStorage.setItem("Garderoba", "Cekirano");
@@ -245,8 +237,8 @@ $status = "Admin";
                         <table id="video" width="60%" align="center" border="0" cellspacing="10">
                             <tr>
                                 <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="" class="linkovi"><?php
-                                            foreach ($podaci as $red) {
-                                                ?>
+                                foreach ($podaci as $red) {
+                                    ?>
                                                 <?php
                                                 echo $red->UserName;
                                             }
@@ -269,8 +261,8 @@ $status = "Admin";
                             </tr>   
                             <tr>
                                 <td colspan="2" align="left" style="text-align: justify;"><font class="tekstIskosen" style="text-align: justify;"><?php
-                                        foreach ($podaci as $red) {
-                                            ?>
+                                            foreach ($podaci as $red) {
+                                                ?>
                                             <?php
                                             echo $red->Opis;
                                         }
@@ -279,8 +271,8 @@ $status = "Admin";
                             <tr>
                                 <td colspan="1" align="left">
                                     <br /><font class="tekstObican">Tezina: <a href="http://localhost/vunica.com/vunica/index.php/Strikarnica" id="tezina" class="linkovi"><?php
-                                            foreach ($podaci as $red) {
-                                                ?>
+                                        foreach ($podaci as $red) {
+                                            ?>
                                                 <?php
                                                 echo $red->Tezina;
                                             }
@@ -300,135 +292,169 @@ $status = "Admin";
                                         <td colspan="2" align="right">
 
 
-                                            <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>    
+                                           
+                                            <?php if ($this->session->UserName != '' && $this->session->UserName == $user) { ?>
+                                            <a  id="prijaviobrisi" href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/<?php echo $idVideo; ?>" class="prijaviVideo" > Obrisi video </a>   
+                                                
+                                            <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
+                                                 <a onclick="" id="prijaviobrisi" href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/<?php echo $idVideo; ?>" class="prijaviVideo" > Obrisi video </a>   
+                                            <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
+                                               <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
+                                            <?php } else { ?>
+                                              <a onclick="prikazi_registraciju()" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
+                                            <?php } ?>
+
+                                          
 
                                         </td>
                                     </tr>
 
 
 
+                                    <!-- PISANJE KOMENTARA-->
+                                    <?php
+                                    $attributes = array('id' => 'formaKomentarVideo', 'UserName' => $user, 'IDVideo' => $idVideo);
+                                    echo form_open("Video/komentar", $attributes);
+                                    ?>
                                     <tr>
                                         <td colspan="2" align="center">
-                                            <br /><textarea  maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify;" placeholder="Napisite komentar" class="tekstPoljeKomentar" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
+                                            <br /><textarea  value="<?php echo set_value('Tekst'); ?>" name="Tekst" maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify;" placeholder="Napisite komentar" class="tekstPoljeKomentar" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
                                                 <font class="preostalokaraktera">Preostalo karaktera: <font id="ostatak">400</font></font>
 
                                                 <tr>
                                                     <td align="center">  
-                                                        <a class="dugme" onclick="postavi()" > Postavi </a> 
-                                                    </td>
+
+
+                                                        <script>
+<?php if ($this->session->UserName != '') { ?>//ako je korisnik prijavljen
+                                                            </script>
+                                                            <a  class = "dugme" onclick="document.forms['formaKomentarVideo'].submit()" > Postavi </a> 
+                                                            <script>
+
+<?php } else { ?> //ako gost pristupa sajtu
+                                                            </script>
+                                                            <a onclick="prikazi_registraciju()" class = "dugme" > Postavi </a>
+                                                            <script>
+<?php } ?></script>                             </td>
                                                     <td align="center"> <a  class="dugme"  onclick="odustani()"> Odustani </a> 
                                                     </td>
                                                 </tr>
-
-                                                <?php
-                                                if (empty($latest_messages)) {
-                                                    
-                                                } else {
-                                                    ?>
-                                                    <tr  >
-                                                        <td colspan="2">
-                                                            <br />
-                                                            <br /><br />
-                                                            <table width = "100%" align = "center">
-                                                                <tr >
-                                                                    <td width = "46%">
-                                                                        <hr width = "100%" class = "linija"/>
-                                                                    </td>
-                                                                    <td width = "8%" align="center">
-                                                                        <img src = "http://localhost/Slike/Linija/Ikonica.png" class = "ikonica">
-                                                                    </td>
-                                                                    <td width = "46%">
-                                                                        <hr width = "100%" class = "linija"/>
-                                                                    </td>
-                                                                </tr>
-                                                            </table> 
-                                                        </td>
-                                                    </tr> 
-                                                <!--Komentari i ucitaj jos-->
-                                                    <tr >
-                                                        <td colspan="2" align="center" >
-                                                            <div id="main_content">
-                                                                <br/>
-                                                                <?php
-                                                                foreach ($latest_messages as $message) {
-                                                                    ?>
-
-
-                                                                    <div class="view view-third" align="left" >  
-                                                                        <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
-                                                                        <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
-                                                                        <br /><br />
-                                                                        <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
-                                                                        <?php $userkom = $message->UserName; ?>
-                                                                        <script>
-
-        <?php if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
-                                                                            </script>
-                                                                            <a  class = "prijaviKomentar" > Obrisi komentar </a>
-                                                                            <script>
-                                                                                //$('#prijaviobrisi').click(obrisi); PREPRAVITI
-        <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
-                                                                            </script>
-                                                                            <a  class = "prijaviKomentar" > Obrisi komentar </a>
-                                                                            <script>
-        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
-                                                                            </script>
-                                                                            <a  class = "prijaviKomentar" > Prijavi komentar </a>
-                                                                            <script>
-                                                                                //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
-        <?php } else { ?> //ako gost pristupa sajtu
-                                                                            </script>
-                                                                            <a onclick="prikazi_registraciju()" class = "prijaviKomentar" > Prijavi komentar </a>
-                                                                            <script>
-        <?php } ?>
-
-                                                                            //< a  class = "prijaviKomentar" > Prijavi komentar < /a>
-
-                                                                        </script>
-                                                                    </div>  <br /><br />
-
-                                                                <?php } ?>
-
-
-                                                                <!--Donja linija i ucitaj jos-->
-                                                            </div>
-                                                            <hr width = "100%" class = "linija"/>
-                                                            <?php
-                                                            if (count($latest_messages) == 3) {
-                                                                ?>
-                                                                <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
-                                                                    <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
-                                                                        <i >
-                                                                            Ucitaj jos
-                                                                        </i>
-                                                                    </a>
-                                                                </div>
-                                                            <?php } ?>
-                                                            <!--Kraj donje linije i ucitaj jos-->
-                                                             
-                                                        </td>
-                                                    </tr>
-<!--Kraj komentara i ucitaj jos-->
-                                                <?php } ?>
-
-
-
-
-                                                </table>
-                                                <br/><br/> <br/> <br/> <br/>        
-                                                
+                                                <input type="hidden" name="UserName" id="UserName"  value="<?php echo $usersession ?>"/>
+                                                <input type="hidden" name="IDVideo" id="IDVideo"  value="<?php echo $idVideo ?>"/>
                                         </td>
                                     </tr>
+                                    <!-- KRAJ PISANJA KOEMNTARA-->
+
+
+
+<?php
+if (empty($latest_messages)) {
+    
+} else {
+    ?>
+                                        <tr  >
+                                            <td colspan="2">
+                                                <br />
+                                                <br /><br />
+                                                <table width = "100%" align = "center">
+                                                    <tr >
+                                                        <td width = "46%">
+                                                            <hr width = "100%" class = "linija"/>
+                                                        </td>
+                                                        <td width = "8%" align="center">
+                                                            <img src = "http://localhost/Slike/Linija/Ikonica.png" class = "ikonica">
+                                                        </td>
+                                                        <td width = "46%">
+                                                            <hr width = "100%" class = "linija"/>
+                                                        </td>
+                                                    </tr>
+                                                </table> 
+                                            </td>
+                                        </tr> 
+                                        <!--Komentari i ucitaj jos-->
+                                        <tr >
+                                            <td colspan="2" align="center" >
+                                                <div id="main_content">
+                                                    <br/>
+    <?php
+    foreach ($latest_messages as $message) {
+        $idkomentar = $message->IDKomentar;
+        ?>
+
+
+                                                        <div class="view view-third" align="left" >  
+                                                            <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
+                                                            <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
+                                                            <br /><br />
+                                                            <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
+        <?php $userkom = $message->UserName; ?>
+                                                            <script>
+
+                                                            <?php if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
+                                                                </script>
+                                                                <a href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/<?php echo $message->IDKomentar; ?>" class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                <script>
+                                                                  
+        <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
+                                                                </script>
+                                                                <a href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/<?php echo $idkomentar ?>" class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                <script>
+        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
+                                                                </script>
+                                                                <a  class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                <script>
+                                                                    //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
+        <?php } else { ?> //ako gost pristupa sajtu
+                                                                </script>
+                                                                <a onclick="prikazi_registraciju()" class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                <script>
+        <?php } ?>
+
+                                                                //< a  class = "prijaviKomentar" > Prijavi komentar < /a>
+
+                                                            </script>
+                                                        </div>  <br /><br />
+
+    <?php } ?>
+
+
+                                                    <!--Donja linija i ucitaj jos-->
+                                                </div>
+                                                <hr width = "100%" class = "linija"/>
+    <?php
+    if (count($latest_messages) == 3) {
+        ?>
+                                                    <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
+                                                        <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
+                                                            <i >
+                                                                Ucitaj jos
+                                                            </i>
+                                                        </a>
+                                                    </div>
+    <?php } ?>
+                                                <!--Kraj donje linije i ucitaj jos-->
+
+                                            </td>
+                                        </tr>
+                                        <!--Kraj komentara i ucitaj jos-->
+<?php } ?>
+
+
+
+
                                     </table>
-                                    </div>
+                                    <br/><br/> <br/> <br/> <br/>        
 
-                                    <!--Kraj tela strane-->
+                                    </td>
+                                </tr>
+                        </table>
+                        </div>
+
+                        <!--Kraj tela strane-->
 
 
-
-
-                                    </body>
-                                    <!-- InstanceEnd -->
-                                    </html>
+                        </body>
+                        <!-- InstanceEnd -->
+                        </html>
 
 

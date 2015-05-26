@@ -20,6 +20,7 @@
 <?php include '/../CSS/Paragraf (1366x768).css'; ?>
 <?php include '/../CSS/Pretraga (1366x768).css'; ?>
 <?php include '/../CSS/Pijaca (1366x768).css'; ?>
+<?php include '/../CSS/Profil - Editovanje (1366x768).css'; ?>
         </style>
         <!--Kraj ucitavanja css za rezoluciju (1920x1080)-->
 
@@ -33,6 +34,7 @@
 <?php include '/../CSS/Dugme (1920x1080).css'; ?>
 <?php include '/../CSS/Pretraga (1920x1080).css'; ?>
 <?php include '/../CSS/Pijaca (1920x1080).css'; ?>
+<?php include '/../CSS/Profil - Editovanje (1920x1080).css'; ?>
         </style>
         <!--Kraj ucitavanja css za rezoluciju (1920x1080)-->
 
@@ -68,22 +70,22 @@
                     }
                 });
             });
-            
+
             //Ovo je kod za pretragu za cenu od
             $(document).ready(function () {
                 $('#manji').change(function () {
                     $src1 = $("#manji").attr("value");
-               
+
                     var value = $("#manji").val();
                     if ($src1 !== "") {
                         sessionStorage.setItem("CenaOd", $src1);
                         $.ajax({
                             type: "POST",
-                            data: {'value' : value},
+                            data: {'value': value},
                             url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsCod"
-                            
 
-            }).done(function () {
+
+                        }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("CenaOd", "");
@@ -97,29 +99,29 @@
             });
             $(document).ready(function () {
                 $sId = sessionStorage.CenaOd;
-                
-               if( $sId !== undefined && $sId !==""){
+
+                if ($sId !== undefined && $sId !== "") {
                     $('#manji').attr("value", $sId);
-                   $('#box').attr("class", "show");
-        }
-                
+                    $('#box').attr("class", "show");
+                }
+
             });
-            
+
             //Ovo je kod za pretragu za cenu do
             $(document).ready(function () {
                 $('#veci').change(function () {
                     $src1 = $("#veci").attr("value");
-               
+
                     var value = $("#veci").val();
                     if ($src1 !== "") {
                         sessionStorage.setItem("CenaDo", $src1);
                         $.ajax({
                             type: "POST",
-                            data: {'value' : value},
+                            data: {'value': value},
                             url: "http://localhost/vunica.com/vunica/index.php/Pijaca/sessionsCdo"
-                            
 
-            }).done(function () {
+
+                        }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("CenaDo", "");
@@ -133,18 +135,18 @@
             });
             $(document).ready(function () {
                 $sId = sessionStorage.CenaDo;
-               
-                if ($sId !== undefined && $sId !=="") {
+
+                if ($sId !== undefined && $sId !== "") {
                     $('#veci').attr("value", $sId);
                     $('#box').attr("class", "show");
                 }
             });
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
             //Ovo je kod za pretragu za materijal vunica
             $(document).ready(function () {
                 $('#Opcija1').click(function () {
@@ -173,7 +175,7 @@
                     $('#box').attr("class", "show");
                 }
             });
-            
+
             //Ovo je kod za pretragu za materijal konci
             $(document).ready(function () {
                 $('#Opcija2').click(function () {
@@ -232,7 +234,7 @@
                     $('#box').attr("class", "show");
                 }
             });
-            
+
             //Ovo je kod za pretragu za materijal ostalo iz materijala
             $(document).ready(function () {
                 $('#Opcija4').click(function () {
@@ -261,8 +263,8 @@
                     $('#box').attr("class", "show");
                 }
             });
-            
-            
+
+
             //Ovo je kod za pretragu za Garderobu 
             $(document).ready(function () {
                 $('#Opcija5').click(function () {
@@ -291,8 +293,8 @@
                     $('#box').attr("class", "show");
                 }
             });
-            
-            
+
+
             //Ovo je kod za pretragu za dodatke 
             $(document).ready(function () {
                 $('#Opcija6').click(function () {
@@ -351,9 +353,9 @@
                     $('#box').attr("class", "show");
                 }
             });
-            
-            
-            
+
+
+
             //Ovo je kod za pretragu za ostalo iz gotovih proizvoda 
             $(document).ready(function () {
                 $('#Opcija8').click(function () {
@@ -382,14 +384,14 @@
                     $('#box').attr("class", "show");
                 }
             });
-            
-            
-            
+
+
+
             //Ovo je za opciju sortiranja po datumu.
             $(document).ready(function () {
                 $('#id1').click(function () {
                     $src1 = $("#i1").html();
-                    
+
                     if ($src1 === "Datum") {
                         sessionStorage.setItem("Datum", "Najnovije");
                         sessionStorage.setItem("Naziv", "");
@@ -448,27 +450,27 @@
                     $('#id1').attr("class", "active");
                     $('#i1').html("Najnovije");
 
-                  
+
                 } else if ($sId === "Najstarije") {
                     $('#id1').attr("class", "dblclick");
                     $('#i1').html("Najstarije");
 
-                    
+
                 } else {
                     $('#id1').attr("class", "btn");
                     $('#i1').html("Datum");
 
-                    
+
 
                 }
             });
-        
-        
-        //Ovo je za opciju sortiranja po nazivu.
+
+
+            //Ovo je za opciju sortiranja po nazivu.
             $(document).ready(function () {
                 $('#id2').click(function () {
                     $src1 = $("#i2").html();
-                    
+
                     if ($src1 === "Naziv") {
                         sessionStorage.setItem("Datum", "");
                         sessionStorage.setItem("Naziv", "A-Z");
@@ -527,23 +529,23 @@
                     $('#id2').attr("class", "active");
                     $('#i2').html("A-Z");
 
-                  
+
                 } else if ($sId === "Z-A") {
                     $('#id2').attr("class", "dblclick");
                     $('#i2').html("Z-A");
 
-                    
+
                 } else {
                     $('#id2').attr("class", "btn");
                     $('#i2').html("Naziv");
                 }
             });
-            
+
             //Ovo je za opciju sortiranja po ceni.
             $(document).ready(function () {
                 $('#id3').click(function () {
                     $src1 = $("#i3").html();
-                    
+
                     if ($src1 === "Cena") {
                         sessionStorage.setItem("Datum", "");
                         sessionStorage.setItem("Naziv", "");
@@ -602,20 +604,20 @@
                     $('#id3').attr("class", "active");
                     $('#i3').html("Najvisa");
 
-                  
+
                 } else if ($sId === "Najniza") {
                     $('#id3').attr("class", "dblclick");
                     $('#i3').html("Najniza");
 
-                    
+
                 } else {
                     $('#id3').attr("class", "btn");
                     $('#i3').html("Cena");
                 }
             });
- 
- 
-            </script>
+
+
+        </script>
         <!-- OVO JE KRAJ ZA DUGME UCITAJ JOS!!-->
 
 
@@ -844,7 +846,7 @@
                                                 </li>
                                             </ul>
                                             </div> 
-                                           
+
 
 
                                             <ul id="tab">
@@ -859,10 +861,70 @@
                                         <!-- Kraj pretrage -->
 
 
+                                        <tr>
+                                            <td>
+                                                <?php
+                                                $status = 0;
+                                                if (strcmp($this->session->Status, 'Admin') == 0) {
+                                                    $status = 1;
+                                                } else {
+                                                    if (strcmp($this->session->Status, 'Pletilja') == 0) {
+                                                        $status = 2;
+                                                    } else {
+                                                        if (strcmp($this->session->Status, 'Klupko') == 0) {
+                                                            $status = 3;
+                                                        }
+                                                    }
+                                                }
+                                                ?>
+
+                                                <!-- Baner -->
+
+<?php if ($status == 3) { ?>
+
+                                                    <br/> <br/>
+
+                                                    <table id = "banerPolje" align = "center">
+                                                        <tr>
+                                                            <td width = "50%" align = "left" style = "padding-left:8%;">
+                                                                <font color = "#fffef4" size="6">
+                                                                    Postanite PREMIUM
+                                                                </font>
+                                                                <br/> <br/>
+                                                                <font class = "banerTekst">
+                                                                    Specijalna ponuda!
+                                                                </font>
+                                                            </td>
+                                                            <td width = "50%" align = "left" style = "padding-left:25%;">
+                                                                <font class = "banerTekst" style = "text-decoration:line-through;">
+                                                                    199€ 
+                                                                </font>
+                                                                <font class = "banerTekst" >
+                                                                    =>19€
+                                                                </font>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <br/> <br/>
+
+<?php } else {?>
+    <br/> <br/> <br/> <?php
+}
+?>
+
+                                            </td>
+
+                                        </tr>
+
+
+
+
+
                                         <!-- Slogan -->                    
                                         <tr>
                                             <td>
-                                                <br/> <br/> <br/> <br/>
+                                                
 
 
                                                 <div width = 100% align = "center">
@@ -916,7 +978,7 @@
                                                 <br />
                                                 <br />
 
-                                                
+
                                             </td>
                                         </tr>
                                         <!-- Kraj sorta -->
@@ -960,122 +1022,150 @@
 
                                                         <td  align = "center" >
                                                             <br/>
-                                                            <a href="http://localhost/vunica.com/vunica/index.php/PostavljanjeProizvoda" style="text-decoration: none;  "><div class="dodajproizvod"  >  
 
-                                                                    <p style="text-align: center">  Dodaj proizvod</p>
-                                                                </div> </a><div class="mask"> </div>
-                                                            <br/>
-                                                        </td>
-                                                    </tr>
-                                                    <!--Kraj dodaj proizvod-->
-                                                    <tr>
-                                                        <td>
-                                                            <div id="main_content" >
+                                                            <script>
 
-                                                                <?php
-                                                                $brojac = 0;
-                                                                foreach ($latest_proizvod as $proizvod) {
-                                                                    if ($brojac % 2 == 0) {
-                                                                        ?>
-                                                                        <!--levi proizvod u td-u-->
+<?php
+$status = $this->session->userdata('Status');
+if ($this->session->UserName != '' && $status !== "Klupko") {
+    ?> //ako je ulogovan a nije klupko
+                                                                </script>
+                                                                <a href="http://localhost/vunica.com/vunica/index.php/PostavljanjeProizvoda" style="text-decoration: none;  ">
+                                                                    <script>
 
+<?php } else if ($this->session->UserName != '' && $status === "Klupko") { ?> // ako je klupko
+                                                                    </script>
+                                                                    <a  style="text-decoration: none;"  onclick="obavesti('Da biste dodali proizvod, morate da postanete premijum korisnik!')" >
+                                                                        <script>
 
+<?php } else { ?> //ako gost pristupa sajtu
+                                                                        </script>
+                                                                        <a onclick="prikazi_registraciju()" style="text-decoration: none;  "> 
+                                                                            <script>
+<?php } ?>
 
+                                                                            //< a  class = "prijaviKomentar" > Prijavi komentar < /a>
 
-                                                                        <div class="view view-third" align="left" style="float: left">  
-                                                                            <img src="<?php echo $proizvod->Slika; ?>"/> 
-                                                                            <div class="mask"> 
-                                                                                <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
-                                                                                    <br/><font size="5"><?php echo $proizvod->Naziv; ?></font>
-                                                                                    <br /><font size="3" style="text-transform:none">Kategorija: <?php echo $proizvod->Kategorija; ?></font>    
-                                                                                    <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?></font></h2>  
-                                                                                <p><?php echo $proizvod->Opis; ?></p> 
-                                                                                <a href='http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>' class="info">Detaljnije</a>  
-                                                                                <font   class="datumNaSlici">OBJAVLJENO <?php echo $proizvod->Datum; ?></font>
-                                                                            </div>  
-                                                                        </div> 
+                                                                        </script>
 
 
-                                                                        <!--Kraj levog proizvoda-a-->
-                                                                        
-                                                                        <?php
-                                                                    } else {
-                                                                        ?>
 
-                                                                        <!--Desni proizovd u td-u-->
+                                                                        <div class="dodajproizvod"  >  
 
-                                                                        <div class="view view-third" align="right" style="float:right">  
-                                                                            <img src="<?php echo $proizvod->Slika; ?>"  /> 
-                                                                            <div class="mask"> 
+                                                                            <p style="text-align: center">  Dodaj proizvod</p>
+                                                                        </div> </a><div class="mask"> </div>
+                                                                    <br/>
+                                                                    </td>
+                                                                    </tr>
+                                                                    <!--Kraj dodaj proizvod-->
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div id="main_content" >
 
-                                                                                <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
-                                                                                    <br/><font size="5"><?php echo $proizvod->Naziv; ?></font>
-                                                                                    <br /><font size="3" style="text-transform:none">Kategorija: <?php echo $proizvod->Kategorija; ?></font>    
-                                                                                    <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?></font></h2>  
-                                                                                <p><?php echo $proizvod->Opis; ?></p> 
-                                                                                <a href="http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>" class="info">Detaljnije</a>  
-                                                                                <font   class="datumNaSlici">OBJAVLJENO <?php echo $proizvod->Datum; ?></font>
-                                                                            </div>  
-                                                                        </div>  
-
-                                                                        <br/>
-                                                                        <!-- Kraj desnog proizvoda-a-->
-
-                                                                        <?php
-                                                                    }
-                                                                    $brojac = $brojac + 1;
-                                                                }
-                                                                ?>
-
-
-                                                            </div>
-
-                                                            <!-- Donja linija  i ucitaj jos dugme-->
-
-                                                            <hr width = "100%" class = "linija"/>
-                                                            <?php
-                                                            if (count($latest_proizvod) == 8) {
-                                                                ?>
-                                                                <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
-                                                                    <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
-                                                                        <i >
-                                                                            Ucitaj jos
-                                                                        </i>
-                                                                    </a>
-                                                                </div>
-                                                                <!-- Kraj donje linije i ucitaj jos dugmeta-->
-                                                            <?php } ?>
-
-                                                        </td>
-                                                    </tr>
+                                                                                <?php
+                                                                                $brojac = 0;
+                                                                                foreach ($latest_proizvod as $proizvod) {
+                                                                                    if ($brojac % 2 == 0) {
+                                                                                        ?>
+                                                                                        <!--levi proizvod u td-u-->
 
 
 
 
-
-                                                </table>
-                                            </td>
-                                        </tr>
-
-                                        -//                 
-
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                </table>
-
-                            </div>
+                                                                                        <div class="view view-third" align="left" style="float: left">  
+                                                                                            <img src="<?php echo $proizvod->Slika; ?>"/> 
+                                                                                            <div class="mask"> 
+                                                                                                <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
+                                                                                                    <br/><font size="5"><?php echo $proizvod->Naziv; ?></font>
+                                                                                                    <br /><font size="3" style="text-transform:none">Kategorija: <?php echo $proizvod->Kategorija; ?></font>    
+                                                                                                    <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?></font></h2>  
+                                                                                                <p><?php echo $proizvod->Opis; ?></p> 
+                                                                                                <a href='http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>' class="info">Detaljnije</a>  
+                                                                                                <font   class="datumNaSlici">OBJAVLJENO <?php echo $proizvod->Datum; ?></font>
+                                                                                            </div>  
+                                                                                        </div> 
 
 
+                                                                                        <!--Kraj levog proizvoda-a-->
+
+                                                                                        <?php
+                                                                                    } else {
+                                                                                        ?>
+
+                                                                                        <!--Desni proizovd u td-u-->
+
+                                                                                        <div class="view view-third" align="right" style="float:right">  
+                                                                                            <img src="<?php echo $proizvod->Slika; ?>"  /> 
+                                                                                            <div class="mask"> 
+
+                                                                                                <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
+                                                                                                    <br/><font size="5"><?php echo $proizvod->Naziv; ?></font>
+                                                                                                    <br /><font size="3" style="text-transform:none">Kategorija: <?php echo $proizvod->Kategorija; ?></font>    
+                                                                                                    <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?></font></h2>  
+                                                                                                <p><?php echo $proizvod->Opis; ?></p> 
+                                                                                                <a href="http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>" class="info">Detaljnije</a>  
+                                                                                                <font   class="datumNaSlici">OBJAVLJENO <?php echo $proizvod->Datum; ?></font>
+                                                                                            </div>  
+                                                                                        </div>  
+
+                                                                                        <br/>
+                                                                                        <!-- Kraj desnog proizvoda-a-->
+
+                                                                                        <?php
+                                                                                    }
+                                                                                    $brojac = $brojac + 1;
+                                                                                }
+                                                                                ?>
+
+
+                                                                            </div>
+
+                                                                            <!-- Donja linija  i ucitaj jos dugme-->
+
+                                                                            <hr width = "100%" class = "linija"/>
+                                                                            <?php
+                                                                            if (count($latest_proizvod) == 8) {
+                                                                                ?>
+                                                                                <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
+                                                                                    <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
+                                                                                        <i >
+                                                                                            Ucitaj jos
+                                                                                        </i>
+                                                                                    </a>
+                                                                                </div>
+                                                                                <!-- Kraj donje linije i ucitaj jos dugmeta-->
+                                                                            <?php } ?>
+
+                                                                        </td>
+                                                                    </tr>
 
 
 
-                            </body>
-                            <!-- InstanceEnd -->
-                            </html>
+
+
+                                                                    </table>
+                                                                    </td>
+                                                                    </tr>
+
+                                                                    -//                 
+
+                                                                    <tr>
+                                                                        <td>&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>&nbsp;</td>
+                                                                    </tr>
+                                                                    </table>
+
+                                                                    </div>
+
+
+
+
+
+                                                                    </body>
+                                                                    <!-- InstanceEnd -->
+                                                                    </html>
