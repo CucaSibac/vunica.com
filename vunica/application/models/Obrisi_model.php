@@ -31,4 +31,9 @@ class Obrisi_model extends CI_Model {
         $this->db->where('IDProizvod', $vrednost);
         $this->db->delete('proizvod');
     }
+    
+    function obrisiKorisnika($vrednost) {
+        $this->db->where('IDKorisnik', $vrednost);
+        $this->db->delete('korisnik');
+    }
 }

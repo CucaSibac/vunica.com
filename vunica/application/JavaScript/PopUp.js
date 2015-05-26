@@ -1,6 +1,6 @@
 // JavaScript Document
 
-var izbor = 0;
+var izbor = "";
 
 function prikazi_prijavu() {
 	sakrij_sve();
@@ -39,7 +39,7 @@ function sakrij_sve(){
 	document.getElementById('registracija').style.visibility = "hidden";
 	document.getElementById('obavestenje').style.visibility = "hidden";
         document.getElementById('upozorenje').style.visibility = "hidden";
-        izbor = 0;
+        izbor = "";
         
 }
 
@@ -97,6 +97,6 @@ function upozorenje(string,izb){
 }
 
 function upozorenje_ok(){
-    if(izbor == 1) window.open('http://localhost/vunica.com/vunica/index.php/IndexStrana', '_parent');
-    izbor = 0;
+    window.open(izbor, '_parent');
+   
 }
