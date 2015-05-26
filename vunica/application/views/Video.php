@@ -78,25 +78,14 @@ foreach ($podaci as $red) {
 }
 $status = "Admin";
 $usersession = $this->session->userdata('UserName');
-
 ?>
 
 
 
-            $(document).ready(function () {
 
-                //ovaj deo je za prijavu odnosno brisanje vide-a
-<?php if ($this->session->UserName != '' && $this->session->UserName == $user) { ?>
-                    $('#prijaviobrisi').html("Obrisi video");
-                    //$('#prijaviobrisi').click(obrisi); PREPRAVITI
-<?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
-                    $('#prijaviobrisi').html("Obrisi video");
-<?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
-                    //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
-<?php } else { ?>
-                    $('#prijaviobrisi').click(prikazi_registraciju);
-<?php } ?>
-            });
+
+
+
             sessionStorage.setItem("Teska", "");
             sessionStorage.setItem('Laka', "");
             sessionStorage.setItem('Srednja', "");
@@ -159,7 +148,7 @@ $usersession = $this->session->userdata('UserName');
             $(document).ready(function () {
                 $('#kategorija').click(function () {
                     $src = $.trim($('#kategorija').html());
-                   
+
 
                     if ($src === 'Garderoba') {
                         sessionStorage.setItem("Garderoba", "Cekirano");
@@ -248,8 +237,8 @@ $usersession = $this->session->userdata('UserName');
                         <table id="video" width="60%" align="center" border="0" cellspacing="10">
                             <tr>
                                 <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="" class="linkovi"><?php
-                                            foreach ($podaci as $red) {
-                                                ?>
+                                foreach ($podaci as $red) {
+                                    ?>
                                                 <?php
                                                 echo $red->UserName;
                                             }
@@ -272,8 +261,8 @@ $usersession = $this->session->userdata('UserName');
                             </tr>   
                             <tr>
                                 <td colspan="2" align="left" style="text-align: justify;"><font class="tekstIskosen" style="text-align: justify;"><?php
-                                        foreach ($podaci as $red) {
-                                            ?>
+                                            foreach ($podaci as $red) {
+                                                ?>
                                             <?php
                                             echo $red->Opis;
                                         }
@@ -282,8 +271,8 @@ $usersession = $this->session->userdata('UserName');
                             <tr>
                                 <td colspan="1" align="left">
                                     <br /><font class="tekstObican">Tezina: <a href="http://localhost/vunica.com/vunica/index.php/Strikarnica" id="tezina" class="linkovi"><?php
-                                            foreach ($podaci as $red) {
-                                                ?>
+                                        foreach ($podaci as $red) {
+                                            ?>
                                                 <?php
                                                 echo $red->Tezina;
                                             }
@@ -303,7 +292,19 @@ $usersession = $this->session->userdata('UserName');
                                         <td colspan="2" align="right">
 
 
-                                            <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>    
+                                           
+                                            <?php if ($this->session->UserName != '' && $this->session->UserName == $user) { ?>
+                                            <a  id="prijaviobrisi" href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/<?php echo $idVideo; ?>" class="prijaviVideo" > Obrisi video </a>   
+                                                
+                                            <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
+                                                 <a onclick="" id="prijaviobrisi" href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/<?php echo $idVideo; ?>" class="prijaviVideo" > Obrisi video </a>   
+                                            <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
+                                               <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
+                                            <?php } else { ?>
+                                              <a onclick="prikazi_registraciju()" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
+                                            <?php } ?>
+
+                                          
 
                                         </td>
                                     </tr>
@@ -312,7 +313,6 @@ $usersession = $this->session->userdata('UserName');
 
                                     <!-- PISANJE KOMENTARA-->
                                     <?php
-                                    
                                     $attributes = array('id' => 'formaKomentarVideo', 'UserName' => $user, 'IDVideo' => $idVideo);
                                     echo form_open("Video/komentar", $attributes);
                                     ?>
@@ -323,20 +323,19 @@ $usersession = $this->session->userdata('UserName');
 
                                                 <tr>
                                                     <td align="center">  
-                                                      
-                                                   
-                                                    <script>
-                                                    <?php
-                                                    if ($this->session->UserName != '' ) { ?>//ako je korisnik prijavljen
-                                                                </script>
-                                                                <a  class = "dugme" onclick="document.forms['formaKomentarVideo'].submit()" > Postavi </a> 
-                                                                <script>
-                                                                  
-        <?php } else { ?> //ako gost pristupa sajtu
-                                                                </script>
-                                                                <a onclick="prikazi_registraciju()" class = "dugme" > Postavi </a>
-                                                                <script>
-        <?php } ?> </script>                             </td>
+
+
+                                                        <script>
+<?php if ($this->session->UserName != '') { ?>//ako je korisnik prijavljen
+                                                            </script>
+                                                            <a  class = "dugme" onclick="document.forms['formaKomentarVideo'].submit()" > Postavi </a> 
+                                                            <script>
+
+<?php } else { ?> //ako gost pristupa sajtu
+                                                            </script>
+                                                            <a onclick="prikazi_registraciju()" class = "dugme" > Postavi </a>
+                                                            <script>
+<?php } ?></script>                             </td>
                                                     <td align="center"> <a  class="dugme"  onclick="odustani()"> Odustani </a> 
                                                     </td>
                                                 </tr>
@@ -348,11 +347,11 @@ $usersession = $this->session->userdata('UserName');
 
 
 
-                                    <?php
-                                    if (empty($latest_messages)) {
-                                        
-                                    } else {
-                                        ?>
+<?php
+if (empty($latest_messages)) {
+    
+} else {
+    ?>
                                         <tr  >
                                             <td colspan="2">
                                                 <br />
@@ -377,9 +376,10 @@ $usersession = $this->session->userdata('UserName');
                                             <td colspan="2" align="center" >
                                                 <div id="main_content">
                                                     <br/>
-                                                    <?php
-                                                    foreach ($latest_messages as $message) {
-                                                        ?>
+    <?php
+    foreach ($latest_messages as $message) {
+        $idkomentar = $message->IDKomentar;
+        ?>
 
 
                                                         <div class="view view-third" align="left" >  
@@ -387,19 +387,19 @@ $usersession = $this->session->userdata('UserName');
                                                             <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
                                                             <br /><br />
                                                             <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
-                                                            <?php $userkom = $message->UserName; ?>
+        <?php $userkom = $message->UserName; ?>
                                                             <script>
 
-        <?php if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
+                                                            <?php if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
                                                                 </script>
-                                                                <a  class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                <a href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/<?php echo $message->IDKomentar; ?>" class = "prijaviKomentar" > Obrisi komentar </a>
                                                                 <script>
-                                                                    //$('#prijaviobrisi').click(obrisi); PREPRAVITI
+                                                                  
         <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
                                                                 </script>
-                                                                <a  class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                <a href="http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/<?php echo $idkomentar ?>" class = "prijaviKomentar" > Obrisi komentar </a>
                                                                 <script>
-        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
+        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
                                                                 </script>
                                                                 <a  class = "prijaviKomentar" > Prijavi komentar </a>
                                                                 <script>
@@ -415,15 +415,15 @@ $usersession = $this->session->userdata('UserName');
                                                             </script>
                                                         </div>  <br /><br />
 
-                                                    <?php } ?>
+    <?php } ?>
 
 
                                                     <!--Donja linija i ucitaj jos-->
                                                 </div>
                                                 <hr width = "100%" class = "linija"/>
-                                                <?php
-                                                if (count($latest_messages) == 3) {
-                                                    ?>
+    <?php
+    if (count($latest_messages) == 3) {
+        ?>
                                                     <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
                                                         <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
                                                             <i >
@@ -431,13 +431,13 @@ $usersession = $this->session->userdata('UserName');
                                                             </i>
                                                         </a>
                                                     </div>
-                                                <?php } ?>
+    <?php } ?>
                                                 <!--Kraj donje linije i ucitaj jos-->
 
                                             </td>
                                         </tr>
                                         <!--Kraj komentara i ucitaj jos-->
-                                    <?php } ?>
+<?php } ?>
 
 
 
