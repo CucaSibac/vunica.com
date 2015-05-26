@@ -17,6 +17,7 @@
           </tr>
            <tr>
             <td class="praznaCelijaPopUp"></td>
+            <?php echo validation_errors(); ?>
             <td colspan="2"><input type="text" name="UserName" id="UserName" placeholder="Korisnicko ime" class="inputPopUp" value="<?php echo set_value('UserName'); ?>"/> </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
