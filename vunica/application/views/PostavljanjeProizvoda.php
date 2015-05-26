@@ -58,8 +58,11 @@
         include("Prijava.php");
         include("Registracija.php");
         include("Zaboravljena lozinka.php");
+        include("Upozorenje.php");
         include("Footer.php");
         ?>	
+        
+        
 
         <!-- Telo strane -->
         <div id = "teloOkvir">
@@ -88,7 +91,7 @@
                                 </td>
                                 <td>
                                     <table style="width:100%;" border="0">
-                                        <tr style="height:70px">
+                                        <tr style="height:70px"> <a href="javascript:upozorenje('cao',1)" class="dugme"> upozorenje </a>
                                             <td style="width:40%;" class="tekstObican"> Naziv </td>
                                             <td style="width:60%;"> <input class="tekstPolje" type="text" name="ProNaziv" value="<?php echo set_value('ProNaziv'); ?>"/> </td>
                                         </tr>
@@ -164,7 +167,8 @@
                                     <font style="margin-left:10%;"> 
                                         Postavljanjem ovog proizvoda pristajete na: <a href="#" class="linkPopUp"> Ugovor </a> 
                                     </font> 
-                                    <br/><br/><br/><br/>                                    
+                                    <br/><br/><br/><br/>   
+                                    
                                 </td>
                             </tr>                                                                       
                         </table>  
