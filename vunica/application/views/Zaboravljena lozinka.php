@@ -6,8 +6,7 @@
    <div id="zaboravljenaLozinka">
       <div class="naslovZL"> Zaboravili ste lozinku? </div>
       <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
-      <!-- InstanceBeginEditable name="ZLDiv" -->    
-       <?php echo validation_errors('<p class="error">'); ?>
+      <!-- InstanceBeginEditable name="ZLDiv" -->         
 	  <?php 
             $attributes = array('style' => 'height: 100%;', 'id' => 'formaZL');
             echo form_open("PopUp/zl", $attributes); 
