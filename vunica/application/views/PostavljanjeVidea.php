@@ -74,8 +74,7 @@
            <td>
 			  <!-- InstanceBeginEditable name="Body" -->                                         
               
-              <br/> <br/> <br/> <br/> </br>
-              <?php echo validation_errors('<p class="error">'); ?>
+              <br/> <br/> <br/> <br/> </br>              
               <?php 
                 $attributes = array('name' => 'PostavljanjeVidea', 'font' => ""); 
                 echo form_open_multipart("PostavljanjeVidea/postavljanje_video", $attributes); 

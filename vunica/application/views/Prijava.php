@@ -15,28 +15,34 @@
         echo form_open("PopUp/login", $attributes); 
       ?>
         <table class="tabelaPrijava">
-          <tr>
+          <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td colspan="2">Molimo vas da unesete sledece podatke:</td>
-            <td class="praznaCelijaPopUp">&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td colspan="2"><input type="text" name="email1" id="email1" placeholder="E-mail adresa" class="inputPopUp" value=""/> </td>
+            <td valign="bottom" colspan="2">Molimo vas da unesete sledece podatke:</td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
-          <tr>
+          <tr class="inputRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td colspan="2"><input type="password" name="password1" id="password1" placeholder="Lozinka" class="inputPopUp" value=""/> </td>
+            <td colspan="2">
+                <input type="text" name="email1" id="email1" placeholder="E-mail adresa" class="inputPopUp" value="<?php echo set_value('email1'); ?>"/> 
+                <?php echo form_error('email1', '<div class="error">', '</div>'); ?>
+            </td>
+            <td class="praznaCelijaPopUp">&nbsp;</td>
+          </tr>
+          <tr class="inputRed">
+            <td class="praznaCelijaPopUp">&nbsp;</td>
+            <td colspan="2">
+                <input type="password" name="password1" id="password1" placeholder="Lozinka" class="inputPopUp" value="<?php echo set_value('password1'); ?>"/>
+                <?php echo form_error('password1', '<div class="error">', '</div>'); ?>
+            </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>                
-          <tr>
+          <tr class="inputRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td class="celijaDugmePopUp"> <div  class="dugmePopUp" onclick="document.forms['formaPrijava'].submit()"> Prijavi se!</div></td>
             <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij_sve()"> Odustani</div></td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>               
-          <tr>
+          <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
               Zaboravili ste lozinku? 
@@ -44,7 +50,7 @@
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
           </tr>
-          <tr>
+          <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
               Nemate profil?

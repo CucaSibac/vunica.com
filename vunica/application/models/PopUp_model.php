@@ -89,5 +89,13 @@ class PopUp_model extends CI_Model {
             return "";
         }
     }
+    
+    public function postavi_prvu_stranu($src){
+        $this->session->set_userdata('prva',$src);
+    }
+    
+    public function postavi_prvu_log_stranu($src){
+        $this->session->set_userdata('log_prva',$src);
+    }
 
 }
