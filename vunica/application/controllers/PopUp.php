@@ -35,6 +35,7 @@ class PopUp extends CI_Controller {
         } else {
             $url = $this->prethodna_strana();
             if($url == "login") $url = $this->session->userdata('log_prva');
+            if ($url == "zl") $url = $this->session->userdata('zl_prva');
             if ($url == "registration")
                 $url = $this->session->userdata('prva');
             else
@@ -54,10 +55,13 @@ class PopUp extends CI_Controller {
 
     public function login() {
         $url = $this->prethodna_strana();
-        if ($url == "login") $url = $this->session->userdata('log_prva');
-        else $this->PopUp_model->postavi_prvu_log_stranu($url);
+        if ($url == "zl") $url = $this->session->userdata('zl_prva');
         if ($url == "registration")
                 $url = $this->session->userdata('prva');
+        if ($url == "login") $url = $this->session->userdata('log_prva');
+        else $this->PopUp_model->postavi_prvu_log_stranu($url);
+        
+       
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email1', 'Email', 'trim|required|valid_email|callback_email1_check');
         $this->form_validation->set_rules('password1', 'Sifra', 'trim|required');
@@ -75,6 +79,19 @@ class PopUp extends CI_Controller {
     }
 
     public function zl() {
+        $url = $this->prethodna_strana();
+        
+        if ($url == "registration")
+                $url = $this->session->userdata('prva');
+        if ($url == "login") $url = $this->session->userdata('log_prva');
+        if ($url == "zl") $url = $this->session->userdata('zl_prva');
+        else $this->PopUp_model->postavi_prvu_zl_stranu($url);
+ 
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('zlEmail', 'Email', 'trim|required|valid_email|callback_zlEmail_check');
+        if ($this->form_validation->run() == TRUE) $this->load->view($url);
+        else $this->load->view($url);
+        /*
         $podaci = $this->PopUp_model->zl($this->input->post('zlEmail'));
         if ($podaci != '') {
             $this->load->library('email');
@@ -95,6 +112,9 @@ class PopUp extends CI_Controller {
         } else {
             
         }
+         
+         */
+        
     }
 
     public function prethodna_strana() {
@@ -106,12 +126,33 @@ class PopUp extends CI_Controller {
     }
 
     public function email1_check($str) {
-
         $email = $this->input->post('email1');
         $password = ($this->input->post('password1'));
         $result = $this->PopUp_model->login($email, $password);
         $this->form_validation->set_message('email1_check', 'nesto nije ok!');
         return $result;
+    }
+    
+    public function zlEmail_check($str) {
+        $podaci = $this->PopUp_model->zl($this->input->post('zlEmail'));
+        $this->form_validation->set_message('zlEmail_check', 'E-mail adresa ne postoji u bazi podataka');
+        if ($podaci == '') return false;
+       
+        $this->load->library('email');
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'ssl://smtp.gmail.com';   //examples: ssl://smtp.googlemail.com, myhost.com
+        $config['smtp_user'] = 'andricgmilos@gmail.com';
+        $config['smtp_pass'] = '****'; //HAHAHA
+        $config['smtp_port'] = '465';
+        $this->email->initialize($config);
+        
+        $this->email->from('andricgmilos@gmail.com', 'Tim vunica.com');
+        $this->email->to('milosgandric@gmail.com');//$this->input->post('zlEmail')
+        $this->email->subject('Povratak lozinke');
+        $this->email->message('Testing the email class.');//$podaci      
+   //   $this->email->send();
+        return true;
+       
     }
 
 }
