@@ -53,6 +53,29 @@
         </script>
         <!-- OVO JE ZA DUGME UCITAJ JOS!!-->
         <script type="text/javascript">
+            
+            <?php
+            $this->session->unset_userdata('Laka');
+        $this->session->unset_userdata('Srednja');
+        $this->session->unset_userdata('Teska');
+        $this->session->unset_userdata('Garderoba');
+        $this->session->unset_userdata('Dodaci');
+        $this->session->unset_userdata('Igracke');
+        $this->session->unset_userdata('Ostalo');
+        $this->session->unset_userdata('Datum');
+        $this->session->unset_userdata('Naziv');
+        
+            ?>
+                sessionStorage.setItem("Teska", "");
+            sessionStorage.setItem('Laka', "");
+            sessionStorage.setItem('Srednja', "");
+            sessionStorage.setItem('Teska', "");
+            sessionStorage.setItem('Garderoba', "");
+            sessionStorage.setItem('Dodaci', "");
+            sessionStorage.setItem('Igracke', "");
+            sessionStorage.setItem('Ostalo', "");
+            sessionStorage.setItem('Datum', "");
+            sessionStorage.setItem('Naziv', "");
             $(document).ready(function () {
                 var num_proizvod = <?= $num_proizvod ?>;
                 var loaded_proizvod = 0;
