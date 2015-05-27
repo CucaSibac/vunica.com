@@ -1,3 +1,5 @@
+<?php  include("Upozorenje.php"); ?>
+
 
 <!--Prozor za registriovanje -->
     <div id="registracija">
@@ -89,3 +91,5 @@
       <?php echo form_close(); ?>
       <!-- InstanceEndEditable -->
     </div> 
+
+

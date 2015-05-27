@@ -5,6 +5,7 @@ class PopUp extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('PopUp_model');
+        $this->load->model('Strikarnica_model');
     }
 
     public function registration() {
@@ -33,14 +34,34 @@ class PopUp extends CI_Controller {
             );
             $this->load->view('ProfilEditovanje', $greske);
         } else {
+            $this->session->set_flashdata('reg', 1);
+            
             $url = $this->prethodna_strana();
+            
             if($url == "login") $url = $this->session->userdata('log_prva');
             if ($url == "zl") $url = $this->session->userdata('zl_prva');
             if ($url == "registration")
                 $url = $this->session->userdata('prva');
             else
                 $this->PopUp_model->postavi_prvu_stranu($url);
-            echo $this->session->userdata('prva');
+            //echo $this->session->userdata('prva');
+                       
+            if ($url == 'Strikarnica' || $url == 'strikarnica'){                               
+                $niz['num_videos'] = $this->Strikarnica_model->num_videos();
+                $niz['latest_videos'] = $this->Strikarnica_model->get_videos();
+                $this->load->view('Strikarnica', $niz);
+                
+               // echo "<script language=\"javascript\">prikazi_registraciju();</script>";
+            }
+            
+            if ($url == 'Proizvod'){
+                $this->load->model('Proizvod_model');
+                $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($vredn);
+                $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($vredn);
+                $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($vredn);
+                $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($vredn);
+                $this->load->view('Proizvod', $nizp);
+            }      
             if ($url == 'PostavljanjeVidea') {
                 $date = array('video' => '');
                 $this->load->view($url, $date);
@@ -49,7 +70,14 @@ class PopUp extends CI_Controller {
                 $date = array('slika' => '');
                 $this->load->view($url, $date);
             }
-            $this->load->view($url);
+            if ($url == 'IndexStrana') {
+                 $this->load->view('IndexStrana');
+            }
+            if ($url == 'IndexStrana') {
+                 $this->load->view('IndexStrana');
+            }
+            
+            //$this->load->view($url);
         }
     }
 
@@ -67,8 +95,29 @@ class PopUp extends CI_Controller {
         $this->form_validation->set_rules('password1', 'Sifra', 'trim|required');
         $this->form_validation->set_message('required', '* Polje je prazno');
         $this->form_validation->set_message('valid_email', '* E-mail nije u odgovarajucem formatu');
-        if ($this->form_validation->run() == TRUE) $this->load->view($url);
-        $this->load->view($url);
+        if ($this->form_validation->run() == TRUE) {
+            if ($url == 'Strikarnica' || $url == 'strikarnica'){               
+                $niz['num_videos'] = $this->Strikarnica_model->num_videos();
+                $niz['latest_videos'] = $this->Strikarnica_model->get_videos();
+                $this->load->view('Strikarnica', $niz);
+            }           
+        }
+        else {
+            $this->session->set_flashdata('pri', 1);
+            
+            if ($url == 'Strikarnica' || $url == 'strikarnica'){               
+                $niz['num_videos'] = $this->Strikarnica_model->num_videos();
+                $niz['latest_videos'] = $this->Strikarnica_model->get_videos();
+                $this->load->view('Strikarnica', $niz);
+            } 
+            
+            if ($url == 'PostavljanjeProizvoda') {
+                $date = array('slika' => '');
+                $this->load->view($url, $date);
+            }
+            
+        }
+        
     }
 
     public function logout() {       
@@ -89,8 +138,28 @@ class PopUp extends CI_Controller {
  
         $this->load->library('form_validation');
         $this->form_validation->set_rules('zlEmail', 'Email', 'trim|required|valid_email|callback_zlEmail_check');
-        if ($this->form_validation->run() == TRUE) $this->load->view($url);
-        else $this->load->view($url);
+        if ($this->form_validation->run() == TRUE){
+             if ($url == 'Strikarnica' || $url == 'strikarnica'){               
+                $niz['num_videos'] = $this->Strikarnica_model->num_videos();
+                $niz['latest_videos'] = $this->Strikarnica_model->get_videos();
+                $this->load->view('Strikarnica', $niz);
+            } 
+        }
+        else {
+            $this->session->set_flashdata('zl', 1);
+            
+             if ($url == 'Strikarnica' || $url == 'strikarnica'){               
+                $niz['num_videos'] = $this->Strikarnica_model->num_videos();
+                $niz['latest_videos'] = $this->Strikarnica_model->get_videos();
+                $this->load->view('Strikarnica', $niz);
+            } 
+            
+            if ($url == 'PostavljanjeProizvoda') {
+                $date = array('slika' => '');
+                $this->load->view($url, $date);
+            }
+        }
+        
         /*
         $podaci = $this->PopUp_model->zl($this->input->post('zlEmail'));
         if ($podaci != '') {
@@ -154,5 +223,5 @@ class PopUp extends CI_Controller {
         return true;
        
     }
-
+    
 }
