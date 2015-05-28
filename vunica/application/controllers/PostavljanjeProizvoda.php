@@ -139,10 +139,25 @@ class PostavljanjeProizvoda extends CI_Controller {
     }
     
      function sacuvaj() {    
-        $url =$this->session->userdata('proSlika');
-        $date = array('slika' => $url); 
-        $this->PostavljanjeProizvoda_model->ubaci_proizvod();
-        $this->load->view('PostavljanjeProizvoda', $date);
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('ProNaziv', 'Naziv', 'trim|required'); //|callback_email1_check
+        $this->form_validation->set_rules('ProCena', 'Cena', 'trim|required|integer');
+        $this->form_validation->set_rules('ProGreska', 'Slika', 'callback_ProGreska_check');
+        $this->form_validation->set_message('required', '* Polje je prazno');
+        $this->form_validation->set_message('integer', '* Cena nije u odgovarajucem formatu');
+        
+        if ($this->form_validation->run() == TRUE){
+            $this->PostavljanjeProizvoda_model->ubaci_proizvod();
+            $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+            redirect('http://localhost/vunica.com/vunica/index.php/Pijaca', 'refresh');
+        }
+        else{
+            $url =$this->session->userdata('proSlika');           
+            $date = array('slika' => $url); 
+            $this->PostavljanjeProizvoda_model->postavi_sliku($url);
+            $this->load->view('PostavljanjeProizvoda', $date); 
+        }
+           
     }
     
    public function ispis_sesije(){
@@ -150,6 +165,13 @@ class PostavljanjeProizvoda extends CI_Controller {
         foreach ($niz as $red){
             echo $red;
         }
+   }
+   
+   function ProGreska_check($str){
+        $url =$this->session->userdata('proSlika');       
+        $this->form_validation->set_message('ProGreska_check', 'Niste postavili sliku!');
+        if($url == '') return false;
+        else return true;
    }
 
 }
