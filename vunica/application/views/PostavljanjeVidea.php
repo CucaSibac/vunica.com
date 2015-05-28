@@ -65,6 +65,7 @@
         include("Zaboravljena lozinka.php");
         include("Footer.php");
         include("Upozorenje.php");
+        include("brisanjesesije.php");
         ?>
   
     <!-- Telo strane -->

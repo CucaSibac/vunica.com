@@ -60,6 +60,7 @@
         include("Zaboravljena lozinka.php");
         include("Upozorenje.php");
         include("Footer.php");
+        include("brisanjesesije.php");
         ?>	
         
         

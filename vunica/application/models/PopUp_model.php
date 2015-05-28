@@ -102,8 +102,8 @@ class PopUp_model extends CI_Model {
         $this->session->set_userdata('zl_prva',$src);
     }
     
-    public function postavi_reg(){
-        $this->session->set_userdata('reg',1);
+    public function postavi_broj($vr){
+        $this->session->set_userdata('broj',$vr);
     }
 
 }
