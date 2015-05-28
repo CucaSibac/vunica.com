@@ -87,19 +87,19 @@ $usersession = $this->session->userdata('UserName');
 
 
 <?php
- $this->session->unset_userdata('CenaOd');
-        $this->session->unset_userdata('CenaDo');
-        $this->session->unset_userdata('Vunica');
-        $this->session->unset_userdata('Konci');
-        $this->session->unset_userdata('Igle');
-        $this->session->unset_userdata('MatOstalo');
-        $this->session->unset_userdata('PGarderoba');
-        $this->session->unset_userdata('PDodaci');
-        $this->session->unset_userdata('PIgracke');
-        $this->session->unset_userdata('POstalo');
-        $this->session->unset_userdata('PDatum');
-        $this->session->unset_userdata('PNaziv');
-        $this->session->unset_userdata('PCena');
+$this->session->unset_userdata('CenaOd');
+$this->session->unset_userdata('CenaDo');
+$this->session->unset_userdata('Vunica');
+$this->session->unset_userdata('Konci');
+$this->session->unset_userdata('Igle');
+$this->session->unset_userdata('MatOstalo');
+$this->session->unset_userdata('PGarderoba');
+$this->session->unset_userdata('PDodaci');
+$this->session->unset_userdata('PIgracke');
+$this->session->unset_userdata('POstalo');
+$this->session->unset_userdata('PDatum');
+$this->session->unset_userdata('PNaziv');
+$this->session->unset_userdata('PCena');
 ?>
 
             sessionStorage.setItem('CenaOd', "");
@@ -122,17 +122,17 @@ $usersession = $this->session->userdata('UserName');
             $(document).ready(function () {
                 $('#tezina').click(function () {
                     $src = $.trim($('#tezina').html());
-                       
-sessionStorage.setItem("Teska", "");
-            sessionStorage.setItem('Laka', "");
-            sessionStorage.setItem('Srednja', "");
-            sessionStorage.setItem('Teska', "");
-            sessionStorage.setItem('Garderoba', "");
-            sessionStorage.setItem('Dodaci', "");
-            sessionStorage.setItem('Igracke', "");
-            sessionStorage.setItem('Ostalo', "");
-            sessionStorage.setItem('Datum', "");
-            sessionStorage.setItem('Naziv', "");
+
+                    sessionStorage.setItem("Teska", "");
+                    sessionStorage.setItem('Laka', "");
+                    sessionStorage.setItem('Srednja', "");
+                    sessionStorage.setItem('Teska', "");
+                    sessionStorage.setItem('Garderoba', "");
+                    sessionStorage.setItem('Dodaci', "");
+                    sessionStorage.setItem('Igracke', "");
+                    sessionStorage.setItem('Ostalo', "");
+                    sessionStorage.setItem('Datum', "");
+                    sessionStorage.setItem('Naziv', "");
                     if ($src === 'Laka') {
                         sessionStorage.setItem("Laka", "Cekirano");
                         $.ajax({
@@ -162,16 +162,16 @@ sessionStorage.setItem("Teska", "");
                 $('#kategorija').click(function () {
                     $src = $.trim($('#kategorija').html());
 
-sessionStorage.setItem("Teska", "");
-            sessionStorage.setItem('Laka', "");
-            sessionStorage.setItem('Srednja', "");
-            sessionStorage.setItem('Teska', "");
-            sessionStorage.setItem('Garderoba', "");
-            sessionStorage.setItem('Dodaci', "");
-            sessionStorage.setItem('Igracke', "");
-            sessionStorage.setItem('Ostalo', "");
-            sessionStorage.setItem('Datum', "");
-            sessionStorage.setItem('Naziv', "");
+                    sessionStorage.setItem("Teska", "");
+                    sessionStorage.setItem('Laka', "");
+                    sessionStorage.setItem('Srednja', "");
+                    sessionStorage.setItem('Teska', "");
+                    sessionStorage.setItem('Garderoba', "");
+                    sessionStorage.setItem('Dodaci', "");
+                    sessionStorage.setItem('Igracke', "");
+                    sessionStorage.setItem('Ostalo', "");
+                    sessionStorage.setItem('Datum', "");
+                    sessionStorage.setItem('Naziv', "");
                     if ($src === 'Garderoba') {
                         sessionStorage.setItem("Garderoba", "Cekirano");
                         $.ajax({
@@ -260,8 +260,8 @@ sessionStorage.setItem("Teska", "");
                         <table id="video" width="60%" align="center" border="0" cellspacing="10">
                             <tr>
                                 <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="" class="linkovi"><?php
-                                foreach ($podaci as $red) {
-                                    ?>
+                                            foreach ($podaci as $red) {
+                                                ?>
                                                 <?php
                                                 echo $red->UserName;
                                             }
@@ -284,8 +284,8 @@ sessionStorage.setItem("Teska", "");
                             </tr>   
                             <tr>
                                 <td colspan="2" align="left" style="text-align: justify;"><font class="tekstIskosen" style="text-align: justify;"><?php
-                                            foreach ($podaci as $red) {
-                                                ?>
+                                        foreach ($podaci as $red) {
+                                            ?>
                                             <?php
                                             echo $red->Opis;
                                         }
@@ -294,8 +294,8 @@ sessionStorage.setItem("Teska", "");
                             <tr>
                                 <td colspan="1" align="left">
                                     <br /><font class="tekstObican">Tezina: <a href="http://localhost/vunica.com/vunica/index.php/Strikarnica" id="tezina" class="linkovi"><?php
-                                        foreach ($podaci as $red) {
-                                            ?>
+                                            foreach ($podaci as $red) {
+                                                ?>
                                                 <?php
                                                 echo $red->Tezina;
                                             }
@@ -315,22 +315,22 @@ sessionStorage.setItem("Teska", "");
                                         <td colspan="2" align="right">
 
 
-                                           
+
                                             <?php
-                                            
-                                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$idVideo" ;
-                                            if ($this->session->UserName != '' && $this->session->UserName == $user) { ?>
-                                            <a  id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi video </a>   
-                                                
+                                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$idVideo";
+                                            if ($this->session->UserName != '' && $this->session->UserName == $user) {
+                                                ?>
+                                                <a  id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi video </a>   
+
                                             <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
-                                                 <a onclick="" id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi video </a>   
+                                                <a onclick="" id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi video </a>   
                                             <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
-                                               <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
+                                                <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
                                             <?php } else { ?>
-                                              <a onclick="prikazi_registraciju()" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
+                                                <a onclick="prikazi_registraciju()" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
                                             <?php } ?>
 
-                                          
+
 
                                         </td>
                                     </tr>
@@ -344,9 +344,18 @@ sessionStorage.setItem("Teska", "");
                                     ?>
                                     <tr>
                                         <td colspan="2" align="center">
-                                            <br /><textarea  value="<?php echo set_value('Tekst'); ?>" name="Tekst" maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify;" placeholder="Napisite komentar" class="tekstPoljeKomentar" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
+                                            <br />
+                                                <?php
+                                                if ($this->session->userdata('tekstGreska')) {
+                                                    ?>
+                                                <textarea  value="<?php echo set_value('Tekst'); ?>" name="Tekst" maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify; " placeholder="Morate da unesete tekst komentara" class="tekstPoljeKomentarGreska" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
+                                                <?php
+                                                }else {
+                                                ?>
+                                                    <textarea  value="<?php echo set_value('Tekst'); ?>" name="Tekst" maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify;" placeholder="Napisite komentar" class="tekstPoljeKomentar" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
+                                                <?php } ?>
                                                 <font class="preostalokaraktera">Preostalo karaktera: <font id="ostatak">400</font></font>
-
+                                                
                                                 <tr>
                                                     <td align="center">  
 
@@ -354,14 +363,16 @@ sessionStorage.setItem("Teska", "");
                                                         <script>
 <?php if ($this->session->UserName != '') { ?>//ako je korisnik prijavljen
                                                             </script>
-                                                            <a  class = "dugme" onclick="document.forms['formaKomentarVideo'].submit()" > Postavi </a> 
+                                                            
+                                                            <a  class = "dugme" onclick="document.forms['formaKomentarVideo'].submit(); " > Postavi </a> 
+
                                                             <script>
 
 <?php } else { ?> //ako gost pristupa sajtu
                                                             </script>
                                                             <a onclick="prikazi_registraciju()" class = "dugme" > Postavi </a>
                                                             <script>
-<?php } ?></script>                             </td>
+                                                            <?php } ?></script>                             </td>
                                                     <td align="center"> <a  class="dugme"  onclick="odustani()"> Odustani </a> 
                                                     </td>
                                                 </tr>
@@ -369,15 +380,16 @@ sessionStorage.setItem("Teska", "");
                                                 <input type="hidden" name="IDVideo" id="IDVideo"  value="<?php echo $idVideo ?>"/>
                                         </td>
                                     </tr>
+                                    <?php echo form_close(); ?>
                                     <!-- KRAJ PISANJA KOEMNTARA-->
 
 
 
-<?php
-if (empty($latest_messages)) {
-    
-} else {
-    ?>
+                                    <?php
+                                    if (empty($latest_messages)) {
+                                        
+                                    } else {
+                                        ?>
                                         <tr  >
                                             <td colspan="2">
                                                 <br />
@@ -402,10 +414,10 @@ if (empty($latest_messages)) {
                                             <td colspan="2" align="center" >
                                                 <div id="main_content">
                                                     <br/>
-    <?php
-    foreach ($latest_messages as $message) {
-        $idkomentar = $message->IDKomentar;
-        ?>
+                                                    <?php
+                                                    foreach ($latest_messages as $message) {
+                                                        $idkomentar = $message->IDKomentar;
+                                                        ?>
 
 
                                                         <div class="view view-third" align="left" >  
@@ -413,16 +425,17 @@ if (empty($latest_messages)) {
                                                             <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
                                                             <br /><br />
                                                             <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
-        <?php $userkom = $message->UserName; ?>
+                                                            <?php $userkom = $message->UserName; ?>
                                                             <script>
 
-                                                            <?php 
-                                                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/$message->IDKomentar" ;
-                                                            if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
+        <?php
+        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/$message->IDKomentar";
+        if ($this->session->UserName != '' && $this->session->UserName == $userkom) {
+            ?> //ako je trenutno prijavljeni korisnik ostavio komentar
                                                                 </script>
                                                                 <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
                                                                 <script>
-                                                                  
+
         <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
                                                                 </script>
                                                                 <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
@@ -449,9 +462,9 @@ if (empty($latest_messages)) {
                                                     <!--Donja linija i ucitaj jos-->
                                                 </div>
                                                 <hr width = "100%" class = "linija"/>
-    <?php
-    if (count($latest_messages) == 3) {
-        ?>
+                                                <?php
+                                                if (count($latest_messages) == 3) {
+                                                    ?>
                                                     <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
                                                         <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
                                                             <i >
@@ -480,6 +493,24 @@ if (empty($latest_messages)) {
 
                         <!--Kraj tela strane-->
 
+<?php 
+    if($this->session->flashdata('reg') == 1){
+        echo "<script language=\"javascript\">prikazi_registraciju();</script>";
+        $this->session->set_flashdata('reg', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('pri') == 1){
+        echo "<script language=\"javascript\">prikazi_prijavu();</script>";
+        $this->session->set_flashdata('pri', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('zl') == 1){
+        echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
+        $this->session->set_flashdata('zl', 0);
+    }
+?>
 
                         </body>
                         <!-- InstanceEnd -->
