@@ -94,10 +94,10 @@
 
 #prijava{
 	width:29%;
-	height:40%;
+	//height:40%;
 	top:20%;
 	left:35.5%;
-	position:fixed;
+	position:absolute;//position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -107,8 +107,8 @@
 
 .naslovPrijava{
 	width:100%;
-	height:10%;
-	font-size:2.75vh;
+	height:27px;//height:10%;
+	font-size:19px;//font-size:2.75vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	text-align:center;
 	color:#fffef4;
@@ -119,8 +119,8 @@
 
 .tabelaPrijava{
 	width:100%;
-	height:90%;
-	font-size:2.25vh;
+	//height:90%;
+	font-size:15px;//font-size:2.25vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;	
 }
@@ -130,10 +130,10 @@
 
 #zaboravljenaLozinka{
 	width:29%;
-	height:24%;
+	//height:24%;
 	top:20%;
 	left:35.5%;
-	position:fixed;
+	position:absolute;//position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -143,8 +143,8 @@
 
 .naslovZL{
 	width:100%;
-	height:16.66%;
-	font-size:2.75vh;
+	height:27px;//height:16.66%;
+	font-size:19px;//font-size:2.75vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	text-align:center;
 	color:#fffef4;
@@ -155,8 +155,8 @@
 
 .tabelaZL{
 	width:100%;
-	height:83.34%;
-	font-size:2.25vh;
+	//height:83.34%;
+	font-size:15px;//font-size:2.25vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;	
 }
@@ -165,10 +165,10 @@
 
 #registracija{
 	width:27%;
-	height:79%;
+	//height:79%;
 	top:10%;
 	left:36.5%;
-	position:fixed;
+	position:absolute;//position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -178,8 +178,8 @@
 
 .naslovRegistracija{
 	width:100%;
-	height:5.06%;
-	font-size:2.75vh;
+	height:27px;//height:5.06%;
+	font-size:19px;//font-size:2.75vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	text-align:center;
 	color:#fffef4;
@@ -190,8 +190,8 @@
 
 .tabelaRegistracija{
 	width:100%;
-	height:94.94%;
-	font-size:2.25vh;
+	//height:94.94%;
+	font-size:15px;//font-size:2.25vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;	
 }
@@ -280,7 +280,7 @@
 
 .inputPopUp{
 	width:96.5%;
-	font-size:2.85vh;
+	font-size:18px;//font-size:2.85vh;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;
 	padding:0.7vh;
@@ -299,8 +299,8 @@
 	width:75%;
 	text-align:center;
 	font-family: Arial;
-    font-size: 2.25vh;
-    text-decoration: none;
+        font-size: 16px; //font-size: 2.25vh;
+        text-decoration: none;
 	color: #fffef4;
 	background-color:#ACCEC0;
 	border-radius: 7px; 
@@ -317,8 +317,8 @@
 	}
 	
 .slikaPopUp{
-	width:3.75vh;
-	height:3.75vh;
+	width:25px;//width:3.75vh;
+	height:25px;//height:3.75vh;
 	position:absolute;
 	right:0vh;
 	top:0vh;
@@ -329,3 +329,17 @@
 	.slikaPopUp:hover {
 		content:url("http://localhost/Slike/Pop-up/Putaca 4.png");
 	}
+        
+ .textRed{
+    height:30px; 
+}
+
+.inputRed{
+    height:50px; 
+}
+
+.error{
+    font-size: 12px;
+    height: 25px;
+    margin-top:4px;
+}
