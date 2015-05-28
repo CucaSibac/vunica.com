@@ -107,11 +107,30 @@
                                         <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Kategorija </td>
                                             <td style="width:60%;"> 
+                                                <?php
+                                                    if($this->session->Status == 'Admin') {
+                                                ?>
                                                 <select class="kategorije" name="ProKat">
-                                                    <option value="1" <?php echo set_select('ProKat', '1', TRUE); ?>> kat 1</option>
-                                                    <option value="2" <?php echo set_select('ProKat', '2'); ?>> kat 2</option>
-                                                    <option value="3" <?php echo set_select('ProKat', '2'); ?>> kat 3</option>
+                                                    <option value="Vunica" <?php echo set_select('ProKat', 'Vunica', TRUE); ?>> Vunica</option>
+                                                    <option value="Konac" <?php echo set_select('ProKat', 'Konac'); ?>> Konac</option>
+                                                    <option value="Igle" <?php echo set_select('ProKat', 'Igle'); ?>> Igle</option>
+                                                    <option value="Ostalo" <?php echo set_select('ProKat', 'Ostalo'); ?>> Ostalo</option>
                                                 </select>
+                                                <?php
+                                                    }
+                                                ?>
+                                                <?php
+                                                    if($this->session->Status == 'Pletilja') {
+                                                ?>
+                                                <select class="kategorije" name="ProKat">
+                                                    <option value="Garderoba" <?php echo set_select('ProKat', 'Garderoba', TRUE); ?>> Garderoba</option>
+                                                    <option value="Igracke" <?php echo set_select('ProKat', 'Igracke'); ?>> Igracke</option>
+                                                    <option value="Dodaci" <?php echo set_select('ProKat', 'Dodaci'); ?>> Dodaci</option>
+                                                    <option value="Ostalo" <?php echo set_select('ProKat', 'Ostalo'); ?>> Ostalo</option>
+                                                </select>
+                                                <?php
+                                                    }
+                                                ?>
                                             </td>
                                         </tr>
                                         <tr style="height:70px">
@@ -135,7 +154,8 @@
                                         
                                         <tr style="height:100px">
                                             <td colspan="2" valign="bottom">                                               
-                                                <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" />                                   
+                                                <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" />  
+                                                <a class="dugme"  onclick="option('3');document.forms['PostavljanjeProizvoda'].submit();">Izbrisi sliku</a>
                                             </td>
                                         </tr>  
                                     </table>         
@@ -162,7 +182,7 @@
                                     <!--<input type="submit" onclick="option('2')" value="Postavi proizvod" class="dugme"/> -->
                                 </td>
                                 <td align="center">
-                                    <a class="dugme" href="#"> odustani</a>
+                                    <a class="dugme" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pijaca', '_parent')"> odustani</a>
                                 </td>
                             </tr> 
                             <tr>               
