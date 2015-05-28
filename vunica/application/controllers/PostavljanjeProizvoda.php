@@ -21,82 +21,6 @@ class PostavljanjeProizvoda extends CI_Controller {
         $this->load->view('PostavljanjeProizvoda', $date);
     }
 
-    /*
-      public function do_upload()
-      {
-      $config['upload_path']          = '../uploads/';
-      $config['allowed_types']        = 'gif|jpg|png';
-      //        $config['max_size']             = 100;
-      //        $config['max_width']            = 1024;
-      //        $config['max_height']           = 768;
-
-      $this->load->library('upload', $config);
-
-      if (!$this->upload->do_upload())
-      {
-
-
-      $error = array('error' => $this->upload->display_errors());
-
-      $this->load->view('upload_form', $error);
-      }
-      else
-      {
-      $data = array('upload_data' => $this->upload->data());
-      echo $this->upload->data('full_path');
-      echo $this->input->post('ProNaziv');
-      echo $this->input->post('ProCena');
-      echo $this->input->post('ProKat');
-      echo $this->input->post('ProKol');
-
-      $this->load->library('ftp');
-
-      $config['hostname'] = 'http://localhost/';
-      // $config['username'] = 'your-username';
-      //  $config['password'] = 'your-password';
-      //  $config['port']     = 21;
-      //  $config['passive']  = FALSE;
-      $config['debug']    = TRUE;
-
-      $this->ftp->connect($config);
-      $this->ftp->move('/public_html/joe/blog.html', '/public_html/fred/blog.html');
-
-      //echo '<img src="C:/wamp/www/vunica.com/uploads/18.JPG1" />';
-      //$this->load->view('upload_success', $data);
-      }
-      }
-     */
-
-    public function x() {
-        $config['upload_path'] = '../../Slike/Proizvodi/';
-        $config['allowed_types'] = 'gif|jpg|png';
-        //        $config['max_size']             = 100;
-        //        $config['max_width']            = 1024;
-        //        $config['max_height']           = 768;
-
-        $this->load->library('upload', $config);
-        if (!$this->upload->do_upload()) {
-            /*
-              $error = array('error' => $this->upload->display_errors());
-              $this->load->view('upload_form', $error);
-             */
-        } else {
-            /* $data = array('upload_data' => $this->upload->data());
-              echo $this->upload->data('full_path');
-              echo $this->input->post('ProNaziv');
-              echo $this->input->post('ProCena');
-              echo $this->input->post('ProKat');
-              echo $this->input->post('ProKol'); */
-            // echo $this->upload->data('full_path');                     
-            $url = $this->adresa($this->upload->data('full_path'));
-            //echo $url;
-            $data = array('slika' => $url);
-            
-            
-            //$this->load->view('PostavljanjeProizvoda', $data);
-        }
-    }
-
     function adresa($url) {
         $niz = explode('/', $url);
         $duzina = sizeof($niz);
@@ -109,10 +33,10 @@ class PostavljanjeProizvoda extends CI_Controller {
         return 'http://localhost/' . $novi_url;
     }
 
-    public function do_upload() {
-        
+    public function do_upload() {        
         if($this->input->post('opt') ==1) $this->postavljanje_slike();
-        else $this->sacuvaj();                                 
+        if($this->input->post('opt') ==2) $this->sacuvaj();  
+        if($this->input->post('opt') ==3) $this->brisanje();   
     }
     
     public function postavljanje_slike(){
@@ -128,6 +52,7 @@ class PostavljanjeProizvoda extends CI_Controller {
               $error = array('error' => $this->upload->display_errors());
               $this->load->view('upload_form', $error);
              */
+            $this->PostavljanjeProizvoda_model->postavi_sliku('');
             $data = array('slika' => '');
             $this->load->view('PostavljanjeProizvoda', $data);
         } else {              
@@ -172,6 +97,12 @@ class PostavljanjeProizvoda extends CI_Controller {
         $this->form_validation->set_message('ProGreska_check', 'Niste postavili sliku!');
         if($url == '') return false;
         else return true;
+   }
+   
+   function brisanje(){
+       $this->PostavljanjeProizvoda_model->postavi_sliku('');
+       $data = array('slika' => '');
+       $this->load->view('PostavljanjeProizvoda', $data);
    }
 
 }

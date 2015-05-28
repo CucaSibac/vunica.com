@@ -350,7 +350,7 @@ class PopUp extends CI_Controller {
             return $podaci;
         }
         else {
-            echo $refering_url;
+        //    echo $refering_url;
             $niz = explode('/', $refering_url);
             $duzina = sizeof($niz);
             $podaci['url'] = $niz[$duzina - 1];
