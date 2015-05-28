@@ -85,20 +85,24 @@
                         ?>
                         <table id="postavkaproizvoda" border="0">
                             <tr>
-                                <td align="center" class="mestoZaSliku"> 
-                                    <div id = "PSlika" class="proizvodSlika">
-                                        <img class="ProSlika"  src="<?php echo $slika;?>"/>
-                                    </div>
+                                <td align="center" class="mestoZaSliku">                               
+                                    <img class="ProSlika"  src="<?php echo $slika;?>"/>                             
                                 </td>
-                                <td>
-                                    <table style="width:100%;" border="0">
-                                        <tr style="height:70px"> <a href="javascript:upozorenje('cao',1)" class="dugme"> upozorenje </a>
+                                <td valign="bottom">
+                                    <table style="margin-left:10%; width:90%;" border="0">
+                                        <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Naziv </td>
-                                            <td style="width:60%;"> <input class="tekstPolje" type="text" name="ProNaziv" value="<?php echo set_value('ProNaziv'); ?>"/> </td>
+                                            <td style="width:60%;"> 
+                                                <input class="tekstPolje" type="text" name="ProNaziv" maxlength="40" value="<?php echo set_value('ProNaziv'); ?>"/> 
+                                                <?php echo form_error('ProNaziv', '<div class="error">', '</div>'); ?>
+                                            </td>
                                         </tr>
                                         <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Cena </td>
-                                            <td style="width:60%;"> <input class="tekstPolje" type="text" name="ProCena" value="<?php echo set_value('ProCena'); ?>"/> </td>
+                                            <td style="width:60%;"> 
+                                                <input class="tekstPolje" type="text" name="ProCena" value="<?php echo set_value('ProCena'); ?>"/> 
+                                                <?php echo form_error('ProCena', '<div class="error">', '</div>'); ?>
+                                            </td>
                                         </tr>
                                         <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Kategorija </td>
@@ -116,13 +120,13 @@
                                                 <table style="margin-left:6%;">
                                                     <tr>
                                                         <td>
-                                                            <a class="dugme" onmousedown="mousedown('-')" onmouseup="mouseup()"> - </a> 
+                                                            <input type="button" class="dugme" value="-" onmousedown="mousedown('-')" onmouseup="mouseup()"/>
                                                         </td>
                                                         <td width="30px" align="center">
-                                                            <font class="tekstObican" id="kolicina" name="ProKol" value="<?php echo set_value('ProKol'); ?>">1</font>
+                                                            <font class="tekstObican" id="kolicina" name="ProKol"><?php echo set_value('ProKol',1); ?></font>
                                                         </td>
                                                         <td>
-                                                            <a class="dugme"  onmousedown="mousedown('+')" onmouseup="mouseup()"> + </a>
+                                                            <input type="button" class="dugme" value="+" onmousedown="mousedown('+')" onmouseup="mouseup()"/>
                                                         </td> 
                                                     </tr>
                                                 </table>
@@ -131,15 +135,18 @@
                                         
                                         <tr style="height:100px">
                                             <td colspan="2" valign="bottom">                                               
-                                                <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" size="20"/>                                   
+                                                <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" />                                   
                                             </td>
                                         </tr>  
                                     </table>         
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" align="center">
-                                    <br/><br/><br/><br/><br/><br/>
+                                <td colspan="2" align="center">                                   
+                                    <br/><br/><br/>
+                                    <input type="hidden" name="ProGreska" />
+                                    <?php echo form_error('ProGreska', '<div class="error">', '</div>'); ?>
+                                    <br/><br/><br/>
                                     <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ><?php echo set_value('ProOpis'); ?></textarea>
                                 </td>
                             </tr>

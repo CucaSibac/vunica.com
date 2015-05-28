@@ -20,7 +20,7 @@
             <td class="praznaCelijaPopUp"></td>
             <!--<?php echo validation_errors(); ?>-->
             <td colspan="2">
-                <input type="text" name="UserName" id="UserName" placeholder="Korisnicko ime" class="inputPopUp" value="<?php echo set_value('UserName'); ?>"/>             
+                <input type="text" maxlength="20" name="UserName" id="UserName" placeholder="Korisnicko ime" class="inputPopUp" value="<?php echo set_value('UserName'); ?>"/>             
                 <?php echo form_error('UserName', '<div class="error">', '</div>'); ?>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
@@ -28,7 +28,7 @@
           <tr class="inputRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
-                <input type="text" name="ImePrezime" id="ImePrezime" placeholder="Ime i prezime" class="inputPopUp" value="<?php echo set_value('ImePrezime'); ?>"/>
+                <input type="text" maxlength="20" name="ImePrezime" id="ImePrezime" placeholder="Ime i prezime" class="inputPopUp" value="<?php echo set_value('ImePrezime'); ?>"/>
                 <?php echo form_error('ImePrezime', '<div class="error">', '</div>'); ?>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
@@ -36,7 +36,7 @@
           <tr class="inputRed">
             <td class="praznaCelijaPopUp"></td>
             <td colspan="2">
-                <input type="text" name="Email" id="Email" placeholder="E-mail adresa" class="inputPopUp" value="<?php echo set_value('Email'); ?>"/> 
+                <input type="text" maxlength="40" name="Email" id="Email" placeholder="E-mail adresa" class="inputPopUp" value="<?php echo set_value('Email'); ?>"/> 
                 <?php echo form_error('Email', '<div class="error">', '</div>'); ?>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
@@ -44,7 +44,7 @@
           <tr class="inputRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
-                <input type="text" name="EmailPotvrda" id="email4" placeholder="Potvrda e-mail adrese" class="inputPopUp" value="<?php echo set_value('EmailPotvrda'); ?>"/> 
+                <input type="text" maxlength="40" name="EmailPotvrda" id="email4" placeholder="Potvrda e-mail adrese" class="inputPopUp" value="<?php echo set_value('EmailPotvrda'); ?>"/> 
                 <?php echo form_error('EmailPotvrda', '<div class="error">', '</div>'); ?>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
@@ -52,7 +52,7 @@
           <tr class="inputRed">
             <td class="praznaCelijaPopUp"></td>
             <td colspan="2">
-                <input type="password" name="Sifra" id="Sifra" placeholder="Lozinka" class="inputPopUp" value="<?php echo set_value('Sifra'); ?>"/> 
+                <input type="password" maxlength="40" name="Sifra" id="Sifra" placeholder="Lozinka" class="inputPopUp" value="<?php echo set_value('Sifra'); ?>"/> 
                 <?php echo form_error('Sifra', '<div class="error">', '</div>'); ?>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
@@ -60,7 +60,7 @@
           <tr class="inputRed">
             <td class="praznaCelijaPopUp"></td>       
             <td colspan="2">
-                <input type="password" name="con_password" id="con_password" placeholder="Potvrda lozinke" class="inputPopUp" value="<?php echo set_value('con_password'); ?>"/>
+                <input type="password" maxlength="40" name="con_password" id="con_password" placeholder="Potvrda lozinke" class="inputPopUp" value="<?php echo set_value('con_password'); ?>"/>
                 <?php echo form_error('con_password', '<div class="error">', '</div>'); ?>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>

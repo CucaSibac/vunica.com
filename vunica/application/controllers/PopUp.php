@@ -9,6 +9,7 @@ class PopUp extends CI_Controller {
         $this->load->model('Pijaca_model');
         $this->load->model('Video_model');
         $this->load->model('Proizvod_model');
+        $this->load->model('Prijave');
     }
 
     public function registration() {
@@ -74,6 +75,14 @@ class PopUp extends CI_Controller {
                 $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($this->session->broj);
                 $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($this->session->broj);
                 $this->load->view('Proizvod', $nizp);
+            }
+            
+            if ($url == 'Pocetna'){                   
+                $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
+                $podaci['Korisnici'] = NULL;
+                $podaci['Videi'] = NULL;
+                $podaci['Proizvodi'] = NULL;
+                $this->load->view('Pocetna', $podaci);
             }
             
             /*
@@ -147,6 +156,15 @@ class PopUp extends CI_Controller {
                 $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($this->session->broj);
                 $this->load->view('Proizvod', $nizp);
             }
+            
+            if ($url == 'Pocetna'){                   
+                $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
+                $podaci['Korisnici'] = NULL;
+                $podaci['Videi'] = NULL;
+                $podaci['Proizvodi'] = NULL;
+                $this->load->view('Pocetna', $podaci);
+            }
+            
         }
         else {
             $this->session->set_flashdata('pri', 1);
@@ -176,6 +194,14 @@ class PopUp extends CI_Controller {
                 $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($this->session->broj);
                 $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($this->session->broj);
                 $this->load->view('Proizvod', $nizp);
+            }
+            
+            if ($url == 'Pocetna'){                   
+                $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
+                $podaci['Korisnici'] = NULL;
+                $podaci['Videi'] = NULL;
+                $podaci['Proizvodi'] = NULL;
+                $this->load->view('Pocetna', $podaci);
             }
             
         }
@@ -230,6 +256,14 @@ class PopUp extends CI_Controller {
                 $this->load->view('Proizvod', $nizp);
             }
             
+            if ($url == 'Pocetna'){                   
+                $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
+                $podaci['Korisnici'] = NULL;
+                $podaci['Videi'] = NULL;
+                $podaci['Proizvodi'] = NULL;
+                $this->load->view('Pocetna', $podaci);
+            }
+            
         }
         else {
             $this->session->set_flashdata('zl', 1);
@@ -259,6 +293,14 @@ class PopUp extends CI_Controller {
                 $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($this->session->broj);
                 $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($this->session->broj);
                 $this->load->view('Proizvod', $nizp);
+            }
+            
+            if ($url == 'Pocetna'){                   
+                $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
+                $podaci['Korisnici'] = NULL;
+                $podaci['Videi'] = NULL;
+                $podaci['Proizvodi'] = NULL;
+                $this->load->view('Pocetna', $podaci);
             }
             
         }

@@ -20,7 +20,7 @@
           <tr class="inputRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
-                <input type="text" name="zlEmail" id="zlEmail" placeholder="E-mail adresa" class="inputPopUp" value="<?php echo set_value('zlEmail');?>"/>
+                <input type="text" maxlength="40" name="zlEmail" id="zlEmail" placeholder="E-mail adresa" class="inputPopUp" value="<?php echo set_value('zlEmail');?>"/>
                 <?php echo form_error('zlEmail', '<div class="error">', '</div>'); ?>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>

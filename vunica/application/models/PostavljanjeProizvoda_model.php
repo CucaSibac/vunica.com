@@ -7,7 +7,7 @@ class PostavljanjeProizvoda_model extends CI_Model {
     }
     
     public function postavi_sliku($src){
-        $this->session->set_userdata('proSlika',$src);
+        $this->session->set_flashdata('proSlika',$src);
     }
     
     public function ubaci_proizvod(){
