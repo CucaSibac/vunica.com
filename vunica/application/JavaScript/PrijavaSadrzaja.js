@@ -1,5 +1,5 @@
 
-function prikazi_prijavu_komenbtara(){
+function prikazi_prijavu_komentara(){
     //sakrij_sve_prijave();
     document.getElementById('prazan').style.display = "block";
     document.getElementById('prijavaVideaKomentar').style.visibility = "visible";

@@ -81,7 +81,7 @@
                         </div>                              
                         
                         <br/> <br/> <br/> <br/> </br>  
-                        <input type="button" onclick="prikazi_prijavu_komenbtara();" value="cao" />
+                        <input type="button" onclick="prikazi_prijavu_komentara();" value="cao" />
                         <?php 
                             $attributes = array('name' => 'PostavljanjeProizvoda', 'font' => ""); 
                             echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
