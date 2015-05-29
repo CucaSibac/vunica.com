@@ -10,6 +10,21 @@ body{
 	outline:0;
 }
 
+
+/* Za <a> tag */
+.link{
+	text-decoration:none;
+        color:#fffef4;
+        font-size:24px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+	.link:hover{
+            cursor:pointer;
+            color:#605951;
+	}
+        
+
 /* Glavni div u kome se sve nalazi*/
 #telo{
 	width:100vw;
@@ -58,6 +73,8 @@ body{
 		position:absolute;
 		bottom:66%;
 		z-index:5;
+		
+		cursor:default;
 	}
 	
 
@@ -139,12 +156,24 @@ body{
 			
 			vertical-align:middle;
 		}
+                
+                    .stavka a{
+                        text-decoration:none;
+                        color:#fffef4;
+                        font-size:24px;
+                        font-family:Tahoma, Geneva, sans-serif;
+                    }
+                    
+                    .stavka a:hover{
+                        cursor:pointer;
+                        color:#605951;
+                    }
 		
-			.stavka:hover{
-				cursor:pointer;
-				color:#605951;
-				background-color:#fffef4;
-			}
+                    .stavka:hover{
+                            cursor:pointer;
+                            color:#605951;
+                            background-color:#fffef4;
+                    }
 	
 	/*Dugme u meniju*/
 	#dugme2{
@@ -153,7 +182,7 @@ body{
 	
 		#dugme2:hover{
 			cursor:pointer;
-                }
+		}
                 
 #odjava{
     color:#fffef4;

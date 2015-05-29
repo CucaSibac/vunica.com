@@ -35,7 +35,7 @@ class Pocetna extends CI_Controller {
         //$this->duzine['BrPrijave'] = count($this->podaci['Prijave']);
         
         $this->podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);
-        $this->duzine['BrKorisnici'] = $this->Korisnici->brojRedova();
+        //$this->duzine['BrKorisnici'] = $this->Korisnici->brojRedova();
         
         $this->podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);
         $this->podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
