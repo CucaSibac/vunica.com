@@ -11,26 +11,33 @@
     
    <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
     
+   <style>
+   <?php include '/../CSS/Proba.css';?>
+   </style>
+   
   <style media="screen and (max-device-width: 1400px)">
   <?php include '/../CSS/Template (1366x768).css'; ?>
+  <?php include '/../CSS/Pocetna (1366x768).css'; ?>
   <?php include '/../CSS/Pop up (1366x768).css'; ?>
   <?php include '/../CSS/Tekst (1366x768).css'; ?>
   <?php include '/../CSS/Dugme (1366x768).css'; ?>
-  <?php include '/../CSS/Pocetna (1366x768).css'; ?>
   <?php include '/../CSS/Paragraf (1366x768).css'; ?>
   </style>
   <style media="screen and (min-device-width: 1401px)">
     <?php include '/../CSS/Template (1920x1080).css'; ?>
+    <?php include '/../CSS/Paragraf (1920x1080).css'; ?>
     <?php include '/../CSS/Pop up (1920x1080).css'; ?>
     <?php include '/../CSS/Tekst (1920x1080).css'; ?>
     <?php include '/../CSS/Dugme (1920x1080).css'; ?>
     <?php include '/../CSS/Pocetna (1920x1080).css'; ?>
-    <?php include '/../CSS/Paragraf (1920x1080).css'; ?>
   </style>
   <script>
     <?php include('/../JavaScript/PopUp.js');?>
     <?php include('/../JavaScript/Footer.js');?>
   </script>
+   
+   <script src="http://www.google.com/jsapi"></script>
+   <script type="text/javascript"> google.load("jquery", "1.3.2"); </script>
    
   <!-- InstanceEndEditable -->
   
@@ -49,6 +56,24 @@
         include("Zaboravljena lozinka.php");
         include("Footer.php");
     ?>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var brKorisnika = <?= count($BrKorisnici) ?>;
+            var ucitano = 0;
+            $("#dugmeKorisnici").click(function () {
+                ucitano += 5;
+                
+                $.get("http://localhost/vunica.com/vunica/index.php/Pocetna/ucitajKorisnike/" + ucitano, function (data) {
+                    $("#markerKorisnici").append(data);
+                });
+
+                if (ucitano >= brKorisnika - 5) {
+                    $("#dugmeKorisnici").hide();
+                }
+            });
+        });
+    </script>
   
     <!-- Telo strane -->
     <div id = "teloOkvir">

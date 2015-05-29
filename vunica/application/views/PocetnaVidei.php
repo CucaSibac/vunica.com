@@ -1,35 +1,9 @@
 <!-- Teodora Aleksic, 391/12-->
 
-    <tr>
-        <td width = "1%">
-            <!--Prazna celija-->
-        </td>
-            <td width = "22%">
-            <img class = "videoThumb" src = "http://localhost/Slike/Strikarnica/slika.jpg">
-            <br/> <br/>
-        </td>
-        <td width = "2%">
-            <!--Prazna celija-->
-        </td>
         <td width = "22%">
-            <img class = "videoThumb" src = "http://localhost/Slike/Strikarnica/slika.jpg">
+            <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/video/index/<?php
+                echo $red->IDVideo; ?>'>
+                <img class = "videoThumb" src = "<?php echo $red->Slika; ?>">
+            </a> 
             <br/> <br/>
         </td>
-        <td width = "2%">
-            <!--Prazna celija-->
-        </td>
-        <td width = "22%">
-            <img class = "videoThumb" src = "http://localhost/Slike/Strikarnica/slika.jpg">
-            <br/> <br/>
-        </td>
-        <td width = "2%">
-            <!--Prazna celija-->
-        </td>
-        <td width = "22%">
-            <img class = "videoThumb" src = "http://localhost/Slike/Strikarnica/slika.jpg">
-            <br/> <br/>
-        </td>
-        <td width = "1%">
-            <!--Prazna celija-->
-        </td>
-    </tr>

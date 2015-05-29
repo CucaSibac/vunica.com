@@ -2,6 +2,7 @@
 
 <!-- Pocetna strana za admina -->
 
+    <a name = "Pocetak" class = "link"> </a>
 
     <!-- Dobrodoslica -->
     <div width = 100% align = "center">
@@ -19,63 +20,47 @@
 
 
     <!-- Dnevni red -->
-    <?php if(1){ ?>
-        <table width = "60%" align = "center">
-            <tr>
-                <td width = "100%">
-                    <font class = "tekstObican">
-                        Od kad ste bili poslednji put na sajtu desile su se nove aktivnosti. Danas za Vas na dnevnom redu imamo nove:
+    <table width = "60%" align = "center">
+        <tr>
+            <td width = "100%">
+                <font class = "tekstObican">
+                    Od kad ste bili poslednji put na sajtu desile su se nove aktivnosti. Danas za Vas na dnevnom redu imamo nove:
+                </font>
+                <br/> <br/> 
+            </td>
+        </tr>
+        <tr>
+            <td width = "100%">
+                <font class = "tekstObican"> Prijave: </font>
+                <a href = "#Prijave" class = "link">
+                    <font class="tekstIskosen">
+                        <?php echo count($Prijave); ?>
                     </font>
-                    <br/> <br/> 
-                </td>
-            </tr>
-            <tr>
-                <td width = "100%">
-                    <font class = "tekstObican"> Prijave: </font>
-                    <a href = "#Prijave" class = "link">
-                        <font class="tekstIskosen">
-                            <?php echo count($Prijave); ?>
-                        </font>
-                    </a>
-                    <br/>
-                    <font class = "tekstObican"> Korisnike: </font>
-                    <a href = "#Korisnici" class = "link">
-                        <font class="tekstIskosen">
-                            <?php echo count($Korisnici); ?>
-                        </font>
-                    </a>
-                    <br/>
-                    <font class = "tekstObican"> Videe: </font>
-                    <a href = "#Videi" class = "link">
-                        <font class="tekstIskosen"> 
-                            <?php echo count($Videi); ?>
-                        </font>
-                    </a>
-                    <br/>
-                    <font class = "tekstObican"> Proizvode: </font>
-                    <a href = "#Proizvodi" class = "link">
-                        <font class="tekstIskosen"> 
-                            <?php echo count($Proizvodi); ?>
-                        </font>
-                    </a>
-                </td>
-            </tr>
-        </table>
-    
-    <?php }else{ ?>
-        <table width = "60%" align = "center">
-            <tr>
-                    <td width = "100%">
-                    <font class = "tekstObican"> Svaka Vam cast </font>
-                    <font class = "tekstIskosen"> Dragance </font>
-                    <font class = "tekstObican"> ! Danas na dnevnom redu nemate nista. Uzmite svoje igle u ruke i bacite se na strikanje! Cekamo Vas do narednog puta. :*
+                </a>
+                <br/>
+                <font class = "tekstObican"> Korisnike: </font>
+                <a href = "#Korisnici" class = "link">
+                    <font class="tekstIskosen">
+                        <?php echo count($Korisnici); ?>
                     </font>
-                    <br/> <br/> 
-                </td>
-            </tr>
-        </table>  
-    <?php } ?>
-        
+                </a>
+                <br/>
+                <font class = "tekstObican"> Videe: </font>
+                <a href = "#Videi" class = "link">
+                    <font class="tekstIskosen"> 
+                        <?php echo count($NoviVidei); ?>
+                    </font>
+                </a>
+                <br/>
+                <font class = "tekstObican"> Proizvode: </font>
+                <a href = "#Proizvodi" class = "link">
+                    <font class="tekstIskosen"> 
+                        <?php echo count($NoviProizvodi); ?>
+                    </font>
+                </a>
+            </td>
+        </tr>
+    </table>       
 
     <br/> <br/> <br/> <br/> </br> <br/>
     
@@ -88,13 +73,13 @@
       <tr>
             <td colspan = "2" width = "100%">
             <font class = "naslovObican"> Nove prijave: </font>
-                    <br/>  
+            <br/>  
         </td>
       </tr>
       <tr>
             <td colspan = "2" width = "100%">
             <hr width = "100%" class = "linija"/>
-                    <br/> 
+            <br/> 
         </td>
       </tr>
       
@@ -109,7 +94,7 @@
       
       <tr>
             <td colspan = "2" width = "100%">
-            <font class = "tekstIskosen"> Dragance </font>
+            <font class = "tekstIskosen"> <?php echo $this->session->UserName; ?> </font>
             <font class = "tekstObican"> pa vi ste zmaj!  Nema prijava koje treba da pogledate. </font>
             <br/> <br/> <br/>
         </td>
@@ -119,9 +104,7 @@
 
       <tr>
         <td colspan = "2" width = "100%" align = "center">
-            <br/> <br/>
             <?php 
-                //$attributes = array('id' => 'formaProfilEditovanje');
                 echo form_open("Pocetna/ucitajPrijave"); 
             ?>
             <input type = "submit" class = "dugme" value = "Ucitaj starije"/>
@@ -159,13 +142,20 @@
         </td>
       </tr>
       
-      <?php if(1){include 'PocetnaKorisnici.php';}
-            else{
+      <?php 
+        if($Korisnici != NULL){     
+           include 'PocetnaKorisnici.php';
+        }
+        else{
       ?>
+      
+      <tr id = "markerKorisnici">
+          <td> </td>
+      </tr>
       
       <tr>
             <td colspan = "2" width = "100%">
-            <font class = "tekstIskosen"> Dragance </font>
+            <font class = "tekstIskosen"> <?php echo $this->session->UserName; ?> </font>
             <font class = "tekstObican"> za sada nema novih drugara koje mozete da upozate. Strpite se, bice ih jos. :D </font>
             <br/> <br/> <br/>
         </td>
@@ -176,7 +166,11 @@
       <tr>
             <td colspan = "2" width = "100%" align = "center">
             <br/> <br/>
-            <a class = "dugme"> Ucitaj starije </a>
+            <?php
+                echo form_open("Pocetna/ucitajKorisnike"); 
+            ?>
+            <input id = "dugmeKorisnici" type = "submit" class = "dugme" value = "Ucitaj starije"/>
+            <?php echo form_close(); ?>
             <br/> <br/> <br/>
         </td>
       </tr>
@@ -197,22 +191,22 @@
 
     <table width = "60%" align = "center">
         <tr>
-                <td>
-                <font class = "naslovObican"> Novi videi: </font>
-                        <br/>
+            <td>
+                <font class = "naslovObican"> Najnoviji: </font>
+                <br/>
             </td>
         </tr>
         <tr>
-                <td>
-                        <hr width = "100%" class = "linija"/> 
-                </td>
+            <td>
+                <hr width = "100%" class = "linija"/> 
+            </td>
         </tr>
         
-        <?php if(0){ ?>
+        <?php if($NoviVidei == NULL){ ?>
         <tr>
                 <td>
                 <br/>
-                <font class = "tekstIskosen"> Dragance </font>
+                <font class = "tekstIskosen"> <?php echo $this->session->UserName; ?> </font>
                 <font class = "tekstObican"> korisnici su se malo ulenjili. Vratice se na posao uskoro. </font>
             </td>
         </tr>
@@ -221,17 +215,41 @@
 
     <br/> <br/>
     
-    <?php if(1){ ?>
+    
     <table width = "80%" align = "center">
-        <?php include 'PocetnaVidei.php'; ?>
+        <tr>
+            <td width = "1%">
+                <!--Prazna celija-->
+            </td>
+              <?php 
+                if($NoviVidei != NULL){   
+                  $i = 0;
+                  foreach($NoviVidei as $red){
+                      include 'PocetnaVidei.php';
+                      $i++;
+                      if($i != 4){
+                      ?>
+                        <td width = "2%">
+                            <!--Prazna celija-->
+                        </td>
+                      <?php
+                      }
+                  }
+                }
+              ?>
+            <td width = "1%">
+                <!--Prazna celija-->
+            </td>
+        </tr>
     </table>
-    <?php } ?>
 
     <table width = "60%" align = "center">
         <tr>
                 <td align = "center">
                 <br/> <br/>
-                <a class = "dugme"> Ucitaj starije </a>
+                <a href = "http://localhost/vunica.com/vunica/index.php/Strikarnica" class = "dugme" target = "_blank">
+                    Ucitaj starije
+                </a>
             </td>
         </tr>
         <tr>
@@ -254,7 +272,7 @@
     <table width = "60%" align = "center">
         <tr>
                 <td>
-                <font class = "naslovObican"> Novi proizvodi: </font>
+                <font class = "naslovObican"> Najnoviji proizvodi: </font>
                         <br/>
             </td>
         </tr>
@@ -264,11 +282,11 @@
                 </td>
         </tr>
         
-        <?php if(0){ ?>
+        <?php if($NoviProizvodi == NULL){ ?>
         <tr>
                 <td>
                 <br/>
-                <font class = "tekstIskosen"> Dragance </font>
+                <font class = "tekstIskosen"> <?php echo $this->session->UserName; ?> </font>
                 <font class = "tekstObican"> korisnicima su otekli prsti od strikanja. Nastavljaju cim se malo odmore. </font>
             </td>
         </tr>
@@ -277,17 +295,40 @@
 
     <br/> <br/>
 
-    <?php if(1){ ?>
     <table width = "80%" align = "center">
-        <?php include 'PocetnaProizvodi.php'; ?>
+        <tr>
+            <td width = "2%">
+                <!--Prazna celija-->
+            </td>
+              <?php 
+                if($NoviProizvodi != NULL){   
+                  $i = 0;
+                  foreach($NoviProizvodi as $red){
+                      include 'PocetnaProizvodi.php';
+                      $i++;
+                      if($i != 4){
+                      ?>
+                        <td width = "4%">
+                            <!--Prazna celija-->
+                        </td>
+                      <?php
+                      }
+                  }
+                }
+              ?>
+            <td width = "2%">
+                <!--Prazna celija-->
+            </td>
+        </tr>
     </table>
-    <?php } ?>
 
     <table width = "60%" align = "center">
         <tr>
                 <td align = "center">
                 <br/> <br/>
-                <a class = "dugme"> Ucitaj starije </a>
+                <a href = "http://localhost/vunica.com/vunica/index.php/Pijaca" class = "dugme" target = "_blank">
+                    Ucitaj starije
+                </a>
             </td>
         </tr>
         <tr>
@@ -302,10 +343,18 @@
 
     <table width = "60%" align = "center">
         <tr>
-                <td>
+            <td>
                 <br/>
-                <font class = "tekstIskosen"> Dragance </font>
+                <font class = "tekstIskosen"> <?php echo $this->session->UserName; ?> </font>
                 <font class = "tekstObican"> , ne razumem, vec ste zavrsili? Vratite se opet na pocetak da to proverite. </font>
+            </td>
+        </tr>
+        <tr>
+            <td align = "center">
+               <br/> <br/>
+               <a href = "#Pocetak" class = "link">
+                   <font class = "tekstIskosen"> Vratite se na pocetak? </font>
+               </a>
             </td>
         </tr>
     </table> 

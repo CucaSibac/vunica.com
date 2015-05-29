@@ -1,40 +1,47 @@
 <!-- Teodora Aleksic, 391/12-->
 
+<?php foreach($Korisnici as $red){ ?>
+
     <tr>
       <td width = "50%" valign = "top">
         <br/>
-        <a href = "http://localhost/vunica.com/vunica/index.php/Profilna" target = "_parent" class = "link"> 
-            <img class = "slikaKorisnika" src = "http://localhost/Slike/Profilna/Musko.jpg">
+        <a href = "http://localhost/vunica.com/vunica/index.php/Profil" target = "_parent" class = "link"> 
+            <img class = "slikaKorisnika" src = "<?php echo $red->Slika; ?>">
         </a>
-        <br/> <br/> <br/>
+        <br/> <br/> <br/> <br/>
       </td>
       <td width = "50%" valign = "top">
          <br/>
-         <a href = "http://localhost/vunica.com/vunica/index.php/Profilna" target = "_parent" class = "link">  
-                <font class = "naslovObican"> Zika </font>
+         <a href = "http://localhost/vunica.com/vunica/index.php/Profil" target = "_parent" class = "link">  
+                <font class = "naslovObican"> <?php echo $red->UserName; ?> </font>
          </a>
          <br/>
-         <font class = "tekstIskosen"> Zivojin Heroj </font>
+         <font class = "tekstIskosen"> 
+            <?php echo $red->ImePrezime; ?>
+         </font>
          <br/> <br/>
          <font class = "tekstObican"> Godine: </font>
-         <font class = "tekstIskosen"> 10 </font>
+         <font class = "tekstIskosen"> <?php echo $red->Godine; ?> </font>
          <br/>
          <font class = "tekstObican"> Pol: </font>
-         <font class = "tekstIskosen"> Muski </font>
+         <font class = "tekstIskosen"> <?php echo $red->Pol; ?> </font>
          <br/>
          <font class = "tekstObican"> Lokacija: </font>
-         <font class = "tekstIskosen"> Pored Marka Kraljevica </font>
+         <font class = "tekstIskosen"> <?php echo $red->Lokacija; ?> </font>
          <br/> <br/>
          <font class = "tekstObican"> Opis korisnika: </font>
          <br/>
          <div class="poljeZaTekst">
-            <font class = "tekstObican"> Zovem se Zivojin, ali me drugovi zovu Zika. Osecacu se srecno ako...
+            <font class = "tekstObican">
+                <?php echo $red->Opis; ?>.
             </font>
          </div>
          <br/> <br/>
-         <a href = "http://localhost/vunica.com/vunica/index.php/Profilna" target = "_parent" class = "link">
-                <font class = "tekstIskosen"> Pogledaj profil </font>
+         <a href = "http://localhost/vunica.com/vunica/index.php/Profil" target = "_blank" class = "akcija">
+            POGLEDAJ PROFIL
          </a>
-         <br/> <br/> <br/>
+         <br/> <br/> <br/> <br/>
       </td>
     </tr>
+    
+<?php } ?>

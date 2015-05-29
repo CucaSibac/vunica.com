@@ -1,5 +1,7 @@
 <?php
 
+// Teodora Aleksic, 391/12
+
 class Prijave extends CI_Model {
     
     private $videi;
@@ -41,7 +43,7 @@ class Prijave extends CI_Model {
     protected function ucitajPrijavu($baza){
         $this->db->select('*');
         $this->db->from($baza);
-        $this->db->order_by('Datum', 'asc');
+        $this->db->order_by('Datum', 'desc');
         $upit = $this->db->get();
         
         if($upit->num_rows() > 0){

@@ -56,7 +56,14 @@
             
             <td id = "cegerPolje">
               <?php if($this->session->UserName != ''){ ?>
-                <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Ceger', '_parent')"/>  
+                <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Ceger', '_parent')"/>
+                <?php
+                    $niz = $this->session->Proizvodi;
+                    if($niz != ''){
+                        if(count($niz) > 0){     
+                ?>
+                    <!-- <font class = "opcijeMenija"> <?php echo count($niz); ?> </font>-->
+                <?php }} ?>
               <?php } ?>
             </td>
           </tr>

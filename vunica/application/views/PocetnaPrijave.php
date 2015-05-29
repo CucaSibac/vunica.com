@@ -31,12 +31,19 @@
          </a>
          <br/>
          <font class = "tekstObican"> Sadrzaj: </font>
-         <a class = "link" target = "_blank">
-                <font class = "tekstIskosen"> 
-                    <?php 
-                        echo $vlasnik['Sadrzaj'];
-                    ?>
-                </font>
+         <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/<?php
+                if($red['Vrsta'] == 0 || $red['Vrsta'] == 2){
+                    echo 'video';
+                }
+                else{
+                    echo 'proizvod';
+                }
+                ?>/index/<?php echo $vlasnik['IDSadrzaj']; ?>'>
+            <font class = "tekstIskosen"> 
+                <?php 
+                    echo $vlasnik['Sadrzaj'];
+                ?>
+            </font>
          </a>
          <br/> <br/>
          <font class = "tekstObican"> Osoba koja je prijavila: </font>
@@ -66,14 +73,25 @@
                 ?>
             </font>
         </div>
+        <br/>
+        <?php if($red['Vrsta'] == 2 || $red['Vrsta'] == 3){ ?>
+            <font class = "tekstObican"> Komentar: </font>
+            <div class = "poljeZaTekst" align = "left">
+                <font class = "tekstObican">
+                    <?php
+                        echo $vlasnik['Komentar'];
+                    ?>
+                </font>
+            </div>  
+        <?php } ?>
         <br/> <br/>
       </td>
     </tr>
-    <tr>
-        <td colspan = "2" width = "50%" align = "left">
-            <a class = "akcija" 
+    <tr valign = "top">
+        <td width = "50%" align = "left" valign = "top">
+            <a class = "akcija" target = "_blank"
                href='http://localhost/vunica.com/vunica/index.php/<?php
-                    if($red['Vrsta'] == 0 || $red['Vrsta'] == 3){
+                    if($red['Vrsta'] == 0 || $red['Vrsta'] == 2){
                         echo 'video';
                     }
                     else{
@@ -83,8 +101,9 @@
                 POGLEDAJ MATERIJAL
             </a>
             
-            <br/> <br/>
-            
+            <br/> <br/> <br/>
+        </td>
+        <td width = "50%" align = "left" valign = "top">
             <?php 
                 //$attributes = array('id' => 'formaProfilEditovanje');
                 echo form_open("Pocetna/obrisiPrijavu"); 
