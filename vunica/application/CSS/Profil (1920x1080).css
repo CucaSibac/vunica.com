@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* Teodora Aleksic, 391/12 */
+
+#banerPolje{
+	width:80%;
+	
+	background-image:url(http://localhost/Slike/Profilna/Baner.jpg);
+	background-position:right;
+	
+	padding:4% 0 3% 0;
+	
+	border-width:1px;
+	border-color:#605951;
+	border-style:solid;
+}
+
+	#banerPolje:hover{
+		cursor:pointer;
+	}
+
+	.banerTekst{
+		color:#605951;
+		font-size:24px;
+		font-family:Tahoma, Geneva, sans-serif;
+	}
+
+#profilnaSlika{
+	width:70%;
+	
+	padding:0 0 0 0;
+	
+	border-width:2px;
+	border-color:#605951;
+	border-style:solid;
+}
+
+/* Za <a> tag */
+.link{
+	text-decoration:none;
+}
+
+	.link:hover{
+		cursor:pointer;
+	}
+        
+/* Submit dugme */
+.akcija{
+    background-color:#fffef4;
+    
+    color:#605951;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:15px;
+    text-decoration: none;
+    
+    border: 0;
+    padding: 0;
+    outline: 0;
+    margin: 0;         
+}
+
+    .akcija:hover{
+        cursor: pointer;
+    }
+        
+/* Dugme za dodavanje proizvoda i videa */    
+.dodajproizvod{
+    width: 100%;
+    height: 120px;
+    
+    border:2px dotted #605951;
+    
+    color:#605951;
+    font-size:24px;
+    font-family:Tahoma, Geneva, sans-serif;
+    text-align: center;
+    text-transform:uppercase;	
+    text-decoration:none;
+    
+    vertical-align: middle;
+    
+    cursor:pointer;	
+}
+    .dodajproizvod:hover{
+        background-color: rgba(172, 206, 192, 0.3);		
+    }
+
+/* Izlistani videi i proizvodi jednog korisnika */   
+.produktKorisnika{
+    	width:250px;
+        height: 200px;
+        
+        padding: 0 0 5% 0;
+              
+        position: relative;
+}
+    
+    /* Naziv preko slicice */
+    .produktKorisnikaNaziv{
+        position: absolute;
+        top: 22px;
+        
+        z-index: 15;
+        
+        color: #fffef4;
+        font-size:28px;
+        font-family:Tahoma, Geneva, sans-serif;
+    }
+    
+    /* Datum preko slicice */
+    .produktKorisnikaDatum{
+        position: absolute;
+        bottom: 5px;
+
+        z-index: 15;
+        
+        color: #fffef4;
+        font-size:18px;
+        font-family:Tahoma, Geneva, sans-serif;
+        font-style: italic;
+    }
+
+    /* Slicica */
+    .produktKorisnikaSlika{
+        width: 100%;
+        height: 180px;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        z-index: 0;
+    }
+    
+        .produktKorisnikaSlika:hover{
+            cursor: pointer;
+        }
+       
+    /* Senka preko slike */
+    .produktKorisnikaSenka{
+        background-color: #fffef4;
+        opacity: 0;
+        
+        width: 100%;
+        height: 200px;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        z-index: 5;
+    }
+    
+    /* Gornja ivica preko slike */
+    .produktKorisnikaZaglavlje{
+        background-color: #61a6ab;
+        opacity: 0.85;
+        
+        width: 100%;
+        height: 75px;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        z-index: 10;
+    }
+    
+    /* Donja ivica preko slike */
+    .produktKorisnikaPodnozje{
+        background-color: #605951;
+        opacity: 0.85;
+        
+        width: 100%;
+        height: 28px;
+        
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        
+        z-index: 10;
+    }

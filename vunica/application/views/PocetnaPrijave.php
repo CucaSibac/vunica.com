@@ -104,12 +104,29 @@
             <br/> <br/> <br/>
         </td>
         <td width = "50%" align = "left" valign = "top">
-            <?php 
-                echo form_open("Pocetna/obrisiPrijavu"); 
+            <?php
+                $id = $red['Prijava']->IDPrijava;
+                if($red['Vrsta'] == 0){
+                    $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiPrijavaVideo/$id";
+                }
+                else{
+                    if($red['Vrsta'] == 1){
+                        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiPrijavaProizvod/$id";
+                    }
+                    else{
+                        if($red['Vrsta'] == 2){
+                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiPrijavaKomentarVideo/$id";
+                        }
+                        else{
+                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiPrijavaKomentarProizvod/$id";
+                        }
+                    }
+                }           
             ?>
-            <input type = "submit" class = "akcija" value = "OBRISI PRIJAVU"/>
-            <?php echo form_close(); ?>
-            
+            <a  id = "prijaviobrisi" class = "akcija"
+                href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete prijavu?','<?php echo $kontroler; ?>')"> 
+                OBRISI PRIJAVU
+            </a>
             <br/> <br/> <br/>
         </td>
     </tr>

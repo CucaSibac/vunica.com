@@ -189,8 +189,8 @@
                     <tr>
                         <td align = "center">
                             <div class="produktKorisnika">
-                                <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/video/index/<?php
-                                                                    echo $redProizvod->IDVideo; ?>'>
+                                <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php
+                                                                                echo $redProizvod->IDProizvod; ?>'>
                                     <font class="produktKorisnikaNaziv" style="left:
                                           <?php echo ((250 - strlen($redProizvod->Naziv) * 11) / 2); ?>px
                                     ">

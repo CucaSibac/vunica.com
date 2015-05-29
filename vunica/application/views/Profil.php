@@ -7,7 +7,16 @@
   
   <!-- InstanceBeginEditable name="doctitle" -->
   
-    <title>Profil</title>
+    <title>
+        <?php
+            if($this->session->UserName != ''){
+                echo $this->session->UserName;
+            }
+            else{
+                echo "Editovanje profila";
+            }
+        ?>
+    </title>
     
     <!-- NE BRISATI NISTA U OVOM EDIT REGIONU!!!! -->
     
@@ -20,7 +29,7 @@
              <?php include '/../CSS/Dugme (1366x768).css'; ?>
              <?php include '/../CSS/Paragraf (1366x768).css'; ?>
              <?php include '/../CSS/Video (1366x768).css'; ?>
-             
+             <?php include '/../CSS/Profil (1366x768).css'; ?>
         </style>
 
         <style media="screen and (min-device-width: 1401px)">
@@ -30,7 +39,7 @@
              <?php include '/../CSS/Tekst (1920x1080).css'; ?>
              <?php include '/../CSS/Dugme (1920x1080).css'; ?>
              <?php include '/../CSS/Video (1920x1080).css'; ?>
-             <?php include '/../CSS/Dodavanje (1366x768).css'; ?>
+             <?php include '/../CSS/Profil (1920x1080).css'; ?>
         </style>
         <script>
              <?php include('/../JavaScript/PopUp.js'); ?>
@@ -43,26 +52,27 @@
 <body onLoad="izracunaj();" onresize="izracunaj();" id="body">
     
     <?php
-	include("Header.php");
-	include("Obavestenje.php");
-	include("Prijava.php");
-	include("Registracija.php");
-	include("Zaboravljena lozinka.php");
-	include("Footer.php");
+        include("Header.php");
+        include("Obavestenje.php");
+        include("Prijava.php");
+        include("Registracija.php");
+        include("Zaboravljena lozinka.php");
+        include("Footer.php");
+        include("Upozorenje.php");
+        include("brisanjesesije.php");
     ?>
 
     
-    <!--Prozor koji potamni-->
-    <div id = "prazan" onclick="sakrij_sve()">
-    </div>
+
 
     <!-- Telo strane -->
     <div id = "teloOkvir">
       <table id = "telo">
       	<tr>
            <td>
-			  <!-- InstanceBeginEditable name="Body" -->
-              <br/> <br/> <br/> <br/> </br> 
+              <!-- InstanceBeginEditable name="Body" -->
+              <br/> <br/> <br/> <br/>
+              <!-- Odredjivanje statusa korisnika -->
               <?php
                 $status = 0;
                 if(strcmp($this->session->Status, 'Admin') == 0){
@@ -79,210 +89,290 @@
                     }
                 } 
               ?>
-              <?php if($status == 3 || $status == 2){?> 
-              <table align="center" width="74%">
-              <th bgcolor='#FF6C6C' align = "center" style="cursor: pointer;" onmouseover="this.bgColor='#3E9569'" onmouseout="bgColor='#FF6C6C'">
-              <div class="mis">
-              <br />
-              <font class="tekstProfil">POSTANITE PREMIUM KORISNIK!!!</font>
-              <br /><br />
-              </div>
-              </th>
-              </table>
+              
+              <!-- Baner -->
+              
+              <?php if($status == 3){?>
+                            
+              <br/> <br/>
+              
+              <a class="link" href="http://localhost/vunica.com/vunica/index.php/Pocetna/premiumProfil">
+              <table id = "banerPolje" align = "center">
+              	<tr>
+                    <td width = "50%" align = "left" style = "padding-left:8%;">
+                    	<font color = "#fffef4" size="6">
+                        	Postanite PREMIUM
+                        </font>
+                        <br/> <br/>
+                        <font class = "banerTekst">
+                        	Specijalna ponuda!
+                        </font>
+                    </td>
+                    <td width = "50%" align = "left" style = "padding-left:25%;">
+                    	<font class = "banerTekst" style = "text-decoration:line-through;">
+                            199€ 
+                        </font>
+                        <font class = "banerTekst" >
+                            =>19€
+                        </font>
+                    </td>
+                </tr>
+               </table>
+              </a>
+                  
+              <br/>
+              
               <?php } ?>
               
-              <?php if($status == 3){?> 
-              <table align="center" width="74%">
-                  <tr>
-                      <td align="center">
-                          <font class="tekstObican"> ILI </font>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td bgcolor='#FF6C6C' align = "center" style="cursor: pointer;" onmouseover="this.bgColor='#3E9569'" onmouseout="bgColor='#FF6C6C'">
-                         <div class="mis">
-                            <br />
-                            <font class="tekstProfil">POSTANITE ČLAN KLUBA PLETILJA!!!</font>
-                            <br /><br />
-                         </div>
-                      </td>
-                  </tr>
-              </table>  
-              <?php }?> 
               
-              <table align="center" border="0" width="70%">
-                
+              <table width = "90%" align = "center"> 
                 <tr>
-                  <td rowspan="3" width="35%" align="center">
-                  <br /><br />
-                    <img width="250px" src="<?php echo $this->session->Slika;?>" />
+                  <td width = "50%" valign = "top"  align = "center">
+                    <br/> <br/>
+                    
+                    <img id = "profilnaSlika" src="<?php echo $this->session->Slika;?>" />
+                    
                   </td>
-                  <td height="25%">
-                  <br /><br />
-                  <font class="naslovObican"><?php echo $this->session->UserName;?></font>
-                  <br /> <br />
-                  <font class="tekstObican"><?php echo $this->session->ImePrezime;?></font>
-                  </td>
-                </tr>
-                <tr>
-                  <td height="25%">
-                  <br />
-                  <font class="tekstBold">Godine: </font>
-                  <font class="tekstObican"><?php echo $this->session->Godine;?></font>
-                  <br /> <br />
-                  <font class="tekstBold">Status: </font>
-                  <font class="tekstObican"><?php echo $this->session->Status;?></font>
-                  </td>
-                </tr>
-                <tr>
-                  <td height="50%" valign="top">
-                  <br />
-                  <font class="tekstBold">O meni: </font>
-                  <font class="tekstObican"><?php echo $this->session->Opis;?></font>
-                  <br /><br />
+                    <td width = "50%" align = "left" valign = "top" style = "padding-right:5%;">
+                      <br/> <br/> <br/>
+                      
+                      <font class="naslovObican">
+                          <?php echo $this->session->UserName;?>
+                      </font> 
+                      <br/>   
+                      <font class="tekstObican">
+                          <?php echo $this->session->ImePrezime;?>
+                      </font>
+                      
+                      <br/> <br/>
+                      
+                      <font class="tekstObican">Status: </font>
+                      <font class="tekstIskosen">
+                          <?php 
+                              if($status == 1){echo "Administrator";}
+                              else{
+                                  if($status == 2){echo "Klub pletilja";}
+                                  else{echo "Klub 5 klupka";}
+                              }  
+                          ?>
+                      </font>
+                      
+                      <br/> <br/>
+                      
+                      <font class="tekstObican"> Godine: </font>
+                      <font class="tekstIskosen"><?php echo $this->session->Godine;?></font>
+                      
+                      <br/>
+                      
+                      <font class="tekstObican"> Pol: </font>
+                      <font class="tekstIskosen"><?php echo $this->session->Pol;?></font>
+                      
+                      <br/>
+                      
+                      <font class="tekstObican"> Lokacija: </font>
+                      <font class="tekstIskosen"><?php echo $this->session->Lokacija;?></font>
+                      
+                      <br/> <br/>
+                      
+                      <font class="tekstObican"> O meni: </font>
+                      <font class="tekstIskosen"><?php echo $this->session->Opis;?></font>
+                      
+                      <br/> <br/>
                   </td>
                 </tr>
                 <tr>
                   <td align="center">
-                  <br />
-                  <a href="#" onclick="window.open('http://localhost/vunica.com/vunica/index.php/ProfilEditovanje', '_parent')" class="dugme">Izmeni profil</a>
-                  <a href="#" onclick="obrisan()" class="dugme">Obriši profil</a>
-                  <br /><br />
+                      <br />
+                      <a class="dugme" target="_parent"
+                         href="http://localhost/vunica.com/vunica/index.php/ProfilEditovanje">
+                          Izmeni profil
+                      </a>
+                      <?php 
+                        $id = $this->session->IDKorisnik;
+                        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKorisnika/$id"; 
+                      ?>
+                      <a  id = "prijaviobrisi" class = "dugme"
+                          href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete korisnika?','<?php echo $kontroler; ?>')"> 
+                          Obrisi profil
+                      </a>
+                      <br/> <br/>
                   </td>
                 </tr>
-
-              </table>
-              <br />
-              <?php if($status == 2 || $status == 1){?> 
-              <table align="center" border="0" width="50%">
-                  <tr>
-                      <td width="50%" align="center">
-                          <div class="dodajvideo">
-                              <br/><br/>
-                              Dodaj
-                              <br/>
-                              video
-                              <br/>
-                          </div>
-                      </td>
-                      <td width="50%" align="center">
-                          <div class="dodajproizvod">
-                              <br/><br/>
-                              Dodaj
-                              <br/>
-                              proizvod
-                              <br/>
-                          </div>
-                      </td>
-                  </tr>
-              </table>
-              <?php } ?>
                   
-              <?php if($status == 3){?> 
-              <table align="center" border="0" width="29%">
-                <tr>
-                  <td align="center">
-                      <div class="dodajvideo">
-                        <br/><br/>
-                        Dodaj
-                        <br/>
-                        video
-                        <br/>
-                     </div>
-                  </td>
-                </tr>
-              </table>
-              <?php } ?>
-              
-              <br />
-              <hr width = "74%" class = "linija"/>
+                <br/> <br/> 
 
-              <br/> 
-              
-              <table align="center" border="1" width="70%">
-                  <?php if($status == 2 || $status == 1){?> 
-                <tr>
-                  <td align="center" width="50%">
-                    <font class="tekstBold">Moji videi</font>
-                  </td>
-                  <td align="center" width="50%">
-                    <font class="tekstBold">Moji proizvodi</font>
-                  </td>
-                </tr>
-                  <?php } ?>
-                  
-                  <?php if($status == 3){?> 
-                <tr>
-                    <td colspan="2" align="center">
-                        <font class="tekstBold">Moji videi</font>
-                    </td>  
-                </tr>
-                  <?php } ?>
+                <table width = "60%" align = "center">
+                    <tr>
+                        <td>
+                            <br/> <br/>
+                            <hr width = "100%" class = "linija"/> 
+                        </td>
+                    </tr>
+                </table> 
                 
-                  <?php if($status == 2 || $status == 1){?> 
-                <tr>
-                  <td align="center" width="50%">
-                  <br />
-                     <video width="90%" controls> <source src="http://localhost/Video/Omca.mp4" type="video/mp4"></video>
-                     <p align="left">
-                     &nbsp; &nbsp; &nbsp;
-                     <font class="tekstBold">Naziv videa</font>
-                     <br />
-                     &nbsp; &nbsp; &nbsp;
-                     <a href="#"><font class="tekstObican">Detaljnije...</font></a>
-                     <br /> <br />
-                     &nbsp; &nbsp;
-                     <a href="#"><font class="dugme">Obriši video</font></a>
-                     </p>
-                  </td>
-                  <td align="center" valign="top" width="50%">
-                  <br />
-                    <font class="tekstObican">Trenutno nemate svojih proizvoda.</font>
-                  </td>
-                </tr>
-                  <?php } ?>
-                <tr>
-                    <td colspan="2" align="center">
-                  <br />
-                     <video width="50%" controls> <source src="http://localhost/Video/Omca.mp4" type="video/mp4"></video>
-                     <p align="left">
-                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                     <font class="tekstBold">Naziv videa</font>
-                     <br />
-                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                     <a href="#"><font class="tekstObican">Detaljnije...</font></a>
-                     <br /> <br />
-                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                     <a href="#"><font class="dugme">Obriši video</font></a>
-                     </p>
-                  </td>
-                </tr>
-              </table>
-              <p align="center">
-              <a href="#" class="dugme">Učitajte još</a>
-              </p>
-              <br/> <br/> </br>
-              
-              <!-- Uokviren paragraf -->
-                        
-              
-              <br/> <br/> <br/> <br/> </br> </br>
-              
-              <!-- Dugmici -->
-                                      
-           
-              <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-              
-              <br/> <br/> <br/> <br/> <br/> 
-             
-              
-              
+                <br/> <br/>
+                  
+                <table width = "80%" align = "center" valign = "top">
+                    <tr>
+                        <td width = "5%">
+                            <!-- Prazna celija -->
+                        </td>
+                        <td width = "45%" valign = "top">       
+                            <!-- Videi -->
+                            <table width = "80%" align = "center">
+                                <tr>
+                                    <td>
+                                        <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/PostavljanjeVidea'>
+                                        <div class="dodajproizvod"  >  
+                                            <p style="text-align: center">  Dodaj video </p>
+                                        </div> 
+                                        </a>
+                                        <br/> <br/>
+                                    </td>
+                                </tr>
+                                <?php 
+                                    if($Videi != NULL){
+                                        foreach ($Videi as $redVideo){ 
+                                ?>
+                                <tr>
+                                    <td align = "center">
+                                        <div class="produktKorisnika">
+                                            <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/video/index/<?php
+                                                                                echo $redVideo->IDVideo; ?>'>
+                                                <font class="produktKorisnikaNaziv" style="left:
+                                                      <?php echo ((250 - strlen($redVideo->Naziv) * 11) / 2); ?>px
+                                                ">
+                                                    <?php echo $redVideo->Naziv; ?>
+                                                </font>
+                                            </a>
+                                            <font class="produktKorisnikaDatum" style="left:
+                                                      <?php echo ((250 - strlen($redVideo->Datum) * 9) / 2); ?>px
+                                            ">
+                                                <?php echo $redVideo->Datum; ?>
+                                            </font>
+                                            <div class="produktKorisnikaZaglavlje">
+                                            </div>
+                                            <div class="produktKorisnikaPodnozje">
+                                            </div>
+                                            <div class="produktKorisnikaSenka"> 
+                                            </div>
+
+                                            <img class="produktKorisnikaSlika" src="<?php echo $redVideo->Slika; ?>">
+                                        </div>   
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align = "center" valign = "top">
+                                        <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$redVideo->IDVideo" ; ?>
+                                        <a  id = "prijaviobrisi" class = "akcija"
+                                            href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
+                                            OBRISI VIDEO
+                                        </a>
+                                        <br/> <br/>
+                                    </td>
+                                </tr>
+                                <?php 
+                                        }
+                                    }
+                                    else{
+                                ?>
+                                <tr>
+                                    <td height = "120px" align = "center" valign = "middle">
+                                        <font class = "tekstObican">
+                                            Trenutno nemate svojih videa. Postanite aktivniji clan zajednice. Postavite video!
+                                        </font>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                            </table>
+                        </td>
+                        <td width = "45%" valign = "top">
+                            <!-- Proizvodi -->
+                            <table width = "80%" align = "center">
+                                <tr>
+                                    <td>
+                                        <?php if($status == 3){ ?>
+                                            <a class="link" href="http://localhost/vunica.com/vunica/index.php/Pocetna/premiumProfil">
+                                        <?php }else{ ?>
+                                            <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/PostavljanjeProizvoda'>
+                                        <?php }?>
+
+                                            <div class="dodajproizvod">  
+                                                <p style="text-align: center">  Dodaj proizvod </p>
+                                            </div> 
+                                            </a>
+
+                                        <br/> <br/>
+                                    </td>
+                                </tr>
+                                <?php 
+                                    if($Proizvodi != NULL){
+                                        foreach ($Proizvodi as $redProizvod){ 
+                                ?>
+                                <tr>
+                                    <td align = "center">
+                                        <div class="produktKorisnika">
+                                            <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php
+                                                                                echo $redProizvod->IDProizvod; ?>'>
+                                                <font class="produktKorisnikaNaziv" style="left:
+                                                      <?php echo ((250 - strlen($redProizvod->Naziv) * 11) / 2); ?>px
+                                                ">
+                                                    <?php echo $redProizvod->Naziv; ?>
+                                                </font>
+                                            </a>
+                                            <font class="produktKorisnikaDatum" style="left:
+                                                      <?php echo ((250 - strlen($redProizvod->Datum) * 9) / 2); ?>px
+                                            ">
+                                                <?php echo $redProizvod->Datum; ?>
+                                            </font>
+                                            <div class="produktKorisnikaZaglavlje">
+                                            </div>
+                                            <div class="produktKorisnikaPodnozje">
+                                            </div>
+                                            <div class="produktKorisnikaSenka"> 
+                                            </div>
+
+                                            <img class="produktKorisnikaSlika" src="<?php echo $redVideo->Slika; ?>">
+                                        </div>     
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align = "center" valign = "top">
+                                        <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiProizvod/$redProizvod->IDProizvod" ; ?>
+                                        <a  id = "prijaviobrisi" class = "akcija"
+                                            href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
+                                            OBRISI PROIZVOD
+                                        </a>
+                                        <br/> <br/>
+                                    </td>
+                                </tr>
+                                <?php 
+                                        }
+                                    }
+                                    else{
+                                ?>
+                                <tr>
+                                    <td height = "120px" align = "center" valign = "middle">
+                                        <font class = "tekstObican">
+                                            Trenutno nemate svojih proizvoda. Postanite aktivniji clan zajednice. Postavite proizvod!
+                                        </font>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                            </table>
+                        </td>
+                        <td width = "5%">
+                            <!-- Prazna celija-->
+                        </td>
+                    </tr>
+                </table>
+
+              <br/> <br/> <br/> <br/> <br/>
               
               <!-- InstanceEndEditable -->
-     		</td>
+              </td>
           </tr>
      	</table>
      </div>
@@ -290,6 +380,24 @@
 </body>
 <!-- InstanceEnd -->
 
-
 </html>
+
+<?php 
+if($this->session->flashdata('reg') == 1){
+    echo "<script language=\"javascript\">prikazi_registraciju();</script>";
+    $this->session->set_flashdata('reg', 0);
+}
+?>
+<?php 
+    if($this->session->flashdata('pri') == 1){
+        echo "<script language=\"javascript\">prikazi_prijavu();</script>";
+        $this->session->set_flashdata('pri', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('zl') == 1){
+        echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
+        $this->session->set_flashdata('zl', 0);
+    }
+?>
 

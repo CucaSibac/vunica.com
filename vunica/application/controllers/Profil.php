@@ -2,24 +2,28 @@
 
 class Profil extends CI_Controller{
     
+    private $podaci;
+    
     public function __construct() {
         parent::__construct();
+        
+        $podaci = array(
+            'Videi' => NULL,
+            'Proizvodi' => NULL,
+        );
     }
     
     public function index(){
-        $this->load->view('Profil');
-        //$nizk['kolicinap'] = $this->Profil_model->broj_proizvod();
-       // $nizk['poslednjip'] = $this->Profil_model->uzmi_proizvod();
-        //$nizk['kolicinav'] = $this->Profil_model->broj_video();
-        //$nizk['poslednjiv'] = $this->Profil_model->uzmi_video();
-       // $this->load->view('Profil', $nizk);
+        $this->load->model('NoviVidei');
+        $this->load->model('NoviProizvodi');
+        
+        $this->podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);
+        $this->podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
+        
+        $this->load->view('Profil', $this->podaci);
     }
 
-    function broj_proizvod($offset) {
-        $this->load->model('Profil_model');
-        $nizk['poslednjip'] = $this->Profil_model->uzmi_proizvod($offset);
-        $this->load->view('get_proizvod', $nizk);
-    }
+
     
 }
 
