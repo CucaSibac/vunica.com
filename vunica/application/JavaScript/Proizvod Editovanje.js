@@ -41,6 +41,7 @@ function mouseup()
 }
 
 function option(x) {
-    document.getElementById("opt").value = x;
+    document.getElementById("opt2").value = x;
     //alert(document.getElementById("opt").value);
 }
+

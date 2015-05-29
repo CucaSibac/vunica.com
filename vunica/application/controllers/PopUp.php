@@ -62,7 +62,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
@@ -83,7 +83,7 @@ class PopUp extends CI_Controller {
                 $podaci['Videi'] = NULL;
                 $podaci['Proizvodi'] = NULL;
                 $this->load->view('Pocetna', $podaci);
-            }
+            }            
             
             /*
             if ($url == 'Proizvod'){
@@ -142,7 +142,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
@@ -164,6 +164,8 @@ class PopUp extends CI_Controller {
                 $podaci['Proizvodi'] = NULL;
                 $this->load->view('Pocetna', $podaci);
             }
+            
+            
             
         }
         else {
@@ -181,7 +183,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
@@ -204,8 +206,9 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pocetna', $podaci);
             }
             
+            
         }
-        
+    //    echo $url;
     }
 
     public function logout() {       
@@ -241,7 +244,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
@@ -263,6 +266,7 @@ class PopUp extends CI_Controller {
                 $podaci['Proizvodi'] = NULL;
                 $this->load->view('Pocetna', $podaci);
             }
+            
             
         }
         else {
@@ -280,7 +284,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
@@ -302,6 +306,7 @@ class PopUp extends CI_Controller {
                 $podaci['Proizvodi'] = NULL;
                 $this->load->view('Pocetna', $podaci);
             }
+            
             
         }
         
@@ -338,8 +343,9 @@ class PopUp extends CI_Controller {
         $novi_url = $niz[$duzina - 1];
         return $novi_url;
     }
-*/
+
     public function prethodna_strana() {
+        
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         if(strpos($refering_url, 'video') == true || strpos($refering_url, 'proizvod') == true ){
             $niz = explode('/', $refering_url);
@@ -355,6 +361,40 @@ class PopUp extends CI_Controller {
             $duzina = sizeof($niz);
             $podaci['url'] = $niz[$duzina - 1];
             return $podaci;
+        }      
+         
+    }
+ 
+ */
+    
+    public function prethodna_strana() {
+        
+        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+        if(strpos($refering_url, 'obrisiKomentarVideo') == true){
+            $niz = explode('/', $refering_url);
+            $duzina = sizeof($niz);
+            $podaci['url'] = $niz[$duzina-2];
+            //$podaci['broj'] = $niz[$duzina-1];
+            //$this->PopUp_model->postavi_broj($niz[$duzina-1]);
+            echo $podaci['url'];
+            return $podaci;
+        }
+        else {
+            if(strpos($refering_url, 'video') == true || strpos($refering_url, 'proizvod') == true ){
+                 $niz = explode('/', $refering_url);
+                $duzina = sizeof($niz);
+                $podaci['url'] = $niz[$duzina-3];
+                //$podaci['broj'] = $niz[$duzina-1];
+                $this->PopUp_model->postavi_broj($niz[$duzina-1]);
+                return $podaci;
+            }
+            else {
+            //  echo $refering_url;
+                $niz = explode('/', $refering_url);
+                $duzina = sizeof($niz);
+                $podaci['url'] = $niz[$duzina - 1];
+                return $podaci;
+            }      
         }
     }
     
