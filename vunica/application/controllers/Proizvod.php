@@ -280,12 +280,16 @@ class Proizvod extends CI_Controller {
     
     function StaviUCeger(){
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-        $data = array (
-            'IDProizvod' => ($this->input->post('IDProizvod')),
-            'NazivProizvoda' => ($this->input->post('NazivProizvoda')),
+        $IDProizvod = $this->input->post('IDProizvod');
+        $NazivProizvoda = $this->input->post('NazivProizvoda');
+        $Cena = $this->input->post('Cena');
+        $KolicinaForma = $this->input->post('KolicinaForma');
+        $data = array ($IDProizvod, $NazivProizvoda, $Cena, $KolicinaForma );
+        /*    'IDProizvod' => ($this->input->post('IDProizvod')),
+            'NazivProizvoda' => ($this->input->post('NazivProizvoda'))
             'Cena' => ($this->input->post('Cena')),
-            'KolicinaForma' => ($this->input->post('KolicinaForma'))
-    );
+            'KolicinaForma' => ($this->input->post('KolicinaForma'))*/
+    
        
         $nizProizvoda = $this->session->Proizvodi;
         

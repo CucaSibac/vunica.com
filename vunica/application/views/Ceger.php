@@ -115,33 +115,33 @@
                         if(count($niz) > 0){
                             $i = 0;
                             $duzina = count($niz);
-                            //for(;$i < $duzina;$i++){
-                               // $red = $niz[$i];
-                            foreach ($niz as $red){
+                            for(;$i < $duzina;$i++){
+                                $red = $niz[$i];
+                               
                 ?>
            
                  <table align="center" width="60%">
                   <tr>
                     <td width="60%" align="left" style="padding-left:5%;">
                         <font class="tekstObican" style="padding-left:5%;">
-                            <?php echo $red->ime; ?>
+                            <?php echo $niz[$i][1]; ?>
                         </font>
                     </td>
                     <td width="20%" align="left" style="padding-left:5%;">
                       <font class="tekstObican">
                           <?php 
-                            $kolicina = (int)($red->kolicina);
+                            $kolicina = (int)($niz[$i][3]);
                             $ukupnoKolicina += $kolicina;
-                            echo $red->kolicina; 
+                            echo $niz[$i][3]; 
                           ?>
                       </font>
                     </td>
                     <td width="20%" align="left" style="padding-left:5%;">
                       <font class="tekstObican">
                           <?php 
-                            $cena = (int)($red->cena);
-                            $kolicina = (int)($red->kolicina);
-                            $ukupnoKolicina += ($kolicina * $cena);
+                            $cena = (int)($niz[$i][2]);
+                           $kolicina = (int)($niz[$i][3]);
+                            $ukupnoCena += ($kolicina * $cena);
                             echo $kolicina * $cena;
                           ?>
                       </font>
