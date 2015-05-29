@@ -93,10 +93,9 @@
 
 #prijava{
 	width:24%;
-	//height:35%;
 	top:20%;
 	left:38%;
-	position:absolute;//position:fixed;
+	position:absolute;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -106,8 +105,8 @@
 
 .naslovPrijava{
 	width:100%;
-	height:32px;//height:10%;
-	font-size:23px;//font-size:2.25vh;
+	height:32px;
+	font-size:23px;
 	font-family:Tahoma, Geneva, sans-serif;
 	text-align:center;
 	color:#fffef4;
@@ -118,8 +117,7 @@
 
 .tabelaPrijava{
 	width:100%;
-	//height:90%;
-	font-size:17px;//font-size:1.75vh;
+	font-size:17px;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;	
 }
@@ -127,10 +125,9 @@
 
 #zaboravljenaLozinka{
 	width:24%;
-	//height:20%;
 	top:20%;
 	left:38%;
-	position:absolute;//position:fixed;
+	position:absolute;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -140,8 +137,8 @@
 
 .naslovZL{
 	width:100%;
-        height:32px;//height:17.5%;
-	font-size:23px;//font-size:2.25vh;
+        height:32px;
+	font-size:23px;
 	font-family:Tahoma, Geneva, sans-serif;
 	text-align:center;
 	color:#fffef4;
@@ -152,8 +149,7 @@
 
 .tabelaZL{
 	width:100%;
-	//height:82.5%;
-	font-size:17px;//font-size:1.75vh;
+	font-size:17px;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;	
 }
@@ -162,10 +158,9 @@
 
 #registracija{
 	width:22%;
-	//height:60%;
 	top:10%;
 	left:39%;
-	position:absolute;//position:fixed;
+	position:absolute;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -175,8 +170,8 @@
 
 .naslovRegistracija{
 	width:100%;
-	height:32px;//height:5.8%;
-	font-size:23px;//font-size:2.25vh;
+	height:32px;
+	font-size:23px;
 	font-family:Tahoma, Geneva, sans-serif;
 	text-align:center;
 	color:#fffef4;
@@ -187,8 +182,7 @@
 
 .tabelaRegistracija{
 	width:100%;
-	//height:94.2%;
-	font-size:17px;//font-size:1.75vh;
+	font-size:17px;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;	
 }
@@ -279,6 +273,38 @@
 	text-align:center;
 }
 
+/*Prijava komentar video */
+
+#prijavaVideaKomentar{
+	width:24%; 
+	top:20%;
+	left:38%;
+	position:absolute;
+        visibility:hidden;
+	background-color:#fffef4;
+	border:2px solid #ACCEC0;
+	border-radius:10px;
+	z-index:102;	
+}
+
+.naslovPrijavaVideaKomentar{
+	width:100%;
+	height:32px;
+	font-size:23px;
+	font-family:Tahoma, Geneva, sans-serif;
+	text-align:center;
+	color:#fffef4;
+	background-color:#ACCEC0;
+	border-top-left-radius:8px;
+	border-top-right-radius:8px;
+}
+
+.tabelaPrijavaVideaKomentar{
+	width:100%;
+	font-size:17px;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#605951;	
+}
 
 /* ostale zajednicke komponente */
 
@@ -292,7 +318,7 @@
 
 .inputPopUp{
 	width:100%;
-	font-size:20px;//font-size:2.35vh;
+	font-size:20px;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;
 	padding:0.7vh;
@@ -311,7 +337,7 @@
 	width:75%;
 	text-align:center;
 	font-family: Arial;
-        font-size: 18px;//font-size: 1,75vh;
+        font-size: 18px;
         text-decoration: none;
 	color: #fffef4;
 	background-color:#ACCEC0;
@@ -329,8 +355,8 @@
 	}
 	
 .slikaPopUp{
-	width:30px;//width:3vh;
-	height:30px;//height:3vh;
+	width:30px;
+	height:30px;
 	position:absolute;
 	right:0vh;
 	top:0vh;

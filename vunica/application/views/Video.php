@@ -39,6 +39,7 @@
 <?php include('/../JavaScript/Footer.js'); ?>
 <?php include('/../JavaScript/Checkbox.js'); ?>
 <?php include('/../JavaScript/Video.js'); ?>
+    <?php include('/../JavaScript/PrijavaSadrzaja.js'); ?>
         </script>
 
 
@@ -447,8 +448,10 @@ $this->session->unset_userdata('PCena');
                                                                 <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
                                                                 <script>
         <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
+                                                              <?php include("PrijavaKomentarVideo.php");?>
                                                                 </script>
-                                                                <a  class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                
+                                                                <a onclick="prikazi_prijavu_komentara()" class = "prijaviKomentar" > Prijavi komentar </a>
                                                                 <script>
                                                                     //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
         <?php } else { ?> //ako gost pristupa sajtu

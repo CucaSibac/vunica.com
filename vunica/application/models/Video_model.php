@@ -30,7 +30,7 @@ class Video_model extends CI_Model {
     function num_messages($vrednost) {
         $this->db->where('IDVideo', $vrednost);
         $query = $this->db->count_all_results('komentarvideo');
-        echo $query;
+      //  echo $query;
 	return $query;
     }
     

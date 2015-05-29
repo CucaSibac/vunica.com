@@ -44,6 +44,7 @@
 <?php include('/../JavaScript/PopUp.js'); ?>
 <?php include('/../JavaScript/Footer.js'); ?>
 <?php include('/../JavaScript/Checkbox.js'); ?>
+<?php include('/../JavaScript/PrijavaSadrzaja.js'); ?>
 <?php include('/../JavaScript/Postavljanje Proizvoda.js'); ?>
         </script>
 
@@ -60,6 +61,7 @@
         include("Zaboravljena lozinka.php");
         include("Upozorenje.php");
         include("Footer.php");
+        include("PrijavaKomentarVideo.php");
         include("brisanjesesije.php");
         ?>	
         
@@ -77,8 +79,9 @@
                         <div width = 100% align = "center">
 
                         </div>                              
-
-                        <br/> <br/> <br/> <br/> </br>                       
+                        
+                        <br/> <br/> <br/> <br/> </br>  
+                        <input type="button" onclick="prikazi_prijavu_komentara();" value="cao" />
                         <?php 
                             $attributes = array('name' => 'PostavljanjeProizvoda', 'font' => ""); 
                             echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
