@@ -81,7 +81,7 @@
                         <br/> <br/> <br/> <br/> </br>                            
                         <?php 
                             $attributes = array('name' => 'EditovanjeProizvoda', 'font' => ""); 
-                            echo form_open_multipart("EditovanjeProizvoda/do_upload", $attributes); 
+                            echo form_open_multipart("ProizvodEditovanje/do_upload", $attributes); 
                         ?>
                         <table id="postavkaproizvoda" border="0">
                             <tr>
@@ -172,7 +172,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2" align="center">
-                                    <font class="preostalokaraktera">Preostalo karaktera: <font id="preostalo">400</font></font> 
+                                   <!-- <font class="preostalokaraktera">Preostalo karaktera: <font id="preostalo">400</font></font> -->
                                     <br/><br/><br/><br/>                       
                                 </td>
                             </tr>               
