@@ -25,6 +25,13 @@ function hasData() {
 			return false;
 		}
 		
+                function proveraImaTeksta() {
+                    var tekst1 = document.getElementById("limitedtextarea").value;
+		if(tekst1 == "" ) {
+			obavesti("Jos uvek niste napisali Vas komentar.");
+                      
+		}
+                }
 		
 function postavi() {
 		var tekst1 = document.getElementById("limitedtextarea").value;

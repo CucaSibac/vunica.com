@@ -1187,7 +1187,24 @@ if ($this->session->UserName != '' && $status !== "Klupko") {
                                                                     </div>
 
 
-
+<?php 
+    if($this->session->flashdata('reg') == 1){
+        echo "<script language=\"javascript\">prikazi_registraciju();</script>";
+        $this->session->set_flashdata('reg', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('pri') == 1){
+        echo "<script language=\"javascript\">prikazi_prijavu();</script>";
+        $this->session->set_flashdata('pri', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('zl') == 1){
+        echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
+        $this->session->set_flashdata('zl', 0);
+    }
+?>
 
 
                                                                     </body>
