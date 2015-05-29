@@ -352,7 +352,7 @@ $usersession = $this->session->userdata('UserName');
                                     <input type="hidden" name="IDProizvod" id="IDProizvod"  value="<?php echo $idProizvod ?>"/>
                                     <input type="hidden" name="Cena" id="Cena"  value="<?php echo $idProizvod ?>"/>
                                     <input type="hidden" name="KolicinaForma" id="KolicinaForma"  value=""/>
-                                    <input type="hidden" name="Naziv" id="Naziv"  value="<?php echo $nazivProizvoda?>"/>
+                                    <input type="hidden" name="NazivProizvoda" id="NazivProizvoda"  value="<?php echo $nazivProizvoda?>"/>
                                         <?php echo form_close(); ?>
                                     <!--Kraj forme za ceger-->
                                 </td>
