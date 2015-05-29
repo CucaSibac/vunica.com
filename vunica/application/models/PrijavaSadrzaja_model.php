@@ -69,5 +69,24 @@ class PrijavaSadrzaja_model extends CI_Model {
         }
         $this->db->insert('prijavavideo', $data);
     }
+    
+    function prijaviProizvod() {
+        if ($this->input->post('Tekst') !== "") {
+            $data = array(
+                'UserName' => ($this->session->UserName),
+                'IDProizvod' => ($this->session->videoId),
+                'Komentar' => ($this->input->post('Tekst')),
+                'Datum' => (date("Y.m.d"))
+            );
+        } else {
+            $data = array(
+                'UserName' => ($this->session->UserName),
+                'IDProizvod' => ($this->session->videoId),
+                'Komentar' => ("Sadrzaj je neprikladan"),
+                'Datum' => (date("Y.m.d"))
+            );
+        }
+        $this->db->insert('prijavaproizvod', $data);
+    }
 
 }
