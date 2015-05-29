@@ -5,9 +5,8 @@
     <!-- Baner -->
     <?php 
         if($status == 3){
-            echo form_open("Pocetna/premiumProfil");
     ?>
-      <input class="akcija" type = "submit"/>
+      <a class="link" href="http://localhost/vunica.com/vunica/index.php/Pocetna/premiumProfil">
       <table id = "banerPolje" align = "center">
         <tr>
             <td width = "50%" align = "left" style = "padding-left:8%;">
@@ -29,11 +28,10 @@
             </td>
         </tr>
        </table>
+      </a>
       
        <br/> <br/> <br/> <br/>
-    <?php 
-        echo form_close(); } 
-    ?>
+    <?php } ?>
 
     <!-- Dobrodoslica -->
     <div width = 100% align = "center">
@@ -136,7 +134,17 @@
                                 </div>
 
                                 <img class="produktKorisnikaSlika" src="<?php echo $redVideo->Slika; ?>">
-                            </div>     
+                            </div>   
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align = "center" valign = "top">
+                            <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$redVideo->IDVideo" ; ?>
+                            <a  id = "prijaviobrisi" class = "akcija"
+                                href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
+                                OBRISI VIDEO
+                            </a>
                             <br/> <br/>
                         </td>
                     </tr>
@@ -160,25 +168,17 @@
                 <table width = "80%" align = "center">
                     <tr>
                         <td>
-                            <?php 
-                                if($status == 3){
-                                    echo form_open("Pocetna/premiumProfil"); 
-                            ?>
-                                <div class="dodajproizvod"> 
-                                    <input class="akcija" type = "submit"/>  
-                                    <p style="text-align: center">  Dodaj proizvod </p>
-                                </div> 
-                            <?php 
-                                echo form_close();
-                                }
-                                else{ 
-                            ?>
+                            <?php if($status == 3){ ?>
+                                <a class="link" href="http://localhost/vunica.com/vunica/index.php/Pocetna/premiumProfil">
+                            <?php }else{ ?>
                                 <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/PostavljanjeProizvoda'>
+                            <?php }?>
+                                
                                 <div class="dodajproizvod">  
                                     <p style="text-align: center">  Dodaj proizvod </p>
                                 </div> 
                                 </a>
-                            <?php }?>
+
                             <br/> <br/>
                         </td>
                     </tr>
@@ -211,6 +211,16 @@
 
                                 <img class="produktKorisnikaSlika" src="<?php echo $redVideo->Slika; ?>">
                             </div>     
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align = "center" valign = "top">
+                            <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiProizvod/$redProizvod->IDProizvod" ; ?>
+                            <a  id = "prijaviobrisi" class = "akcija"
+                                href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
+                                OBRISI PROIZVOD
+                            </a>
                             <br/> <br/>
                         </td>
                     </tr>

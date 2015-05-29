@@ -107,7 +107,7 @@
             <?php 
                 echo form_open("Pocetna/ucitajPrijave"); 
             ?>
-            <input type = "submit" class = "dugme" value = "Ucitaj starije"/>
+            <input type = "hidden" class = "dugme" value = "Ucitaj starije"/>
             <?php echo form_close(); ?>
             <br/> <br/> <br/>
         </td>
@@ -169,7 +169,7 @@
             <?php
                 echo form_open("Pocetna/ucitajKorisnike"); 
             ?>
-            <input id = "dugmeKorisnici" type = "submit" class = "dugme" value = "Ucitaj starije"/>
+            <input id = "dugmeKorisnici" type = "hidden" class = "dugme" value = "Ucitaj starije"/>
             <?php echo form_close(); ?>
             <br/> <br/> <br/>
         </td>

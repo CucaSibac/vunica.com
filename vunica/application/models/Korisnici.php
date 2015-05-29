@@ -15,7 +15,12 @@ class Korisnici extends CI_Model {
     // Ucitava 5 korisnika iz baze od reda $pocetak
     public function ucitavanjeKorisnika($pocetak){
         $this->db->order_by('DatumPoslednjegLogovanja', 'desc');
-        $upit = $this->db->get('korisnik', 5, $pocetak);
+        
+        //$upit = $this->db->get('korisnik', 5, $pocetak);
+        
+        $this->db->select('*');
+        $this->db->from('korisnik');
+        $upit = $this->db->get();
         
         return $upit->result();
     }

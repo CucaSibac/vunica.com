@@ -37,11 +37,24 @@
             </font>
          </div>
          <br/> <br/>
-         <a href = "http://localhost/vunica.com/vunica/index.php/Profil" target = "_blank" class = "akcija">
-            POGLEDAJ PROFIL
-         </a>
-         <br/> <br/> <br/> <br/>
       </td>
+    </tr>    
+    <tr valign = "top">
+        <td width = "50%" align = "left" valign = "top">
+            <a href = "http://localhost/vunica.com/vunica/index.php/Profil" target = "_blank" class = "akcija">
+                POGLEDAJ PROFIL
+            </a>
+            
+            <br/> <br/> <br/>
+        </td>
+        <td width = "50%" align = "left" valign = "top">
+            <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKorisnika/$red->IDKorisnik" ; ?>
+            <a  id = "prijaviobrisi" class = "akcija"
+                href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
+                OBRISI PROFIL
+            </a>
+            <br/> <br/> <br/>
+        </td>
     </tr>
     
 <?php } ?>
