@@ -1,5 +1,8 @@
 <?php
 
+// Teodora Aleksic, 391/12
+// Ivana Lisanin, 531/12
+
 class Kupovina extends CI_Model {
     
     private $kupovina;

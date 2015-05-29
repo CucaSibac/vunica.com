@@ -1,5 +1,7 @@
 <?php
 
+// Teodora Aleksic, 391/12
+
 class Pocetna extends CI_Controller {
     
     private $podaci;

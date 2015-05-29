@@ -1,5 +1,8 @@
 <?php
 
+// Ivana Lisanin, 531/12
+// Teodora Aleksic, 391/12
+
 class Ceger extends CI_Controller{
     
     private $kupovina;

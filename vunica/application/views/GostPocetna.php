@@ -19,7 +19,7 @@
     </div>
 
 
-    <br/> <br/> <br/>
+    <br/> <br/> <br/> </br>
     
 
     <!-- Predstavljanje -->
@@ -39,17 +39,21 @@
             </tr>
         </table> 
 
-        <br/> <br/>  
+        <br/> <br/>
 
         <table width = "60%" align = "center">
             <tr>
                 <td width = "100%" align = "left">
                   <font class = "tekstObican">
-                      I tako, jednog lepog dana, Teodora se prihvatila svojih igala i pocela da strika. Strikala je i strikala ceo dan i noc. Na kraju je napravila dva lepa dzempercica, jedan par carapa (sa jednorozima) i kapicu za hladne zimske dane. Oh, kako joj je samo taj dan bio ispunjen!
+                      I tako, jednog lepog dana, Teodora se prihvatila svojih igala i pocela da strika. 
+                      Strikala je i strikala ceo dan i noc.
+                      Medjutim, kada je dosla do jednog specificnog veza, koji vodi poreklo iz istocnih Karpata, shvatila je da ne zna da ga uradi.
+                      Trazila je i trazila resenje na internetu, ali nije mogla da ga nadje.
+                      Onda se zapitala ima li ljudi koji nailaze na isti problem i ima li nacina da im nekako pomogne.
                   </font>
                   <br/> <br/> <br/>
                   <font class = "tekstIskosen">
-                      Ovaj tekst je jako bitan, inace ne bi bio ovako napisan.
+                      Tog trenutka dosla je do ideje za vunicu.com.
                   </font>
                 </td>
             </tr>
@@ -58,5 +62,74 @@
         <br/> <br/>   
 
         <hr width = "60%" class = "linija"/>
+        
+        <br/> <br/> <br/> <br/> </br>
+        
+        
+        <!-- Ponude sajta-->
+        
+        <table width = "60%" align = "center">
+            <tr>
+                <td width = "100%" align = "left">
+                  <font class = "tekstObican">
+                      Otvorite se izobilju novih ideja. Vunica.com za Vas ima spremno vise razlicitih aktivnosti:
+                  </font>
+                </td>
+            </tr>
+        </table>  
+        
+        <br/> <br/>
+        
+        <table width = "80%" align = "center" valign = "top">
+            <tr>
+                <td width = "11%">
+                    <!-- Prazna celija-->
+                </td>
+                <td width = "38%" align = "center" valign = "top">
+                    <div class="reklama">
+                        <a class = "link" target = "_parent"
+                           href = "http://localhost/vunica.com/vunica/index.php/Strikarnica"
+                        >
+                            <img class="reklamaSlika" src="http://localhost/Slike/Strikarnica/slika.jpg">
+                        </a>
+                    </div>
+                    
+                    <br/>
+                    
+                    <font class = "naslovObican"> Omce </font>
+                    <br/> <br/>
+                    <font class = "tekstObican">
+                        Omce su nova atrakcija korisnika vunice.com. Ima ih sve vise iz dana u dana,
+                        a prave ih ne samo nove pridoslice sajta, nego i najiskusniji clanovi
+                    </font>
+                </td>
+                <td width = "2%">
+                    <!-- Prazna celija-->
+                </td>
+                <td width = "38%" align = "center" valign = "top">
+                    <div class="reklama">
+                        <a class = "link" target = "_parent"
+                           href = "http://localhost/vunica.com/vunica/index.php/Pijaca"
+                        >
+                            <img class="reklamaSlika" src="http://localhost/Slike/Materijali/vuna.jpg">
+                        </a>
+                    </div>  
+                    
+                    <br/>
+                    
+                    <font class = "naslovObican"> Vunica </font>
+                    <br/> <br/>
+                    <font class = "tekstObican">
+                        Samo najmeksa i najkvalitetnija vunica. Mozete je naci samo na nasoj pijaci, a ako 
+                        ne pozurite, uskoro ne ni na njoj.
+                    </font>
+                </td>
+                <td width = "11%">
+                    <!-- Prazna celija-->
+                </td>
+            </tr>
+        </table>
+        
+        
     </div>           
 

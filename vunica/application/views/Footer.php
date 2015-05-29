@@ -1,3 +1,6 @@
+<!-- Milos Andric 206/12 -->
+<!-- Teodora Aleksic 391/12 -->
+
 <!-- Footer -->
     <div id="footer" >
       
