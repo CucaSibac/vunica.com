@@ -39,8 +39,6 @@ class Proizvod extends CI_Controller {
     }
     
     public function index($vredn) {
-
-        $this->load->model('PopUp_model');
         $this->load->model('Proizvod_model');
         $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($vredn);
         $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($vredn);
