@@ -9,8 +9,36 @@
 
 class Proizvod extends CI_Controller {
     
+    public $niz;
+    private $element;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('Proizvod_model');
+        
+        $this->element = array(
+            'id' => '',
+            'ime' => $this->input->post('arg'),
+            'kolicina' => $this->input->post('v'), 
+            'cena' => ''
+        );
+    }
+    public function postavljanje($argument){
+       // $this->element['id'] = 
+        $this->element['ime'] = $argument;
+       // $this->element['cena'] = 
+        
+        $this->niz = $this->session->Proizvodi;
+        if ($this->niz == '') {
+            $this->niz[0] = $this->element;
+        } else {
+            $this->niz[count($this->niz)] = $this->element;
+        }
+        $this->session->Proizvodi = $this->niz;
+        echo $this->element['ime'];
+    }
+    
     public function index($vredn) {
-        $this->load->model('PopUp_model');
         $this->load->model('Proizvod_model');
         $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($vredn);
         $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($vredn);
@@ -18,6 +46,8 @@ class Proizvod extends CI_Controller {
         $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($vredn);
         $this->load->view('Proizvod', $nizp);
     }
+    
+    
 
     function get_messages($vredn, $offset ) {
         $this->load->model('Proizvod_model');
