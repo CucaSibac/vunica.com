@@ -9,20 +9,6 @@ body{
 	border:0;
 	outline:0;
 }
-
-
-/* Za <a> tag */
-.link{
-	text-decoration:none;
-        color:#fffef4;
-        font-size:24px;
-	font-family:Tahoma, Geneva, sans-serif;
-}
-
-	.link:hover{
-            cursor:pointer;
-            color:#605951;
-	}
         
 
 /* Glavni div u kome se sve nalazi*/
@@ -156,18 +142,6 @@ body{
 			
 			vertical-align:middle;
 		}
-                
-                    .stavka a{
-                        text-decoration:none;
-                        color:#fffef4;
-                        font-size:24px;
-                        font-family:Tahoma, Geneva, sans-serif;
-                    }
-                    
-                    .stavka a:hover{
-                        cursor:pointer;
-                        color:#605951;
-                    }
 		
                     .stavka:hover{
                             cursor:pointer;

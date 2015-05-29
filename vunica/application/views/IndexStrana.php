@@ -85,15 +85,13 @@
                       </td>
                       <td class = "stavka" align = "center" valign = "middle">
                         <?php if($this->session->UserName != ''){ ?>
-                            <a target = "_parent" 
-                             href="http://localhost/vunica.com/vunica/index.php/Profil/index">
+                            <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil/index', '_parent');">
                                 <?php echo $this->session->UserName; ?>
-                            </a>
-                            /
-                            <a target = "_parent" 
-                             href="http://localhost/vunica.com/vunica/index.php/PopUp/logout">
-                                Odjava
-                            </a>
+                            </font>
+                            <font> / </font>
+                            <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/PopUp/logout', '_parent');"> 
+                                Odjava 
+                            </font>
                         <?php }else{ ?>
                             <font onclick = "prikazi_prijavu()"> Prijava </font>
                             <font> / </font>
