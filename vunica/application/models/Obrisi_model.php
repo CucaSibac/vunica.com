@@ -36,4 +36,24 @@ class Obrisi_model extends CI_Model {
         $this->db->where('IDKorisnik', $vrednost);
         $this->db->delete('korisnik');
     }
+    
+    function obrisiPrijavaKomentarProizvod($vrednost) {
+        $this->db->where('IDPrijava', $vrednost);
+        $this->db->delete('prijavakomentarproizvod');
+    }
+    
+    function obrisiPrijavaKomentarVideo($vrednost) {
+        $this->db->where('IDPrijava', $vrednost);
+        $this->db->delete('prijavakomentarvideo');
+    }
+    
+    function obrisiPrijavaProizvod($vrednost) {
+        $this->db->where('IDPrijava', $vrednost);
+        $this->db->delete('prijiavaproizvod');
+    }
+    
+    function obrisiPrijavaVideo($vrednost) {
+        $this->db->where('IDPrijava', $vrednost);
+        $this->db->delete('prijavavideo');
+    }
 }

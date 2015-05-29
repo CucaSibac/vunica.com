@@ -277,7 +277,13 @@ $this->session->unset_userdata('PCena');
                                 </td>
                             </tr> 
                             <tr>
-                                <td colspan="2" align="center"> <video width="100%" controls> <source src="http://localhost/Video/Omca.mp4" type="video/mp4"></video></td>
+                                <td colspan="2" align="center"> <video width="100%" controls> <source src="<?php
+                                            foreach ($podaci as $red) {
+                                                ?>
+                                                <?php
+                                                echo $red->Video;
+                                            }
+                                            ?>" type="video/mp4"></video></td>
                             </tr>  
                             <tr>
                                 <td colspan="2" align="left"><font class="tekstObican" style="text-justify:auto">Kratak opis:</font></td>

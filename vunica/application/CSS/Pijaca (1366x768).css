@@ -224,7 +224,7 @@
 	transition-delay: 0.4s;
 }
 .view-third:hover a.info { 
-	transform: translateY(0px);
+	transform: translateY(20px);
 	transition-delay: 0.3s;
 }
 /*Datum na slici i animacija za njega*/
@@ -232,7 +232,7 @@
 	position:absolute; 
 	right:0; bottom:0; 
 	color:#fffef4;
-	font-size:15px;
+	font-size:11px;
 }
 .view-third .datumNaSlici{
 	transform: translateX(340px);
