@@ -1,6 +1,6 @@
 <?php
 
-// Tijana Trifunovic 311/12
+// Tijana Trifunovic, 311/12
 
 /*
  * potrebno je pored &vredn koja predstavlja IDProizvod staviti i $vrednk koji predstavlja IDKorisnik

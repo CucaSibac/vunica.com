@@ -113,6 +113,7 @@
                     $ukupnoCena = 0;
                     if($niz != ''){
                         if(count($niz) > 0){
+                            $red = NULL;
                             $i = 0;
                             $duzina = count($niz);
                             for(;$i < $duzina;$i++){
