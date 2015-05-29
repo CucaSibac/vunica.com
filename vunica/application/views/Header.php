@@ -64,7 +64,7 @@
                             if(count($niz) > 0){     
                     ?>
                         <font id = "cegerBroj"> <?php echo count($niz); ?> </font>
-                    <?php // }} ?>
+                    <?php }} ?>
                   <?php } ?>
                 </div>
             </td>
