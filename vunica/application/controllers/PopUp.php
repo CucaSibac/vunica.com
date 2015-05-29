@@ -10,6 +10,9 @@ class PopUp extends CI_Controller {
         $this->load->model('Video_model');
         $this->load->model('Proizvod_model');
         $this->load->model('Prijave');
+        $this->load->model('Korisnici');
+        $this->load->model('NoviVidei');
+        $this->load->model('NoviProizvodi');
     }
 
     public function registration() {
@@ -79,9 +82,11 @@ class PopUp extends CI_Controller {
             
             if ($url == 'Pocetna'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
-                $podaci['Korisnici'] = NULL;
-                $podaci['Videi'] = NULL;
-                $podaci['Proizvodi'] = NULL;
+                $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
+                $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
+                $podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
+                $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
+                $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
             }            
             
@@ -159,9 +164,11 @@ class PopUp extends CI_Controller {
             
             if ($url == 'Pocetna'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
-                $podaci['Korisnici'] = NULL;
-                $podaci['Videi'] = NULL;
-                $podaci['Proizvodi'] = NULL;
+                $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
+                $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
+                $podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
+                $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
+                $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
             }
             
@@ -200,9 +207,11 @@ class PopUp extends CI_Controller {
             
             if ($url == 'Pocetna'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
-                $podaci['Korisnici'] = NULL;
-                $podaci['Videi'] = NULL;
-                $podaci['Proizvodi'] = NULL;
+                $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
+                $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
+                $podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
+                $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
+                $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
             }
             
@@ -261,9 +270,11 @@ class PopUp extends CI_Controller {
             
             if ($url == 'Pocetna'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
-                $podaci['Korisnici'] = NULL;
-                $podaci['Videi'] = NULL;
-                $podaci['Proizvodi'] = NULL;
+                $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
+                $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
+                $podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
+                $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
+                $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
             }
             
@@ -301,9 +312,11 @@ class PopUp extends CI_Controller {
             
             if ($url == 'Pocetna'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
-                $podaci['Korisnici'] = NULL;
-                $podaci['Videi'] = NULL;
-                $podaci['Proizvodi'] = NULL;
+                $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
+                $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
+                $podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
+                $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
+                $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
             }
             

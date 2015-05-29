@@ -128,7 +128,7 @@
               
               <?php 
                 $attributes = array('id' => 'formaProfilEditovanje');
-                echo form_open("ProfilEditovanje/opcija", $attributes); 
+                echo form_open_multipart("ProfilEditovanje/opcija", $attributes); 
               ?>
               
               <input type="hidden" name="opt" id="opt" value="1" />

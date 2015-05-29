@@ -2,7 +2,7 @@
 <link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="Pop up (1920x1080).css">
 
 <!--Prozor koji potamni-->
-    <div id = "prazan" onclick="sakrij_sve()">
+    <div id = "prazan" onclick="sakrij_sve(); sakrij_sve_prijave();">
     </div>
     
     <!--Prozor za prijavljivanje-->
