@@ -85,16 +85,15 @@
                       </td>
                       <td class = "stavka" align = "center" valign = "middle">
                         <?php if($this->session->UserName != ''){ ?>
-                            <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil', '_parent')">
-                            <?php echo $this->session->UserName; ?>
-                            </font>
+                            <a target = "_parent" 
+                             href="http://localhost/vunica.com/vunica/index.php/Profil/index">
+                                <?php echo $this->session->UserName; ?>
+                            </a>
                             /
-                            <?php 
-                            $attributes = array('id' => 'formaOdjava');
-                            echo form_open("PopUp/logout", $attributes); 
-                            ?>
-                            <input id = "odjava" type = "submit" value = "Odjava"/>
-                            <?php echo form_close();?>
+                            <a target = "_parent" 
+                             href="http://localhost/vunica.com/vunica/index.php/PopUp/logout">
+                                Odjava
+                            </a>
                         <?php }else{ ?>
                             <font onclick = "prikazi_prijavu()"> Prijava </font>
                             <font> / </font>
