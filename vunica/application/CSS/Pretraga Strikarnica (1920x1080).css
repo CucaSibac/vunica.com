@@ -14,18 +14,14 @@ za Strikarnicu i Pijacu. Jos je u izradi.
 	border-width:2px;
 	border-style:solid;
 	border-radius:0px 30px 30px 0px;
-	width: 80%;
+	width: 75%;
     float: left;
-	padding-left:3px;
+	padding-left:8px;
 	
 	
 }
 
-/*slika iza pretrage*/
-#slika{
-	z-index:-100;
-	opacity:0.2;
-}
+
 
 /*Checkbox podesavanja*/
 .checkbox{
@@ -38,7 +34,7 @@ za Strikarnicu i Pijacu. Jos je u izradi.
 			cursor:pointer;	
 		}
 #box{
-    width:24%;
+    width:20%;
     font-size: 7px;
     line-height: 12px;
     left: -261px;
@@ -135,7 +131,7 @@ za Strikarnicu i Pijacu. Jos je u izradi.
   background: #61a6ab;
   
   font-family: Arial;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
   padding-left:10px;
 	padding-right:10px;

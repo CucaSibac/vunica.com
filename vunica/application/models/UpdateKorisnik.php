@@ -27,10 +27,10 @@ class UpdateKorisnik extends CI_Model {
             ++ $promene;
         }
 
-//            if($korisnik['Slika'] != '' && $korisnik['Slika'] != $this->session->Slika){
-//                $this->session->Slika = $data['Slika'] = $korisnik['Slika'];
-//                ++ $promene;
-//            }
+        if($korisnik['Slika'] != '' && $korisnik['Slika'] != $this->session->Slika){
+            $this->session->Slika = $data['Slika'] = $korisnik['Slika'];
+            ++ $promene;
+        }
 
         if($korisnik['ImePrezime'] != '' && $korisnik['ImePrezime'] != $this->session->ImePrezime){
             $this->session->ImePrezime = $data['ImePrezime'] = $korisnik['ImePrezime'];
