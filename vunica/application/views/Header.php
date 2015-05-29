@@ -1,3 +1,6 @@
+<!-- Milos Andric 206/12 -->
+<!-- Teodora Aleksic 391/12 -->
+
 <!-- Header -->
     <div id = "headerOkvir">
       <table id = "header">
@@ -64,8 +67,7 @@
                             if(count($niz) > 0){     
                     ?>
                         <font id = "cegerBroj"> <?php echo count($niz); ?> </font>
-                    <?php }} ?>
-                  <?php } ?>
+                  <?php }}} ?>
                 </div>
             </td>
           </tr>

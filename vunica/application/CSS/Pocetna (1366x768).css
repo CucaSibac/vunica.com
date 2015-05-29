@@ -220,3 +220,36 @@
         
         z-index: 10;
     }
+    
+/* Reklame za gosta na pocetnoj strani */   
+.reklama{
+    	width:230px;
+        height: 230px;
+        
+        padding: 0 0 5% 0;
+              
+        position: relative;
+}
+
+        /* Slicica */
+    .reklamaSlika{
+        width: 230px;
+        height: 230px;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        z-index: 0;
+        
+        border-width: 2px;
+        border-color: #605951;
+        border-style: solid;
+        -webkit-border-radius: 140px;
+        -moz-border-radius: 140px;
+        border-radius: 140px;
+    }
+    
+        .reklamaSlika:hover{
+            cursor: pointer;
+        }

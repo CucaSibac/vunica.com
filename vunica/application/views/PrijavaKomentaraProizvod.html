@@ -1,14 +1,15 @@
 
-<!--Prozor za prijavu komentara na videu-->
-<div id = "prijavaVideaKomentar">
-    <div class = "naslovPrijavaVideaKomentar"> Prijava komentar </div>
+
+<!--Prozor za prijavu komentara na proizvodu-->
+<div id = "prijavaProizvodKomentar">
+    <div class = "naslovPrijavProizvodKomentar"> Prijava komentar </div>
 
     <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve_prijave()"/>
     <?php
     $attributes = array('style' => 'height: 100%;', 'id' => 'formaPrijavaVideoKomentar');
     echo form_open("PrijavaSadrzaja/prijaviKomentarVideo", $attributes);
     ?>
-    <table class="tabelaPrijavaVideaKomentar">
+    <table class="tabelaPrijavaProizvodKomentar">
         <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
@@ -40,7 +41,7 @@
 
             <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij_sve_prijave()"> Odustani</div><br /></td>
 
-            <td class="praznaCelijaPopUp">&nbsp;<input type="hidden" name="IDKomentar" id="pkvID" /></td>       
+            <td class="praznaCelijaPopUp">&nbsp; <input type="hidden" name="IDKomentar" id="ppvID" /></td>       
             
 
         </tr> 

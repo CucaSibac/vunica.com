@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* Ivana Lisanin, 531/12 */
+
+.tekstForme{	
+	color:#605951;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	
+	border-width:1px;
+	border-color:#605951;
+	border-style:solid;
+}
+
+	.tekstForme:focus{		
+		outline-width:2px;
+		outline-style:solid;
+		outline-color:#61a6ab;
+	}
+        
+.greska{
+    color:#E13300;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:14px;
+    font-style:italic;
+}
+

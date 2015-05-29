@@ -114,10 +114,12 @@ class Prijave extends CI_Model {
         }
         
         for($j = $i; $j < 4; $j++){
-            if($maxElem < $elementi[$j]->Datum){
-                $maxElem = $elementi[$j]->Datum;
-                $maxInd = $j;
-            }     
+            if($elementi[$j] != NULL){
+                if($maxElem < $elementi[$j]->Datum){
+                    $maxElem = $elementi[$j]->Datum;
+                    $maxInd = $j;
+                }     
+            }
         }
         
         return $maxInd;

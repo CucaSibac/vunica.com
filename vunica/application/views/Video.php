@@ -76,6 +76,7 @@ foreach ($podaci as $red) {
 foreach ($podaci as $red) {
     $user = $red->UserName;
     $idVideo = $red->IDVideo;
+    $this->session->set_flashdata('videoId', $idVideo);
 }
 $status = "Admin";
 $usersession = $this->session->userdata('UserName');
@@ -230,6 +231,8 @@ $this->session->unset_userdata('PCena');
         include("Zaboravljena lozinka.php");
         include("Footer.php");
         include("Upozorenje.php");
+        include("PrijavaKomentarVideo.php");
+        include("PrijavaVideo.php");
         ?>	
 
 
@@ -332,7 +335,7 @@ $this->session->unset_userdata('PCena');
                                             <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
                                                 <a onclick="" id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi video </a>   
                                             <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
-                                                <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
+                                                <a onclick="prikazi_prijavu_video();" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
                                             <?php } else { ?>
                                                 <a onclick="prikazi_registraciju()" id="prijaviobrisi" class="prijaviVideo" > Prijavi video </a>  
                                             <?php } ?>
@@ -447,11 +450,12 @@ $this->session->unset_userdata('PCena');
                                                                 </script>
                                                                 <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
                                                                 <script>
-        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
-                                                              <?php include("PrijavaKomentarVideo.php");?>
+        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar                                                             
                                                                 </script>
                                                                 
-                                                                <a onclick="prikazi_prijavu_komentara()" class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                
+                                                                
+                                                                <a onclick="prikazi_prijavu_komentara('<?php echo $idkomentar; ?>')"  class = "prijaviKomentar" > Prijavi komentar </a>
                                                                 <script>
                                                                     //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
         <?php } else { ?> //ako gost pristupa sajtu

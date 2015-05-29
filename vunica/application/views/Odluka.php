@@ -1,3 +1,5 @@
+<!-- Ivana Lisanin 531/12 -->
+
 <link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="../CSS/Pop up (1366x768).css">
 <link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Pop up (1920x1080).css">
 
