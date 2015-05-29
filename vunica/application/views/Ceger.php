@@ -142,7 +142,7 @@
                             $cena = (int)($red->cena);
                             $kolicina = (int)($red->kolicina);
                             $ukupnoKolicina += ($kolicina * $cena);
-                            echo $red->kolicina * $red->cena;
+                            echo $kolicina * $cena;
                           ?>
                       </font>
                     </td>

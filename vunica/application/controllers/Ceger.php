@@ -111,7 +111,9 @@ class Ceger extends CI_Controller{
         $niz = $this->kupovina['Proizvodi'];
         $this->kupovina['Iznos'] = 0;
         foreach($niz as $red){
-            $this->kupovina['Iznos'] += $red->Kolicina * $red->Cena;
+            $cena = (int)($red->cena);
+            $kolicina = (int)($red->kolicina);
+            $this->kupovina['Iznos'] += ($kolicina * $cena);
         }
 
         // Datum

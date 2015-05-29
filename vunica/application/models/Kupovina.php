@@ -61,8 +61,8 @@ class Kupovina extends CI_Model {
     protected function kupiPojedinacno($red){
         $redTabele = array(
             'IDKupovina' => $this->idKupovine,
-            'IDProizvod' => $red->IDProizvod,
-            'Kolicina' => $red->Kolicina,  
+            'IDProizvod' => $red->id,
+            'Kolicina' => $red->kolicina,  
         );
         $this->db->insert('kupovinapojedinacno', $redTabele); 
     }
