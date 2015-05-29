@@ -115,9 +115,9 @@
                                                 ?>
                                                 <select class="kategorije" name="ProKat">
                                                     <option value="Vunica" <?php echo set_select('ProKat', 'Vunica', TRUE); ?>> Vunica</option>
-                                                    <option value="Konac" <?php echo set_select('ProKat', 'Konac'); ?>> Konac</option>
+                                                    <option value="Konci" <?php echo set_select('ProKat', 'Konci'); ?>> Konci</option>
                                                     <option value="Igle" <?php echo set_select('ProKat', 'Igle'); ?>> Igle</option>
-                                                    <option value="Ostalo" <?php echo set_select('ProKat', 'Ostalo'); ?>> Ostalo</option>
+                                                    <option value="Ostali materijali" <?php echo set_select('ProKat', 'Ostali materijali'); ?>> Ostali materijali</option>
                                                 </select>
                                                 <?php
                                                     }
