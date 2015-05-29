@@ -20,7 +20,7 @@ class Prijave extends CI_Model {
         $this->prijave = NULL;
     }
     
-    // Ucitava sve priajve iz baze
+    // Ucitava sve prijave iz baze
     public function ucitavanjePrijava(){     
         $this->videi = $this->ucitajPrijavu('prijavavideo');
         $this->proizvodi = $this->ucitajPrijavu('prijavaproizvod');

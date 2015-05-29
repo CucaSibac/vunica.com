@@ -50,7 +50,7 @@
         <td width = "50%" align = "left" valign = "top">
             <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKorisnika/$red->IDKorisnik" ; ?>
             <a  id = "prijaviobrisi" class = "akcija"
-                href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
+                href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete korisnika?','<?php echo $kontroler; ?>')"> 
                 OBRISI PROFIL
             </a>
             <br/> <br/> <br/>
