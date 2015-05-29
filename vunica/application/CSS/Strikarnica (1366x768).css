@@ -222,6 +222,7 @@
 	transition-delay: 0.5s; 
 }
 .view-third:hover p	{ 
+    margin-top: -25px;
     transform: translateX(0px) rotate(0deg);
 	transition-delay: 0.4s;
 }

@@ -99,7 +99,7 @@
 /*Ovo je za video-e*/
 	
 		.view {
-    width: 48%;
+    width: 47%;
     height: 330px;
     //margin-left: 10px;
     //margin-top: 10px;
@@ -144,7 +144,7 @@
 }
 .view .mask, .view .content {
     width: 100%;
-    height: 330px;
+    height: 335px;
     position: absolute;
     overflow: hidden;
     top: 0px;
@@ -153,7 +153,7 @@
 .view img {
     //display: block;
        width: 100%;
-    height: 330px;
+    height: 335px;
     top: 0px;
    left:0px;
     position: absolute;
@@ -185,7 +185,8 @@
     background: #000;
     color: #fff;
     text-transform: uppercase;
-    box-shadow: 0 0 1px #000
+    box-shadow: 0 0 1px #000;
+    font-size: 20px;
 }
 .view a.info:hover {
     box-shadow: 0 0 5px #000
@@ -208,7 +209,7 @@
 	transition: all 0.2s ease-in-out;
 }
 .view-third a.info { 
-	transform: translateY(50px);
+	transform: translateY(150px);
 	transition: all 0.2s ease-in-out;
 }
 .view-third:hover .mask { 
@@ -222,11 +223,12 @@
 	transition-delay: 0.5s; 
 }
 .view-third:hover p	{ 
+    font-size:14px;
     transform: translateX(0px) rotate(0deg);
 	transition-delay: 0.4s;
 }
 .view-third:hover a.info { 
-	transform: translateY(-10px);
+	transform: translateY(10px);
 	transition-delay: 0.3s;
 }
 
@@ -235,7 +237,7 @@
 	position:absolute; 
 	right:0; bottom:0; 
 	color:#fffef4;
-	font-size:10px;
+	font-size:14px;
 }
 .view-third .datumNaSlici{
 	transform: translateX(300px);
