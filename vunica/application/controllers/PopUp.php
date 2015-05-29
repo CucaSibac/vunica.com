@@ -65,14 +65,14 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo' || $url == 'prijaviKomentarVideo' || $url == 'prijaviVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
                 $this->load->view('Video', $niz);
             }
             
-            if ($url == 'proizvod'){                   
+            if ($url == 'proizvod' || $url == 'prijaviKomentarProizvod' || $url == 'prijaviProizvod'){                   
                 $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($this->session->broj);
                 $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($this->session->broj);
                 $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($this->session->broj);
@@ -147,14 +147,14 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo' || $url == 'prijaviKomentarVideo' || $url == 'prijaviVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
                 $this->load->view('Video', $niz);
             }
             
-            if ($url == 'proizvod'){                   
+            if ($url == 'proizvod' || $url == 'prijaviKomentarProizvod' || $url == 'prijaviProizvod'){                   
                 $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($this->session->broj);
                 $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($this->session->broj);
                 $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($this->session->broj);
@@ -188,14 +188,14 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo' || $url == 'prijaviKomentarVideo' || $url == 'prijaviVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
                 $this->load->view('Video', $niz);
             }
             
-            if ($url == 'proizvod'){                   
+            if ($url == 'proizvod' || $url == 'prijaviKomentarProizvod' || $url == 'prijaviProizvod'){                   
                 $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($this->session->broj);
                 $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($this->session->broj);
                 $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($this->session->broj);
@@ -214,7 +214,7 @@ class PopUp extends CI_Controller {
             } 
             
         }
-    //    echo $url;
+   //     echo $url;
     }
 
     public function logout() {       
@@ -250,14 +250,14 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo' || $url == 'prijaviKomentarVideo' || $url == 'prijaviVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
                 $this->load->view('Video', $niz);
             }
             
-            if ($url == 'proizvod'){                   
+            if ($url == 'proizvod' || $url == 'prijaviKomentarProizvod' || $url == 'prijaviProizvod'){                   
                 $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($this->session->broj);
                 $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($this->session->broj);
                 $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($this->session->broj);
@@ -291,14 +291,14 @@ class PopUp extends CI_Controller {
                 $this->load->view('Pijaca', $niz);
             }
             
-            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo'){     
+            if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo' || $url == 'prijaviKomentarVideo' || $url == 'prijaviVideo'){     
                 $niz['podaci'] = $this->Video_model->getAllForVideo($this->session->broj);
                 $niz['num_messages'] = $this->Video_model->num_messages($this->session->broj);
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
                 $this->load->view('Video', $niz);
             }
             
-            if ($url == 'proizvod'){                   
+            if ($url == 'proizvod' || $url == 'prijaviKomentarProizvod' || $url == 'prijaviProizvod'){                   
                 $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($this->session->broj);
                 $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($this->session->broj);
                 $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($this->session->broj);
@@ -378,6 +378,7 @@ class PopUp extends CI_Controller {
     public function prethodna_strana() {
         
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+        echo $refering_url;
         if(strpos($refering_url, 'obrisiKomentarVideo') == true){
             $niz = explode('/', $refering_url);
             $duzina = sizeof($niz);
@@ -424,14 +425,14 @@ class PopUp extends CI_Controller {
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.gmail.com';   //examples: ssl://smtp.googlemail.com, myhost.com
         $config['smtp_user'] = 'andricgmilos@gmail.com';
-        $config['smtp_pass'] = '****'; //HAHAHA
+        $config['smtp_pass'] = '****';
         $config['smtp_port'] = '465';
         $this->email->initialize($config);
         
         $this->email->from('andricgmilos@gmail.com', 'Tim vunica.com');
-        $this->email->to('milosgandric@gmail.com');//$this->input->post('zlEmail')
+        $this->email->to($this->input->post('zlEmail'));//
         $this->email->subject('Povratak lozinke');
-        $this->email->message('Testing the email class.');//$podaci      
+        $this->email->message('Vasa sifra je: ' . $podaci);//      
    //   $this->email->send();
         return true;
        

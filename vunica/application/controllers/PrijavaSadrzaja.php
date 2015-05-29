@@ -33,5 +33,12 @@ class PrijavaSadrzaja extends CI_Controller {
         $this->PrijavaSadrzaja_model->prijaviVideo();     
         redirect($refering_url, 'refresh');
     }
+    
+    public function prijaviProizvod() {
+        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+        $this->load->model('PrijavaSadrzaja_model');
+        $this->PrijavaSadrzaja_model->prijaviProizvod();     
+        redirect($refering_url, 'refresh');
+    }
 
 }
