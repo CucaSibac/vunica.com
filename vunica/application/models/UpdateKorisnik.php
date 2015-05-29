@@ -1,5 +1,6 @@
 <?php
 
+// Teodora Aleksic, 391/12
 
 class UpdateKorisnik extends CI_Model {
     

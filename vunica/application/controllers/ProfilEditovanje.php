@@ -46,9 +46,10 @@ class ProfilEditovanje extends CI_Controller {
     
     // Resetuje sve greske na nulu
     protected function resetujGreske(){
-        foreach($this->greske as $element){
-            $element = 0;
-        }
+        $this->greske['Godine'] = 0;
+        $this->greske['Slika'] = 0;
+        $this->greske['Email'] = 0;
+        $this->greske['Lozinka'] = 0;
     }
     
     // Izvrsava funckiju u zavisnosti koje je dugme selektovano
@@ -87,7 +88,7 @@ class ProfilEditovanje extends CI_Controller {
         $this->load->library('upload', $config);
         
         if (!$this->upload->do_upload()) {
-            $this->greske['Profilna'] = '';
+            // $this->greske['Profilna'] = '';
             $this->greske['Slika'] = 1;
             $this->load->view('ProfilEditovanje', $this->greske);
         }
