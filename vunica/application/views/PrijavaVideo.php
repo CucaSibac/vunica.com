@@ -12,7 +12,7 @@
         <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
-                Želite li da prijavite ovaj video?</td>
+                Želite li da prijavite ovaj proizvod?</td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
         </tr>
         <tr class="textRed">

@@ -1,35 +1,50 @@
-<link rel="stylesheet" media="screen and (max-device-width: 1400px)" type="text/css" href="../CSS/Pop up (1366x768).css">
-<link rel="stylesheet" media="screen and (min-device-width: 1401px)" type="text/css" href="../CSS/Pop up (1920x1080).css">
 
 <!--Prozor za prijavu proizvoda-->
- <div id = "prijavaProizvoda">
-      <div class = "naslovPrijavaProizvoda"> Prijava proizvoda </div>
-      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij()"/>
-      <form style="height:100%;" name="prijavaProizvoda" action="prijavaProizvoda.php" method = "post">
-        <table class="tabelaPrijavaProizvoda">
-          <tr>
+<div id = "prijavaProizvod">
+    <div class = "naslovPrijavProizvod"> Prijava videa </div>
+
+    <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve_prijave()"/>
+    <?php
+    $attributes = array('style' => 'height: 100%;', 'id' => 'formaPrijavaVideo');
+    echo form_open("PrijavaSadrzaja/prijaviVideo", $attributes);
+    ?>
+    <table class="tabelaPrijavaProizvod">
+        <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
-            Želite li da prijavite ovaj proizvod?</td>
+                Želite li da prijavite ovaj video?</td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-          </tr>
-          <tr>
+        </tr>
+        <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">Navedite razlog prijave:</td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-          </tr>    
-          <tr>
+        </tr>    
+        <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td colspan="2"><input type="text" name="tekst" id="email1" placeholder="Prijavljujem proizvod zbog..." class="inputPopUpPrijava" /> </td>
+            <td colspan="2">
+                <textarea  name="Tekst" maxlength="400" style="width:100%; height:120px; resize:none;text-align: justify;" placeholder="Unesite razlog prijave" class="tekstPoljeKomentar" id="prikomvid" onKeyDown="preostaloPKV(400);" onKeyUp="preostaloPKV(400);"></textarea>
+                
             <td class="praznaCelijaPopUp">&nbsp;</td>
-          </tr>
-          <tr>
+        </tr>
+        <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="prijavi_proizvod()"> Da</div> <br /></td>
-            <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij()"> Ne</div><br /></td>
+            <td colspan="2" align="center">
+                <font class="preostalokaraktera">Preostalo karaktera: <font id="ostatakprikomvid">400</font>
+            </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
-          </tr> 
-                            
-        </table>
-      </form>
-      </div>
+        </tr>
+        <tr class="inputRed">
+            <td class="praznaCelijaPopUp">&nbsp;</td>
+            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="document.forms['formaPrijavaVideo'].submit()"> Prijavi</div> <br /></td>
+
+            <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij_sve_prijave()"> Odustani</div><br /></td>
+
+            <td class="praznaCelijaPopUp">&nbsp;<input type="hidden" name="IDKomentar" id="pkvID" /></td>       
+            
+
+        </tr> 
+
+    </table>
+</form>
+</div>

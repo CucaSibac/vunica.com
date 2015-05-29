@@ -77,6 +77,7 @@ foreach ($podacip as $red) {
 foreach ($podacip as $red) {
     $user = $red->UserName;
     $idProizvod = $red->IDProizvod;
+    $nazivProizvoda = $red->Naziv;
 }
 $status = "Admin";
 $usersession = $this->session->userdata('UserName');
@@ -351,7 +352,8 @@ $usersession = $this->session->userdata('UserName');
                                     <input type="hidden" name="IDProizvod" id="IDProizvod"  value="<?php echo $idProizvod ?>"/>
                                     <input type="hidden" name="Cena" id="Cena"  value="<?php echo $idProizvod ?>"/>
                                     <input type="hidden" name="KolicinaForma" id="KolicinaForma"  value=""/>
-                                    <?php echo form_close(); ?>
+                                    <input type="hidden" name="Naziv" id="Naziv"  value="<?php echo $nazivProizvoda?>"/>
+                                        <?php echo form_close(); ?>
                                     <!--Kraj forme za ceger-->
                                 </td>
                             </tr>

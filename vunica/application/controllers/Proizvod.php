@@ -280,6 +280,7 @@ class Proizvod extends CI_Controller {
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         $data = array (
             'IDProizvod' => ($this->input->post('IDProizvod')),
+            'NazivProizvoda' => ($this->input->post('NazivProizvoda')),
             'Cena' => ($this->input->post('Cena')),
             'KolicinaForma' => ($this->input->post('KolicinaForma'))
     );
