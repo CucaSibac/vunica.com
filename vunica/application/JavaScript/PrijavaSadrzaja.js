@@ -1,12 +1,12 @@
 
-function prikazi_prijavu_komentara(){
-    //sakrij_sve_prijave();
+function prikazi_prijavu_komentara(id){
+    sakrij_sve_prijave();
     document.getElementById('prazan').style.display = "block";
-    document.getElementById('prijavaVideaKomentar').style.visibility = "visible";
+    document.getElementById('prijavaVideaKomentar').style.visibility = "visible";  
+    document.getElementById('pkvID').value = id;
 }
 
 function sakrij_sve_prijave(){
-    sakrij_sve();
     document.getElementById('prazan').style.display = "none";
     document.getElementById('prijavaVideaKomentar').style.visibility = "hidden";
 }

@@ -230,6 +230,7 @@ $this->session->unset_userdata('PCena');
         include("Zaboravljena lozinka.php");
         include("Footer.php");
         include("Upozorenje.php");
+        include("PrijavaKomentarVideo.php");
         ?>	
 
 
@@ -447,11 +448,12 @@ $this->session->unset_userdata('PCena');
                                                                 </script>
                                                                 <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
                                                                 <script>
-        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
-                                                              <?php include("PrijavaKomentarVideo.php");?>
+        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar                                                             
                                                                 </script>
                                                                 
-                                                                <a onclick="prikazi_prijavu_komentara()" class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                
+                                                                
+                                                                <a onclick="prikazi_prijavu_komentara('<?php echo $idkomentar; ?>')"  class = "prijaviKomentar" > Prijavi komentar </a>
                                                                 <script>
                                                                     //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
         <?php } else { ?> //ako gost pristupa sajtu
