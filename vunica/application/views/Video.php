@@ -317,7 +317,7 @@ $this->session->unset_userdata('PCena');
                                             }
                                             ?></a></font>
                                 </td>
-                                <tr>     
+                                </tr>     
                                     <tr>
                                         <td colspan="2" align="right">
 

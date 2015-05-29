@@ -41,7 +41,7 @@ class Proizvod_model extends CI_Model{
         return $nizp;
     }
     */
-    function get_messagesp($vredn, $offset = 0 ){
+    function get_messages($vredn, $offset = 0 ){
         $this->db->where('IDProizvod', $vredn);
         $this->db->order_by('IDKomentar', 'desc');
 	$query = $this->db->get('komentarproizvod', 3, $offset);
@@ -49,14 +49,14 @@ class Proizvod_model extends CI_Model{
     }
     
     
-    function num_messagesp($vredn) {
+    function num_messages($vredn) {
         $this->db->where('IDProizvod', $vredn);
         $query = $this->db->count_all_results('komentarproizvod');
      //   echo $query;
 	return $query;
     }
     
-    function new_komentar() {
+    function novikomentar() {
         $data = array (
             'UserName' => ($this->input->post('UserName')),
                     'Datum' => (date("Y.m.d")),
