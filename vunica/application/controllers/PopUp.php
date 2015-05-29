@@ -80,7 +80,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Proizvod', $nizp);
             }
             
-            if ($url == 'Pocetna'){                   
+            if ($url == 'Pocetna' || $url == 'IndexStrana'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
                 $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
                 $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
@@ -88,7 +88,7 @@ class PopUp extends CI_Controller {
                 $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
                 $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
-            }            
+            }         
             
             /*
             if ($url == 'Proizvod'){
@@ -162,7 +162,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Proizvod', $nizp);
             }
             
-            if ($url == 'Pocetna'){                   
+            if ($url == 'Pocetna' || $url == 'IndexStrana'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
                 $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
                 $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
@@ -170,9 +170,7 @@ class PopUp extends CI_Controller {
                 $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
                 $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
-            }
-            
-            
+            }  
             
         }
         else {
@@ -205,7 +203,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Proizvod', $nizp);
             }
             
-            if ($url == 'Pocetna'){                   
+            if ($url == 'Pocetna' || $url == 'IndexStrana'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
                 $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
                 $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
@@ -213,8 +211,7 @@ class PopUp extends CI_Controller {
                 $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
                 $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
-            }
-            
+            } 
             
         }
     //    echo $url;
@@ -268,7 +265,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Proizvod', $nizp);
             }
             
-            if ($url == 'Pocetna'){                   
+            if ($url == 'Pocetna' || $url == 'IndexStrana'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
                 $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
                 $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
@@ -276,8 +273,7 @@ class PopUp extends CI_Controller {
                 $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
                 $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
-            }
-            
+            }  
             
         }
         else {
@@ -310,7 +306,7 @@ class PopUp extends CI_Controller {
                 $this->load->view('Proizvod', $nizp);
             }
             
-            if ($url == 'Pocetna'){                   
+            if ($url == 'Pocetna' || $url == 'IndexStrana'){                   
                 $podaci['Prijave'] = $this->Prijave->ucitavanjePrijava();
                 $podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika(0);;
                 $podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);;
@@ -318,8 +314,7 @@ class PopUp extends CI_Controller {
                 $podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
                 $podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
                 $this->load->view('Pocetna', $podaci);
-            }
-            
+            } 
             
         }
         
