@@ -1,19 +1,18 @@
 
-
 <!--Prozor za prijavu videa-->
-<div id = "prijavaVideaKomentar">
-    <div class = "naslovPrijavaVideaKomentar"> Prijava komentar </div>
+<div id = "prijavaVideo">
+    <div class = "naslovPrijavVideo"> Prijava videa </div>
 
     <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve_prijave()"/>
     <?php
-    $attributes = array('style' => 'height: 100%;', 'id' => 'formaPrijavaVideoKomentar');
-    echo form_open("PrijavaSadrzaja/prijaviKomentarVideo", $attributes);
+    $attributes = array('style' => 'height: 100%;', 'id' => 'formaPrijavaVideo');
+    echo form_open("PrijavaSadrzaja/prijaviVideo", $attributes);
     ?>
-    <table class="tabelaPrijavaVideaKomentar">
+    <table class="tabelaPrijavaVideo">
         <tr class="textRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
-                Želite li da prijavite ovaj komentar?</td>
+                Želite li da prijavite ovaj video?</td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
         </tr>
         <tr class="textRed">
@@ -37,7 +36,7 @@
         </tr>
         <tr class="inputRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
-            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="document.forms['formaPrijavaVideoKomentar'].submit()"> Prijavi</div> <br /></td>
+            <td class="celijaDugmePopUp"> <div class="dugmePopUp" onclick="document.forms['formaPrijavaVideo'].submit()"> Prijavi</div> <br /></td>
 
             <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij_sve_prijave()"> Odustani</div><br /></td>
 

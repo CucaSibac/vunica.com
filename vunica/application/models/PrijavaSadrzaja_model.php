@@ -55,14 +55,14 @@ class PrijavaSadrzaja_model extends CI_Model {
         if ($this->input->post('Tekst') !== "") {
             $data = array(
                 'UserName' => ($this->session->UserName),
-                'IDVideo' => ($this->input->post('IDKomentar')),
+                'IDVideo' => ($this->session->videoId),
                 'Komentar' => ($this->input->post('Tekst')),
                 'Datum' => (date("Y.m.d"))
             );
         } else {
             $data = array(
                 'UserName' => ($this->session->UserName),
-                'IDVideo' => ($this->input->post('IDKomentar')),
+                'IDVideo' => ($this->session->videoId),
                 'Komentar' => ("Sadrzaj je neprikladan"),
                 'Datum' => (date("Y.m.d"))
             );
