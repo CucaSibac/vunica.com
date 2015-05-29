@@ -7,7 +7,7 @@ class PostavljanjeVidea_model extends CI_Model {
     }
     
     public function postavi_video($src){
-        $this->session->set_userdata('proVideo',$src);
+        $this->session->set_flashdata('proVideo',$src);
     }
     
     public function ubaci_video(){                           

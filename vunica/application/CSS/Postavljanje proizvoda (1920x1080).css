@@ -8,15 +8,18 @@
 
 .mestoZaSliku{
 	width:50%;
+        height:500px; 
 }
 
 .proizvodSlika{
+    /*
 	width:380px;
 	height:416px;
 	padding:0 0 0 0;
 	border-width:2px;
 	border-color:#605951;
 	border-style:solid;
+    */
 }
 
 .ProizvodOpis{
@@ -71,6 +74,10 @@
 	}
         
 .ProSlika{
-    width:380px;
-    height:416px;     
+    width:90%;	
+    padding:0 0 0 0;	
+    border-width:2px;
+    border-color:#605951;
+    border-style:solid;    
 }
+

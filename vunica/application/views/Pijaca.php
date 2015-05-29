@@ -53,6 +53,29 @@
         </script>
         <!-- OVO JE ZA DUGME UCITAJ JOS!!-->
         <script type="text/javascript">
+            
+            <?php
+            $this->session->unset_userdata('Laka');
+        $this->session->unset_userdata('Srednja');
+        $this->session->unset_userdata('Teska');
+        $this->session->unset_userdata('Garderoba');
+        $this->session->unset_userdata('Dodaci');
+        $this->session->unset_userdata('Igracke');
+        $this->session->unset_userdata('Ostalo');
+        $this->session->unset_userdata('Datum');
+        $this->session->unset_userdata('Naziv');
+        
+            ?>
+                sessionStorage.setItem("Teska", "");
+            sessionStorage.setItem('Laka', "");
+            sessionStorage.setItem('Srednja', "");
+            sessionStorage.setItem('Teska', "");
+            sessionStorage.setItem('Garderoba', "");
+            sessionStorage.setItem('Dodaci', "");
+            sessionStorage.setItem('Igracke', "");
+            sessionStorage.setItem('Ostalo', "");
+            sessionStorage.setItem('Datum', "");
+            sessionStorage.setItem('Naziv', "");
             $(document).ready(function () {
                 var num_proizvod = <?= $num_proizvod ?>;
                 var loaded_proizvod = 0;
@@ -635,6 +658,7 @@
         include("Registracija.php");
         include("Zaboravljena lozinka.php");
         include("Footer.php");
+        include("Upozorenje.php");
         ?>	
 
 
@@ -1078,7 +1102,7 @@ if ($this->session->UserName != '' && $status !== "Klupko") {
                                                                                                 <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
                                                                                                     <br/><font size="5"><?php echo $proizvod->Naziv; ?></font>
                                                                                                     <br /><font size="3" style="text-transform:none">Kategorija: <?php echo $proizvod->Kategorija; ?></font>    
-                                                                                                    <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?></font></h2>  
+                                                                                                    <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?> &#8364;</font></h2>  
                                                                                                 <p><?php echo $proizvod->Opis; ?></p> 
                                                                                                 <a href='http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>' class="info">Detaljnije</a>  
                                                                                                 <font   class="datumNaSlici">OBJAVLJENO <?php echo $proizvod->Datum; ?></font>
@@ -1101,7 +1125,7 @@ if ($this->session->UserName != '' && $status !== "Klupko") {
                                                                                                 <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
                                                                                                     <br/><font size="5"><?php echo $proizvod->Naziv; ?></font>
                                                                                                     <br /><font size="3" style="text-transform:none">Kategorija: <?php echo $proizvod->Kategorija; ?></font>    
-                                                                                                    <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?></font></h2>  
+                                                                                                    <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?> &#8364;</font></h2>  
                                                                                                 <p><?php echo $proizvod->Opis; ?></p> 
                                                                                                 <a href="http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>" class="info">Detaljnije</a>  
                                                                                                 <font   class="datumNaSlici">OBJAVLJENO <?php echo $proizvod->Datum; ?></font>
@@ -1163,7 +1187,24 @@ if ($this->session->UserName != '' && $status !== "Klupko") {
                                                                     </div>
 
 
-
+<?php 
+    if($this->session->flashdata('reg') == 1){
+        echo "<script language=\"javascript\">prikazi_registraciju();</script>";
+        $this->session->set_flashdata('reg', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('pri') == 1){
+        echo "<script language=\"javascript\">prikazi_prijavu();</script>";
+        $this->session->set_flashdata('pri', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('zl') == 1){
+        echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
+        $this->session->set_flashdata('zl', 0);
+    }
+?>
 
 
                                                                     </body>

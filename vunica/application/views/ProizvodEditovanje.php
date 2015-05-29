@@ -44,7 +44,7 @@
 <?php include('/../JavaScript/PopUp.js'); ?>
 <?php include('/../JavaScript/Footer.js'); ?>
 <?php include('/../JavaScript/Checkbox.js'); ?>
-<?php include('/../JavaScript/Postavljanje Proizvoda.js'); ?>
+<?php include('/../JavaScript/Proizvod Editovanje.js'); ?>
         </script>
 
         <!-- InstanceEndEditable -->
@@ -78,29 +78,29 @@
 
                         </div>                              
 
-                        <br/> <br/> <br/> <br/> </br>                       
+                        <br/> <br/> <br/> <br/> </br>                            
                         <?php 
-                            $attributes = array('name' => 'PostavljanjeProizvoda', 'font' => ""); 
-                            echo form_open_multipart("PostavljanjeProizvoda/do_upload", $attributes); 
+                            $attributes = array('name' => 'EditovanjeProizvoda', 'font' => ""); 
+                            echo form_open_multipart("EditovanjeProizvoda/do_upload", $attributes); 
                         ?>
                         <table id="postavkaproizvoda" border="0">
                             <tr>
                                 <td align="center" class="mestoZaSliku">                               
-                                    <img class="ProSlika"  src="<?php echo $slika;?>"/>                             
+                                    <img class="ProSlika"  src="<?php echo $Slika;?>"/>                             
                                 </td>
                                 <td valign="bottom">
                                     <table style="margin-left:10%; width:90%;" border="0">
                                         <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Naziv </td>
                                             <td style="width:60%;"> 
-                                                <input class="tekstPolje" type="text" name="ProNaziv" maxlength="40" value="<?php echo set_value('ProNaziv'); ?>"/> 
+                                                <input class="tekstPolje" type="text" name="ProNaziv" maxlength="40" value="<?php echo $Naziv; ?>"/> 
                                                 <?php echo form_error('ProNaziv', '<div class="error">', '</div>'); ?>
                                             </td>
                                         </tr>
                                         <tr style="height:70px">
                                             <td style="width:40%;" class="tekstObican"> Cena </td>
                                             <td style="width:60%;"> 
-                                                <input class="tekstPolje" type="text" name="ProCena" value="<?php echo set_value('ProCena'); ?>"/> 
+                                                <input class="tekstPolje" type="text" name="ProCena" value="<?php echo $Cena; ?>"/> 
                                                 <?php echo form_error('ProCena', '<div class="error">', '</div>'); ?>
                                             </td>
                                         </tr>
@@ -109,12 +109,12 @@
                                             <td style="width:60%;"> 
                                                 <?php
                                                     if($this->session->Status == 'Admin') {
-                                                ?>
+                                                ?> 
                                                 <select class="kategorije" name="ProKat">
-                                                    <option value="Vunica" <?php echo set_select('ProKat', 'Vunica', TRUE); ?>> Vunica</option>
-                                                    <option value="Konac" <?php echo set_select('ProKat', 'Konac'); ?>> Konac</option>
-                                                    <option value="Igle" <?php echo set_select('ProKat', 'Igle'); ?>> Igle</option>
-                                                    <option value="Ostalo" <?php echo set_select('ProKat', 'Ostalo'); ?>> Ostalo</option>
+                                                    <option value="Vunica" <?php if($Kategorija == 'Vunica'){?> selected <?php }; ?>> Vunica</option>
+                                                    <option value="Konac" <?php  if($Kategorija == 'Konac') {?> selected <?php }; ?>> Konac</option>
+                                                    <option value="Igle" <?php if($Kategorija == 'Igle') {?> selected <?php }; ?>> Igle</option>
+                                                    <option value="Ostalo" <?php if($Kategorija == 'Ostalo'){?> selected <?php }; ?>> Ostalo</option>
                                                 </select>
                                                 <?php
                                                     }
@@ -123,10 +123,10 @@
                                                     if($this->session->Status == 'Pletilja') {
                                                 ?>
                                                 <select class="kategorije" name="ProKat">
-                                                    <option value="Garderoba" <?php echo set_select('ProKat', 'Garderoba', TRUE); ?>> Garderoba</option>
-                                                    <option value="Igracke" <?php echo set_select('ProKat', 'Igracke'); ?>> Igracke</option>
-                                                    <option value="Dodaci" <?php echo set_select('ProKat', 'Dodaci'); ?>> Dodaci</option>
-                                                    <option value="Ostalo" <?php echo set_select('ProKat', 'Ostalo'); ?>> Ostalo</option>
+                                                    <option value="Garderoba" <?php if($Kategorija == 'Garderoba'){?> selected <?php }; ?>> Garderoba</option>
+                                                    <option value="Igracke" <?php if($Kategorija == 'Igracke'){?> selected <?php }; ?>> Igracke</option>
+                                                    <option value="Dodaci" <?php if($Kategorija == 'Dodaci'){?> selected <?php }; ?>> Dodaci</option>
+                                                    <option value="Ostalo" <?php if($Kategorija == 'Ostalo'){?> selected <?php }; ?>> Ostalo</option>
                                                 </select>
                                                 <?php
                                                     }
@@ -142,7 +142,7 @@
                                                             <input type="button" class="dugme" value="-" onmousedown="mousedown('-')" onmouseup="mouseup()"/>
                                                         </td>
                                                         <td width="30px" align="center">
-                                                            <font class="tekstObican" id="kolicina" name="ProKol"><?php echo set_value('ProKol',1); ?></font>
+                                                            <font class="tekstObican" id="kolicina" name="ProKol"><?php echo $BrojArtikala ?></font>
                                                         </td>
                                                         <td>
                                                             <input type="button" class="dugme" value="+" onmousedown="mousedown('+')" onmouseup="mouseup()"/>
@@ -154,8 +154,8 @@
                                         
                                         <tr style="height:100px">
                                             <td colspan="2" valign="bottom">                                               
-                                                <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" />  
-                                                <a class="dugme"  onclick="option('3');document.forms['PostavljanjeProizvoda'].submit();">Izbrisi sliku</a>
+                                                <input type="file" name="userfile" onchange="option('1');document.forms['EditovanjeProizvoda'].submit();" class="dugme" />  
+                                                <a class="dugme"  onclick="option('3');document.forms['EditovanjeProizvoda'].submit();">Izbrisi sliku</a>
                                             </td>
                                         </tr>  
                                     </table>         
@@ -167,7 +167,7 @@
                                     <input type="hidden" name="ProGreska" />
                                     <?php echo form_error('ProGreska', '<div class="error">', '</div>'); ?>
                                     <br/><br/><br/>
-                                    <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ><?php echo set_value('ProOpis'); ?></textarea>
+                                    <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ><?php echo $Opis; ?></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -178,11 +178,11 @@
                             </tr>               
                             <tr>
                                 <td align="center">  
-                                    <a class="dugme"  onclick="option('2');document.forms['PostavljanjeProizvoda'].submit();"> Postavi proizvod</a>
+                                    <a class="dugme"  onclick="option('2');document.forms['EditovanjeProizvoda'].submit();"> Izmeni proizvod</a>
                                     <!--<input type="submit" onclick="option('2')" value="Postavi proizvod" class="dugme"/> -->
                                 </td>
                                 <td align="center">
-                                    <a class="dugme" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pijaca', '_parent')"> odustani</a>
+                                    <a class="dugme" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Proizvod/index/<?php echo $IDProizvod; ?>', '_parent')"> odustani</a>
                                 </td>
                             </tr> 
                             <tr>               
@@ -200,8 +200,8 @@
                                 </td>
                             </tr>                                                                       
                         </table>  
-                        <input type="hidden" name="ProKol" id="ProKol" value="<?php echo set_value('ProKol',1); ?>" />
-                        <input type="hidden" name="opt" id="opt" value="<?php echo set_value('opt'); ?>" />
+                        <input type="hidden" name="ProKol" id="ProKol" value="<?php echo $BrojArtikala ?>" />
+                        <input type="hidden" name="opt2" id="opt2" value="<?php echo set_value('opt'); ?>" />
                         </form>
                         <!-- InstanceEndEditable -->
                     </td>

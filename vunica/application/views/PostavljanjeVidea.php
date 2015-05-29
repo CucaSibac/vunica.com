@@ -64,6 +64,8 @@
         include("Registracija.php");
         include("Zaboravljena lozinka.php");
         include("Footer.php");
+        include("Upozorenje.php");
+        include("brisanjesesije.php");
         ?>
   
     <!-- Telo strane -->
@@ -73,8 +75,7 @@
            <td>
 			  <!-- InstanceBeginEditable name="Body" -->                                         
               
-              <br/> <br/> <br/> <br/> </br>
-              <?php echo validation_errors('<p class="error">'); ?>
+              <br/> <br/> <br/> <br/> </br>              
               <?php 
                 $attributes = array('name' => 'PostavljanjeVidea', 'font' => ""); 
                 echo form_open_multipart("PostavljanjeVidea/postavljanje_video", $attributes); 
@@ -88,7 +89,8 @@
                  <tr>
                   <td colspan="2" align="center">
                     <br/> <br/><?php echo $video;?>
-                    <input type="file" class="dugme"  name="userfile" onchange="option('1');document.forms['PostavljanjeVidea'].submit();" value="Ucitaj video"/>                 
+                    <input type="file" class="dugme"  name="userfile" onchange="option('1');document.forms['PostavljanjeVidea'].submit();" value="Ucitaj video"/>
+                    <a class="dugme"  onclick="option('3');document.forms['PostavljanjeVidea'].submit();">Izbrisi video</a>
                     <br/> <br/> <br/>
                   </td>
                 </tr>
@@ -97,7 +99,8 @@
                     <font class = "tekstObican"> Naziv videa </font>
                   </td>
                   <td align="center" width="50%">
-                    <input type="text" class="tekstPolje" name="vidNaziv" value="<?php echo set_value('vidNaziv'); ?>"/>
+                    <input type="text" maxlength="40" class="tekstPolje" name="vidNaziv" value="<?php echo set_value('vidNaziv'); ?>"/>
+                    <?php echo form_error('vidNaziv', '<div class="error">', '</div>'); ?>                    
                   </td>
                 </tr>
                 </tr>
@@ -109,9 +112,10 @@
                   <td align="center" width="50%">
 				    <br/> 
                     <select class="kategorije" name="vidKat">
-                      <option value="1" <?php echo set_select('vidKat', '1', TRUE); ?>>1</option>
-                      <option value="2" <?php echo set_select('vidKat', '2'); ?>>2</option>
-                      <option value="3" <?php echo set_select('vidKat', '3'); ?>>3</option>
+                      <option value="Garderoba" <?php echo set_select('vidKat', 'Garderoba', TRUE); ?>>Garderoba</option>
+                      <option value="Dodaci" <?php echo set_select('vidKat', 'Dodaci'); ?>>Dodaci</option>
+                      <option value="Igracke" <?php echo set_select('vidKat', 'Igracke'); ?>>Igracke</option>
+                      <option value="Ostalo" <?php echo set_select('vidKat', 'Ostalo'); ?>>Ostalo</option>
                     </select>
                   </td>
                 </tr>
@@ -130,6 +134,8 @@
               </tr>
               <tr>
                   <td colspan="2" align="center">
+                      <input type="hidden" name="VidGreska" />
+                      <?php echo form_error('VidGreska', '<div class="error">', '</div>'); ?>
 				   </br>
                    <textarea  maxlength="400" placeholder="Napisite opis" class="videoOpis" name="vidOpis" id="opisVidea" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);"><?php echo set_value('vidOpis'); ?></textarea>
 				  </td>

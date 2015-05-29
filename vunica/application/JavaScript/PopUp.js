@@ -1,5 +1,7 @@
 // JavaScript Document
 
+var izbor = "";
+
 function prikazi_prijavu() {
 	sakrij_sve();
 	document.getElementById('prazan').style.display = "block";
@@ -36,6 +38,8 @@ function sakrij_sve(){
 	document.getElementById('zaboravljenaLozinka').style.visibility = "hidden";
 	document.getElementById('registracija').style.visibility = "hidden";
 	document.getElementById('obavestenje').style.visibility = "hidden";
+        document.getElementById('upozorenje').style.visibility = "hidden";
+        izbor = "";
         
 }
 
@@ -83,4 +87,16 @@ function obavesti(string){
 function ok(){
 	document.getElementById('prazan').style.display = "none";
 	document.getElementById('obavestenje').style.visibility = "hidden";
+}
+
+function upozorenje(string,izb){
+        izbor = izb;
+        document.getElementById('tekstZaUpozorenje').innerHTML = string;
+	document.getElementById('prazan').style.display = "block";
+	document.getElementById('upozorenje').style.visibility = "visible";
+}
+
+function upozorenje_ok(){
+    window.open(izbor, '_parent');
+   
 }

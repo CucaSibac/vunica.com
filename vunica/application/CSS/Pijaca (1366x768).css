@@ -103,7 +103,7 @@
 		.view {
              //padding:26px;
              
-    width:340px;
+    width:44%;
     height: 400px;
     margin: 10px;
     
@@ -145,7 +145,7 @@
 	
 }
 .view .mask, .view .content {
-    width: 340px;
+    width: 100%;
     height: 400px;
     position: absolute;
     overflow: hidden;
@@ -153,7 +153,7 @@
     left: 0
 }
 .view img {
-    width: 340px;
+     width: 100%;
     height: 400px;
     display: block;
     position: relative

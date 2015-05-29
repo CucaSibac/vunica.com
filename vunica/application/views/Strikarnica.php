@@ -54,6 +54,37 @@
         </script>
         <!-- OVO JE ZA DUGME UCITAJ JOS!!-->
         <script type="text/javascript">
+            
+            
+            <?php
+ $this->session->unset_userdata('CenaOd');
+        $this->session->unset_userdata('CenaDo');
+        $this->session->unset_userdata('Vunica');
+        $this->session->unset_userdata('Konci');
+        $this->session->unset_userdata('Igle');
+        $this->session->unset_userdata('MatOstalo');
+        $this->session->unset_userdata('PGarderoba');
+        $this->session->unset_userdata('PDodaci');
+        $this->session->unset_userdata('PIgracke');
+        $this->session->unset_userdata('POstalo');
+        $this->session->unset_userdata('PDatum');
+        $this->session->unset_userdata('PNaziv');
+        $this->session->unset_userdata('PCena');
+?>
+
+            sessionStorage.setItem('CenaOd', "");
+            sessionStorage.setItem('CenaDo', "");
+            sessionStorage.setItem('Vunica', "");
+            sessionStorage.setItem('Konci', "");
+            sessionStorage.setItem('Igle', "");
+            sessionStorage.setItem('MatOstalo', "");
+            sessionStorage.setItem('PGarderoba', "");
+            sessionStorage.setItem('PDodaci', "");
+            sessionStorage.setItem('PIgracke', "");
+            sessionStorage.setItem('POstalo', "");
+            sessionStorage.setItem('PDatum', "");
+            sessionStorage.setItem('PNaziv', "");
+            sessionStorage.setItem('PCena', "");
             $(document).ready(function () {
                 var num_videos = <?= $num_videos ?>;
                 var loaded_videos = 0;
@@ -448,6 +479,7 @@
         include("Registracija.php");
         include("Zaboravljena lozinka.php");
         include("Footer.php");
+        include("Upozorenje.php");
         ?>	
 
 
@@ -809,7 +841,24 @@
 
         </div>
 
-
+<?php 
+    if($this->session->flashdata('reg') == 1){
+        echo "<script language=\"javascript\">prikazi_registraciju();</script>";
+        $this->session->set_flashdata('reg', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('pri') == 1){
+        echo "<script language=\"javascript\">prikazi_prijavu();</script>";
+        $this->session->set_flashdata('pri', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('zl') == 1){
+        echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
+        $this->session->set_flashdata('zl', 0);
+    }
+?>
 
 
     </body>
