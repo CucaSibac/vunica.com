@@ -105,7 +105,6 @@
         </td>
         <td width = "50%" align = "left" valign = "top">
             <?php 
-                //$attributes = array('id' => 'formaProfilEditovanje');
                 echo form_open("Pocetna/obrisiPrijavu"); 
             ?>
             <input type = "submit" class = "akcija" value = "OBRISI PRIJAVU"/>

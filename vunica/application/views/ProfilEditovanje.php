@@ -38,6 +38,7 @@
         <?php include('/../JavaScript/PopUp.js');?>
         <?php include('/../JavaScript/Footer.js');?>
         <?php include('/../JavaScript/Video.js');?>
+        <?php include('/../JavaScript/Postavljanje Proizvoda.js'); ?>
       </script>
    
   <!-- InstanceEndEditable -->
@@ -57,6 +58,8 @@
         include("Registracija.php");
         include("Zaboravljena lozinka.php");
         include("Footer.php");
+        include("Upozorenje.php");
+        include("brisanjesesije.php");
     ?>
   
     <!-- Telo strane -->
@@ -123,16 +126,18 @@
               
               <?php 
                 $attributes = array('id' => 'formaProfilEditovanje');
-                echo form_open("ProfilEditovanje/promeni"); 
+                echo form_open("ProfilEditovanje/opcija", $attributes); 
               ?>
+              
+              <input type="hidden" name="opt" id="opt" value="1" />
               
                   <table width = "90%" align = "center">                 	
                     <tr>
                         <td width = "50%" align = "center">
                             </br> </br>
                         
-                            <!-- Profilna slika -->
-                            <img id = "profilnaSlika" name = "profilnaSlika" src="<?php echo $this->session->Slika;?>"/>
+                            <!-- Profilna slika -->   
+                            <img id = "profilnaSlika" name = "profilnaSlika" src="<?php echo $Profilna;?>"/>
                         
                         </td>
                         <td width = "50%" align = "left" valign = "middle">
@@ -224,11 +229,18 @@
                                    size = "<?php echo strlen($this->session->Lokacija);?>"
                                    placeholder = "<?php echo $this->session->Lokacija; ?>"/>
                             
-                            <br/> <br/> <br/> <br/>
+                            <br/> <br/> <br/>
                             
                             <!-- Menjanje slike -->
-                            <input class = "dugme" type = "submit" value = "Promeni sliku"/>
-                            <input class = "dugme" type = "submit" value = "Obrisi sliku"/>
+                            <input type = "file" name = "userfile" class = "dugme"
+                                   onchange="option(1);document.forms['formaProfilEditovanje'].submit();"                           
+                            />  
+                            
+                            <br/> <br/>
+                            
+                            <a class="dugme"  onclick="option(3);document.forms['formaProfilEditovanje'].submit();">
+                                Obrisi sliku
+                            </a>
                             
                             <?php if($Slika != 0){ ?>
                             <div id = "greskaGodine">
@@ -344,8 +356,15 @@
                             </font>
                             
                             <br/> <br/> <br/> <br/> <br/>
-                            <input class = "dugme" type = "submit" value = "Sacuvaj"/>
-                            <input class = "dugme" type = "submit" value = "Odustani"/>
+                            <a class="dugme" 
+                               onclick="option(2);
+                                        document.forms['formaProfilEditovanje'].submit();"
+                            > 
+                                Sacuvaj
+                            </a>
+                            <a class = "dugme" href="http://localhost/vunica.com/vunica/index.php/Profil"> 
+                                Odustani
+                            </a>
                         </td>
                     </tr>   
                   </table>
@@ -359,6 +378,25 @@
           </tr>
      	</table>
      </div>
+    
+    <?php 
+    if($this->session->flashdata('reg') == 1){
+        echo "<script language=\"javascript\">prikazi_registraciju();</script>";
+        $this->session->set_flashdata('reg', 0);
+    }
+    ?>
+    <?php 
+        if($this->session->flashdata('pri') == 1){
+            echo "<script language=\"javascript\">prikazi_prijavu();</script>";
+            $this->session->set_flashdata('pri', 0);
+        }
+    ?>
+    <?php 
+        if($this->session->flashdata('zl') == 1){
+            echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
+            $this->session->set_flashdata('zl', 0);
+        }
+    ?>
     
 </body>
 <!-- InstanceEnd -->

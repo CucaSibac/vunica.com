@@ -52,20 +52,12 @@ class Pocetna extends CI_Controller {
         
     }
     
-    public function obrisiPrijavu(){
-        
-    }
-    
     // Funkcije koje sluze za manipulisanje korisnicima
     
     public function ucitajKorisnike($pocetak){
         $this->load->model('Korisnici');
         $this->podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika($pocetak);
         $this->load->view('PocetnaKorisnici', $this->podaci['Korisnici']);
-    }
-    
-    public function obrisiKorisnika(){
-        
     }
     
     // Ubacuje pretplatu za premium korisnika u ceger
