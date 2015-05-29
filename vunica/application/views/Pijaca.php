@@ -906,7 +906,7 @@ $this->session->unset_userdata('Naziv');
                                                 <?php if ($status == 3) { ?>
 
                                                     <br/> <br/>
-
+<a class="link" href="http://localhost/vunica.com/vunica/index.php/Pocetna/premiumProfil">
                                                     <table id = "banerPolje" align = "center">
                                                         <tr>
                                                             <td width = "50%" align = "left" style = "padding-left:8%;">
@@ -928,7 +928,7 @@ $this->session->unset_userdata('Naziv');
                                                             </td>
                                                         </tr>
                                                     </table>
-
+</a>
                                                     <br/> <br/>
 
                                                 <?php } else { ?>
