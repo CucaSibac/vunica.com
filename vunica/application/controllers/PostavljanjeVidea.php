@@ -1,5 +1,7 @@
 <?php
 
+// Milos Andric, 206/12
+
 class PostavljanjeVidea extends CI_Controller {
 
     public function __construct() {

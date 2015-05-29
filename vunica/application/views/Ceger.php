@@ -113,11 +113,11 @@
                     $ukupnoCena = 0;
                     if($niz != ''){
                         if(count($niz) > 0){
-                            $red = NULL;
                             $i = 0;
                             $duzina = count($niz);
-                            for(;$i < $duzina;$i++){
-                                $red = $niz[$i];
+                            //for(;$i < $duzina;$i++){
+                               // $red = $niz[$i];
+                            foreach ($niz as $red){
                 ?>
            
                  <table align="center" width="60%">
