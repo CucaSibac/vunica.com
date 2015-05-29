@@ -26,7 +26,7 @@ class Proizvod_model extends CI_Model{
         return $nizp;
     }
     
-    function dohvatiKolicinu($vredn){
+  /*  function dohvatiKolicinu($vredn){
         $this->db->select('*');
         $this->db->from('kupovinapojedinacno');
         //potrebno je postaviti i proveru korisnika po IDKorisnik ali to nakon sto je korisnik ulogovan
@@ -40,7 +40,7 @@ class Proizvod_model extends CI_Model{
         }
         return $nizp;
     }
-    
+    */
     function get_messagesp($vredn, $offset = 0 ){
         $this->db->where('IDProizvod', $vredn);
         $this->db->order_by('IDKomentar', 'desc');
@@ -52,7 +52,7 @@ class Proizvod_model extends CI_Model{
     function num_messagesp($vredn) {
         $this->db->where('IDProizvod', $vredn);
         $query = $this->db->count_all_results('komentarproizvod');
-        echo $query;
+     //   echo $query;
 	return $query;
     }
     

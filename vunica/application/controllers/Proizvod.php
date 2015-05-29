@@ -1,6 +1,5 @@
 <?php
 
-
 /*
  * potrebno je pored &vredn koja predstavlja IDProizvod staviti i $vrednk koji predstavlja IDKorisnik
  * ovo se stavlja kada je korisnik ulogovan
@@ -8,26 +7,27 @@
  */
 
 class Proizvod extends CI_Controller {
-    
+
     public $niz;
     private $element;
-    
+
     public function __construct() {
         parent::__construct();
         $this->load->model('Proizvod_model');
-        
+
         $this->element = array(
             'id' => '',
             'ime' => $this->input->post('arg'),
-            'kolicina' => $this->input->post('v'), 
+            'kolicina' => $this->input->post('v'),
             'cena' => ''
         );
     }
-    public function postavljanje($argument){
-       // $this->element['id'] = 
+
+    public function postavljanje($argument) {
+        // $this->element['id'] = 
         $this->element['ime'] = $argument;
-       // $this->element['cena'] = 
-        
+        // $this->element['cena'] = 
+
         $this->niz = $this->session->Proizvodi;
         if ($this->niz == '') {
             $this->niz[0] = $this->element;
@@ -37,31 +37,33 @@ class Proizvod extends CI_Controller {
         $this->session->Proizvodi = $this->niz;
         echo $this->element['ime'];
     }
-    
+
     public function index($vredn) {
         $this->load->model('Proizvod_model');
         $nizp['podacip'] = $this->Proizvod_model->getAllForProizvod($vredn);
-        $nizp['ucegeru'] = $this->Proizvod_model->dohvatiKolicinu($vredn);
         $nizp['num_messagesp'] = $this->Proizvod_model->num_messagesp($vredn);
         $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($vredn);
         $this->load->view('Proizvod', $nizp);
     }
-    
-    
 
-    function get_messages($vredn, $offset ) {
+    function get_messages($vredn, $offset) {
         $this->load->model('Proizvod_model');
         $nizp['latest_messagesp'] = $this->Proizvod_model->get_messagesp($vredn, $offset);
         $this->load->view('get_messages', $nizp);
     }
-    
+
     public function komentarp() {
-        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '' ;
-        $this->load->model('Proizvod_model');
-        $this->Video_model->new_komentar();
+        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+        if ($this->input->post('Tekst') !== "") {
+            $this->load->model('Proizvod_model');
+            $this->Video_model->new_komentar();
+            $this->session->unset_userdata('tekstpGreska');
+        } else {
+            $this->session->ser_userdata('tekstpGreska', 'true');
+        }
         redirect($refering_url, 'refresh');
     }
-    
+
     function unsetall1p() {
         $this->session->unset_userdata('Laka');
         $this->session->unset_userdata('Srednja');
@@ -244,5 +246,5 @@ class Proizvod extends CI_Controller {
         $this->session->unset_userdata('PCena');
         $this->session->set_userdata('POstalo', "Cekirano");
     }
-    
+
 }
