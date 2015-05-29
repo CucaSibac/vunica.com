@@ -113,29 +113,36 @@
                     $ukupnoCena = 0;
                     if($niz != ''){
                         if(count($niz) > 0){
-                            foreach($niz as $red){
+                            $red = NULL;
+                            $i = 0;
+                            $duzina = count($niz);
+                            for(;$i < $duzina;$i++){
+                                $red = $niz[$i];
                 ?>
            
                  <table align="center" width="60%">
                   <tr>
                     <td width="60%" align="left" style="padding-left:5%;">
                         <font class="tekstObican" style="padding-left:5%;">
-                            <?php echo $red->Naziv; ?>
+                            <?php echo $red->ime; ?>
                         </font>
                     </td>
                     <td width="20%" align="left" style="padding-left:5%;">
                       <font class="tekstObican">
                           <?php 
-                            $ukupnoKolicina += $red->Kolicina;
-                            echo $red->Kolicina; 
+                            $kolicina = (int)($red->kolicina);
+                            $ukupnoKolicina += $kolicina;
+                            echo $red->kolicina; 
                           ?>
                       </font>
                     </td>
                     <td width="20%" align="left" style="padding-left:5%;">
                       <font class="tekstObican">
                           <?php 
-                            $ukupnoKolicina += $red->Kolicina * $red->Cena;
-                            echo $red->Kolicina * $red->Cena;
+                            $cena = (int)($red->cena);
+                            $kolicina = (int)($red->kolicina);
+                            $ukupnoKolicina += ($kolicina * $cena);
+                            echo $red->kolicina * $red->cena;
                           ?>
                       </font>
                     </td>
