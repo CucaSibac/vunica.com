@@ -55,4 +55,15 @@ class Proizvod_model extends CI_Model{
         echo $query;
 	return $query;
     }
+    
+    function new_komentar() {
+        $data = array (
+            'UserName' => ($this->input->post('UserName')),
+                    'Datum' => (date("Y.m.d")),
+                    'Vreme' => (date("H:i:s")),
+                    'Tekst' => ($this->input->post('Tekst')),
+                    'IDProizvod' => ($this->input->post('IDProizvod'))
+    );
+        $this->db->insert('komentarproizvod', $data);
+    }
 }
