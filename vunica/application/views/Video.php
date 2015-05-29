@@ -39,6 +39,7 @@
 <?php include('/../JavaScript/Footer.js'); ?>
 <?php include('/../JavaScript/Checkbox.js'); ?>
 <?php include('/../JavaScript/Video.js'); ?>
+    <?php include('/../JavaScript/PrijavaSadrzaja.js'); ?>
         </script>
 
 
