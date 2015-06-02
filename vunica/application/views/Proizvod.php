@@ -78,6 +78,7 @@ foreach ($podacip as $red) {
     $user = $red->UserName;
     $idProizvod = $red->IDProizvod;
     $nazivProizvoda = $red->Naziv;
+    $this->session->set_flashdata('proizvodId', $idProizvod);
 }
 $status = "Admin";
 $usersession = $this->session->userdata('UserName');
@@ -240,6 +241,8 @@ $usersession = $this->session->userdata('UserName');
         include("brisanjesesijestrikarnica.php");
         include("PrijavaKomentaraProizvod.php");
         include("PrijavaProizvoda.php");
+        include("PrijavaKomentarVideo.php");
+        include("PrijavaVideo.php");
         ?>	
 
 

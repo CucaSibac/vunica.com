@@ -7,7 +7,7 @@
     <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve_prijave()"/>
     <?php
     $attributes = array('style' => 'height: 100%;', 'id' => 'formaPrijavaVideoKomentar');
-    echo form_open("PrijavaSadrzaja/prijaviKomentarVideo", $attributes);
+    echo form_open("PrijavaSadrzaja/prijaviKomentarProizvod", $attributes);
     ?>
     <table class="tabelaPrijavaProizvodKomentar">
         <tr class="textRed">

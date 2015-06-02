@@ -246,7 +246,7 @@ class PopUp extends CI_Controller {
 
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         echo $refering_url;
-        if (strpos($refering_url, 'obrisiKomentarVideo') == true) {
+        if ((strpos($refering_url, 'obrisiKomentarVideo') == true) ||(strpos($refering_url, 'obrisiKomentarProizvod') == true)) {
             $niz = explode('/', $refering_url);
             $duzina = sizeof($niz);
             $podaci['url'] = $niz[$duzina - 2];
