@@ -39,7 +39,7 @@
 <?php include('/../JavaScript/Footer.js'); ?>
 <?php include('/../JavaScript/Checkbox.js'); ?>
 <?php include('/../JavaScript/Video.js'); ?>
-<?php include('/../JavaScript/PrijavaSadrzaja.js'); ?>
+  <?php include('/../JavaScript/PrijavaSadrzaja.js'); ?>
 <?php include('/../JavaScript/Proizvod.js'); ?>
         </script>
 
@@ -238,6 +238,8 @@ $usersession = $this->session->userdata('UserName');
         include("Footer.php");
         include("Upozorenje.php");
         include("brisanjesesijestrikarnica.php");
+        include("PrijavaKomentaraProizvod.php");
+        include("PrijavaProizvoda.php");
         ?>	
 
 
@@ -414,7 +416,7 @@ $usersession = $this->session->userdata('UserName');
                                     <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
                                         <a onclick="" id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi proizvod </a>   
                                     <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
-                                        <a onclick="" id="prijaviobrisi" class="prijaviVideo" > Prijavi proizvod </a>  
+                                        <a onclick="prikazi_prijavu_proizvod();" id="prijaviobrisi" class="prijaviVideo" > Prijavi proizvod </a>  
                                     <?php } else { ?>
                                         <a onclick="prikazi_registraciju()" id="prijaviobrisi" class="prijaviVideo" > Prijavi proizvod </a>  
                                     <?php } ?>
@@ -534,9 +536,9 @@ $usersession = $this->session->userdata('UserName');
             <?php include("PrijavaKomentarVideo.php"); ?>
                                                                         </script>
 
-                                                                        <a onclick="prikazi_prijavu_komentara()" class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                        <a onclick="prikazi_prijavu_komentara_proizvod('<?php echo $idkomentar; ?>')" class = "prijaviKomentar" > Prijavi komentar </a>
                                                                         <script>
-                                                                            //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
+                                                                            
         <?php } else { ?> //ako gost pristupa sajtu
                                                                         </script>
                                                                         <a onclick="prikazi_registraciju()" class = "prijaviKomentar" > Prijavi komentar </a>

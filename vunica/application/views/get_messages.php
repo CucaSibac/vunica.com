@@ -1,41 +1,46 @@
-<!-- Tijana Trifunovic 311/12-->
  <?php
-                                                                foreach ($latest_messages as $message) {
-                                                                    ?>
+                                                    foreach ($latest_messages as $message) {
+                                                        $idkomentar = $message->IDKomentar;
+                                                        ?>
 
 
-                                                                    <div class="view view-third" align="left" >  
-                                                                        <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
-                                                                        <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
-                                                                        <br /><br />
-                                                                        <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
-                                                                         <?php $userkom = $message->UserName;
-                                                                         $status = "Admin";?>
-                                                                        <script>
-                                                                               
-                                                                                <?php if ($this->session->UserName != '' && $this->session->UserName == $userkom) { ?> //ako je trenutno prijavljeni korisnik ostavio komentar
-                                                                                   </script>
-                                                                                            <a  class = "prijaviKomentar" > Obrisi komentar </a>
-                                                                                   <script>
-                                                                                            // PREPRAVITI ON CLICK FUNKCIJU
-                                                                                <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
-                                                                                     </script>
-                                                                                            <a  class = "prijaviKomentar" > Obrisi komentar </a>
-                                                                                   <script>
-                                                                                <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
-                                                                                     </script>
-                                                                                            <a  class = "prijaviKomentar" > Prijavi komentar </a>
-                                                                                   <script>
-                                                                                    // PREPRAVITI ON CLICK FUNKCIJU
-                                                                                <?php } else { ?> //ako gost pristupa sajtu
-                                                                                     </script>
-                                                                                            <a onclick="prikazi_registraciju()" class = "prijaviKomentar" > Prijavi komentar </a>
-                                                                                   <script>
-                                                                                <?php } ?>
+                                                        <div class="view view-third" align="left" >  
+                                                            <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
+                                                            <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
+                                                            <br /><br />
+                                                            <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
+                                                            <?php $userkom = $message->UserName; ?>
+                                                            <script>
 
-                                                                            
+        <?php
+        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/$message->IDKomentar";
+        if ($this->session->UserName != '' && $this->session->UserName == $userkom) {
+            ?> //ako je trenutno prijavljeni korisnik ostavio komentar
+                                                                </script>
+                                                                <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                <script>
 
-                                                                        </script>
-                                                                    </div>  <br /><br />
+        <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
+                                                                </script>
+                                                                <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                <script>
+        <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar                                                             
+                                                                </script>
+                                                                
+                                                                
+                                                                
+                                                                <a onclick="prikazi_prijavu_komentara('<?php echo $idkomentar; ?>')"  class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                <script>
+                                                                    //  $('#prijaviobrisi').click(prijavi_video); PREPRAVITI
+        <?php } else { ?> //ako gost pristupa sajtu
+                                                                </script>
+                                                                <a onclick="prikazi_registraciju()" class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                <script>
+        <?php } ?>
 
-                                                                <?php } ?>
+                                                                //< a  class = "prijaviKomentar" > Prijavi komentar < /a>
+
+                                                            </script>
+                                                        </div>  <br /><br />
+
+    <?php } ?>
