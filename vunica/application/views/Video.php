@@ -231,6 +231,8 @@ $this->session->unset_userdata('PCena');
         include("Zaboravljena lozinka.php");
         include("Footer.php");
         include("Upozorenje.php");
+          include("PrijavaKomentaraProizvod.php");
+        include("PrijavaProizvoda.php");
         include("PrijavaKomentarVideo.php");
         include("PrijavaVideo.php");
         ?>	
