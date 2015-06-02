@@ -41,9 +41,12 @@ class Proizvod_model extends CI_Model{
         return $nizp;
     }
     */
-    function get_messages($vredn, $offset = 0 ){
-        $this->db->where('IDProizvod', $vredn);
-        $this->db->order_by('IDKomentar', 'desc');
+    function get_messages($vrednost, $offset = 0 ){
+        $this->db->select('komentarproizvod.IDKomentar, komentarproizvod.UserName, komentarproizvod.Datum, komentarproizvod.Vreme, komentarproizvod.Tekst, komentarproizvod.IDProizvod, prijavakomentarproizvod.Komentar');
+        $this->db->where('IDProizvod', $vrednost);
+        $this->db->order_by('komentarproizvod.IDKomentar', 'desc');
+        $this->db->join('prijavakomentarproizvod', 'prijavakomentarproizvod.IDKomentar = komentarproizvod.IDKomentar', 'left');
+        $this->db->group_by('komentarproizvod.IDKomentar');
 	$query = $this->db->get('komentarproizvod', 3, $offset);
 	return $query->result();
     }

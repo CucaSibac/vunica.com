@@ -314,6 +314,27 @@ $usersession = $this->session->userdata('UserName');
                                         ?>
                                         <?php
                                         $broj = $red->BrojArtikala;
+                                        
+                                        
+                                          $niz = $this->session->Proizvodi;
+                    $ukupnoKolicina = 0;
+                    if($niz != ''){
+                        if(count($niz) > 0){
+                            $i = 0;
+                            $duzina = count($niz);
+                            for(;$i < $duzina;$i++){
+                                if (($niz[$i][0])=== $red->IDProizvod){
+                                    $ukupnoKolicina = $ukupnoKolicina + (int)($niz[$i][3]);
+                                }
+                                
+                            }
+                            $broj = $red->BrojArtikala - $ukupnoKolicina;
+                               
+                
+                    }}
+                                   
+                                        
+                                        
                                     }
                                     ?>
 
@@ -389,7 +410,7 @@ $usersession = $this->session->userdata('UserName');
                                             foreach ($podacip as $red) {
                                                 ?>
                                                 <?php
-                                                echo $red->BrojArtikala;
+                                                echo $broj;
                                             }
                                             ?></a>
                                     </font>
@@ -515,7 +536,13 @@ $usersession = $this->session->userdata('UserName');
                                                                 ?>
 
 
-                                                                <div class="view view-third" align="left" >  
+                                                                <?php if ($message->Komentar !== null && $this->session->UserName != '' && $this->session->Status == $status) { ?>
+                                                    <div class="view view-third" style="background-color: rgba(248, 154, 164, 0.1);" align="left" >  
+                                                        <?php } else if ($message->Komentar === null && $this->session->UserName != '' && $this->session->Status == $status) { ?>
+                                                        <div class="view view-third" style="background-color: rgba(172, 206, 192, 0.1);	" align="left" > 
+                                                        <?php }else {?>
+                                                            <div class="view view-third"  align="left" >
+                                                        <?php }?>
                                                                     <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
                                                                     <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
                                                                     <br /><br />
