@@ -78,6 +78,7 @@ foreach ($podacip as $red) {
     $user = $red->UserName;
     $idProizvod = $red->IDProizvod;
     $nazivProizvoda = $red->Naziv;
+    $cena = $red->Cena;
     $this->session->set_flashdata('proizvodId', $idProizvod);
 }
 $status = "Admin";
@@ -376,7 +377,7 @@ $usersession = $this->session->userdata('UserName');
                                         <script>
                                         <?php } ?></script>                           
                                     <input type="hidden" name="IDProizvod" id="IDProizvod"  value="<?php echo $idProizvod ?>"/>
-                                    <input type="hidden" name="Cena" id="Cena"  value="<?php echo $idProizvod ?>"/>
+                                    <input type="hidden" name="Cena" id="Cena"  value="<?php echo $cena ?>"/>
                                     <input type="hidden" name="KolicinaForma" id="KolicinaForma"  value=""/>
                                     <input type="hidden" name="NazivProizvoda" id="NazivProizvoda"  value="<?php echo $nazivProizvoda?>"/>
                                         <?php echo form_close(); ?>
