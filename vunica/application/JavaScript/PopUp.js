@@ -1,5 +1,5 @@
 // JavaScript Document
-//
+
 var izbor = "";
 
 function prikazi_prijavu() {

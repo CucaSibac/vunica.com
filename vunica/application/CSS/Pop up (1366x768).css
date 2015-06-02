@@ -1,8 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* Milos Andric, 206/12 */
-/* Ivana Lisanin, 531/12 */
+
 
 #prazan{  
 	width:100%;
@@ -97,7 +96,7 @@
 	width:29%;
 	top:20%;
 	left:35.5%;
-	position:absolute;;
+	position:fixed;;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -131,7 +130,7 @@
 	width:29%;
 	top:20%;
 	left:35.5%;
-	position:absolute;
+	position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -164,7 +163,7 @@
 	width:27%;
 	top:10%;
 	left:36.5%;
-	position:absolute;
+	position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -269,7 +268,7 @@
 	width:27%;
 	top:10%;
 	left:36.5%;
-	position:absolute;
+	position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -302,7 +301,7 @@
 	width:27%;
 	top:10%;
 	left:36.5%;
-	position:absolute;
+	position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -335,7 +334,7 @@
 	width:27%;
 	top:10%;
 	left:36.5%;
-	position:absolute;
+	position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
@@ -368,7 +367,7 @@
 	width:27%;
 	top:10%;
 	left:36.5%;
-	position:absolute;
+	position:fixed;
 	visibility:hidden;
 	background-color:#fffef4;
 	border:2px solid #ACCEC0;
