@@ -297,7 +297,7 @@ class PopUp extends CI_Controller {
         $this->email->from('vunica.com@gmail.com', 'Tim vunica.com');
         $this->email->to($this->input->post('zlEmail')); //
         $this->email->subject('Povratak lozinke');
-        $this->email->message('Vasa sifra je: ' . $podaci); //      
+        $this->email->message('Cveticu sifra ti je ' . $podaci); //      
         $this->email->send();
         return true;
     }
