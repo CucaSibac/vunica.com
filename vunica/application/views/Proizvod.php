@@ -429,7 +429,7 @@ $usersession = $this->session->userdata('UserName');
                             <!-- PISANJE KOMENTARA-->
                             <?php
                             $attributes = array('id' => 'formaKomentarProizvod', 'UserName' => $user);
-                            echo form_open("Proizvod/komentar", $attributes);
+                            echo form_open("Proizvod/komentarp", $attributes);
                             ?>
                             <tr>
                                 <td colspan="2" align="center">

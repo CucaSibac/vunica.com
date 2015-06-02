@@ -55,7 +55,7 @@ class Proizvod extends CI_Controller {
     }
 
      
-    public function komentar() {
+    public function komentarp() {
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         if ($this->input->post('Tekst') !== "") {
             $this->load->model('Proizvod_model');

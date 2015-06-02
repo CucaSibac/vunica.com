@@ -20,8 +20,11 @@ class Video_model extends CI_Model {
     }
     
     function get_messages($vrednost, $offset = 0 ){
+        $this->db->select('komentarvideo.IDKomentar, komentarvideo.UserName, komentarvideo.Datum, komentarvideo.Vreme, komentarvideo.Tekst, komentarvideo.IDVideo, prijavakomentarvideo.IDKomentar');
         $this->db->where('IDVideo', $vrednost);
-        $this->db->order_by('IDKomentar', 'desc');
+        $this->db->order_by('komentarvideo.IDKomentar', 'desc');
+        $this->db->join('prijavakomentarvideo', 'prijavakomentarvideo.IDKomentar = komentarvideo.IDKomentar', 'left');
+        $this->db->group_by('komentarvideo.IDKomentar');
 	$query = $this->db->get('komentarvideo', 3, $offset);
 	return $query->result();
     }
