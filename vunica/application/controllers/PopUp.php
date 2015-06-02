@@ -289,16 +289,16 @@ class PopUp extends CI_Controller {
         $this->load->library('email');
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.gmail.com';   //examples: ssl://smtp.googlemail.com, myhost.com
-        $config['smtp_user'] = 'andricgmilos@gmail.com';
-        $config['smtp_pass'] = '****';
+        $config['smtp_user'] = 'vunica.com@gmail.com';
+        $config['smtp_pass'] = '092810271993';
         $config['smtp_port'] = '465';
         $this->email->initialize($config);
 
-        $this->email->from('andricgmilos@gmail.com', 'Tim vunica.com');
+        $this->email->from('vunica.com@gmail.com', 'Tim vunica.com');
         $this->email->to($this->input->post('zlEmail')); //
         $this->email->subject('Povratak lozinke');
         $this->email->message('Vasa sifra je: ' . $podaci); //      
-        //   $this->email->send();
+        $this->email->send();
         return true;
     }
 
