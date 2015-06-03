@@ -28,8 +28,10 @@ class UpdateKorisnik extends CI_Model {
             ++ $promene;
         }
 
+        // $korisnik['Slikea'] != '' && $korisnik['Slika'] != $this->session->Slika
         if(1){
-            $data['Slika'] = $this->session->Slika;          
+            $data['Slika'] = $this->session->Slika;
+            // $this->session->Slika = $data['Slika'] = $korisnik['Slika'];   
             ++ $promene;
         }
 
