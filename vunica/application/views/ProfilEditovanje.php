@@ -169,7 +169,7 @@
                             <font class = "tekstObican"> Godine: </font>
                             <input id = "godine" name = "godine" class = "tekstForme" type = "text" maxlength = "10"
                                    size = "<?php echo strlen($this->session->Godine);?>"
-                                   placeholder="<?php echo $this->session->Godine; ?>"/>
+                                   value = "<?php echo $this->session->Godine; ?>"/>
                             
                             <?php if($Godine != 0){ ?>
                             <div id = "greskaGodine">
@@ -229,7 +229,7 @@
                             <font class = "tekstObican"> Lokacija: </font>
                             <input id = "lokacija" name = "lokacija" class = "tekstForme" type = "text" maxlength = "30"
                                    size = "<?php echo strlen($this->session->Lokacija);?>"
-                                   placeholder = "<?php echo $this->session->Lokacija; ?>"/>
+                                   value = "<?php echo $this->session->Lokacija; ?>"/>
                             
                             <br/> <br/> <br/>
                             
@@ -264,7 +264,7 @@
                             <br/> <br/>
                             <input id = "imeprezime" name = "imeprezime" class = "tekstForme" type = "text" maxlength = "20"
                                    size = "<?php echo strlen($this->session->ImePrezime);?>"
-                                   placeholder="<?php echo $this->session->ImePrezime; ?>"/>
+                                   value = "<?php echo $this->session->ImePrezime; ?>"/>
                             <br/> <br/>
                         </td>
                     </tr>
@@ -276,7 +276,7 @@
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <input id = "email" name = "email" class = "tekstForme" type = "text" maxlength = "40"
                                    size = "<?php echo strlen($this->session->Email);?>"
-                                   placeholder="<?php echo $this->session->Email; ?>"/>
+                                   value = "<?php echo $this->session->Email; ?>"/>
                         </td>
                     </tr>
                     <tr>
@@ -288,7 +288,7 @@
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <input id = "emailPotvrda" name = "emailPotvrda" class = "tekstForme" type = "text" maxlength = "40"
                                    size = "<?php echo strlen($this->session->Email);?>"
-                                   placeholder="<?php echo $this->session->Email; ?>"/>
+                                   value = "<?php echo $this->session->Email; ?>"/>
                             <br/>
                         </td>
                     </tr>
@@ -315,7 +315,7 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <input id = "lozinka" name = "lozinka" class = "tekstForme" type = "password" size = "25" maxlength = "40"
-                                   placeholder="<?php echo $this->session->Lozinka; ?>"/>
+                                   value = "<?php echo $this->session->Lozinka; ?>"/>
                         </td>
                     </tr>
                     <tr>
@@ -326,7 +326,7 @@
                         </td>
                         <td width = "50%" align = "left" style = "padding:0 0 1% 0;">
                             <input id = "lozinkaPotvrda" name = "lozinkaPotvrda" class = "tekstForme" type = "password" size = "25" maxlength = "40"
-                                   placeholder="<?php echo $this->session->Lozinka; ?>"/>
+                                   value = "<?php echo $this->session->Lozinka; ?>"/>
                             <br/>
                         </td>
                     </tr>
@@ -347,14 +347,13 @@
                         <td colspan = "2" width = "100%" align = "center">
                             <font class = "tekstObican"> O meni: </font>
                             <br/> <br/> 
-                            <textarea id = "limitedtextarea" name = "opis" class = "tekstPolje" maxlength = "400" onKeyDown = "limitText(400);" onKeyUp = "limitText(400);"
-                                      placeholder = "<?php echo $this->session->Opis; ?>"></textarea>
+                            <textarea id = "limitedtextarea" name = "opis" class = "tekstPolje" maxlength = "400" onKeyDown = "limitText(400);" onKeyUp = "limitText(400);"><?php echo $this->session->Opis; ?></textarea>
                             <br/>
                             <font class="tekstObican">
                             	Preostalo karaktera: 
                             </font>
                             <font id="ostatak" class="tekstIskosen">
-                            	400
+                            	<?php echo 400 - strlen($this->session->Opis);?>
                             </font>
                             
                             <br/> <br/> <br/> <br/> <br/>

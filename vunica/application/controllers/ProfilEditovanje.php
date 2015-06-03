@@ -62,7 +62,7 @@ class ProfilEditovanje extends CI_Controller {
                 $this->promeni();
             }
             else{
-                $this->obrisiSiiku();
+                $this->obrisiSliku();
             }
         }
     }
@@ -88,7 +88,6 @@ class ProfilEditovanje extends CI_Controller {
         $this->load->library('upload', $config);
         
         if (!$this->upload->do_upload()) {
-            // $this->greske['Profilna'] = '';
             $this->greske['Slika'] = 1;
             $this->load->view('ProfilEditovanje', $this->greske);
         }
@@ -101,7 +100,7 @@ class ProfilEditovanje extends CI_Controller {
     }
     
     // Brise sliku, stavlja default u zavinsosti od pola
-    protected function obrisiSiiku(){
+    protected function obrisiSliku(){
         $pol = $this->input->post('pol');
         if(strcmp($pol, "Musko") == 0){
             $this->promene['Slika'] = "http://localhost/Slike/Profilna/Musko.jpg";
@@ -143,12 +142,9 @@ class ProfilEditovanje extends CI_Controller {
             $this->greske['Email'] = 2;
         }
         
-        if($this->session->UserName != ''){
-            $this->load->view('ProfilEditovanje', $this->greske);
-        }
-        else{
-            $this->load->view('GreskaStrana');
-        }
+
+        $this->load->view('ProfilEditovanje', $this->greske);
+
     }  
     
     // Proverava godine
