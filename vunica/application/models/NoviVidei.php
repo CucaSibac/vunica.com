@@ -12,26 +12,6 @@ class NoviVidei extends CI_Model {
         $this->videi = NULL;
     }
     
-    public function ucitavanjeNovihVidea() {
-        $this->db->select('*');
-        $this->db->from('video');
-        $this->db->order_by('Datum', 'desc');
-        
-        $upit = $this->db->get();
-        if($upit->num_rows() > 0){
-            $i = 0;
-            foreach ($upit->result() as $red){
-                $this->videi[$i] = $red;
-                $i++;
-                if($i == 4){
-                    break;
-                }
-            }
-        }   
-        
-        return $this->videi;
-    }
-    
     public function ucitavanjeVidea($id) {
         $this->db->select('*');
         $this->db->from('video');

@@ -15,8 +15,6 @@ class Pocetna extends CI_Controller {
             'Korisnici' => NULL,
             'Videi' => NULL,
             'Proizvodi' => NULL,
-            'NoviVidei' => NULL,
-            'NoviProizvodi' => NULL,
         );
         
         $duzine = array(
@@ -42,39 +40,48 @@ class Pocetna extends CI_Controller {
         $this->podaci['Videi'] = $this->NoviVidei->ucitavanjeVidea($this->session->UserName);
         $this->podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
         
-        $this->podaci['NoviVidei'] = $this->NoviVidei->ucitavanjeNovihVidea();
-        $this->podaci['NoviProizvodi'] = $this->NoviProizvodi->ucitavanjeNovihProizvoda();
-        
         $this->load->view('Pocetna', $this->podaci);
     }
-    
-    // Funkcije koje sluze za manipulisanje prijavama
-    
-    public function ucitajPrijave(){
-        
-    }
-    
-    // Funkcije koje sluze za manipulisanje korisnicima
-    
-    public function ucitajKorisnike($pocetak){
-        $this->load->model('Korisnici');
-        $this->podaci['Korisnici'] = $this->Korisnici->ucitavanjeKorisnika($pocetak);
-        $this->load->view('PocetnaKorisnici', $this->podaci['Korisnici']);
-    }
+
     
     // Ubacuje pretplatu za premium korisnika u ceger
     public function premiumProfil(){
         $niz = $this->session->Proizvodi;
+         
+        $element = array(
+            0 => 1,
+            1 => 'Premium pretplata', 
+            2 => 19,
+            3 => 1
+        );
+        
         if($niz == ''){
-            $niz[0] = '1';
-        }
+            $niz[0] = $element;
+        } 
         else{
-            $duzina = count($niz);
-            $niz[$duzina] = '1';
+            if($this->nadjiPretplatu($niz) == FALSE){
+                $niz[count($niz)] = $element;
+            }    
         }
+        
         $this->session->Proizvodi = $niz;
         
-        $this->load->view('Ceger');
+        $greske = array(
+            'Kartica' => 0,
+            'Adresa' => 0,
+        ); 
+        
+        $this->load->view('Ceger', $greske);
+    }
+    
+    // Da li premium pretplata vec postoji u cegeru?
+    protected function nadjiPretplatu($niz){
+        foreach($niz as $red){
+            if($red[0] == 1){
+                return TRUE;
+            }
+        }
+        return FALSE;
     }
     
 }

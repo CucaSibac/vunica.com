@@ -10,8 +10,8 @@
   
     <title>
         <?php
-            if($this->session->UserName != ''){
-                echo $this->session->UserName;
+            if($Korisnik['UserName'] != ''){
+                echo $Korisnik['UserName'];
             }
             else{
                 echo "Editovanje profila";
@@ -76,15 +76,15 @@
               <!-- Odredjivanje statusa korisnika -->
               <?php
                 $status = 0;
-                if(strcmp($this->session->Status, 'Admin') == 0){
+                if(strcmp($Korisnik['Status'], 'Admin') == 0){
                     $status = 1;
                 } 
                 else{
-                    if(strcmp($this->session->Status, 'Pletilja') == 0){
+                    if(strcmp($Korisnik['Status'], 'Pletilja') == 0){
                         $status = 2;
                     } 
                     else{
-                        if(strcmp($this->session->Status, 'Klupko') == 0){
+                        if(strcmp($Korisnik['Status'], 'Klupko') == 0){
                             $status = 3;
                         } 
                     }
@@ -93,7 +93,7 @@
               
               <!-- Baner -->
               
-              <?php if($status == 3){?>
+              <?php if($status == 3 && ($Korisnik['UserName'] == $this->session->UserName)){?>
                             
               <br/> <br/>
               
@@ -131,18 +131,18 @@
                   <td width = "50%" valign = "top"  align = "center">
                     <br/> <br/>
                     
-                    <img id = "profilnaSlika" src="<?php echo $this->session->Slika;?>" />
+                    <img id = "profilnaSlika" src="<?php echo $Korisnik['Slika'];?>" />
                     
                   </td>
                     <td width = "50%" align = "left" valign = "top" style = "padding-right:5%;">
                       <br/> <br/> <br/>
                       
                       <font class="naslovObican">
-                          <?php echo $this->session->UserName;?>
+                          <?php echo $Korisnik['UserName'];?>
                       </font> 
                       <br/>   
                       <font class="tekstObican">
-                          <?php echo $this->session->ImePrezime;?>
+                          <?php echo $Korisnik['ImePrezime'];?>
                       </font>
                       
                       <br/> <br/>
@@ -161,22 +161,22 @@
                       <br/> <br/>
                       
                       <font class="tekstObican"> Godine: </font>
-                      <font class="tekstIskosen"><?php echo $this->session->Godine;?></font>
+                      <font class="tekstIskosen"><?php echo $Korisnik['Godine'];?></font>
                       
                       <br/>
                       
                       <font class="tekstObican"> Pol: </font>
-                      <font class="tekstIskosen"><?php echo $this->session->Pol;?></font>
+                      <font class="tekstIskosen"><?php echo $Korisnik['Pol'];?></font>
                       
                       <br/>
                       
                       <font class="tekstObican"> Lokacija: </font>
-                      <font class="tekstIskosen"><?php echo $this->session->Lokacija;?></font>
+                      <font class="tekstIskosen"><?php echo $Korisnik['Lokacija'];?></font>
                       
                       <br/> <br/>
                       
                       <font class="tekstObican"> O meni: </font>
-                      <font class="tekstIskosen"><?php echo $this->session->Opis;?></font>
+                      <font class="tekstIskosen"><?php echo $Korisnik['Opis'];?></font>
                       
                       <br/> <br/>
                   </td>
@@ -184,28 +184,41 @@
                 <tr>
                   <td align="center">
                       <br />
-                      <a class="dugme" target="_parent"
-                         href="http://localhost/vunica.com/vunica/index.php/ProfilEditovanje">
-                          Izmeni profil
-                      </a>
+                      <?php if($Korisnik['UserName'] == $this->session->UserName){ ?>
+                          <a class="dugme" target="_parent"
+                             href="http://localhost/vunica.com/vunica/index.php/ProfilEditovanje">
+                              Izmeni profil
+                          </a>
+                      <?php } ?>
                       <?php 
-                        $id = $this->session->IDKorisnik;
+                        $id = $Korisnik['IDKorisnik'];
                         $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKorisnika/$id"; 
                       ?>
-                      <a  id = "prijaviobrisi" class = "dugme"
-                          href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete korisnika?','<?php echo $kontroler; ?>')"> 
-                          Obrisi profil
-                      </a>
+                      <?php if((strcmp($this->session->Status, 'Admin') == 0) || ($Korisnik['UserName'] == $this->session->UserName)){ ?>
+                          <a  id = "prijaviobrisi" class = "dugme"
+                              href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete korisnika?','<?php echo $kontroler; ?>')"> 
+                              Obrisi profil
+                          </a>
+                      <?php } ?>
                       <br/> <br/>
                   </td>
                 </tr>
                   
-                <br/> <br/> 
-
+                <br/> <br/> <br/> <br/>
+                
+                
                 <table width = "60%" align = "center">
+                    <?php if($Korisnik['UserName'] != $this->session->UserName){ ?>
+                    <tr>
+                        <td align = "center"> 
+                            <font class = "tekstObican">
+                                Korisnikov sadrzaj:
+                            </font> 
+                        </td> 
+                    </tr>
+                    <?php } ?>
                     <tr>
                         <td>
-                            <br/> <br/>
                             <hr width = "100%" class = "linija"/> 
                         </td>
                     </tr>
@@ -221,6 +234,7 @@
                         <td width = "45%" valign = "top">       
                             <!-- Videi -->
                             <table width = "80%" align = "center">
+                                <?php if($Korisnik['UserName'] == $this->session->UserName){ ?>
                                 <tr>
                                     <td>
                                         <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/PostavljanjeVidea'>
@@ -231,6 +245,7 @@
                                         <br/> <br/>
                                     </td>
                                 </tr>
+                                <?php } ?>
                                 <?php 
                                     if($Videi != NULL){
                                         foreach ($Videi as $redVideo){ 
@@ -263,6 +278,7 @@
                                         <br/>
                                     </td>
                                 </tr>
+                                <?php if((strcmp($this->session->Status, 'Admin') == 0) || ($Korisnik['UserName'] == $this->session->UserName)){ ?>
                                 <tr>
                                     <td align = "center" valign = "top">
                                         <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$redVideo->IDVideo" ; ?>
@@ -273,6 +289,7 @@
                                         <br/> <br/>
                                     </td>
                                 </tr>
+                                <?php } ?>
                                 <?php 
                                         }
                                     }
@@ -280,9 +297,15 @@
                                 ?>
                                 <tr>
                                     <td height = "120px" align = "center" valign = "middle">
-                                        <font class = "tekstObican">
-                                            Trenutno nemate svojih videa. Postanite aktivniji clan zajednice. Postavite video!
-                                        </font>
+                                        <?php if($Korisnik['UserName'] == $this->session->UserName){ ?>
+                                            <font class = "tekstObican">
+                                                Trenutno nemate svojih videa. Postanite aktivniji clan zajednice. Postavite proizvod!
+                                            </font>
+                                        <?php }else{ ?>
+                                            <font class = "tekstObican">
+                                                Korisnik nema svojih videa.
+                                            </font>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -291,6 +314,7 @@
                         <td width = "45%" valign = "top">
                             <!-- Proizvodi -->
                             <table width = "80%" align = "center">
+                                <?php if($Korisnik['UserName'] == $this->session->UserName){ ?>
                                 <tr>
                                     <td>
                                         <?php if($status == 3){ ?>
@@ -307,6 +331,7 @@
                                         <br/> <br/>
                                     </td>
                                 </tr>
+                                <?php } ?>
                                 <?php 
                                     if($Proizvodi != NULL){
                                         foreach ($Proizvodi as $redProizvod){ 
@@ -334,21 +359,34 @@
                                             <div class="produktKorisnikaSenka"> 
                                             </div>
 
-                                            <img class="produktKorisnikaSlika" src="<?php echo $redVideo->Slika; ?>">
+                                            <img class="produktKorisnikaSlika" src="<?php echo $redProizvod->Slika; ?>">
                                         </div>     
                                         <br/>
                                     </td>
                                 </tr>
+                                <?php if((strcmp($this->session->Status, 'Admin') == 0) || ($Korisnik['UserName'] == $this->session->UserName)){ ?>
                                 <tr>
                                     <td align = "center" valign = "top">
                                         <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiProizvod/$redProizvod->IDProizvod" ; ?>
                                         <a  id = "prijaviobrisi" class = "akcija"
-                                            href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
+                                            href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')"> 
                                             OBRISI PROIZVOD
                                         </a>
                                         <br/> <br/>
                                     </td>
                                 </tr>
+                                <?php } ?>
+                                <?php if($Korisnik['UserName'] == $this->session->UserName){ ?>
+                                <tr>
+                                    <td align = "center" valign = "top">
+                                        <a  id = "prijaviobrisi" class = "akcija"
+                                            href="http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/<?php echo $redProizvod->IDProizvod;?>"> 
+                                            IZMENI PROIZVOD
+                                        </a>
+                                        <br/> <br/>
+                                    </td>
+                                </tr>
+                                <?php } ?>
                                 <?php 
                                         }
                                     }
@@ -356,9 +394,15 @@
                                 ?>
                                 <tr>
                                     <td height = "120px" align = "center" valign = "middle">
-                                        <font class = "tekstObican">
-                                            Trenutno nemate svojih proizvoda. Postanite aktivniji clan zajednice. Postavite proizvod!
-                                        </font>
+                                        <?php if($Korisnik['UserName'] == $this->session->UserName){ ?>
+                                            <font class = "tekstObican">
+                                                Trenutno nemate svojih proizvoda. Postanite aktivniji clan zajednice. Postavite proizvod!
+                                            </font>
+                                        <?php }else{ ?>
+                                            <font class = "tekstObican">
+                                                Korisnik nema svojih proizvoda.
+                                            </font>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                                 <?php } ?>

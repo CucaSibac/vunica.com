@@ -364,7 +364,7 @@
                             > 
                                 Sacuvaj
                             </a>
-                            <a class = "dugme" href="http://localhost/vunica.com/vunica/index.php/Profil"> 
+                            <a class = "dugme" href="http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>"> 
                                 Odustani
                             </a>
                         </td>

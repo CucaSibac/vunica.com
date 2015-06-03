@@ -12,7 +12,7 @@ class Korisnici extends CI_Model {
         $this->korisnici = NULL;
     }
     
-    // Ucitava 5 korisnika iz baze od reda $pocetak
+    // Ucitava sve korisnike iz baze
     public function ucitavanjeKorisnika($pocetak){
         $this->db->order_by('DatumPoslednjegLogovanja', 'desc');
         
@@ -25,13 +25,32 @@ class Korisnici extends CI_Model {
         return $upit->result();
     }
     
-    // Ucitava sve korisnike iz baze.
-    public function brojRedova(){
+    // Ucitava jednog korisnike iz baze prema id-u
+    public function ucitavanjeJednogKorisnika($id){
         $this->db->select('*');
         $this->db->from('korisnik');
+        $this->db->where('IDKorisnik', $id);
+        
         $upit = $this->db->get();
         
-        return count($upit->result());
+        if($upit->num_rows() > 0){
+            foreach($upit->result() as $red){
+                $korisnik = array(
+                    'IDKorisnik' => $red->IDKorisnik,
+                    'UserName' => $red->UserName,
+                    'ImePrezime' => $red->ImePrezime,
+                    'Godine' => $red->Godine,
+                    'Pol' => $red->Pol,
+                    'Lokacija' => $red->Lokacija,
+                    'Status' => $red->Status,
+                    'Slika' => $red->Slika,
+                    'Email' => $red->Email,
+                    'Opis' => $red->Opis,
+                );
+            }
+        }
+        
+        return $korisnik;
     }
     
 }

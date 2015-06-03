@@ -85,7 +85,7 @@
                       </td>
                       <td class = "stavka" align = "center" valign = "middle">
                         <?php if($this->session->UserName != ''){ ?>
-                            <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil/index', '_parent');">
+                            <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>', '_parent');">
                                 <?php echo $this->session->UserName; ?>
                             </font>
                             <font> / </font>
