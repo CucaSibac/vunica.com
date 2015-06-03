@@ -58,3 +58,7 @@
 	.kategorije:focus{		
 		outline:2px solid #61a6ab;
 	}
+        
+input[type="file"] {
+    display: none;
+}

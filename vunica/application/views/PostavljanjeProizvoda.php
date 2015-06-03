@@ -158,9 +158,12 @@
                                         </tr>
                                         
                                         <tr style="height:100px">
-                                            <td colspan="2" valign="bottom">                                               
-                                                <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" />  
-                                                <a class="dugme"  onclick="option('3');document.forms['PostavljanjeProizvoda'].submit();">Izbrisi sliku</a>
+                                            <td colspan="2" valign="bottom">  
+                                                <label class="dugme">
+                                                  <input type="file" name="userfile" onchange="option('1');document.forms['PostavljanjeProizvoda'].submit();" class="dugme" /> 
+                                                  Postavi sliku
+                                                </label>
+                                                
                                             </td>
                                         </tr>  
                                     </table>         

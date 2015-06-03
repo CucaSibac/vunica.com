@@ -76,3 +76,7 @@
     width:380px;
     height:416px;     
 }
+
+input[type="file"] {
+    display: none;
+}

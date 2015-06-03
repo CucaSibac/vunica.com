@@ -83,3 +83,7 @@
     border-style:solid;    
 }
 
+input[type="file"] {
+    display: none;
+}
+
