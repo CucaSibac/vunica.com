@@ -13,8 +13,9 @@ class Proizvod_model extends CI_Model{
 
     function getAllForProizvod($vredn) {
         $nizp = null;
-        $this->db->select('*');
+        $this->db->select('proizvod.IDProizvod, proizvod.UserName, proizvod.Datum, proizvod.Naziv, proizvod.Opis, proizvod.BrojArtikala, proizvod.Cena, proizvod.Slika, proizvod.Kategorija, korisnik.IDKorisnik');
         $this->db->from('proizvod');
+        $this->db->join('korisnik', 'korisnik.UserName = proizvod.UserName');
         $this->db->where('IDProizvod', $vredn);
         
         $upit = $this->db->get();

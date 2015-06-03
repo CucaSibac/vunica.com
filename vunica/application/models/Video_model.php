@@ -6,8 +6,9 @@ class Video_model extends CI_Model {
     //funkcija dohvata sve podatke koje su potrebne za video iz tabela Video, Korisnik, ProduktKorisnik za stranu video
     function getAllForVideo($vrednost) {
         $niz = null;
-        $this->db->select('*');
+        $this->db->select('video.IDVideo, video.UserName, video.Datum, video.Naziv, video.Opis, video.Slika, video.Video, video.Kategorija, video.Tezina, korisnik.IDKorisnik');
         $this->db->from('video');
+        $this->db->join('korisnik', 'korisnik.UserName = video.UserName');
         $this->db->where('IDVideo', $vrednost);
         
         $upit = $this->db->get();
