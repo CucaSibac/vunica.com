@@ -231,14 +231,13 @@
                                    size = "<?php echo strlen($this->session->Lokacija);?>"
                                    value = "<?php echo $this->session->Lokacija; ?>"/>
                             
-                            <br/> <br/> <br/>
+                            <br/> <br/> <br/> <br/>
                             
                             <!-- Menjanje slike -->
-                            <input type = "file" name = "userfile" class = "dugme"
-                                   onchange="option(1);document.forms['formaProfilEditovanje'].submit();"                           
-                            />  
-                            
-                            <br/> <br/>
+                            <label class = "dugme">
+                                <input type = "file" name = "userfile" class = "dugme"  onchange = "option(1);document.forms['formaProfilEditovanje'].submit();"/> 
+                                Postavi sliku
+                            </label>
                             
                             <a class="dugme"  onclick="option(3);document.forms['formaProfilEditovanje'].submit();">
                                 Obrisi sliku

@@ -15,7 +15,9 @@ class NoviProizvodi extends CI_Model {
     public function ucitavanjeProizvoda($id) {
         $this->db->select('*');
         $this->db->from('proizvod');
-         $this->db->where('UserName', $id);
+        $this->db->where('UserName', $id);
+        $premium = array(1);
+        $this->db->where_not_in('IDProizvod', $premium);
         $this->db->order_by('Datum', 'desc');
         
         $upit = $this->db->get();  

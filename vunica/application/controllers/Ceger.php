@@ -31,6 +31,8 @@ class Ceger extends CI_Controller{
         $this->greske = array(
             'Kartica' => 0,
             'Adresa' => 0,
+            'Stanje' => 0,
+            'Uspesno' => 0,
         ); 
         
         $this->load->model('Kupovina');
@@ -88,6 +90,7 @@ Vas Racun je:
 Ukupan Iznos: '.$this->kupovina['Iznos'].'€'
                             
                                            .'
+                                               
 Informacije o Vasoj kartici su: 
 Vrsta krtice: '.$this->kupovina['VrstaKartice']
                                            .'
@@ -116,11 +119,11 @@ Kupujte kod nas ponovo!'
                     $this->email->send();
                     
                     $this->session->Proizvodi = '';
-                    
-                    // Obavestenje
+                                     
+                    $this->greske['Uspesno'] = 1;
                 }
                 else{
-                    // Kupovina nije uspesno obavljena
+                    $this->greske['Stanje'] = 1;
                 }
             }
         }
@@ -134,7 +137,7 @@ Kupujte kod nas ponovo!'
         
         foreach ($niz as $red){
             $poruka .= $red[1].' - '.$red[2].'€ - '.$red[3].' komad/a
-                       ';
+';
         } 
         
         return $poruka;
