@@ -5,8 +5,8 @@
 
         <!-- InstanceBeginEditable name="doctitle" -->
 
-        <title>Primer</title>
-
+        <title>Izmena proizvoda</title>
+        <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
         <!-- NE BRISATI NISTA U OVOM EDIT REGIONU!!!! -->
 
 
@@ -216,22 +216,3 @@
     <!-- InstanceEnd -->
 </html>
 
-
-<?php 
-    if($this->session->flashdata('reg') == 1){
-        echo "<script language=\"javascript\">prikazi_registraciju();</script>";
-        $this->session->set_flashdata('reg', 0);
-    }
-?>
-<?php 
-    if($this->session->flashdata('pri') == 1){
-        echo "<script language=\"javascript\">prikazi_prijavu();</script>";
-        $this->session->set_flashdata('pri', 0);
-    }
-?>
-<?php 
-    if($this->session->flashdata('zl') == 1){
-        echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
-        $this->session->set_flashdata('zl', 0);
-    }
-?>

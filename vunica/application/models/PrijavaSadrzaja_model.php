@@ -17,14 +17,14 @@ class PrijavaSadrzaja_model extends CI_Model {
         if ($this->input->post('Tekst') !== "") {
             $data = array(
                 'UserName' => ($this->session->UserName),
-                'IDKomentar' => ($this->input->post('IDKomentar')),
+                'IDKomentar' => ($this->input->post('IDKomentar1')),
                 'Komentar' => ($this->input->post('Tekst')),
                 'Datum' => (date("Y.m.d"))
             );
         } else {
             $data = array(
                 'UserName' => ($this->session->UserName),
-                'IDKomentar' => ($this->input->post('IDKomentar')),
+                'IDKomentar' => ($this->input->post('IDKomentar1')),
                 'Komentar' => ("Sadrzaj je neprikladan"),
                 'Datum' => (date("Y.m.d"))
             );

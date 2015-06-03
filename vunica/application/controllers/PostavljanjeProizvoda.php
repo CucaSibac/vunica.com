@@ -35,13 +35,15 @@ class PostavljanjeProizvoda extends CI_Controller {
         return 'http://localhost/' . $novi_url;
     }
 
-    public function do_upload() {        
+    public function do_upload() {       
         if($this->input->post('opt') ==1) $this->postavljanje_slike();
         if($this->input->post('opt') ==2) $this->sacuvaj();  
         if($this->input->post('opt') ==3) $this->brisanje();   
     }
     
     public function postavljanje_slike(){
+        $this->load->helper('file');
+        delete_files($this->session->userdata('proSlika'));
         $this->PostavljanjeProizvoda_model->postavi_sliku('');
         $config['upload_path'] = '../../Slike/Proizvodi/';
         $config['allowed_types'] = 'gif|jpg|png';
@@ -54,6 +56,7 @@ class PostavljanjeProizvoda extends CI_Controller {
               $error = array('error' => $this->upload->display_errors());
               $this->load->view('upload_form', $error);
              */
+            $this->session->set_flashdata('proGreska1',1);
             $this->PostavljanjeProizvoda_model->postavi_sliku('');
             $data = array('slika' => '');
             $this->load->view('PostavljanjeProizvoda', $data);
@@ -94,14 +97,19 @@ class PostavljanjeProizvoda extends CI_Controller {
         }
    }
    
-   function ProGreska_check($str){
-        $url =$this->session->userdata('proSlika');       
-        $this->form_validation->set_message('ProGreska_check', 'Niste postavili sliku!');
-        if($url == '') return false;
+   function ProGreska_check($str){       
+        $url =$this->session->userdata('proSlika');             
+        if($url == '') {
+            $this->session->set_flashdata('proGreska2',1);
+            return false;
+        }
         else return true;
    }
    
    function brisanje(){
+       $this->load->helper('file');
+       delete_files($this->session->userdata('proSlika'));
+       
        $this->PostavljanjeProizvoda_model->postavi_sliku('');
        $data = array('slika' => '');
        $this->load->view('PostavljanjeProizvoda', $data);

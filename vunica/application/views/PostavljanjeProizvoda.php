@@ -7,8 +7,8 @@
 
         <!-- InstanceBeginEditable name="doctitle" -->
 
-        <title>Primer</title>
-
+        <title>Postavljanje proizvoda</title>
+        <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
         <!-- NE BRISATI NISTA U OVOM EDIT REGIONU!!!! -->
 
 
@@ -169,8 +169,7 @@
                             <tr>
                                 <td colspan="2" align="center">                                   
                                     <br/><br/><br/>
-                                    <input type="hidden" name="ProGreska" />
-                                    <?php echo form_error('ProGreska', '<div class="error">', '</div>'); ?>
+                                    
                                     <br/><br/><br/>
                                     <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ><?php echo set_value('ProOpis'); ?></textarea>
                                 </td>
@@ -221,22 +220,15 @@
     <!-- InstanceEnd -->
 </html>
 
-
 <?php 
-    if($this->session->flashdata('reg') == 1){
-        echo "<script language=\"javascript\">prikazi_registraciju();</script>";
-        $this->session->set_flashdata('reg', 0);
+    if($this->session->flashdata('proGreska1') == 1){
+        echo "<script language=\"javascript\">obavesti('Greska pri ucitavanju fajla');</script>";
+        $this->session->set_flashdata('proGreska1', 0);
     }
 ?>
 <?php 
-    if($this->session->flashdata('pri') == 1){
-        echo "<script language=\"javascript\">prikazi_prijavu();</script>";
-        $this->session->set_flashdata('pri', 0);
-    }
-?>
-<?php 
-    if($this->session->flashdata('zl') == 1){
-        echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
-        $this->session->set_flashdata('zl', 0);
+    if($this->session->flashdata('proGreska2') == 1){
+        echo "<script language=\"javascript\">obavesti('Niste postavili sliku');</script>";
+        $this->session->set_flashdata('proGreska2', 0);
     }
 ?>

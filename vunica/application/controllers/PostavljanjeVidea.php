@@ -35,6 +35,7 @@ class PostavljanjeVidea extends CI_Controller {
                 echo $red;
             }
              */
+            $this->session->set_flashdata('videoGreska1',1);
             $this->PostavljanjeVidea_model->postavi_video('');
             $date = array('video' => '');
             $this->load->view('PostavljanjeVidea',$date);
@@ -90,8 +91,10 @@ class PostavljanjeVidea extends CI_Controller {
     
     function VidGreska_check($str){
         $url =$this->session->userdata('proVideo');       
-        $this->form_validation->set_message('VidGreska_check', 'Niste postavili video!');
-        if($url == '') return false;
+        if($url == ''){
+            $this->session->set_flashdata('videoGreska2',1);
+            return false;
+        }
         else return true;
    }
    
