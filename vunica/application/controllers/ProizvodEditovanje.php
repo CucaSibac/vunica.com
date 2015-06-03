@@ -51,8 +51,8 @@ class ProizvodEditovanje extends CI_Controller {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('ProNaziv', 'Naziv', 'trim|required'); //|callback_email1_check
         $this->form_validation->set_rules('ProCena', 'Cena', 'trim|required|integer');
-        $this->form_validation->set_message('required', '* Polje je prazno');
-        $this->form_validation->set_message('integer', '* Cena nije u odgovarajucem formatu');
+        $this->form_validation->set_message('required', '* Polje je bilo prazno');
+        $this->form_validation->set_message('integer', '* Cena nije bila u odgovarajucem formatu');
         
         if ($this->form_validation->run() == TRUE){
             $this->ProizvodEditovanje_model->izmeni_proizvod($this->session->IDPro);
