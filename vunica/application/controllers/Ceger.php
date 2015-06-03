@@ -8,6 +8,7 @@ class Ceger extends CI_Controller{
     private $kupovina;
     private $greske;
     
+    // Konstruktor
     public function __construct() {
         parent::__construct();
         
@@ -36,6 +37,7 @@ class Ceger extends CI_Controller{
  
     }
   
+    // Indeks
     public function index(){
         if($this->session->UserName != ''){
             $this->resetujGreske();
@@ -59,14 +61,86 @@ class Ceger extends CI_Controller{
         $this->kupovina['Proizvodi'] = $this->session->Proizvodi;
         if($this->kupovina['Proizvodi'] != ''){
             if(count($this->kupovina['Proizvodi']) > 0){
-                $this->obaviKupovinu(); 
+                $ishod = $this->obaviKupovinu(); 
+                if($ishod == TRUE){
+                    $this->load->library('email');
+                    $config['protocol'] = 'smtp';
+                    $config['smtp_host'] = 'ssl://smtp.gmail.com';
+                    $config['smtp_user'] = 'vunica.com@gmail.com';
+                    $config['smtp_pass'] = '092810271993';
+                    $config['smtp_port'] = '465';
+                    $this->email->initialize($config);
+                    
+                    $poruka = $this->tekstPoruke($this->kupovina['Proizvodi']);
+
+                    $this->email->from('vunica.com@gmail.com', 'Tim vunica.com');
+                    $this->email->to($this->session->Email); 
+                    $this->email->subject('Racun');
+                    $this->email->message('Postovani korisnice, uspesno ste obavili svoju kupovinu.
+
+Vas Racun je:
+
+'
+                            
+                                           .$poruka
+                            
+                                           .'
+Ukupan Iznos: '.$this->kupovina['Iznos'].'€'
+                            
+                                           .'
+Informacije o Vasoj kartici su: 
+Vrsta krtice: '.$this->kupovina['VrstaKartice']
+                                           .'
+Broj kartice: '.$this->kupovina['BrojKartice']
+                                           .'
+Datum isteka: '.$this->kupovina['DatumIsteka']
+                                           .'
+Sigurnosni broj: '.$this->kupovina['SigurnosniBroj']
+                                           .'
+                            
+Adresa na koju cete primiti posiljku je: 
+Grad: '.$this->kupovina['Grad']
+                                           .'
+Postanski broj: '.$this->kupovina['PostanskiBroj']
+                                           .'
+Ulica: '.$this->kupovina['Ulica']
+                                           .'
+Broj: '.$this->kupovina['Broj']
+                                           .'
+                            
+Ako se neki od ovih podataka ne slazu sa Vasom kupovinom, kontaktirajte nas sto pre na: vunica.com@gmail.com
+                                           
+                            
+Kupujte kod nas ponovo!'
+                    );     
+                    $this->email->send();
+                    
+                    $this->session->Proizvodi = '';
+                    
+                    // Obavestenje
+                }
+                else{
+                    // Kupovina nije uspesno obavljena
+                }
             }
         }
                 
         $this->load->view('Ceger', $this->greske);
     }
 
+    // Sastavlja telo za tekst e-mail racuna
+    protected function tekstPoruke($niz){
+        $poruka = '';
+        
+        foreach ($niz as $red){
+            $poruka .= $red[1].' - '.$red[2].'€ - '.$red[3].' komad/a
+                       ';
+        } 
+        
+        return $poruka;
+    }
 
+    // Vrsi provere podataka i obavlja kupovinu
     protected function obaviKupovinu(){     
         $this->load->library('form_validation');
 
@@ -76,10 +150,27 @@ class Ceger extends CI_Controller{
         $this->kupovina['BrojKartice'] = $this->input->post('karticabr');
         $this->form_validation->set_rules('karticabr', 'BrojKartice', 'required|trim|numeric|exact_length[16]');
 
+        // Datum isteka
         $this->kupovina['DatumIsteka'] = $this->input->post('datumisteka');
         $this->form_validation->set_rules('datumisteka', 'DatumIsteka', 'required|trim|exact_length[7]');
-        $nizDatum  = explode('/', $this->kupovina['DatumIsteka']);
-        $rezultat = checkdate($nizDatum[0], 31, $nizDatum[1]);
+        
+        $nizDatum  = explode('/', $this->kupovina['DatumIsteka']);     
+        $rezultat = checkdate($nizDatum[0], 1, $nizDatum[1]);
+        
+        if($rezultat == TRUE){
+            $dani = cal_days_in_month(CAL_GREGORIAN, $nizDatum[0], $nizDatum[1]);
+            
+            $datumTekst = $nizDatum[1]."-".$nizDatum[0]."-".$dani;
+            $datum = strtotime($datumTekst);
+            $trenutniDatum = date('Y-m-d');
+            
+            if($datum > $trenutniDatum){     
+                $this->kupovina['DatumIsteka'] = $datumTekst;
+            }
+            else {             
+                $rezultat = FALSE;
+            }
+        }
 
         $this->kupovina['SigurnosniBroj'] = $this->input->post('sigurnosni');
         $this->form_validation->set_rules('sigurnosni', 'SigurnosniBroj', 'required|trim|numeric|exact_length[4]');
@@ -110,19 +201,43 @@ class Ceger extends CI_Controller{
         // Iznos
         $niz = $this->kupovina['Proizvodi'];
         $this->kupovina['Iznos'] = 0;
-        foreach($niz as $red){
-            $cena = (int)($red->cena);
-            $kolicina = (int)($red->kolicina);
+        $i = 0;
+        for(;$i < count($niz);$i++){
+            $cena = (int)($niz[$i][2]);
+            $kolicina = (int)($niz[$i][3]);
             $this->kupovina['Iznos'] += ($kolicina * $cena);
         }
 
         // Datum
-        $this->kupovina['DatumKupovine'] = date('d-m-y');
+        $this->kupovina['DatumKupovine'] = date('Y-m-d');
 
         // Zove model
-        $this->Kupovina->kupi($this->kupovina);
+        $ishod = $this->Kupovina->kupi($this->kupovina);
         
-        return TRUE;
+        return $ishod;
+    }
+    
+    // Izbacuje proizvod iz sesije
+    public function izbaciProizvod($id){
+        $niz = $this->session->Proizvodi;
+        
+        $indeks = $this->nadjiIndeks($niz, $id);
+        
+        unset($niz[$indeks]);     
+        $this->session->Proizvodi = array_values($niz);
+        
+        $this->resetujGreske();
+        $this->load->view('Ceger', $this->greske);  
+    }
+    
+    // Nalazi proizvod u sesiju
+    protected function nadjiIndeks($niz, $id){
+        $i = 0;
+        for(;$i < count($niz);$i++){
+            if($niz[$i][0] == $id){
+               return $i;
+            }
+        }
     }
     
 }

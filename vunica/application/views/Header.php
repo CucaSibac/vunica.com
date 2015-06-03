@@ -34,9 +34,9 @@
             <td id = "poljePrijava" style="width: 7%; text-align: right;">
                 <font class = "opcijeMenija">
                     <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil', '_parent')">
-                        <?php echo $this->session->UserName; ?> /
+                        <?php echo $this->session->UserName; ?>
                     </font>
-                    
+                    /
                 </font>
             </td>
             <td id = "poljePrijava" style="width: 5%; text-align: left; padding-right: 3%;">
@@ -63,8 +63,10 @@
                     <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Ceger', '_parent')"/>
                     <?php
                         $niz = $this->session->Proizvodi;
-                        if($niz != ''){
-                            if(count($niz) > 0){     
+                        
+                        if($niz != ''){   
+                            if(count($niz) > 0){
+                               
                     ?>
                         <font id = "cegerBroj"> <?php echo count($niz); ?> </font>
                   <?php }}} ?>

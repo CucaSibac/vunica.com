@@ -78,7 +78,7 @@
                 <!-- Pocetna linija-->
                 <table align="center" width="60%">
                   <tr>
-                    <td width="60%" align="left" style="padding-left:5%;">
+                    <td width="40%" align="left" style="padding-left:5%;">
                         <font class="tekstObican">
                             Proizvod:
                         </font>
@@ -93,6 +93,9 @@
                           Cena:
                       </font>
                     </td>
+                    <td width="20%" align="right" style="padding-right:5%;">
+                        <!-- Prazna celija-->
+                    </td> 
                   </tr>
                 </table>
            
@@ -111,24 +114,24 @@
                     $niz = $this->session->Proizvodi;
                     $ukupnoKolicina = 0;
                     $ukupnoCena = 0;
-                    if($niz != ''){
+                    
+                    if($niz != ''){   
                         if(count($niz) > 0){
-                            $red = NULL;
                             $i = 0;
-                            $duzina = count($niz);
-                            for(;$i < $duzina;$i++){
-                                $red = $niz[$i];
-                               
+                            for(;$i < count($niz);$i++){
+                           
                 ?>
            
                  <table align="center" width="60%">
                   <tr>
-                    <td width="60%" align="left" style="padding-left:5%;">
-                        <font class="tekstObican" style="padding-left:5%;">
+                    <td width="40%" align="left" style="padding-left:5%;">
+                        <a class = "link" target = "_blank" 
+                           href = 'http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $niz[$i][0]; ?>'
+                        >
                             <?php echo $niz[$i][1]; ?>
-                        </font>
+                        </a>
                     </td>
-                    <td width="20%" align="left" style="padding-left:5%;">
+                    <td width="20%" align="left" style="padding-left:11%;">
                       <font class="tekstObican">
                           <?php 
                             $kolicina = (int)($niz[$i][3]);
@@ -137,18 +140,27 @@
                           ?>
                       </font>
                     </td>
-                    <td width="20%" align="left" style="padding-left:5%;">
+                    <td width="20%" align="right" style="padding-right:8%;">
                       <font class="tekstObican">
                           <?php 
                             $cena = (int)($niz[$i][2]);
-                           $kolicina = (int)($niz[$i][3]);
+                            $kolicina = (int)($niz[$i][3]);
                             $ukupnoCena += ($kolicina * $cena);
-                            echo $kolicina * $cena;
+                            $cenaIspis = $kolicina * $cena;
+                            echo "$cenaIspis €";
                           ?>
                       </font>
                     </td>
+                    <td width="20%" align="right" style="padding-right:5%;">
+                        <a class = "brisanje" 
+                           href = "http://localhost/vunica.com/vunica/index.php/Ceger/izbaciProizvod/<?php echo $niz[$i][0];?>"
+                        >
+                            IZBACI
+                        </a>
+                    </td> 
                   </tr>
                 </table>
+                
                 
                 <?php }}} else{ ?>
                 
@@ -157,7 +169,7 @@
                         <td align = "center">
                             <br/> </br>
                             <font class = "tekstObican">
-                                Postovani korisnice, trenutno nemate prozivoda u svom cegeru.
+                                Postovani korisnice, trenutno nemate proizvoda u svom cegeru.
                             </font>
                             <br/> <br/> <br/>
                         </td>
@@ -176,28 +188,31 @@
                 
                 
                 <?php
-                    if($niz != ''){
+                    if($niz != ''){   
                         if(count($niz) > 0){
                 ?>
                 
                 <!-- Pocetna linija-->
                 <table align="center" width="60%">
                   <tr>
-                    <td width="60%" align="left" style="padding-left:5%;">
+                    <td width="40%" align="left" style="padding-left:5%;">
                         <font class="tekstObican">
                             Ukupno:
                         </font>
                     </td>
-                    <td width="20%" align="left" style="padding-left:5%;">
+                    <td width="20%" align="left" style="padding-left:11%;">
                       <font class="tekstObican">
                           <?php echo $ukupnoKolicina; ?>
                       </font>
                     </td>
-                    <td width="20%" align="left" style="padding-left:5%;">
+                    <td width="20%" align="right" style="padding-right:8%;">
                       <font class="tekstObican">
-                          <?php echo $ukupnoCena; ?>
+                          <?php echo "$ukupnoCena €"; ?>
                       </font>
                     </td>
+                    <td width="20%" align="right" style="padding-right:5%;">
+                        <!-- Prazna celija-->
+                    </td> 
                   </tr>
                 </table>
                 

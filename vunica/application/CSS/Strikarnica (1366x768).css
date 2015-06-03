@@ -149,6 +149,7 @@
     overflow: hidden;
     top: 0px;
    left:0px;
+   
 }
 .view img {
     //display: block;
@@ -160,6 +161,7 @@
     overflow: hidden;
 }
 .view h2 {
+    
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -199,32 +201,33 @@
 	transform: translate(460px, -100px) rotate(180deg);
 	transition: all 0.2s 0.4s ease-in-out;
 }
-.view-third h2{
+/*.view-third h2{
 	transform: translateY(-200px);
 	transition: all 0.2s ease-in-out;
-}
+}*/
 .view-third p { 
 	transform: translateX(350px) rotate(90deg);
 	transition: all 0.2s ease-in-out;
 }
 .view-third a.info { 
-	transform: translateY(50px);
+	transform: translateY(350px);
 	transition: all 0.2s ease-in-out;
 }
 .view-third:hover .mask { 
 	opacity:1; 
 	transition-delay: 0s;							 
-	transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
         
 }
+/*
 .view-third:hover h2 { 
 	transform: translateY(-20px); 
 	transition-delay: 0.5s; 
-}
+}*/
 .view-third:hover p	{ 
-    margin-top: -25px;
+    margin-top: 100px;
     transform: translateX(0px) rotate(0deg);
-	transition-delay: 0.4s;
+	transition-delay: 0.2s;
 }
 .view-third:hover a.info { 
 	transform: translateY(-10px);
@@ -240,9 +243,9 @@
 }
 .view-third .datumNaSlici{
 	transform: translateX(300px);
-	transition: all 0.4s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 .view-third:hover .datumNaSlici{
-	transform: translateX(0px);
-	transition-delay:0.4s;
+	transform:translateX(-2px)translateY(-2px);
+	transition-delay:0.3s;
 }

@@ -753,12 +753,13 @@
 
                                                 <div class="view view-third" align="left" >  
                                                     <img src="<?php echo $videos->Slika; ?>"/> 
-                                                    <div class="mask"> 
-                                                        <h2><font size="1" style="text-transform:none"><?php echo $videos->UserName; ?></font>
+                                                    <h2><font size="1" style="text-transform:none"><?php echo $videos->UserName; ?></font>
                                                             <br/><font size="4"><?php echo $videos->Naziv; ?></font>
                                                             <br /><font size="2" style="text-transform:none">Kategorija: <?php echo $videos->Kategorija; ?></font>    
                                                             <br /><font size="2" style="text-transform:none">Tezina: <?php echo $videos->Tezina; ?></font></h2>  
-                                                        <p><?php echo $videos->Opis; ?></p> 
+                                                       
+                                                    <div class="mask"> 
+                                                         <p><?php echo $videos->Opis; ?></p> 
                                                         <a href='http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
                                                         <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                     </div>  
@@ -775,13 +776,13 @@
 
                                                 <div class="view view-third" align="right">  
                                                     <img src="<?php echo $videos->Slika; ?>" width="350" height="270" /> 
-                                                    <div class="mask"> 
-
-                                                        <h2><font size="1" style="text-transform:none"><?php echo $videos->UserName; ?></font>
+                                                    <h2><font size="1" style="text-transform:none"><?php echo $videos->UserName; ?></font>
                                                             <br/><font size="4"><?php echo $videos->Naziv; ?></font>
                                                             <br /><font size="2" style="text-transform:none">Kategorija: <?php echo $videos->Kategorija; ?></font>    
                                                             <br /><font size="2" style="text-transform:none">Tezina: <?php echo $videos->Tezina; ?></font></h2>  
-                                                        <p><?php echo $videos->Opis; ?></p> 
+                                                       <div class="mask"> 
+
+                                                         <p><?php echo $videos->Opis; ?></p> 
                                                         <a href="http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
                                                         <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                     </div>  
