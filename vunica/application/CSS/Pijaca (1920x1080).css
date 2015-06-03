@@ -159,14 +159,18 @@
     position: relative
 }
 .view h2 {
+    width: 100%;
+   margin-top: -500px; //promeniti
+    margin-left: 0px; //promeniti
     text-transform: uppercase;
     color: #fff;
     text-align: center;
     position: relative;
     font-size: 17px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    margin: 20px 0 0 0
+    background: rgba(0, 0, 0, 0.4);
+   // margin: 20px 0 0 0;
+    z-index: 100;
 }
 .view p {
     font-family: Georgia, serif;
@@ -199,36 +203,36 @@
 	transform: translate(460px, -100px) rotate(180deg);
 	transition: all 0.2s 0.4s ease-in-out;
 }
-.view-third h2{
+/*.view-third h2{
 	transform: translateY(-200px);
 	transition: all 0.2s ease-in-out;
-}
+}*/
 .view-third p { 
 	transform: translateX(340px) rotate(90deg);
 	transition: all 0.2s ease-in-out;
 }
 .view-third a.info { 
-	transform: translateY(400px);
-	transition: all 0.2s ease-in-out;
+	transform: translateY(500px);
+	transition: all 0.4s ease-in-out;
 }
 .view-third:hover .mask { 
 	opacity:1; 
 	transition-delay: 0s;							 
 	transform: translate(0px, 0px);
 }
-.view-third:hover h2 { 
+/*.view-third:hover h2 { 
 	transform: translateY(-20px); 
 	transition-delay: 0.5s; 
-}
+}*/
 .view-third:hover p	{ 
-    font-size: 15px;
-    margin-top: 25px;
+    font-size: 17px;
+   margin-top:120px;
     transform: translateX(0px) rotate(0deg);
-	transition-delay: 0.4s;
+	transition-delay: 0.2s;
 }
 .view-third:hover a.info { 
-	transform: translateY(50px);
-	transition-delay: 0.3s;
+	transform: translateY(70px); //promeniti
+	transition-delay: 0.4s;
 }
 /*Datum na slici i animacija za njega*/
 .datumNaSlici{
@@ -239,9 +243,9 @@
 }
 .view-third .datumNaSlici{
 	transform: translateX(340px);
-	transition: all 0.4s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 .view-third:hover .datumNaSlici{
-	transform: translateX(0px);
-	transition-delay:0.4s;
+	transform: translateX(-2px)translateY(-2px);
+	transition-delay:0.3s;
 }
