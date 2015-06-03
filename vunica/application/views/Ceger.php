@@ -165,6 +165,27 @@
                 <?php }}} else{ ?>
                 
                 <table width = "60%" align = "center">
+                    <?php if($Stanje != 0){ ?>
+                    <tr>
+                        <td align = "center">
+                            <br/> </br>
+                            <font class = "tekstObican">
+                                Postovani korisnice, kupovina nije obavljena! Molimo Vas proverite trenutno stanje proizvoda koji se nalaze u cegeru.
+                            </font>
+                            <br/> <br/> <br/>
+                        </td>
+                    </tr>
+                    <?php } if($Uspesno != 0){ ?>
+                    <tr>
+                        <td align = "center">
+                            <br/> </br>
+                            <font class = "tekstObican">
+                                Postovani korisnice, kupovina je uspesno obavljena. Uskoro ce na Vasu e-mail adresu stici detaljan racun.
+                            </font>
+                            <br/> <br/> <br/>
+                        </td>
+                    </tr>
+                    <?php } else{ ?>
                     <tr>
                         <td align = "center">
                             <br/> </br>
@@ -174,6 +195,7 @@
                             <br/> <br/> <br/>
                         </td>
                     </tr>
+                    <?php } ?>
                 </table> 
            
                 <?php } ?>

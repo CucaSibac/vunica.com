@@ -128,8 +128,6 @@
                                 </font>
                                 <div class="produktKorisnikaZaglavlje">
                                 </div>
-                                <div class="produktKorisnikaPodnozje">
-                                </div>
                                 <div class="produktKorisnikaSenka"> 
                                 </div>
 

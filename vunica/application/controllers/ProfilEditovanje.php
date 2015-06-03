@@ -94,7 +94,8 @@ class ProfilEditovanje extends CI_Controller {
         else {
             $url = $this->adresa($this->upload->data('full_path'));
             $this->greske['Profilna'] = $url;
-            $this->promene['Slika'] = $url;           
+            $this->promene['Slika'] = $url;  
+            $this->session->Slika = $url;
             $this->load->view('ProfilEditovanje', $this->greske);
         }
     }
@@ -114,6 +115,7 @@ class ProfilEditovanje extends CI_Controller {
             }
         }  
         $this->greske['Profilna'] = $this->promene['Slika'];
+        $this->session->Slika = $this->promene['Slika'];
         $this->load->view('ProfilEditovanje', $this->greske);
     }
     

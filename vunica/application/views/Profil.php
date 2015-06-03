@@ -72,7 +72,7 @@
       	<tr>
            <td>
               <!-- InstanceBeginEditable name="Body" -->
-              <br/> <br/> <br/> <br/>
+              <br/> <br/>
               <!-- Odredjivanje statusa korisnika -->
               <?php
                 $status = 0;
@@ -268,14 +268,11 @@
                                             </font>
                                             <div class="produktKorisnikaZaglavlje">
                                             </div>
-                                            <div class="produktKorisnikaPodnozje">
-                                            </div>
                                             <div class="produktKorisnikaSenka"> 
                                             </div>
 
                                             <img class="produktKorisnikaSlika" src="<?php echo $redVideo->Slika; ?>">
                                         </div>   
-                                        <br/>
                                     </td>
                                 </tr>
                                 <?php if((strcmp($this->session->Status, 'Admin') == 0) || ($Korisnik['UserName'] == $this->session->UserName)){ ?>
@@ -286,7 +283,7 @@
                                             href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
                                             OBRISI VIDEO
                                         </a>
-                                        <br/> <br/>
+                                        <br/> <br/> <br/>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -354,14 +351,11 @@
                                             </font>
                                             <div class="produktKorisnikaZaglavlje">
                                             </div>
-                                            <div class="produktKorisnikaPodnozje">
-                                            </div>
                                             <div class="produktKorisnikaSenka"> 
                                             </div>
 
                                             <img class="produktKorisnikaSlika" src="<?php echo $redProizvod->Slika; ?>">
                                         </div>     
-                                        <br/>
                                     </td>
                                 </tr>
                                 <?php if((strcmp($this->session->Status, 'Admin') == 0) || ($Korisnik['UserName'] == $this->session->UserName)){ ?>
@@ -383,7 +377,7 @@
                                             href="http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/<?php echo $redProizvod->IDProizvod;?>"> 
                                             IZMENI PROIZVOD
                                         </a>
-                                        <br/> <br/>
+                                        <br/> <br/> <br/>
                                     </td>
                                 </tr>
                                 <?php } ?>

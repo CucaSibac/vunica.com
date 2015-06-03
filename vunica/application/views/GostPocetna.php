@@ -53,7 +53,7 @@
                   </font>
                   <br/> <br/> <br/>
                   <font class = "tekstIskosen">
-                      Tog trenutka dosla je do ideje za vunicu.com.
+                      Tog trenutka je nastala ideja za vunicu.com.
                   </font>
                 </td>
             </tr>
@@ -91,6 +91,9 @@
                            href = "http://localhost/vunica.com/vunica/index.php/Strikarnica"
                         >
                             <img class="reklamaSlika" src="http://localhost/Slike/Strikarnica/slika.jpg">
+                        
+                        <div class="reklamaSenka">        
+                        </div>
                         </a>
                     </div>
                     
@@ -112,6 +115,8 @@
                            href = "http://localhost/vunica.com/vunica/index.php/Pijaca"
                         >
                             <img class="reklamaSlika" src="http://localhost/Slike/Materijali/vuna.jpg">
+                        <div class="reklamaSenka">        
+                        </div>
                         </a>
                     </div>  
                     
