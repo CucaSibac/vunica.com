@@ -23,13 +23,13 @@ class UpdateKorisnik extends CI_Model {
             ++ $promene;
         }
 
-        if($korisnik['Lokacija'] != '' && $korisnik['Lokacija'] != $this->session->Lokacija){
+        if($korisnik['Lokacija'] != $this->session->Lokacija){
             $this->session->Lokacija = $data['Lokacija'] = $korisnik['Lokacija'];
             ++ $promene;
         }
 
         if($korisnik['Slika'] != '' && $korisnik['Slika'] != $this->session->Slika){
-            $this->session->Slika = $data['Slika'] = $korisnik['Slika'];
+            $this->session->Slika = $data['Slika'] = $korisnik['Slika'];          
             ++ $promene;
         }
 
@@ -48,7 +48,7 @@ class UpdateKorisnik extends CI_Model {
             ++ $promene;
         }
 
-        if($korisnik['Opis'] != '' && $korisnik['Opis'] != $this->session->Opis){
+        if($korisnik['Opis'] != $this->session->Opis){
             $korisnik['Opis'] != $this->session->Opis = $data['Opis'] = $korisnik['Opis'];
             ++ $promene;
         }
