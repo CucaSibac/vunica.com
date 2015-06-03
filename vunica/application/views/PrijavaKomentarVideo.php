@@ -40,7 +40,7 @@
 
             <td class="celijaDugmePopUp" align="right"><div class="dugmePopUp" onclick="sakrij_sve_prijave()"> Odustani</div><br /></td>
 
-            <td class="praznaCelijaPopUp">&nbsp;<input type="hidden" name="IDKomentar" id="pkvID" /></td>       
+            <td class="praznaCelijaPopUp">&nbsp;<input type="hidden" name="IDKomentar1" id="pkvID" /></td>       
             
 
         </tr> 

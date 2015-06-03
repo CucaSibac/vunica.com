@@ -2,7 +2,7 @@
 
 var kolicina = 1;
 var mouse = false;
-var brzina = 400;
+var brzina = 1000;
 
 function preostalo(kap) {
     document.getElementById("preostalo").innerHTML = kap - document.getElementById("opisVidea").value.length;
@@ -16,7 +16,7 @@ function postavljanjeKolicine(operacija) {
             document.getElementById("kolicina").innerHTML = kolicina;
             document.getElementById("ProKol").value = kolicina;
             if (brzina > 100)
-                brzina -= 50;
+                brzina -= 300;
             setTimeout("postavljanjeKolicine('+')", brzina);
         }
         else if (operacija == '-' && kolicina > 1) {
@@ -24,7 +24,7 @@ function postavljanjeKolicine(operacija) {
             document.getElementById("kolicina").innerHTML = kolicina;
             document.getElementById("ProKol").value = kolicina;
             if (brzina > 100)
-                brzina -= 50;
+                brzina -= 300;
             setTimeout("postavljanjeKolicine('-')", brzina);
         }
     }
@@ -37,7 +37,7 @@ function mousedown(operacija)
 function mouseup()
 {
     mouse = false;
-    brzina = 400;
+    brzina = 1000;
 }
 
 function option(x) {

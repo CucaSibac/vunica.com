@@ -36,3 +36,15 @@ function sakrij_sve_prijave(){
 function preostaloPKV(kap) {
     document.getElementById("ostatakprikomvid").innerHTML = kap - document.getElementById("prikomvid").value.length;
 }
+
+function preostaloPV(kap) {
+    document.getElementById("ostatakprivid").innerHTML = kap - document.getElementById("privid").value.length;
+}
+
+function preostaloPP(kap) {
+    document.getElementById("ostatakpripro").innerHTML = kap - document.getElementById("pripro").value.length;
+}
+
+function preostaloPKP(kap) {
+    document.getElementById("ostatakprikompro").innerHTML = kap - document.getElementById("prikompro").value.length;
+}

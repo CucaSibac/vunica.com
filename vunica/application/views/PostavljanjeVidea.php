@@ -7,8 +7,8 @@
   
   <!-- InstanceBeginEditable name="doctitle" -->
   
-    <title>Primer</title>
-    
+    <title>Postavljanje pokaznog video materijala</title>
+    <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
     <!-- NE BRISATI NISTA U OVOM EDIT REGIONU!!!! -->
     
     
@@ -83,7 +83,7 @@
                 echo form_open_multipart("PostavljanjeVidea/postavljanje_video", $attributes); 
               ?>
               <table id="postavkaVidea" border="0">
-                <tr>
+                <tr style="height:500px;">
                   <td colspan="2"> 
                     <video style="width:100%;"  src="<?php echo $video;?>" controls></video> 
                   </td>
@@ -172,3 +172,16 @@
 </body>
 <!-- InstanceEnd -->
 </html>
+
+<?php 
+    if($this->session->flashdata('videoGreska1') == 1){
+        echo "<script language=\"javascript\">obavesti('Greska pri ucitavanju fajla');</script>";
+        $this->session->set_flashdata('videoGreska1', 0);
+    }
+?>
+<?php 
+    if($this->session->flashdata('videoGreska2') == 1){
+        echo "<script language=\"javascript\">obavesti('Niste postavili pokazni video');</script>";
+        $this->session->set_flashdata('videoGreska2', 0);
+    }
+?>

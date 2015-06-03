@@ -14,7 +14,7 @@
 class PrijavaSadrzaja extends CI_Controller {
 
     public function prijaviKomentarVideo() {
-        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+        $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';      
         $this->load->model('PrijavaSadrzaja_model');
         $this->PrijavaSadrzaja_model->prijaviKomentarVideo();     
         redirect($refering_url, 'refresh');
@@ -30,6 +30,7 @@ class PrijavaSadrzaja extends CI_Controller {
     public function prijaviVideo() {
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         $this->load->model('PrijavaSadrzaja_model');    
+        echo $this->session->videoId;
         $this->PrijavaSadrzaja_model->prijaviVideo();     
         redirect($refering_url, 'refresh');
     }
