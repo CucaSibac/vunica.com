@@ -44,20 +44,6 @@
                         <?php echo count($Korisnici); ?>
                     </font>
                 </a>
-                <br/>
-                <font class = "tekstObican"> Videe: </font>
-                <a href = "#Videi" class = "link">
-                    <font class="tekstIskosen"> 
-                        <?php echo count($NoviVidei); ?>
-                    </font>
-                </a>
-                <br/>
-                <font class = "tekstObican"> Proizvode: </font>
-                <a href = "#Proizvodi" class = "link">
-                    <font class="tekstIskosen"> 
-                        <?php echo count($NoviProizvodi); ?>
-                    </font>
-                </a>
             </td>
         </tr>
     </table>       
@@ -131,7 +117,7 @@
     <table width = "60%" align = "center">
       <tr>
             <td colspan = "2" width = "100%">
-            <font class = "naslovObican"> Novi korisnici: </font>
+            <font class = "naslovObican"> Novi i stari korisnici: </font>
             <br/>  
         </td>
       </tr>
@@ -162,18 +148,7 @@
       </tr>
       
       <?php } ?>
-      
-      <tr>
-            <td colspan = "2" width = "100%" align = "center">
-            <br/> <br/>
-            <?php
-                echo form_open("Pocetna/ucitajKorisnike"); 
-            ?>
-            <input id = "dugmeKorisnici" type = "hidden" class = "dugme" value = "Ucitaj starije"/>
-            <?php echo form_close(); ?>
-            <br/> <br/> <br/>
-        </td>
-      </tr>
+
       <tr>
             <td colspan = "2" width = "100%">
             <hr width = "100%" class = "linija"/> 
@@ -184,162 +159,6 @@
     
     <br/> <br/> <br/> <br/> <br/> 
     
-
-    <!-- Videi -->
-
-    <a name = "Videi" class = "link"> </a>
-
-    <table width = "60%" align = "center">
-        <tr>
-            <td>
-                <font class = "naslovObican"> Najnoviji: </font>
-                <br/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <hr width = "100%" class = "linija"/> 
-            </td>
-        </tr>
-        
-        <?php if($NoviVidei == NULL){ ?>
-        <tr>
-                <td>
-                <br/>
-                <font class = "tekstIskosen"> <?php echo $this->session->UserName; ?> </font>
-                <font class = "tekstObican"> korisnici su se malo ulenjili. Vratice se na posao uskoro. </font>
-            </td>
-        </tr>
-        <?php } ?>
-    </table>
-
-    <br/> <br/>
-    
-    
-    <table width = "80%" align = "center">
-        <tr>
-            <td width = "1%">
-                <!--Prazna celija-->
-            </td>
-              <?php 
-                if($NoviVidei != NULL){   
-                  $i = 0;
-                  foreach($NoviVidei as $red){
-                      include 'PocetnaVidei.php';
-                      $i++;
-                      if($i != 4){
-                      ?>
-                        <td width = "2%">
-                            <!--Prazna celija-->
-                        </td>
-                      <?php
-                      }
-                  }
-                }
-              ?>
-            <td width = "1%">
-                <!--Prazna celija-->
-            </td>
-        </tr>
-    </table>
-
-    <table width = "60%" align = "center">
-        <tr>
-                <td align = "center">
-                <br/> <br/>
-                <a href = "http://localhost/vunica.com/vunica/index.php/Strikarnica" class = "dugme" target = "_blank">
-                    Ucitaj starije
-                </a>
-            </td>
-        </tr>
-        <tr>
-                <td>
-                <br/> <br/>
-                        <hr width = "100%" class = "linija"/> 
-                </td>
-        </tr>
-    </table>
-
-
-    <br/> <br/> <br/> <br/> <br/> 
-    
-    
-
-    <!-- Proizvodi -->
-
-    <a name = "Proizvodi" class = "link"> </a>
-
-    <table width = "60%" align = "center">
-        <tr>
-                <td>
-                <font class = "naslovObican"> Najnoviji proizvodi: </font>
-                        <br/>
-            </td>
-        </tr>
-        <tr>
-                <td>
-                        <hr width = "100%" class = "linija"/> 
-                </td>
-        </tr>
-        
-        <?php if($NoviProizvodi == NULL){ ?>
-        <tr>
-                <td>
-                <br/>
-                <font class = "tekstIskosen"> <?php echo $this->session->UserName; ?> </font>
-                <font class = "tekstObican"> korisnicima su otekli prsti od strikanja. Nastavljaju cim se malo odmore. </font>
-            </td>
-        </tr>
-        <?php } ?>
-    </table>
-
-    <br/> <br/>
-
-    <table width = "80%" align = "center">
-        <tr>
-            <td width = "2%">
-                <!--Prazna celija-->
-            </td>
-              <?php 
-                if($NoviProizvodi != NULL){   
-                  $i = 0;
-                  foreach($NoviProizvodi as $red){
-                      include 'PocetnaProizvodi.php';
-                      $i++;
-                      if($i != 4){
-                      ?>
-                        <td width = "4%">
-                            <!--Prazna celija-->
-                        </td>
-                      <?php
-                      }
-                  }
-                }
-              ?>
-            <td width = "2%">
-                <!--Prazna celija-->
-            </td>
-        </tr>
-    </table>
-
-    <table width = "60%" align = "center">
-        <tr>
-                <td align = "center">
-                <br/> <br/>
-                <a href = "http://localhost/vunica.com/vunica/index.php/Pijaca" class = "dugme" target = "_blank">
-                    Ucitaj starije
-                </a>
-            </td>
-        </tr>
-        <tr>
-                <td>
-                <br/> <br/>
-                        <hr width = "100%" class = "linija"/> 
-                </td>
-        </tr>
-    </table>
-
-    <br/> <br/> <br/> <br/> 
 
     <table width = "60%" align = "center">
         <tr>

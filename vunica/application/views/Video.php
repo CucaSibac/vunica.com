@@ -376,7 +376,7 @@ $this->session->unset_userdata('PCena');
 <?php if ($this->session->UserName != '') { ?>//ako je korisnik prijavljen
                                                             </script>
                                                             
-                                                            <a  class = "dugme" onclick="document.forms['formaKomentarVideo'].submit(); " > Postavi </a> 
+                                                        <a  class = "dugme" onclick="document.forms['formaKomentarVideo'].submit(); " style="cursor: pointer" > Postavi </a> 
 
                                                             <script>
 
@@ -385,7 +385,7 @@ $this->session->unset_userdata('PCena');
                                                             <a onclick="prikazi_registraciju()" class = "dugme" > Postavi </a>
                                                             <script>
                                                             <?php } ?></script>                             </td>
-                                                    <td align="center"> <a  class="dugme"  onclick="odustani()"> Odustani </a> 
+                                                    <td align="center"> <a  class="dugme"  onclick="odustani()" style="cursor: pointer"> Odustani </a> 
                                                     </td>
                                                 </tr>
                                                 <input type="hidden" name="UserName" id="UserName"  value="<?php echo $usersession ?>"/>

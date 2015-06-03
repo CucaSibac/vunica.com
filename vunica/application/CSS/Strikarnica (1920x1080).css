@@ -160,13 +160,15 @@
     overflow: hidden;
 }
 .view h2 {
+    margin-top: -4px;
+    margin-left: -4px;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
     position: relative;
     font-size: 17px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.4);
   /*  margin: 20px 0 0 0*/
 }
 .view p {
@@ -200,16 +202,16 @@
 	transform: translate(460px, -100px) rotate(180deg);
 	transition: all 0.2s 0.4s ease-in-out;
 }
-.view-third h2{
+/*.view-third h2{
 	transform: translateY(-200px);
 	transition: all 0.2s ease-in-out;
-}
+}*/
 .view-third p { 
 	transform: translateX(350px) rotate(90deg);
 	transition: all 0.2s ease-in-out;
 }
 .view-third a.info { 
-	transform: translateY(150px);
+	transform: translateY(350px); //promeniti
 	transition: all 0.2s ease-in-out;
 }
 .view-third:hover .mask { 
@@ -218,17 +220,18 @@
 	transform: translate(0px, 0px);
         
 }
-.view-third:hover h2 { 
+/*.view-third:hover h2 { 
 	transform: translateY(-20px); 
 	transition-delay: 0.5s; 
-}
+}*/
 .view-third:hover p	{ 
-    font-size:14px;
+    font-size:15px;
+    margin-top: 100px; //promeniti
     transform: translateX(0px) rotate(0deg);
-	transition-delay: 0.4s;
+	transition-delay: 0.2s;
 }
 .view-third:hover a.info { 
-	transform: translateY(10px);
+	transform: translateY(-10px); //promeniti
 	transition-delay: 0.3s;
 }
 
@@ -241,9 +244,9 @@
 }
 .view-third .datumNaSlici{
 	transform: translateX(300px);
-	transition: all 0.4s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 .view-third:hover .datumNaSlici{
-	transform: translateX(0px);
-	transition-delay:0.4s;
+	transform: translateX(-2px)translateY(-2px);
+	transition-delay:0.3s;
 }

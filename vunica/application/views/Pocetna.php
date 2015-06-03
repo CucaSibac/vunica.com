@@ -58,24 +58,6 @@
         include("Upozorenje.php");
         include("brisanjesesije.php");
     ?>
-    
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var brKorisnika = <?= count($BrKorisnici) ?>;
-            var ucitano = 0;
-            $("#dugmeKorisnici").click(function () {
-                ucitano += 5;
-                
-                $.get("http://localhost/vunica.com/vunica/index.php/Pocetna/ucitajKorisnike/" + ucitano, function (data) {
-                    $("#markerKorisnici").append(data);
-                });
-
-                if (ucitano >= brKorisnika - 5) {
-                    $("#dugmeKorisnici").hide();
-                }
-            });
-        });
-    </script>
   
     <!-- Telo strane -->
     <div id = "teloOkvir">

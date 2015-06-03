@@ -1,4 +1,4 @@
-<!-- Tijana Trifunovic 311/12-->
+<!-- Tijana Trifunovic 311/12 i Ivana Lisanin 531/12 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/Template.dwt" codeOutsideHTMLIsLocked="false" -->
     <head>
@@ -342,7 +342,7 @@ $usersession = $this->session->userdata('UserName');
                                     <input type="button" class="dugme" value="-" onclick="minus()"/>
 
 
-                                    <font class="tekstObican" id="kolicina" name="Kolicina" >0</font>
+                                    <font class="tekstObican" id="kolicina" name="Kolicina" >1</font>
 
 
                                     <input type="button" class="dugme" value="+" onclick="plus(<?php echo $broj; ?>)"/>
@@ -366,8 +366,7 @@ $usersession = $this->session->userdata('UserName');
                                     <?php if ($this->session->UserName != '') { ?>//ako je korisnik prijavljen
                                         </script>
 
-                                        <a  class = "dugme" onclick="document.forms['formaStaviUCeger'].submit();
-                                                                        " > Stavi u ceger </a> 
+                                   <a  class = "dugme" onclick="document.forms['formaStaviUCeger'].submit();" style="cursor: pointer" > Stavi u ceger </a> 
 
                                         <script>
 
@@ -378,7 +377,7 @@ $usersession = $this->session->userdata('UserName');
                                         <?php } ?></script>                           
                                     <input type="hidden" name="IDProizvod" id="IDProizvod"  value="<?php echo $idProizvod ?>"/>
                                     <input type="hidden" name="Cena" id="Cena"  value="<?php echo $cena ?>"/>
-                                    <input type="hidden" name="KolicinaForma" id="KolicinaForma"  value=""/>
+                                    <input type="hidden" name="KolicinaForma" id="KolicinaForma"  value="1"/>
                                     <input type="hidden" name="NazivProizvoda" id="NazivProizvoda"  value="<?php echo $nazivProizvoda?>"/>
                                         <?php echo form_close(); ?>
                                     <!--Kraj forme za ceger-->
@@ -428,7 +427,14 @@ $usersession = $this->session->userdata('UserName');
                                 </td>
                             </tr>     
                             <tr>
-                                <td colspan="2" align="right">
+                                    <td align="left">
+                               <?php if ($this->session->UserName != '' && $this->session->UserName == $user) {
+                                        ?>
+                                          
+                                            <a    class="prijaviVideo" href="http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/<?php echo $idProizvod?>" >Izmeni proizvod</a>
+                                    <?php } ?>
+                                </td>
+                                <td  align="right">
 
 
 
@@ -436,8 +442,8 @@ $usersession = $this->session->userdata('UserName');
                                     $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiProizvod/$idProizvod";
                                     if ($this->session->UserName != '' && $this->session->UserName == $user) {
                                         ?>
-                                        <a  id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi proizvod </a>   
-
+                                        <a  id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')" class="prijaviVideo" >Obrisi proizvod</a>   
+                                           
                                     <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
                                         <a onclick="" id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi proizvod </a>   
                                     <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>

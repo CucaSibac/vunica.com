@@ -33,7 +33,7 @@
             <?php if($this->session->UserName != ''){ ?>
             <td id = "poljePrijava" style="width: 7%; text-align: right;">
                 <font class = "opcijeMenija">
-                    <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil', '_parent')">
+                    <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>', '_parent')">
                         <?php echo $this->session->UserName; ?>
                     </font>
                     /

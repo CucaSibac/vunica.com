@@ -2,7 +2,7 @@
 
     <tr>
       <td width = "50%" valign = "top">
-         <br/>
+         <br/> <br/>
          <font class = "tekstObican"> Prijavljeni materijal: </font>
          <font class = "tekstIskosen">
             <?php
@@ -64,7 +64,7 @@
          <br/> <br/>      
       </td>
       <td width = "50%" valign = "top">
-        <br/>
+        <br/> <br/>
         <font class = "tekstObican"> Komentar prijave: </font>
         <div class = "poljeZaTekst" align = "left">
             <font class = "tekstObican">
@@ -89,19 +89,34 @@
     </tr>
     <tr valign = "top">
         <td width = "50%" align = "left" valign = "top">
-            <a class = "akcija" target = "_blank"
-               href='http://localhost/vunica.com/vunica/index.php/<?php
-                    if($red['Vrsta'] == 0 || $red['Vrsta'] == 2){
-                        echo 'video';
+            <?php
+                if($red['Vrsta'] == 0){
+                    $id = $vlasnik['IDSadrzaj'];
+                    $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$id";
+                }
+                else{
+                    if($red['Vrsta'] == 1){
+                        $id = $vlasnik['IDSadrzaj'];
+                        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiProizvod/$id";
                     }
                     else{
-                        echo 'proizvod';
+                        if($red['Vrsta'] == 2){
+                            $id = $vlasnik['IDKomentara'];
+                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/$id";
+                        }
+                        else{
+                            $id = $vlasnik['IDKomentara'];
+                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarProizvod/$id";
+                        }
                     }
-               ?>/index/<?php echo $vlasnik['IDSadrzaj']; ?>'>
-                POGLEDAJ MATERIJAL
+                }           
+            ?>
+            <a  id = "prijaviobrisi" class = "akcija"
+                href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete materijal?','<?php echo $kontroler; ?>')"> 
+                OBRISI MATERIJAL
             </a>
             
-            <br/> <br/> <br/>
+            <br/> <br/> <br/> <br/>
         </td>
         <td width = "50%" align = "left" valign = "top">
             <?php
@@ -127,6 +142,6 @@
                 href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete prijavu?','<?php echo $kontroler; ?>')"> 
                 OBRISI PRIJAVU
             </a>
-            <br/> <br/> <br/>
+            <br/> <br/> <br/> <br/>
         </td>
     </tr>

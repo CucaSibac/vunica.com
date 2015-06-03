@@ -5,14 +5,14 @@
     <tr>
       <td width = "50%" valign = "top">
         <br/>
-        <a href = "http://localhost/vunica.com/vunica/index.php/Profil" target = "_parent" class = "link"> 
+        <a href = "http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $red->IDKorisnik;?>" target = "_parent" class = "link"> 
             <img class = "slikaKorisnika" src = "<?php echo $red->Slika; ?>">
         </a>
         <br/> <br/> <br/> <br/>
       </td>
       <td width = "50%" valign = "top">
          <br/>
-         <a href = "http://localhost/vunica.com/vunica/index.php/Profil" target = "_parent" class = "link">  
+         <a href = "http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $red->IDKorisnik;?>" target = "_parent" class = "link">  
                 <font class = "naslovObican"> <?php echo $red->UserName; ?> </font>
          </a>
          <br/>
@@ -41,7 +41,7 @@
     </tr>    
     <tr valign = "top">
         <td width = "50%" align = "left" valign = "top">
-            <a href = "http://localhost/vunica.com/vunica/index.php/Profil" target = "_blank" class = "akcija">
+            <a href = "http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $red->IDKorisnik;?>" target = "_blank" class = "akcija">
                 POGLEDAJ PROFIL
             </a>
             
