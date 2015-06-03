@@ -86,7 +86,7 @@
                         <table id="postavkaproizvoda" border="0">
                             <tr>
                                 <td align="center" class="mestoZaSliku">                               
-                                    <img class="ProSlika"  src="<?php echo $Slika;?>"/>                             
+                                <img class="ProSlika"  src="<?php echo $Slika;?>"/>                     
                                 </td>
                                 <td valign="bottom">
                                     <table style="margin-left:10%; width:90%;" border="0">
@@ -155,7 +155,7 @@
                                         <tr style="height:100px">
                                             <td colspan="2" valign="bottom">                                               
                                                 <input type="file" name="userfile" onchange="option('1');document.forms['EditovanjeProizvoda'].submit();" class="dugme" />  
-                                                <a class="dugme"  onclick="option('3');document.forms['EditovanjeProizvoda'].submit();">Izbrisi sliku</a>
+                                                
                                             </td>
                                         </tr>  
                                     </table>         
@@ -164,8 +164,7 @@
                             <tr>
                                 <td colspan="2" align="center">                                   
                                     <br/><br/><br/>
-                                    <input type="hidden" name="ProGreska" />
-                                    <?php echo form_error('ProGreska', '<div class="error">', '</div>'); ?>
+                                    <input type="hidden" name="ProGreska" />                                  
                                     <br/><br/><br/>
                                     <textarea  maxlength="400" placeholder="Napisite opis" class="ProizvodOpis" id="opisVidea" name="ProOpis" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);" ><?php echo $Opis; ?></textarea>
                                 </td>
@@ -216,3 +215,9 @@
     <!-- InstanceEnd -->
 </html>
 
+<?php 
+    if($this->session->flashdata('proGreska3') == 1){
+        echo "<script language=\"javascript\">obavesti('Greska pri ucitavanju fajla');</script>";
+        $this->session->set_flashdata('proGreska3', 0);
+    }
+?>
