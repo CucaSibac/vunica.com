@@ -90,9 +90,12 @@
                 </tr>
                  <tr>
                   <td colspan="2" align="center">
-                    <br/> <br/><?php echo $video;?>
-                    <input type="file" class="dugme"  name="userfile" onchange="option('1');document.forms['PostavljanjeVidea'].submit();" value="Ucitaj video"/>
-                    <a class="dugme"  onclick="option('3');document.forms['PostavljanjeVidea'].submit();">Izbrisi video</a>
+                    <br/> <br/>
+                    <label class="dugme">
+                        <input type="file" class="dugme"  name="userfile" onchange="option('1');document.forms['PostavljanjeVidea'].submit();"/>
+                        Postavite video
+                    </label>
+                    
                     <br/> <br/> <br/>
                   </td>
                 </tr>

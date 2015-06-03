@@ -20,6 +20,8 @@ class Korisnici extends CI_Model {
         
         $this->db->select('*');
         $this->db->from('korisnik');
+        $names = array($this->session->UserName);
+        $this->db->where_not_in('UserName', $names);
         $upit = $this->db->get();
         
         return $upit->result();

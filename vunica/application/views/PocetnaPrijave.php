@@ -101,11 +101,11 @@
                     }
                     else{
                         if($red['Vrsta'] == 2){
-                            $id = $vlasnik['IDKomentara'];
+                            $id = $vlasnik['IDKomentar'];
                             $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/$id";
                         }
                         else{
-                            $id = $vlasnik['IDKomentara'];
+                            $id = $vlasnik['IDKomentar'];
                             $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarProizvod/$id";
                         }
                     }
