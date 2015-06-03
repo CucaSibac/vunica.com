@@ -34,9 +34,9 @@
             <td id = "poljePrijava" style="width: 7%; text-align: right;">
                 <font class = "opcijeMenija">
                     <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil', '_parent')">
-                        <?php echo $this->session->UserName; ?>
+                        <?php echo $this->session->UserName; ?> /
                     </font>
-                    /
+                    
                 </font>
             </td>
             <td id = "poljePrijava" style="width: 5%; text-align: left; padding-right: 3%;">
