@@ -24,3 +24,27 @@
     font-style:italic;
 }
 
+/* Za <a> tag */
+.link{
+    color:#61a6ab;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:18px;
+    text-decoration:none;
+}
+
+	.link:hover{
+            cursor:pointer;
+	}
+        
+/* Za <a> tag */
+.brisanje{
+    color:#605951;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:14px;
+    text-decoration:none;
+}
+
+	.brisanje:hover{
+            cursor:pointer;
+	}
+

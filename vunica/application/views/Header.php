@@ -63,8 +63,10 @@
                     <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Ceger', '_parent')"/>
                     <?php
                         $niz = $this->session->Proizvodi;
-                        if($niz != ''){
-                            if(count($niz) > 0){     
+                        
+                        if($niz != ''){   
+                            if(count($niz) > 0){
+                               
                     ?>
                         <font id = "cegerBroj"> <?php echo count($niz); ?> </font>
                   <?php }}} ?>
