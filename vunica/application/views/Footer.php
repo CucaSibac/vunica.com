@@ -17,7 +17,7 @@
                 <font> Telefon: +38163/666-666</font>
                 <br/>
                 <font> E-mail: </font>
-                <a href="mailto:vunica.com@opatija.com" target="_top" class="footerlink"> vunica.com@opatija.com </a>
+                <a href="mailto:vunica.com@opatija.com" target="_top" class="footerlink"> vunica.com@gmail.com </a>
                 <br/>
                 <font> Faks: +666-666-666</font>
             </td>
