@@ -231,7 +231,7 @@
 	transition-delay: 0.2s;
 }
 .view-third:hover a.info { 
-	transform: translateY(70px); //promeniti
+	transform: translateY(30px); //promeniti
 	transition-delay: 0.4s;
 }
 /*Datum na slici i animacija za njega*/

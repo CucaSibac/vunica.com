@@ -225,7 +225,7 @@
 	transition-delay: 0.5s; 
 }*/
 .view-third:hover p	{ 
-    font-size:17px;
+    font-size:15px;
     margin-top: 100px; //promeniti
     transform: translateX(0px) rotate(0deg);
 	transition-delay: 0.2s;
