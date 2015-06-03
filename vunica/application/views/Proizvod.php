@@ -274,7 +274,14 @@ $usersession = $this->session->userdata('UserName');
 
                         <table id="video" width="60%" align="center" border="0" cellspacing="10">
                             <tr>
-                                <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="" class="linkovi"><?php
+                                <?php
+                                            foreach ($podacip as $red) {
+                                               
+                                                $idkorisnik = $red->IDKorisnik;
+                                                
+                                            }
+                                            ?>
+                                <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $idkorisnik?>" class="linkovi"><?php
                                             foreach ($podacip as $red) {
                                                 ?>
                                                 <?php
