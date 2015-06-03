@@ -26,7 +26,7 @@ class PostavljanjeVidea extends CI_Controller {
         $this->PostavljanjeVidea_model->postavi_video('');
         $config['upload_path'] = '../../Video/';
         $config['allowed_types'] = 'avi|mkv|mp4';
-        //$config['max_size'] = 100000000;       
+        $config['max_size'] = 102400;       
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload()) {
             /*

@@ -153,9 +153,11 @@
                                         </tr>
                                         
                                         <tr style="height:100px">
-                                            <td colspan="2" valign="bottom">                                               
-                                                <input type="file" name="userfile" onchange="option('1');document.forms['EditovanjeProizvoda'].submit();" class="dugme" />  
-                                                
+                                            <td colspan="2" valign="bottom">  
+                                                <label class="dugme">
+                                                  <input type="file" name="userfile" onchange="option('1');document.forms['EditovanjeProizvoda'].submit();" class="dugme" /> 
+                                                  Promeni sliku
+                                                </label>
                                             </td>
                                         </tr>  
                                     </table>         
