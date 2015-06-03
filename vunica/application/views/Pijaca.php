@@ -1096,12 +1096,13 @@ if ($this->session->UserName != '' && $status !== "Klupko") {
 
 
                                                                                         <div class="view view-third" align="left" style="float: left">  
-                                                                                            <img src="<?php echo $proizvod->Slika; ?>"/> 
-                                                                                            <div class="mask"> 
-                                                                                                <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
+                                                                                            <img src="<?php echo $proizvod->Slika; ?>"/>
+                                                                                            <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
                                                                                                     <br/><font size="5"><?php echo $proizvod->Naziv; ?></font>
                                                                                                     <br /><font size="3" style="text-transform:none">Kategorija: <?php echo $proizvod->Kategorija; ?></font>    
                                                                                                     <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?> &#8364;</font></h2>  
+                                                                                                
+                                                                                            <div class="mask"> 
                                                                                                 <p><?php echo $proizvod->Opis; ?></p> 
                                                                                                 <a href='http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>' class="info">Detaljnije</a>  
                                                                                                 <font   class="datumNaSlici">OBJAVLJENO: <?php echo $proizvod->Datum; ?></font>
@@ -1119,13 +1120,13 @@ if ($this->session->UserName != '' && $status !== "Klupko") {
 
                                                                                         <div class="view view-third" align="right" style="float:right">  
                                                                                             <img src="<?php echo $proizvod->Slika; ?>"  /> 
-                                                                                            <div class="mask"> 
-
-                                                                                                <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
+                                                                                             <h2><font size="2" style="text-transform:none"><?php echo $proizvod->UserName; ?></font>
                                                                                                     <br/><font size="5"><?php echo $proizvod->Naziv; ?></font>
                                                                                                     <br /><font size="3" style="text-transform:none">Kategorija: <?php echo $proizvod->Kategorija; ?></font>    
                                                                                                     <br /><font size="4" style="text-transform:none">CENA: <?php echo $proizvod->Cena; ?> &#8364;</font></h2>  
-                                                                                                <p><?php echo $proizvod->Opis; ?></p> 
+                                                                                                <div class="mask"> 
+
+                                                                                               <p><?php echo $proizvod->Opis; ?></p> 
                                                                                                 <a href="http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>" class="info">Detaljnije</a>  
                                                                                                 <font   class="datumNaSlici">OBJAVLJENO <?php echo $proizvod->Datum; ?></font>
                                                                                             </div>  
