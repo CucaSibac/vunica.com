@@ -32,6 +32,17 @@ class ProizvodEditovanje_model extends CI_Model {
        $this->db->update("proizvod",$date);
    }
    
+   public function dohvati_sliku($id){
+       $this->db->from("proizvod");
+       $this->db->where("IDProizvod", $id);
+       $query = $this->db->get();
+       if ($query->num_rows() > 0) {
+           foreach ($query->result() as $rows)  {            
+               return $rows->Slika;              
+           }
+       }
+   }
+   
    public function postavi_id($src){
         $this->session->set_flashdata('IDPro',$src);
     }

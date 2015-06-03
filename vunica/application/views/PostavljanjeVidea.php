@@ -135,9 +135,7 @@
                 </td>
               </tr>
               <tr>
-                  <td colspan="2" align="center">
-                      <input type="hidden" name="VidGreska" />
-                      <?php echo form_error('VidGreska', '<div class="error">', '</div>'); ?>
+                  <td colspan="2" align="center">                     
 				   </br>
                    <textarea  maxlength="400" placeholder="Napisite opis" class="videoOpis" name="vidOpis" id="opisVidea" onKeyDown="preostalo(400);" onKeyUp="preostalo(400);"><?php echo set_value('vidOpis'); ?></textarea>
 				  </td>
