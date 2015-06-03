@@ -15,11 +15,12 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
 	background-color: rgba(172, 206, 192, 0.3);
+        font-size: 16px;
 }
 .tekstPoljeKomentarGreska{
     
     border:2px solid #605951;/*-----------------------------------------------------------------------------------*/
-	
+	font-size: 18px;
 	font-family:Tahoma, Geneva, sans-serif;
 	color:#605951;
 	padding:3px;
@@ -92,13 +93,18 @@
     position: relative
 }
 .view h2 {
+    width:100%; 
+    margin-top: -4px; //promeniti
+    margin-left: -4px; //promeniti
+    
     text-transform: uppercase;
     color: #fff;
     text-align: center;
     position: relative;
     font-size: 17px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
   /*  margin: 20px 0 0 0*/
 }
 .view p {
@@ -136,10 +142,10 @@
 	transform: translateY(500px, 300px) rotate(0deg) ;
 	transition: all 0.2s 0.12s ease-in-out;
 }
-.view-third h2{
+/*.view-third h2{
 	transform: translateY(-200px);
 	transition: all 0.2s ease-in-out;
-}
+}*/
 .view-third p { 
 	transform: translateX(350px) rotate(90deg);
 	transition: all 0.2s ease-in-out;
@@ -153,10 +159,10 @@
 	transition-delay: 0s;							 
 	transform: translateY(0px, 0px) rotate(0deg);
 }
-.view-third:hover h2 { 
+/*.view-third:hover h2 { 
 	transform: translateY(-20px); 
 	transition-delay: 0.5s; 
-}
+}*/
 .view-third:hover p	{ 
     transform: translateX(0px) rotate(0deg);
 	transition-delay: 0.4s;

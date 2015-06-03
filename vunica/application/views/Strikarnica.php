@@ -743,6 +743,13 @@
 
                                         <?php
                                         $brojac = 0;
+                                         if($latest_videos == null){
+                                                                                    ?><div align="center">
+                                                                                        <br/><br/><br/><br/><br/><br/>
+                                                                                        <font class="tekstObican" style="font-size: 25px; " align="center">Zao nam je. Nema video-a koji zadovoljavaju Vase kriterijume pretrage.</font>
+                                                                                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                                                                                    </div> <?php
+                                                                                }
                                         foreach ($latest_videos as $videos) {
                                             if ($brojac % 2 == 0) {
                                                 ?>
