@@ -49,7 +49,7 @@ class Obrisi_model extends CI_Model {
     
     function obrisiPrijavaProizvod($vrednost) {
         $this->db->where('IDPrijava', $vrednost);
-        $this->db->delete('prijiavaproizvod');
+        $this->db->delete('prijavaproizvod');
     }
     
     function obrisiPrijavaVideo($vrednost) {
