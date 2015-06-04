@@ -52,8 +52,8 @@ class KupovinaProizvodaTest extends CI_Controller {
         unset($niz[$indeks]);     
         $this->session->Proizvodi = array_values($niz);
         
-        $this->resetujGreske();
-        $this->load->view('Ceger', $this->greske);
+        
+       
         return true;
     }
     
