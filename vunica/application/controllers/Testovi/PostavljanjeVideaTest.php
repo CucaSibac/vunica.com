@@ -10,7 +10,7 @@ class PostavljanjeVideaTest extends CI_Controller {
     
     public function index() {
         $this->load->library('unit_test');
-        $this->adresa_Test();
+        // $this->adresa_Test();
     }
     
     // (1) Funkcija koja testira
