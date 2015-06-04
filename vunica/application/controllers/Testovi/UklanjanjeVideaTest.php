@@ -6,25 +6,26 @@ class UklanjanjeVideaTest extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Obrisi_model');
+        $this->load->model('Test_model');
     }
     
     public function index() {
         $this->load->library('unit_test');
-        $this->adresa_Test();
+        $this->test1();
+        $this->test2();
     }
     
-    // (1) Funkcija koja testira
     public function test1(){
-        $this->unit->run($this->obrisiVideo(''), 'http://vunica.azurewebsites.net/vunica/index.php/application/Video/auto.jpg', 'brisanje videa test');
+        $this->unit->run($this->obrisiVideo(21), true, 'brisanje videa test1');
         echo $this->unit->report();
     }
     
     public function test2(){
-        $this->unit->run($this->obrisiVideo(''), 'http://vunica.azurewebsites.net/vunica/index.php/application/Video/auto.jpg', 'brisanje videa test');
+        $this->unit->run($this->obrisiVideo(100), false, 'brisanje videa test2');
         echo $this->unit->report();
     }
     
-    public function obrisiVideo($vrednost) {
+    public function obrisiVideo($vrednost) {   
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         if ($refering_url == 'http://vunica.azurewebsites.net/vunica/index.php/Pocetna') {
             
@@ -33,9 +34,11 @@ class UklanjanjeVideaTest extends CI_Controller {
         } else {
             $refering_url = 'http://vunica.azurewebsites.net/vunica/index.php/Strikarnica';
         }
+        $rezultat = $this->Test_model->nadji_video($vrednost);
+        if($rezultat == false ) return false;
         $this->load->model('Obrisi_model');
         $this->Obrisi_model->obrisiVideo($vrednost);
-        redirect($refering_url, 'refresh');
+        return true;
     }
 
 
