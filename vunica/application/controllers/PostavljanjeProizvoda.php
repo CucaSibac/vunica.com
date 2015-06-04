@@ -45,7 +45,7 @@ class PostavljanjeProizvoda extends CI_Controller {
         $this->load->helper('file');
         delete_files($this->session->userdata('proSlika'));
         $this->PostavljanjeProizvoda_model->postavi_sliku('');
-        $config['upload_path'] = '../Slike/';
+        $config['upload_path'] = '../Slike/Proizvodi/';
         $config['allowed_types'] = 'gif|jpg|png';
         //        $config['max_size']             = 100;
         //        $config['max_width']            = 1024;
@@ -58,7 +58,6 @@ class PostavljanjeProizvoda extends CI_Controller {
               foreach ($error as $red){
                     echo $red;
                 }
-                
             $this->session->set_flashdata('proGreska1',1);
             $this->PostavljanjeProizvoda_model->postavi_sliku('');
             $data = array('slika' => '');
