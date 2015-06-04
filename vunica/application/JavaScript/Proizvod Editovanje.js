@@ -11,7 +11,7 @@ function preostalo(kap) {
 function postavljanjeKolicine(operacija) {
     if (mouse) {
         kolicina = document.getElementById("ProKol").value;
-        if (operacija == '+') {
+        if (operacija == '+' && kolicina <100) {
             kolicina++;
             document.getElementById("kolicina").innerHTML = kolicina;
             document.getElementById("ProKol").value = kolicina;
@@ -27,6 +27,7 @@ function postavljanjeKolicine(operacija) {
                 brzina -= 50;
             setTimeout("postavljanjeKolicine('-')", brzina);
         }
+        if(kolicina == 100) obavesti('Cveticu dokle vise');
     }
 }
 function mousedown(operacija)

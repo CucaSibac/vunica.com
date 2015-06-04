@@ -43,8 +43,12 @@ class ProizvodEditovanje_model extends CI_Model {
        }
    }
    
-   public function postavi_id($src){
+    public function postavi_id($src){
         $this->session->set_flashdata('IDPro',$src);
+    }
+    
+    public function postavi_sliku($src){
+        $this->session->set_flashdata('ProizvodSlika',$src);
     }
     
      public function izmeni_proizvod($id){                 
