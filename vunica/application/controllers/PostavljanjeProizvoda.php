@@ -22,34 +22,31 @@ class PostavljanjeProizvoda extends CI_Controller {
         $date = array('slika' => ''); //http://vunica.azurewebsites.net/vunica/application/Slike/Pop-up/Putaca 3.png
         $this->load->view('PostavljanjeProizvoda', $date);
     }
-
-    /*
+    
     function adresa($url) {
-        $niz = explode('', $url);
+        $niz = explode('/', $url);
         $duzina = sizeof($niz);
         $novi_url = "";
         for ($i = $duzina - 2; $i < $duzina; $i++) {
             $novi_url .= $niz[$i];
-            echo $novi_url;
             if ($i != $duzina - 1)
                 $novi_url .= '/';
         }
-        return 'http://vunica.azurewebsites.net/vunica/application/Slike' . $novi_url;
+        return 'http://vunica.azurewebsites.net/vunica/application/Slike/' . $novi_url;
     }
-     * 
-     */
     
+    /*
     function adresa($url) {
        $duzina = sizeof($url);
        $novi_url = "";
        echo $duzina;
-       echo $url;
+       echo $url . "   ";
        for ($i = 56; $i < $duzina; $i++) {
            $novi_url .= $url[i];
        }
        return 'http://vunica.azurewebsites.net/vunica/application/Slike/Proizvodi/' . $novi_url;
     }
-
+*/
     public function do_upload() {       
         if($this->input->post('opt') ==1) $this->postavljanje_slike();
         if($this->input->post('opt') ==2) $this->sacuvaj();  
@@ -77,12 +74,11 @@ class PostavljanjeProizvoda extends CI_Controller {
             $this->PostavljanjeProizvoda_model->postavi_sliku('');
             $data = array('slika' => '');
         //    $this->load->view('PostavljanjeProizvoda', $data);
-        } else {              
-            $url =$this->adresa($this->session->userdata('proSlika'));
+        } else {                         
+            $url = $this->adresa($this->upload->data('full_path'));
             $data = array('slika' => $url);
             $this->PostavljanjeProizvoda_model->postavi_sliku($url); 
-      //      echo $url;
-        //    $this->load->view('PostavljanjeProizvoda', $data);
+            $this->load->view('PostavljanjeProizvoda', $data);
         }
     }
     
