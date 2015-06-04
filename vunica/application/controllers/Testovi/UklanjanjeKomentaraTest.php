@@ -16,12 +16,12 @@ class UklanjanjeKomentaraTest extends CI_Controller {
     
     // Prva funkcija koja testira
     public function ObrisiKomentarVideo_Test(){
-        $this->unit->run($this->obrisiKomentarVideo(21), true, 'Testiranje brisanja komentara sa video-a');
-        echo $this->unit->report();
+        $this->unit->run($this->obrisiKomentarVideo(61), true, 'Testiranje brisanja komentara sa video-a');
+      
     }
      // Druga funkcija koja testira
     public function ObrisiKomentarProizvod_Test(){
-        $this->unit->run($this->obrisiKomentarProizvod(31), true, 'Testiranje brasanja komentara sa proizvoda');
+        $this->unit->run($this->obrisiKomentarProizvod(41), true, 'Testiranje brasanja komentara sa proizvoda');
         echo $this->unit->report();
     }
     
