@@ -45,7 +45,7 @@ class PostavljanjeProizvoda extends CI_Controller {
         $this->load->helper('file');
         delete_files($this->session->userdata('proSlika'));
         $this->PostavljanjeProizvoda_model->postavi_sliku('');
-        $config['upload_path'] = 'D:/home/site/wwwroot/vunica/application/Slike';
+        $config['upload_path'] = 'D:/home/site/wwwroot/vunica/application/Slike/Proizvodi';
         $config['allowed_types'] = 'gif|jpg|png';
         //        $config['max_size']             = 100;
         //        $config['max_width']            = 1024;
@@ -66,7 +66,9 @@ class PostavljanjeProizvoda extends CI_Controller {
             $url = $this->adresa($this->upload->data('full_path'));
             $data = array('slika' => $url);
             $this->PostavljanjeProizvoda_model->postavi_sliku($url);           
-            $this->load->view('PostavljanjeProizvoda', $data);
+            echo $url;
+            echo $this->upload->data('full_path');
+            //    $this->load->view('PostavljanjeProizvoda', $data);
         }
     }
     
