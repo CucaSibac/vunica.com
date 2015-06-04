@@ -24,7 +24,7 @@ class PopUpRegistracijaTest extends CI_Controller  {
     
     // (1) Funkcija koja testira
     public function registration_Test(){
-        $this->unit->run($this->registration(), TRUE, 'Testiranje ucitavanja jednog dela proizvoda');
+        $this->unit->run($this->registration(), TRUE, 'Testiranje registracije');
         echo $this->unit->report();
     }
     
@@ -54,7 +54,7 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 'Lozinka' => 0,
             );
             //$this->load->view('ProfilEditovanje', $greske);
-            return TRUE;
+            return FALSE;
         } else {
             $this->session->set_flashdata('reg', 1);
 
