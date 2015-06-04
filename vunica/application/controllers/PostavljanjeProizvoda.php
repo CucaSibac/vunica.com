@@ -63,7 +63,7 @@ class PostavljanjeProizvoda extends CI_Controller {
             $data = array('slika' => '');
         //    $this->load->view('PostavljanjeProizvoda', $data);
         } else {              
-            $url = $this->upload->data('full_path');
+            $url =$this->adresa($this->session->userdata('proSlika'));
             $data = array('slika' => $url);
             $this->PostavljanjeProizvoda_model->postavi_sliku($url);           
             $this->load->view('PostavljanjeProizvoda', $data);
@@ -86,9 +86,8 @@ class PostavljanjeProizvoda extends CI_Controller {
         else{
             $url =$this->adresa($this->session->userdata('proSlika'));           
             $date = array('slika' => $url); 
-            $this->PostavljanjeProizvoda_model->postavi_sliku($url);
-            echo $url;
-            //    $this->load->view('PostavljanjeProizvoda', $date); 
+            $this->PostavljanjeProizvoda_model->postavi_sliku($url);       
+            $this->load->view('PostavljanjeProizvoda', $date); 
         }
            
     }
