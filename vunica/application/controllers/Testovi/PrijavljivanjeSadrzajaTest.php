@@ -9,26 +9,38 @@ class PrijavljivanjeSadrzajaTest extends CI_Controller {
     
     public function index() {
         $this->load->library('unit_test');
-        $this->adresa_Test();
-    }
-        
-    public function adresa_Test(){
-        $this->unit->run($this->adresa("C:/Users/IcySch/Pictures/Bzvz/auto.jpg"), 'http://vunica.azurewebsites.net/vunica/index.php/application/Video/auto.jpg', 'Testiranje putanje slike');
+        $this->test1();
+        $this->test2();
         echo $this->unit->report();
     }
+        
+    public function test1(){
+        $this->unit->run($this->prijaviVideo(), true, 'prijava videa test');
+        
+    }
     
-    public function prijaviKomentarProizvod() {
+    public function test2(){
+        $this->unit->run($this->prijaviProizvod(), true, 'prijava proizvoda test');
+        
+    }
+    
+    public function prijaviVideo() {
+        $this->session->set_flashdata('UserName','Cuca200');
+        $this->session->set_flashdata('videoId',9);
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-        $this->load->model('PrijavaSadrzaja_model');
-        $this->PrijavaSadrzaja_model->prijaviKomentarProizvod();     
-        redirect($refering_url, 'refresh');
+        $this->load->model('PrijavaSadrzaja_model');    
+        echo $this->session->videoId;
+        $this->PrijavaSadrzaja_model->prijaviVideo();     
+        return true;
     }
     
     public function prijaviProizvod() {
+        $this->session->set_flashdata('UserName','Cuca200');
+        $this->session->set_flashdata('proizvodId',5);
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         $this->load->model('PrijavaSadrzaja_model');
         $this->PrijavaSadrzaja_model->prijaviProizvod();     
-        redirect($refering_url, 'refresh');
+        return true;
     }
 
 

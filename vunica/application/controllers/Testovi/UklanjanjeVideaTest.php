@@ -13,16 +13,17 @@ class UklanjanjeVideaTest extends CI_Controller {
         $this->load->library('unit_test');
         $this->test1();
         $this->test2();
+        echo $this->unit->report();
     }
     
     public function test1(){
         $this->unit->run($this->obrisiVideo(21), true, 'brisanje videa test1');
-        echo $this->unit->report();
+        
     }
     
     public function test2(){
         $this->unit->run($this->obrisiVideo(100), false, 'brisanje videa test2');
-        echo $this->unit->report();
+        
     }
     
     public function obrisiVideo($vrednost) {   
