@@ -43,7 +43,7 @@ class PostavljanjeProizvoda extends CI_Controller {
        $duzina = sizeof($url);
        $novi_url = "";
        echo $duzina;
-       echo $url;
+       echo $url . "   ";
        for ($i = 56; $i < $duzina; $i++) {
            $novi_url .= $url[i];
        }
@@ -78,10 +78,11 @@ class PostavljanjeProizvoda extends CI_Controller {
             $data = array('slika' => '');
         //    $this->load->view('PostavljanjeProizvoda', $data);
         } else {              
+            echo $this->upload->data('full_path') . "   ";
             $url = $this->adresa($this->upload->data('full_path'));
             $data = array('slika' => $url);
             $this->PostavljanjeProizvoda_model->postavi_sliku($url); 
-            echo $url;
+       //     echo $url;
         //    $this->load->view('PostavljanjeProizvoda', $data);
         }
     }
