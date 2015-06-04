@@ -32,7 +32,7 @@ class PostavljanjeProizvoda extends CI_Controller {
             if ($i != $duzina - 1)
                 $novi_url .= '/';
         }
-        return 'http://vunica.azurewebsites.net/vunica/application/Slike' . $novi_url;
+        return 'http://vunica.azurewebsites.net/vunica/application/Slike/' . $novi_url;
     }
     
     /*
@@ -78,8 +78,7 @@ class PostavljanjeProizvoda extends CI_Controller {
             $url = $this->adresa($this->upload->data('full_path'));
             $data = array('slika' => $url);
             $this->PostavljanjeProizvoda_model->postavi_sliku($url); 
-            echo $url;
-        //    $this->load->view('PostavljanjeProizvoda', $data);
+            $this->load->view('PostavljanjeProizvoda', $data);
         }
     }
     
