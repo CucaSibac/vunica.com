@@ -13,14 +13,36 @@ class KupovinaProizvodaTest extends CI_Controller {
     public function index() {
         $this->load->library('unit_test');
         $this->test1();
+        $this->test2();
+        echo $this->unit->report();
     }
       
     public function test1(){
         $this->StaviUCeger();
         $this->unit->run($this->izbaciProizvod(10), true, 'test kupovine');
-        echo $this->unit->report();
+        
     }
     
+    public function test2(){
+        $niz[1] = "MIS";
+        $niz[2] = 25;
+        $niz[3] = 1;
+        echo $this->tekstPoruke($niz);
+        $this->unit->run($this->tekstPoruke($niz), true, 'test kupovine');
+        
+    }
+    
+    
+    protected function tekstPoruke($niz){
+        $poruka = '';
+        
+        foreach ($niz as $red){
+            $poruka .= $red[1].' - '.$red[2].'€ - '.$red[3].' komad/a
+';
+        } 
+        
+        return $poruka;
+    }
     
     function StaviUCeger(){
         $IDProizvod = 10;
@@ -71,6 +93,8 @@ class KupovinaProizvodaTest extends CI_Controller {
             $element = 0;
         }
     }
+    
+    
 
 
 }
