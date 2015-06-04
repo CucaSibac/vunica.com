@@ -7,6 +7,9 @@ class KupovinaProizvodaTest extends CI_Controller {
         parent::__construct();
     }
     
+     private $kupovina;
+    private $greske;
+    
     public function index() {
         $this->load->library('unit_test');
         $this->test1();
@@ -18,17 +21,6 @@ class KupovinaProizvodaTest extends CI_Controller {
         echo $this->unit->report();
     }
     
-    protected function adresa($url) {
-        $niz = explode('/', $url);
-        $duzina = sizeof($niz);
-        $novi_url = "";
-        for ($i = $duzina - 2; $i < $duzina; $i++) {
-            $novi_url .= $niz[$i];
-            if ($i != $duzina - 1)
-                $novi_url .= '/';
-        }
-        return 'http://localhost/' . $novi_url;
-    }
     
     function StaviUCeger(){
         $IDProizvod = 10;
@@ -71,6 +63,12 @@ class KupovinaProizvodaTest extends CI_Controller {
             if($niz[$i][0] == $id){
                return $i;
             }
+        }
+    }
+    
+    protected function resetujGreske(){
+        foreach($this->greske as $element){
+            $element = 0;
         }
     }
 
