@@ -27,12 +27,12 @@ class PostavljanjeProizvoda extends CI_Controller {
         $niz = explode('/', $url);
         $duzina = sizeof($niz);
         $novi_url = "";
-        for ($i = $duzina - 3; $i < $duzina; $i++) {
+        for ($i = $duzina - 2; $i < $duzina; $i++) {
             $novi_url .= $niz[$i];
             if ($i != $duzina - 1)
                 $novi_url .= '/';
         }
-        return 'http://localhost/' . $novi_url;
+        return 'http://vunica.azurewebsites.net/' . $novi_url;
     }
 
     public function do_upload() {       
@@ -45,7 +45,7 @@ class PostavljanjeProizvoda extends CI_Controller {
         $this->load->helper('file');
         delete_files($this->session->userdata('proSlika'));
         $this->PostavljanjeProizvoda_model->postavi_sliku('');
-        $config['upload_path'] = '../../Slike/Proizvodi/';
+        $config['upload_path'] = '../Slike/Proizvodi/';
         $config['allowed_types'] = 'gif|jpg|png';
         //        $config['max_size']             = 100;
         //        $config['max_width']            = 1024;
