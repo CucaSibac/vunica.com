@@ -6,6 +6,15 @@ class PopUpRegistracijaTest extends CI_Controller  {
     
     public function __construct() {
         parent::__construct();
+        $this->load->model('PopUp_model');
+        $this->load->model('Strikarnica_model');
+        $this->load->model('Pijaca_model');
+        $this->load->model('Video_model');
+        $this->load->model('Proizvod_model');
+        $this->load->model('Prijave');
+        $this->load->model('Korisnici');
+        $this->load->model('NoviVidei');
+        $this->load->model('NoviProizvodi');
     }
     
     public function index() {
