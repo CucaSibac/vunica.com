@@ -29,10 +29,11 @@ class PostavljanjeProizvoda extends CI_Controller {
         $novi_url = "";
         for ($i = $duzina - 2; $i < $duzina; $i++) {
             $novi_url .= $niz[$i];
+            echo $novi_url;
             if ($i != $duzina - 1)
                 $novi_url .= '/';
         }
-        return 'http://vunica.azurewebsites.net/' . $novi_url;
+        return 'http://vunica.azurewebsites.net/vunica/application/Slike' . $novi_url;
     }
 
     public function do_upload() {       
@@ -63,12 +64,10 @@ class PostavljanjeProizvoda extends CI_Controller {
             $data = array('slika' => '');
         //    $this->load->view('PostavljanjeProizvoda', $data);
         } else {              
-            $url = $this->adresa($this->upload->data('full_path'));
+            $url =$this->adresa($this->session->userdata('proSlika'));
             $data = array('slika' => $url);
             $this->PostavljanjeProizvoda_model->postavi_sliku($url);           
-            echo $url;
-            echo $this->upload->data('full_path');
-            //    $this->load->view('PostavljanjeProizvoda', $data);
+        //    $this->load->view('PostavljanjeProizvoda', $data);
         }
     }
     
@@ -86,9 +85,9 @@ class PostavljanjeProizvoda extends CI_Controller {
             redirect('http://vunica.azurewebsites.net/vunica/index.php/Pijaca', 'refresh');
         }
         else{
-            $url =$this->session->userdata('proSlika');           
+            $url =$this->adresa($this->session->userdata('proSlika'));           
             $date = array('slika' => $url); 
-            $this->PostavljanjeProizvoda_model->postavi_sliku($url);
+            $this->PostavljanjeProizvoda_model->postavi_sliku($url);       
             $this->load->view('PostavljanjeProizvoda', $date); 
         }
            
