@@ -6,6 +6,15 @@ class PopUpRegistracijaTest extends CI_Controller  {
     
     public function __construct() {
         parent::__construct();
+        $this->load->model('PopUp_model');
+        $this->load->model('Strikarnica_model');
+        $this->load->model('Pijaca_model');
+        $this->load->model('Video_model');
+        $this->load->model('Proizvod_model');
+        $this->load->model('Prijave');
+        $this->load->model('Korisnici');
+        $this->load->model('NoviVidei');
+        $this->load->model('NoviProizvodi');
     }
     
     public function index() {
@@ -44,7 +53,8 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 'Email' => 0,
                 'Lozinka' => 0,
             );
-            $this->load->view('ProfilEditovanje', $greske);
+            //$this->load->view('ProfilEditovanje', $greske);
+            return TRUE;
         } else {
             $this->session->set_flashdata('reg', 1);
 
