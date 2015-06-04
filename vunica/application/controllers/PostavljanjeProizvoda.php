@@ -24,12 +24,11 @@ class PostavljanjeProizvoda extends CI_Controller {
     }
     
     function adresa($url) {
-        $niz = explode('', $url);
+        $niz = explode('/', $url);
         $duzina = sizeof($niz);
         $novi_url = "";
         for ($i = $duzina - 2; $i < $duzina; $i++) {
             $novi_url .= $niz[$i];
-            echo $novi_url;
             if ($i != $duzina - 1)
                 $novi_url .= '/';
         }
