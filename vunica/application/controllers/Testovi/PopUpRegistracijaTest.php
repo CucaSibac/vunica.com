@@ -53,7 +53,8 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 'Email' => 0,
                 'Lozinka' => 0,
             );
-            $this->load->view('ProfilEditovanje', $greske);
+            //$this->load->view('ProfilEditovanje', $greske);
+            return TRUE;
         } else {
             $this->session->set_flashdata('reg', 1);
 
