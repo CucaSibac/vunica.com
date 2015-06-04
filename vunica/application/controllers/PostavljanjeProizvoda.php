@@ -23,8 +23,9 @@ class PostavljanjeProizvoda extends CI_Controller {
         $this->load->view('PostavljanjeProizvoda', $date);
     }
 
+    /*
     function adresa($url) {
-        $niz = explode('/', $url);
+        $niz = explode('', $url);
         $duzina = sizeof($niz);
         $novi_url = "";
         for ($i = $duzina - 2; $i < $duzina; $i++) {
@@ -34,6 +35,17 @@ class PostavljanjeProizvoda extends CI_Controller {
                 $novi_url .= '/';
         }
         return 'http://vunica.azurewebsites.net/vunica/application/Slike' . $novi_url;
+    }
+     * 
+     */
+    
+    function adresa($url) {
+       $duzina = sizeof($url);
+       $novi_url = "";
+       for ($i = 56; $i < $duzina; $i++) {
+           $novi_url .= $url[i];
+       }
+       return 'http://vunica.azurewebsites.net/vunica/application/Slike/Proizvodi/' . $novi_url;
     }
 
     public function do_upload() {       
@@ -66,7 +78,8 @@ class PostavljanjeProizvoda extends CI_Controller {
         } else {              
             $url =$this->adresa($this->session->userdata('proSlika'));
             $data = array('slika' => $url);
-            $this->PostavljanjeProizvoda_model->postavi_sliku($url);           
+            $this->PostavljanjeProizvoda_model->postavi_sliku($url); 
+            echo $url;
         //    $this->load->view('PostavljanjeProizvoda', $data);
         }
     }
