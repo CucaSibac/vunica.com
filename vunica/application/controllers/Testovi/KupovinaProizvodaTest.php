@@ -52,7 +52,7 @@ class KupovinaProizvodaTest extends CI_Controller {
         unset($niz[$indeks]);     
         $this->session->Proizvodi = array_values($niz);
         
-        $this->resetujGreske();
+        
        
         return true;
     }
