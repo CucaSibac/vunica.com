@@ -1,7 +1,6 @@
 <?php
 
-namespace SourceFiles\application\controllers\Testovi;
-namespace SourceFiles\application\controllers;
+namespace vunica\application\controllers;
 
 
 class PostavljanjeVideaTest extends PostavljanjeVidea {
