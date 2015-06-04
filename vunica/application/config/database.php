@@ -64,10 +64,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'vunica.com',
+	'hostname' => 'eu-cdbr-azure-west-c.cloudapp.net',
+	'username' => 'b92e417796378d',
+	'password' => 'aa2d93da',
+	'database' => 'vunicaMySQL',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
