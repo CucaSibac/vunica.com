@@ -1,7 +1,7 @@
 <?php
 
 
-class PostavljanjeVideaTest extends CI_Controller {
+class KupovinaProizvodaTest extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
@@ -9,7 +9,7 @@ class PostavljanjeVideaTest extends CI_Controller {
     
     public function index() {
         $this->load->library('unit_test');
-        $this->adresa_Test();
+        $this->test1();
     }
       
     public function test1(){
