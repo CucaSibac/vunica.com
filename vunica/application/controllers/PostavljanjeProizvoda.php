@@ -78,10 +78,10 @@ class PostavljanjeProizvoda extends CI_Controller {
             $data = array('slika' => '');
         //    $this->load->view('PostavljanjeProizvoda', $data);
         } else {              
-            $url =$this->adresa($this->session->userdata('proSlika'));
+            $url = $this->adresa($this->upload->data('full_path'));
             $data = array('slika' => $url);
             $this->PostavljanjeProizvoda_model->postavi_sliku($url); 
-      //      echo $url;
+            echo $url;
         //    $this->load->view('PostavljanjeProizvoda', $data);
         }
     }
