@@ -9,7 +9,7 @@
                   <!-- Prazna celija-->
             </td>
             <td id = "logoPolje">
-                <img src="http://localhost/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/IndexStrana', '_parent')">
+                <img src="http://vunica.azurewebsites.net/vunica/application/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/IndexStrana', '_parent')">
             </td>
             <td width = "8%" class = "poljeMenija" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Pocetna', '_parent')">
                 <font class = "opcijeMenija"> Početna </font>
