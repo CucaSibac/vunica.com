@@ -1,5 +1,7 @@
 <?php
 
+namespace vunica\application\controllers;
+
 // Milos Andric, 206/12
 
 class PostavljanjeVidea extends CI_Controller {
