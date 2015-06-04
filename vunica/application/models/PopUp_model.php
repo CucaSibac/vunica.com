@@ -12,10 +12,11 @@ class PopUp_model extends CI_Model {
         $data = array(
             'ImePrezime' => ($this->input->post('ImePrezime')),
             'UserName' => $this->input->post('UserName'),
+            'Status' => ('Pletilja'),
             'Email' => $this->input->post('Email'),
             'Sifra' => ($this->input->post('Sifra')),
             'DatumPoslednjegLogovanja' => (date("Y.m.d")),
-            'Slika' => ('http://localhost/Slike/Profilna/Nedefinisano.jpg'),
+            'Slika' => ('http://vunica.azurewebsites.net/vunica/application/Slike/Profilna/Nedefinisano.jpg'),
         );
         $this->session->set_userdata($data);
         $this->db->insert('korisnik', $data);
