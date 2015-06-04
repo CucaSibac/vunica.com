@@ -104,14 +104,14 @@ class ProfilEditovanje extends CI_Controller {
     protected function obrisiSliku(){
         $pol = $this->input->post('pol');
         if(strcmp($pol, "Musko") == 0){
-            $this->promene['Slika'] = "http://localhost/Slike/Profilna/Musko.jpg";
+            $this->promene['Slika'] = "http://vunica.azurewebsites.net/vunica/application/Slike/Profilna/Musko.jpg";
         } 
         else{
             if(strcmp($pol, "Zensko") == 0){
-                $this->promene['Slika'] = "http://localhost/Slike/Profilna/Zensko.jpg";
+                $this->promene['Slika'] = "http://vunica.azurewebsites.net/vunica/application/Slike/Profilna/Zensko.jpg";
             } 
             else{
-                $this->promene['Slika'] = "http://localhost/Slike/Profilna/Nedefinisano.jpg";
+                $this->promene['Slika'] = "http://vunica.azurewebsites.net/vunica/application/Slike/Profilna/Nedefinisano.jpg";
             }
         }  
         $this->greske['Profilna'] = $this->promene['Slika'];

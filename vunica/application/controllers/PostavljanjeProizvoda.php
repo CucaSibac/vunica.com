@@ -19,7 +19,7 @@ class PostavljanjeProizvoda extends CI_Controller {
     }
 
     function index() {
-        $date = array('slika' => ''); //http://localhost/Slike/Pop-up/Putaca 3.png
+        $date = array('slika' => ''); //http://vunica.azurewebsites.net/vunica/application/Slike/Pop-up/Putaca 3.png
         $this->load->view('PostavljanjeProizvoda', $date);
     }
 

@@ -5,9 +5,9 @@ function check(id){
 	var dir = checkbox.src;
 	
 	if(dir[dir.length -5] == '1'){
-		checkbox.src = "http://localhost/Slike/Checkbox/Checkbox 2.png";
+		checkbox.src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png";
 	}
 	else{
-		checkbox.src = "http://localhost/Slike/Checkbox/Checkbox 1.png";
+		checkbox.src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 1.png";
 	};
 }
