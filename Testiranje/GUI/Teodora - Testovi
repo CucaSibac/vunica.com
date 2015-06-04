@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="PostavljanjeVidea - Test 1.html">PostavljanjeVidea - Test 1</a></td></tr>
+<tr><td><a href="PostavljanjeVidea - Test 2.html">PostavljanjeVidea - Test 2</a></td></tr>
+<tr><td><a href="PostavljanjeVidea - Test 3.html">PostavljanjeVidea - Test 3</a></td></tr>
+<tr><td><a href="Registrovanje - Test 1.html">Registrovanje - Test 1</a></td></tr>
+<tr><td><a href="Registrovanje - Test 2.html">Registrovanje - Test 2</a></td></tr>
+<tr><td><a href="Registrovanje - Test 3.html">Registrovanje - Test 3</a></td></tr>
+<tr><td><a href="PostavljanjeKomentara - Test 1.html">PostavljanjeKomentara - Test 1</a></td></tr>
+<tr><td><a href="PostavljanjeKomentara - Test 2.html">PostavljanjeKomentara - Test 2</a></td></tr>
+<tr><td><a href="PostavljanjeKomentara - Test 3.html">PostavljanjeKomentara - Test 3</a></td></tr>
+<tr><td><a href="Pijaca - Test 1.html">Pijaca - Test 1</a></td></tr>
+<tr><td><a href="Pijaca - Test 2.html">Pijaca - Test 2</a></td></tr>
+<tr><td><a href="Pijaca - Test 3.html">Pijaca - Test 3</a></td></tr>
+</tbody></table>
+</body>
+</html>
