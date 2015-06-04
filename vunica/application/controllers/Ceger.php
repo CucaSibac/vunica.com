@@ -156,9 +156,33 @@ Kupujte kod nas ponovo!'
         // Datum isteka
         $this->kupovina['DatumIsteka'] = $this->input->post('datumisteka');
         $this->form_validation->set_rules('datumisteka', 'DatumIsteka', 'required|trim|exact_length[7]');
+
+        $this->kupovina['SigurnosniBroj'] = $this->input->post('sigurnosni');
+        $this->form_validation->set_rules('sigurnosni', 'SigurnosniBroj', 'required|trim|numeric|exact_length[4]');
+
+        if($this->form_validation->run() != TRUE){
+            $this->greske['Kartica'] = 1;
+            return FALSE;
+        }
         
-        $nizDatum  = explode('/', $this->kupovina['DatumIsteka']);     
-        $rezultat = checkdate($nizDatum[0], 1, $nizDatum[1]);
+        // Dodatne provere za datum isteka
+        $nizDatum  = explode('/', $this->kupovina['DatumIsteka']);
+        
+        if(count($nizDatum) == 2){
+            if(is_numeric($nizDatum[0]) && is_numeric($nizDatum[1])){
+                $rezultat = checkdate($nizDatum[0], 1, $nizDatum[1]);
+            }
+            else{
+                $this->greske['Kartica'] = 1;
+                return FALSE;
+            }
+        }
+        else{
+            $this->greske['Kartica'] = 1;
+            return FALSE;
+        }
+        
+        
         
         if($rezultat == TRUE){
             $dani = cal_days_in_month(CAL_GREGORIAN, $nizDatum[0], $nizDatum[1]);
@@ -171,14 +195,11 @@ Kupujte kod nas ponovo!'
                 $this->kupovina['DatumIsteka'] = $datumTekst;
             }
             else {             
-                $rezultat = FALSE;
+                $this->greske['Kartica'] = 1;
+                return FALSE;
             }
         }
-
-        $this->kupovina['SigurnosniBroj'] = $this->input->post('sigurnosni');
-        $this->form_validation->set_rules('sigurnosni', 'SigurnosniBroj', 'required|trim|numeric|exact_length[4]');
-
-        if($this->form_validation->run() != TRUE || $rezultat != TRUE){
+        else{
             $this->greske['Kartica'] = 1;
             return FALSE;
         }
