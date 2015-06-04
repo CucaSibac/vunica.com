@@ -31,7 +31,7 @@ class PregledVideaTest extends CI_Controller {
         $niz['podaci'] = $this->Video_model->getAllForVideo($vrednost);
         $niz['num_messages'] = $this->Video_model->num_messages($vrednost);
         $niz['latest_messages'] = $this->Video_model->get_messages($vrednost);
-        if (niz['podaci'] == null) {
+        if ($niz['podaci'] == null) {
             return false;
         } else {
             return true;
@@ -43,7 +43,7 @@ class PregledVideaTest extends CI_Controller {
         $niz['podaci'] = $this->Video_model->getAllForVideo($vrednost);
         $niz['num_messages'] = $this->Video_model->num_messages($vrednost);
         $niz['latest_messages'] = $this->Video_model->get_messages($vrednost);
-        if (niz['num_messages'] == null) {
+        if ($niz['num_messages'] == null) {
             return false;
         } else {
             return true;
