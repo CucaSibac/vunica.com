@@ -1,7 +1,7 @@
 <?php
 
 
-class PostavljanjeVideaTest extends CI_Controller {
+class KupovinaProizvodaTest extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
