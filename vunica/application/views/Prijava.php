@@ -10,7 +10,7 @@
     <!--Prozor za prijavljivanje-->
    <div id = "prijava">
       <div class = "naslovPrijava"> Prijava </div>
-      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
+      <img src="http://vunica.azurewebsites.net/vunica/application/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <!-- InstanceBeginEditable name="PrijavaDiv" -->    
       <?php 
         $attributes = array('style' => 'height: 100%;', 'id' => 'formaPrijava');

@@ -22,7 +22,7 @@
                 <font> Faks: +666-666-666</font>
             </td>
             <td id = "klupkoPolje" >
-            	<img src = "http://localhost/Slike/Vunica/Klupko.png" id = "klupko"/>
+            	<img src = "http://vunica.azurewebsites.net/vunica/application/Slike/Vunica/Klupko.png" id = "klupko"/>
                 <br/>
                 <font id = "klupkoTekst"> vunica.com </font>
                 <br/> <br/> <br/>
@@ -35,13 +35,13 @@
                 <font>Pronađite nas na:</font>
                 <br/>
                 <a href = "https://www.facebook.com/" target = "_blank" style = "text-decoration:none">
-                	<img src = "http://localhost/Slike/Footer/Facebook 1.png" width = "42px" style = "padding:8px 5px 0 2px;"/>
+                	<img src = "http://vunica.azurewebsites.net/vunica/application/Slike/Footer/Facebook 1.png" width = "42px" style = "padding:8px 5px 0 2px;"/>
                 </a>
                 <a href = "https://twitter.com/" target = "_blank" style = "text-decoration:none">
-                	<img src = "http://localhost/Slike/Footer/Twitter 1.png" width = "42px" style = "padding:8px 5px 0 2px;"/>
+                	<img src = "http://vunica.azurewebsites.net/vunica/application/Slike/Footer/Twitter 1.png" width = "42px" style = "padding:8px 5px 0 2px;"/>
                 </a>
 				<a href = "https://www.youtube.com/" target = "_blank" style = "text-decoration:none">
-                	<img src = "http://localhost/Slike/Footer/YouTube 1.png" width = "42px" style = "padding:8px 5px 0 2px;"/>
+                	<img src = "http://vunica.azurewebsites.net/vunica/application/Slike/Footer/YouTube 1.png" width = "42px" style = "padding:8px 5px 0 2px;"/>
                 </a>
             </td>
             <td width = "10%" valign = "top" align = "right">
@@ -56,7 +56,7 @@
           <tr>
               <td width = "15%" align = "left">
                   <!-- Bivsa prazna celija -->                  
-                  <img id = "levaStrelica" class = "strelica" src = "http://localhost/Slike/Footer/Strelica.png">
+                  <img id = "levaStrelica" class = "strelica" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Footer/Strelica.png">
               </td>
               <td width = "15%">
               	<font> 2015 </font>
@@ -81,7 +81,7 @@
               </td>
               <td width = "15%" align = "right">
               	<!-- Bivsa prazna celija --> 
-                <img id = "desnaStrelica" class = "strelica" src = "http://localhost/Slike/Footer/Strelica.png">
+                <img id = "desnaStrelica" class = "strelica" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Footer/Strelica.png">
               </td>
           </tr>
       </table>

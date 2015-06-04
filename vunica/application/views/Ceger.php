@@ -12,7 +12,7 @@
     
     <!-- NE BRISATI NISTA U OVOM EDIT REGIONU!!!! -->
     
-    <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
+    <link rel = "shortcut icon" type = "image/png" href = "http://vunica.azurewebsites.net/vunica/application/Slike/Vunica/Ikona.png" />
     
     <style media="screen and (max-device-width: 1400px)">
         <?php include '/../CSS/Template (1366x768).css'; ?>

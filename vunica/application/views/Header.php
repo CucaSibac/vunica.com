@@ -60,7 +60,7 @@
             <td id = "cegerPolje">
                 <div class="cegerPoljeDiv">
                   <?php if($this->session->UserName != ''){ ?>
-                    <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Ceger', '_parent')"/>
+                    <img src="http://vunica.azurewebsites.net/vunica/application/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Ceger', '_parent')"/>
                     <?php
                         $niz = $this->session->Proizvodi;
                         

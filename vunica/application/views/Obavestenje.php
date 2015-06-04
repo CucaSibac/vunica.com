@@ -6,7 +6,7 @@
 <!--Prozor za obavestenja-->
     <div id="obavestenje">
       <div id="naslovObavestenje">Obavestenje</div>
-      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
+      <img src="http://vunica.azurewebsites.net/vunica/application/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <table class="tabelaObavestenje">
         <tr>
           <td class="praznaCelijaPopUp">&nbsp;</td>

@@ -11,7 +11,7 @@
 <!--Prozor za odluku-->
 <div id = "odluka">
       <div class = "naslovOdluka"> Ceger </div>
-      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_odluku()"/>
+      <img src="http://vunica.azurewebsites.net/vunica/application/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_odluku()"/>
       
       
         <table class="tabelaOdluka">

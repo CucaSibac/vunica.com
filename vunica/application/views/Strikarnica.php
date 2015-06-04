@@ -7,7 +7,7 @@
         <!-- InstanceBeginEditable name="doctitle" -->
 
         <title>Strikarnica</title>
-        <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
+        <link rel = "shortcut icon" type = "image/png" href = "http://vunica.azurewebsites.net/vunica/application/Slike/Vunica/Ikona.png" />
 
 
         <!--Ucitavanje css za rezoluciju (1920x1080)-->
@@ -112,7 +112,7 @@
             $(document).ready(function () {
                 $('#Opcija1').click(function () {
                     $src1 = $("#Opcija1").attr("src");
-                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                    if ($src1 === "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png") {
                         sessionStorage.setItem("Laka", "Cekirano");
                         $.ajax({
                             type: "POST",
@@ -132,7 +132,7 @@
             $(document).ready(function () {
                 $sId = sessionStorage.Laka;
                 if ($sId === "Cekirano") {
-                    $('#Opcija1').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#Opcija1').attr("src", "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png");
                     $('#box').attr("class", "show");
                 }
             });
@@ -143,7 +143,7 @@
             $(document).ready(function () {
                 $('#Opcija2').click(function () {
                     $src1 = $("#Opcija2").attr("src");
-                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                    if ($src1 === "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png") {
                         sessionStorage.setItem("Srednja", "Cekirano");
                         $.ajax({
                             type: "POST",
@@ -163,7 +163,7 @@
             $(document).ready(function () {
                 $sId = sessionStorage.Srednja;
                 if ($sId === "Cekirano") {
-                    $('#Opcija2').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#Opcija2').attr("src", "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png");
                     $('#box').attr("class", "show");
                 }
             });
@@ -173,7 +173,7 @@
             $(document).ready(function () {
                 $('#Opcija3').click(function () {
                     $src1 = $("#Opcija3").attr("src");
-                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                    if ($src1 === "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png") {
                         sessionStorage.setItem("Teska", "Cekirano");
                         $.ajax({
                             type: "POST",
@@ -193,7 +193,7 @@
             $(document).ready(function () {
                 $sId = sessionStorage.Teska;
                 if ($sId === "Cekirano") {
-                    $('#Opcija3').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#Opcija3').attr("src", "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png");
                     $('#box').attr("class", "show");
                 }
             });
@@ -203,7 +203,7 @@
             $(document).ready(function () {
                 $('#Opcija4').click(function () {
                     $src1 = $("#Opcija4").attr("src");
-                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                    if ($src1 === "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png") {
                         sessionStorage.setItem("Garderoba", "Cekirano");
                         $.ajax({
                             type: "POST",
@@ -223,7 +223,7 @@
             $(document).ready(function () {
                 $sId = sessionStorage.Garderoba;
                 if ($sId === "Cekirano") {
-                    $('#Opcija4').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#Opcija4').attr("src", "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png");
                     $('#box').attr("class", "show");
                 }
             });
@@ -233,7 +233,7 @@
             $(document).ready(function () {
                 $('#Opcija5').click(function () {
                     $src1 = $("#Opcija5").attr("src");
-                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                    if ($src1 === "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png") {
                         sessionStorage.setItem("Dodaci", "Cekirano");
                         $.ajax({
                             type: "POST",
@@ -253,7 +253,7 @@
             $(document).ready(function () {
                 $sId = sessionStorage.Dodaci;
                 if ($sId === "Cekirano") {
-                    $('#Opcija5').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#Opcija5').attr("src", "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png");
                     $('#box').attr("class", "show");
                 }
             });
@@ -264,7 +264,7 @@
             $(document).ready(function () {
                 $('#Opcija6').click(function () {
                     $src1 = $("#Opcija6").attr("src");
-                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                    if ($src1 === "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png") {
                         sessionStorage.setItem("Igracke", "Cekirano");
                         $.ajax({
                             type: "POST",
@@ -284,7 +284,7 @@
             $(document).ready(function () {
                 $sId = sessionStorage.Igracke;
                 if ($sId === "Cekirano") {
-                    $('#Opcija6').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#Opcija6').attr("src", "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png");
                     $('#box').attr("class", "show");
                 }
             });
@@ -294,7 +294,7 @@
             $(document).ready(function () {
                 $('#Opcija7').click(function () {
                     $src1 = $("#Opcija7").attr("src");
-                    if ($src1 === "http://localhost/Slike/Checkbox/Checkbox 2.png") {
+                    if ($src1 === "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png") {
                         sessionStorage.setItem("Ostalo", "Cekirano");
                         $.ajax({
                             type: "POST",
@@ -314,7 +314,7 @@
             $(document).ready(function () {
                 $sId = sessionStorage.Ostalo;
                 if ($sId === "Cekirano") {
-                    $('#Opcija7').attr("src", "http://localhost/Slike/Checkbox/Checkbox 2.png");
+                    $('#Opcija7').attr("src", "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 2.png");
                     $('#box').attr("class", "show");
                 }
             });
@@ -514,7 +514,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija1" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija1')">
+                                            <img id = "Opcija1" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija1')">
                                                 <font class="tekstObican">
                                                     Laka
                                                 </font>
@@ -525,7 +525,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija2" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija2')">
+                                            <img id = "Opcija2" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija2')">
                                                 <font class="tekstObican">
                                                     Srednja
                                                 </font>
@@ -536,7 +536,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija3" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija3')">
+                                            <img id = "Opcija3" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija3')">
                                                 <font class="tekstObican">
                                                     Teska
                                                 </font>
@@ -554,7 +554,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija4" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija4')">
+                                            <img id = "Opcija4" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija4')">
                                                 <font class="tekstObican">
                                                     Garderoba
                                                 </font>
@@ -565,7 +565,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija5" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija5')">
+                                            <img id = "Opcija5" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija5')">
                                                 <font class="tekstObican">
                                                     Dodaci
                                                 </font>
@@ -576,7 +576,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija6" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija6')">
+                                            <img id = "Opcija6" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija6')">
                                                 <font class="tekstObican">
                                                     Igracke
                                                 </font>
@@ -587,7 +587,7 @@
 
                                         </td>
                                         <td  width="80%" style = "padding:4% 0 2% 4%;">
-                                            <img id = "Opcija7" src = "http://localhost/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija7')">
+                                            <img id = "Opcija7" src = "http://vunica.azurewebsites.net/vunica/application/Slike/Checkbox/Checkbox 1.png" class = "checkbox" onclick="check('Opcija7')">
                                                 <font class="tekstObican">
                                                     Ostalo
                                                 </font>
@@ -614,7 +614,7 @@
                             <!-- Kraj pretrage -->
                             <ul id="tab">
                                 <li>
-                                    <img id="arrow" class= "hide"onclick="toggle('box');" width="0px"  src="http://localhost/Slike/Pretraga/KlupkoPretraga.png">
+                                    <img id="arrow" class= "hide"onclick="toggle('box');" width="0px"  src="http://vunica.azurewebsites.net/vunica/application/Slike/Pretraga/KlupkoPretraga.png">
                                 </li>
                             </ul>
                         </div> 
@@ -691,7 +691,7 @@
                                         <hr width = "100%" class = "linija"/>
                                     </td>
                                     <td width = "8%" align="center">
-                                        <img src = "http://localhost/Slike/Linija/Ikonica.png" class ="ikonica">
+                                        <img src = "http://vunica.azurewebsites.net/vunica/application/Slike/Linija/Ikonica.png" class ="ikonica">
                                     </td>
                                     <td width = "46%">
                                         <hr width = "100%" class = "linija"/>

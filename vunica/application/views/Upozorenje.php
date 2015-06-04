@@ -2,7 +2,7 @@
 
 <div id="upozorenje">
     <div id="naslovUpozorenje">Upozorenje</div>
-    <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
+    <img src="http://vunica.azurewebsites.net/vunica/application/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
     <table class="tabelaUpozorenje">
         <tr>
             <td class="praznaCelijaPopUp">&nbsp;</td>

@@ -13,7 +13,7 @@
                 echo $red->Naziv;
             }
             ?></title>
-        <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
+        <link rel = "shortcut icon" type = "image/png" href = "http://vunica.azurewebsites.net/vunica/application/Slike/Vunica/Ikona.png" />
 
 
         <style media="screen and (max-device-width: 1400px)">
@@ -421,7 +421,7 @@ $this->session->unset_userdata('PCena');
                                                             <hr width = "100%" class = "linija"/>
                                                         </td>
                                                         <td width = "8%" align="center">
-                                                            <img src = "http://localhost/Slike/Linija/Ikonica.png" class = "ikonica">
+                                                            <img src = "http://vunica.azurewebsites.net/vunica/application/Slike/Linija/Ikonica.png" class = "ikonica">
                                                         </td>
                                                         <td width = "46%">
                                                             <hr width = "100%" class = "linija"/>

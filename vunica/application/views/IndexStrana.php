@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   
-  <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
+  <link rel = "shortcut icon" type = "image/png" href = "http://vunica.azurewebsites.net/vunica/application/Slike/Vunica/Ikona.png" />
   
   <!-- Teodora Aleksic, 391/12 -->
   
@@ -56,8 +56,8 @@
           </font>
         </div>  
     
-    	<img id = "milje" src="http://localhost/Slike/Index/Milje.png">
-        <img id = "dugme1" src="http://localhost/Slike/Index/Dugme.png" onclick="dugme()">     
+    	<img id = "milje" src="http://vunica.azurewebsites.net/vunica/application/Slike/Index/Milje.png">
+        <img id = "dugme1" src="http://vunica.azurewebsites.net/vunica/application/Slike/Index/Dugme.png" onclick="dugme()">     
         
         <div id = "sakriveni">
         
@@ -110,7 +110,7 @@
                           <font> Štrikarnica </font>
                       </td>
                       <td align = "center" valign = "middle">
-                        <img id = "dugme2" src="http://localhost/Slike/Index/Dugme.png" onclick="dugme()">
+                        <img id = "dugme2" src="http://vunica.azurewebsites.net/vunica/application/Slike/Index/Dugme.png" onclick="dugme()">
                       </td>
                       <td class = "stavka" align = "center" valign = "middle" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pijaca/index', '_parent');">
                           <font> Pijaca </font>

@@ -6,7 +6,7 @@
 <!--Prozor za registriovanje -->
     <div id="registracija">
       <div class="naslovRegistracija"> Registracija </div>
-      <img src="http://localhost/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
+      <img src="http://vunica.azurewebsites.net/vunica/application/Slike/Pop-up/Putaca 3.png" class="slikaPopUp" onclick="sakrij_sve()"/>
       <!-- InstanceBeginEditable name="RegistracijaDiv" -->     
 	  <?php 
             $attributes = array('style' => 'height: 100%;', 'id' => 'formaRegistracija');

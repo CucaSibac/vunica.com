@@ -8,7 +8,7 @@
         <!-- InstanceBeginEditable name="doctitle" -->
 
         <title>Postavljanje proizvoda</title>
-        <link rel = "shortcut icon" type = "image/png" href = "http://localhost/Slike/Vunica/Ikona.png" />
+        <link rel = "shortcut icon" type = "image/png" href = "http://vunica.azurewebsites.net/vunica/application/Slike/Vunica/Ikona.png" />
         <!-- NE BRISATI NISTA U OVOM EDIT REGIONU!!!! -->
 
 
