@@ -24,7 +24,7 @@ class PopUpRegistracijaTest extends CI_Controller  {
     
     // (1) Funkcija koja testira
     public function registration_Test(){
-        $this->unit->run($this->registration(), TRUE, 'Testiranje registracije');
+        $this->unit->run($this->registration(), FALSE, 'Testiranje registracije');
         echo $this->unit->report();
     }
     
@@ -54,7 +54,7 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 'Lozinka' => 0,
             );
             //$this->load->view('ProfilEditovanje', $greske);
-            return FALSE;
+            return TRUE;
         } else {
             $this->session->set_flashdata('reg', 1);
 
@@ -74,14 +74,12 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 $niz['num_videos'] = $this->Strikarnica_model->num_videos();
                 $niz['latest_videos'] = $this->Strikarnica_model->get_videos();
                 //$this->load->view('Strikarnica', $niz);
-                return TRUE;
             }
 
             if ($url == 'Pijaca' || $url == 'pijaca') {
                 $niz['num_proizvod'] = $this->Pijaca_model->num_proizvod();
                 $niz['latest_proizvod'] = $this->Pijaca_model->get_proizvod();
                 //$this->load->view('Pijaca', $niz);
-                return TRUE;
             }
 
             if ($url == 'video' || $url == 'komentar' || $url == 'obrisiKomentarVideo' || $url == 'prijaviKomentarVideo' || $url == 'prijaviVideo') {
@@ -90,7 +88,6 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 $niz['latest_messages'] = $this->Video_model->get_messages($this->session->broj);
                 if($url != 'video' ) $this->session->set_flashdata('reg', 0);
                 //$this->load->view('Video', $niz); 
-                return TRUE;
             }
 
             if ($url == 'proizvod' || $url == 'komentarp' || $url=='obrisiKomentarProizvod' ||$url == 'prijaviKomentarProizvod' || $url == 'prijaviProizvod') {
@@ -100,7 +97,6 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 $nizp['latest_messagesp'] = $this->Proizvod_model->get_messages($this->session->broj);
                 if($url != 'proizvod' ) $this->session->set_flashdata('reg', 0);
                 //$this->load->view('Proizvod', $nizp);
-                return TRUE;
             }
 
             if ($url == 'Pocetna' || $url == 'IndexStrana') {
@@ -111,10 +107,9 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 $podaci['Proizvodi'] = $this->NoviProizvodi->ucitavanjeProizvoda($this->session->UserName);
 
                 //$this->load->view('Pocetna', $podaci);
-                return TRUE;
             }
             //echo $url;
-            return TRUE;
+            return FALSE;
         }
     }
     
