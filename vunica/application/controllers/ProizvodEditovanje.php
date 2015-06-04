@@ -36,14 +36,14 @@ class ProizvodEditovanje extends CI_Controller {
               $this->load->view('upload_form', $error);                     
             */
             $this->session->set_flashdata('proGreska3',1);
-            redirect('http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/'.$this->session->IDPro, 'refresh');
+            redirect('http://vunica.azurewebsites.net/vunica/index.php/ProizvodEditovanje/index/'.$this->session->IDPro, 'refresh');
         } else {   
             $stara_slika = $this->ProizvodEditovanje_model->dohvati_sliku($this->session->IDPro);
             $this->load->helper('file');
             delete_files($stara_slika);
             $url = $this->adresa($this->upload->data('full_path'));           
             $this->ProizvodEditovanje_model->ubacivanje_slike($this->session->IDPro,$url);           
-            redirect('http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/'.$this->session->IDPro, 'refresh');
+            redirect('http://vunica.azurewebsites.net/vunica/index.php/ProizvodEditovanje/index/'.$this->session->IDPro, 'refresh');
         }
     }
     
@@ -56,14 +56,14 @@ class ProizvodEditovanje extends CI_Controller {
         
         if ($this->form_validation->run() == TRUE){
             $this->ProizvodEditovanje_model->izmeni_proizvod($this->session->IDPro);
-            redirect('http://localhost/vunica.com/vunica/index.php/Proizvod/index/'.$this->session->IDPro, 'refresh');
+            redirect('http://vunica.azurewebsites.net/vunica/index.php/Proizvod/index/'.$this->session->IDPro, 'refresh');
         }
         else{
             $id = $this->session->IDPro;
             $this->ProizvodEditovanje_model->postavi_id($id);
             $proizvod = $this->ProizvodEditovanje_model->dohvati_proizvod($id);
             $this->load->view('ProizvodEditovanje', $proizvod);
-            //redirect('http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/'.$this->session->IDPro, 'refresh');
+            //redirect('http://vunica.azurewebsites.net/vunica/index.php/ProizvodEditovanje/index/'.$this->session->IDPro, 'refresh');
         }
            
     }  
@@ -71,7 +71,7 @@ class ProizvodEditovanje extends CI_Controller {
    function brisanje(){
         $id = $this->session->IDPro;
         $this->ProizvodEditovanje_model->brisanje_slike($id);
-        redirect('http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/'.$this->session->IDPro, 'refresh');
+        redirect('http://vunica.azurewebsites.net/vunica/index.php/ProizvodEditovanje/index/'.$this->session->IDPro, 'refresh');
          
    }
 

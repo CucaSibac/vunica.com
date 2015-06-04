@@ -119,7 +119,7 @@
                 <table width = "60%" align = "center">
                     <tr>
                         <td align = "center">
-                            <a href = "http://localhost/vunica.com/vunica/index.php/Pocetna" target = "_parent" class="link">
+                            <a href = "http://vunica.azurewebsites.net/vunica/index.php/Pocetna" target = "_parent" class="link">
                                 <font class="tekstIskosen">
                                     Vratite se na pocetnu?
                                 </font>

@@ -31,7 +31,7 @@
          </a>
          <br/>
          <font class = "tekstObican"> Sadrzaj: </font>
-         <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/<?php
+         <a class = "link" target = "_blank" href = 'http://vunica.azurewebsites.net/vunica/index.php/<?php
                 if($red['Vrsta'] == 0 || $red['Vrsta'] == 2){
                     echo 'video';
                 }
@@ -92,21 +92,21 @@
             <?php
                 if($red['Vrsta'] == 0){
                     $id = $vlasnik['IDSadrzaj'];
-                    $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$id";
+                    $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiVideo/$id";
                 }
                 else{
                     if($red['Vrsta'] == 1){
                         $id = $vlasnik['IDSadrzaj'];
-                        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiProizvod/$id";
+                        $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiProizvod/$id";
                     }
                     else{
                         if($red['Vrsta'] == 2){
                             $id = $vlasnik['IDKomentar'];
-                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/$id";
+                            $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiKomentarVideo/$id";
                         }
                         else{
                             $id = $vlasnik['IDKomentar'];
-                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarProizvod/$id";
+                            $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiKomentarProizvod/$id";
                         }
                     }
                 }           
@@ -122,18 +122,18 @@
             <?php
                 $id = $red['Prijava']->IDPrijava;
                 if($red['Vrsta'] == 0){
-                    $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiPrijavaVideo/$id";
+                    $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiPrijavaVideo/$id";
                 }
                 else{
                     if($red['Vrsta'] == 1){
-                        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiPrijavaProizvod/$id";
+                        $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiPrijavaProizvod/$id";
                     }
                     else{
                         if($red['Vrsta'] == 2){
-                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiPrijavaKomentarVideo/$id";
+                            $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiPrijavaKomentarVideo/$id";
                         }
                         else{
-                            $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiPrijavaKomentarProizvod/$id";
+                            $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiPrijavaKomentarProizvod/$id";
                         }
                     }
                 }           

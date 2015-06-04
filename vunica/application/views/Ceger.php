@@ -126,7 +126,7 @@
                   <tr>
                     <td width="40%" align="left" style="padding-left:5%;">
                         <a class = "link" target = "_blank" 
-                           href = 'http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $niz[$i][0]; ?>'
+                           href = 'http://vunica.azurewebsites.net/vunica/index.php/proizvod/index/<?php echo $niz[$i][0]; ?>'
                         >
                             <?php echo $niz[$i][1]; ?>
                         </a>
@@ -153,7 +153,7 @@
                     </td>
                     <td width="20%" align="right" style="padding-right:5%;">
                         <a class = "brisanje" 
-                           href = "http://localhost/vunica.com/vunica/index.php/Ceger/izbaciProizvod/<?php echo $niz[$i][0];?>"
+                           href = "http://vunica.azurewebsites.net/vunica/index.php/Ceger/izbaciProizvod/<?php echo $niz[$i][0];?>"
                         >
                             IZBACI
                         </a>
@@ -378,7 +378,7 @@
                 <input type = "submit" class = "dugme" value = "Obavi kupovinu"/>
                 
                 <a class = "dugme" target="_parent" 
-                     href="http://localhost/vunica.com/vunica/index.php/Pijaca">
+                     href="http://vunica.azurewebsites.net/vunica/index.php/Pijaca">
                     Vrati se na pijacu
                 </a>
               

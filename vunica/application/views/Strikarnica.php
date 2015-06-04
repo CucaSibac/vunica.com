@@ -90,7 +90,7 @@
                 var loaded_videos = 0;
                 $("#more_button").click(function () {
                     loaded_videos += 8;
-                    $.get("http://localhost/vunica.com/vunica/index.php/strikarnica/get_videos/" + loaded_videos, function (data) {
+                    $.get("http://vunica.azurewebsites.net/vunica/index.php/strikarnica/get_videos/" + loaded_videos, function (data) {
                         $("#main_content").append(data);
 
                     });
@@ -116,14 +116,14 @@
                         sessionStorage.setItem("Laka", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions1"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessions1"
                         }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("Laka", "");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions1"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessions1"
                         }).done(function () {
                         });
                     }
@@ -147,14 +147,14 @@
                         sessionStorage.setItem("Srednja", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions2"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessions2"
                         }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("Srednja", "");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions2"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessions2"
                         }).done(function () {
                         });
                     }
@@ -177,14 +177,14 @@
                         sessionStorage.setItem("Teska", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions3"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessions3"
                         }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("Teska", "");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions3"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessions3"
                         }).done(function () {
                         });
                     }
@@ -207,14 +207,14 @@
                         sessionStorage.setItem("Garderoba", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions4"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessions4"
                         }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("Garderoba", "");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions4"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessions4"
                         }).done(function () {
                         });
                     }
@@ -237,14 +237,14 @@
                         sessionStorage.setItem("Dodaci", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions5"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessions5"
                         }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("Dodaci", "");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions5"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessions5"
                         }).done(function () {
                         });
                     }
@@ -268,14 +268,14 @@
                         sessionStorage.setItem("Igracke", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions6"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessions6"
                         }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("Igracke", "");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions6"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessions6"
                         }).done(function () {
                         });
                     }
@@ -298,14 +298,14 @@
                         sessionStorage.setItem("Ostalo", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessions7"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessions7"
                         }).done(function () {
                         });
                     } else {
                         sessionStorage.setItem("Ostalo", "");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessions7"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessions7"
                         }).done(function () {
                         });
                     }
@@ -336,7 +336,7 @@
                         $('#i2').html("Naziv");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessionsD1"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessionsD1"
                         }).done(function () {
                         });
                     } else if ($src1 === "Najnovije") {
@@ -349,7 +349,7 @@
                         $('#i2').html("Naziv");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessionsD2"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessionsD2"
                         }).done(function () {
                         });
                     } else {
@@ -363,7 +363,7 @@
 
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessionsD"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessionsD"
                         }).done(function () {
                         });
                     }
@@ -407,7 +407,7 @@
                         $('#i2').html("A-Z");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessionsN1"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessionsN1"
                         }).done(function () {
                         });
                     } else if ($src1 === "A-Z") {
@@ -420,7 +420,7 @@
                         $('#i2').html("Z-A");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/sessionsN2"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/sessionsN2"
                         }).done(function () {
                         });
                     } else {
@@ -434,7 +434,7 @@
 
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Strikarnica/unsessionsN"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/unsessionsN"
                         }).done(function () {
                         });
                     }
@@ -599,7 +599,7 @@
                                         </td>
                                         <tr>
                                             <td  align="center" width="70%" colspan="3" style = "padding:3% 3% 3% 3%;">
-                                                <a href="http://localhost/vunica.com/vunica/index.php/strikarnica" class="dugme1"> 
+                                                <a href="http://vunica.azurewebsites.net/vunica/index.php/strikarnica" class="dugme1"> 
                                                     Trazi 
                                                 </a> 
                                             </td>
@@ -721,7 +721,7 @@
                                                     <?php
                                                     if ($this->session->UserName != '' ) { ?>//ako je korisnik prijavljen
                                                                 </script>
-                                                                <a href="http://localhost/vunica.com/vunica/index.php/PostavljanjeVidea" style="text-decoration: none;  "> 
+                                                                <a href="http://vunica.azurewebsites.net/vunica/index.php/PostavljanjeVidea" style="text-decoration: none;  "> 
                                                                 <script>
                                                                   
         <?php } else { ?> //ako gost pristupa sajtu
@@ -767,7 +767,7 @@
                                                        
                                                     <div class="mask"> 
                                                          <p><?php echo $videos->Opis; ?></p> 
-                                                        <a href='http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
+                                                        <a href='http://vunica.azurewebsites.net/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
                                                         <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                     </div>  
                                                 </div> 
@@ -790,7 +790,7 @@
                                                        <div class="mask"> 
 
                                                          <p><?php echo $videos->Opis; ?></p> 
-                                                        <a href="http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
+                                                        <a href="http://vunica.azurewebsites.net/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
                                                         <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                     </div>  
                                                 </div>  

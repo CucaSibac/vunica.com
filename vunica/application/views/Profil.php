@@ -97,7 +97,7 @@
                             
               <br/> <br/>
               
-              <a class="link" href="http://localhost/vunica.com/vunica/index.php/Pocetna/premiumProfil">
+              <a class="link" href="http://vunica.azurewebsites.net/vunica/index.php/Pocetna/premiumProfil">
               <table id = "banerPolje" align = "center">
               	<tr>
                     <td width = "50%" align = "left" style = "padding-left:8%;">
@@ -186,13 +186,13 @@
                       <br />
                       <?php if($Korisnik['UserName'] == $this->session->UserName){ ?>
                           <a class="dugme" target="_parent"
-                             href="http://localhost/vunica.com/vunica/index.php/ProfilEditovanje">
+                             href="http://vunica.azurewebsites.net/vunica/index.php/ProfilEditovanje">
                               Izmeni profil
                           </a>
                       <?php } ?>
                       <?php 
                         $id = $Korisnik['IDKorisnik'];
-                        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKorisnika/$id"; 
+                        $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiKorisnika/$id"; 
                       ?>
                       <?php if((strcmp($this->session->Status, 'Admin') == 0) || ($Korisnik['UserName'] == $this->session->UserName)){ ?>
                           <a  id = "prijaviobrisi" class = "dugme"
@@ -237,7 +237,7 @@
                                 <?php if($Korisnik['UserName'] == $this->session->UserName){ ?>
                                 <tr>
                                     <td>
-                                        <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/PostavljanjeVidea'>
+                                        <a class = "link" target = "_blank" href = 'http://vunica.azurewebsites.net/vunica/index.php/PostavljanjeVidea'>
                                         <div class="dodajproizvod"  >  
                                             <p style="text-align: center">  Dodaj video </p>
                                         </div> 
@@ -253,7 +253,7 @@
                                 <tr>
                                     <td align = "center">
                                         <div class="produktKorisnika">
-                                            <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/video/index/<?php
+                                            <a class = "link" target = "_blank" href = 'http://vunica.azurewebsites.net/vunica/index.php/video/index/<?php
                                                                                 echo $redVideo->IDVideo; ?>'>
                                                 <font class="produktKorisnikaNaziv" style="left:
                                                       <?php echo ((250 - strlen($redVideo->Naziv) * 11) / 2); ?>px
@@ -278,7 +278,7 @@
                                 <?php if((strcmp($this->session->Status, 'Admin') == 0) || ($Korisnik['UserName'] == $this->session->UserName)){ ?>
                                 <tr>
                                     <td align = "center" valign = "top">
-                                        <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiVideo/$redVideo->IDVideo" ; ?>
+                                        <?php $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiVideo/$redVideo->IDVideo" ; ?>
                                         <a  id = "prijaviobrisi" class = "akcija"
                                             href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete video?','<?php echo $kontroler; ?>')"> 
                                             OBRISI VIDEO
@@ -315,9 +315,9 @@
                                 <tr>
                                     <td>
                                         <?php if($status == 3){ ?>
-                                            <a class="link" href="http://localhost/vunica.com/vunica/index.php/Pocetna/premiumProfil">
+                                            <a class="link" href="http://vunica.azurewebsites.net/vunica/index.php/Pocetna/premiumProfil">
                                         <?php }else{ ?>
-                                            <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/PostavljanjeProizvoda'>
+                                            <a class = "link" target = "_blank" href = 'http://vunica.azurewebsites.net/vunica/index.php/PostavljanjeProizvoda'>
                                         <?php }?>
 
                                             <div class="dodajproizvod">  
@@ -336,7 +336,7 @@
                                 <tr>
                                     <td align = "center">
                                         <div class="produktKorisnika">
-                                            <a class = "link" target = "_blank" href = 'http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php
+                                            <a class = "link" target = "_blank" href = 'http://vunica.azurewebsites.net/vunica/index.php/proizvod/index/<?php
                                                                                 echo $redProizvod->IDProizvod; ?>'>
                                                 <font class="produktKorisnikaNaziv" style="left:
                                                       <?php echo ((250 - strlen($redProizvod->Naziv) * 11) / 2); ?>px
@@ -361,7 +361,7 @@
                                 <?php if((strcmp($this->session->Status, 'Admin') == 0) || ($Korisnik['UserName'] == $this->session->UserName)){ ?>
                                 <tr>
                                     <td align = "center" valign = "top">
-                                        <?php $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiProizvod/$redProizvod->IDProizvod" ; ?>
+                                        <?php $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiProizvod/$redProizvod->IDProizvod" ; ?>
                                         <a  id = "prijaviobrisi" class = "akcija"
                                             href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')"> 
                                             OBRISI PROIZVOD
@@ -374,7 +374,7 @@
                                 <tr>
                                     <td align = "center" valign = "top">
                                         <a  id = "prijaviobrisi" class = "akcija"
-                                            href="http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/<?php echo $redProizvod->IDProizvod;?>"> 
+                                            href="http://vunica.azurewebsites.net/vunica/index.php/ProizvodEditovanje/index/<?php echo $redProizvod->IDProizvod;?>"> 
                                             IZMENI PROIZVOD
                                         </a>
                                         <br/> <br/> <br/>

@@ -79,7 +79,7 @@ class PostavljanjeProizvoda extends CI_Controller {
         if ($this->form_validation->run() == TRUE){
             $this->PostavljanjeProizvoda_model->ubaci_proizvod();
             $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-            redirect('http://localhost/vunica.com/vunica/index.php/Pijaca', 'refresh');
+            redirect('http://vunica.azurewebsites.net/vunica/index.php/Pijaca', 'refresh');
         }
         else{
             $url =$this->session->userdata('proSlika');           

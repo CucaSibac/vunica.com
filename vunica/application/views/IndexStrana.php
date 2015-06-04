@@ -77,7 +77,7 @@
             <div id = "meniGornji" class = "meni" style = "top:0;">
                 <table class = "stavke" cellspacing = "0" cellpadding "0">                
                   <tr>
-                      <td class = "stavka" align = "center" valign = "middle" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pocetna/index', '_parent');">
+                      <td class = "stavka" align = "center" valign = "middle" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Pocetna/index', '_parent');">
                           <font> Početna </font>
                       </td>
                       <td align = "center" valign = "middle" style = "cursor:default;">
@@ -85,11 +85,11 @@
                       </td>
                       <td class = "stavka" align = "center" valign = "middle">
                         <?php if($this->session->UserName != ''){ ?>
-                            <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>', '_parent');">
+                            <font onclick = "window.open('http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>', '_parent');">
                                 <?php echo $this->session->UserName; ?>
                             </font>
                             <font> / </font>
-                            <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/PopUp/logout', '_parent');"> 
+                            <font onclick = "window.open('http://vunica.azurewebsites.net/vunica/index.php/PopUp/logout', '_parent');"> 
                                 Odjava 
                             </font>
                         <?php }else{ ?>
@@ -106,13 +106,13 @@
             <div id = "meniDonji" class = "meni" style = "bottom:0;">
                 <table class = "stavke" cellspacing = "0" cellpadding "0">                
                   <tr>
-                      <td class = "stavka" align = "center" valign = "middle" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Strikarnica/index', '_parent');">
+                      <td class = "stavka" align = "center" valign = "middle" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/index', '_parent');">
                           <font> Štrikarnica </font>
                       </td>
                       <td align = "center" valign = "middle">
                         <img id = "dugme2" src="http://vunica.azurewebsites.net/vunica/application/Slike/Index/Dugme.png" onclick="dugme()">
                       </td>
-                      <td class = "stavka" align = "center" valign = "middle" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pijaca/index', '_parent');">
+                      <td class = "stavka" align = "center" valign = "middle" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Pijaca/index', '_parent');">
                           <font> Pijaca </font>
                       </td>
                   </tr>

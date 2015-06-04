@@ -59,7 +59,7 @@ class PostavljanjeVidea extends CI_Controller {
         if ($this->form_validation->run() == TRUE){
             $this->PostavljanjeVidea_model->ubaci_video();
             $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-            redirect('http://localhost/vunica.com/vunica/index.php/Strikarnica', 'refresh');
+            redirect('http://vunica.azurewebsites.net/vunica/index.php/Strikarnica', 'refresh');
         }
         else{
             $url =$this->session->userdata('proVideo');           

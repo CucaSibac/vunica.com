@@ -20,7 +20,7 @@
                                                                                                 
                                                                                             <div class="mask"> 
                                                                                                 <p><?php echo $proizvod->Opis; ?></p> 
-                                                                                                <a href='http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>' class="info">Detaljnije</a>  
+                                                                                                <a href='http://vunica.azurewebsites.net/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>' class="info">Detaljnije</a>  
                                                                                                 <font   class="datumNaSlici">OBJAVLJENO: <?php echo $proizvod->Datum; ?></font>
                                                                                             </div>  
                                                                                         </div> 
@@ -43,7 +43,7 @@
                                                                                                 <div class="mask"> 
 
                                                                                                <p><?php echo $proizvod->Opis; ?></p> 
-                                                                                                <a href="http://localhost/vunica.com/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>" class="info">Detaljnije</a>  
+                                                                                                <a href="http://vunica.azurewebsites.net/vunica/index.php/proizvod/index/<?php echo $proizvod->IDProizvod; ?>" class="info">Detaljnije</a>  
                                                                                                 <font   class="datumNaSlici">OBJAVLJENO <?php echo $proizvod->Datum; ?></font>
                                                                                             </div>  
                                                                                         </div>  

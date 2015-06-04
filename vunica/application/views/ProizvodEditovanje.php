@@ -183,7 +183,7 @@
                                     <!--<input type="submit" onclick="option('2')" value="Postavi proizvod" class="dugme"/> -->
                                 </td>
                                 <td align="center">
-                                    <a class="dugme" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Proizvod/index/<?php echo $IDProizvod; ?>', '_parent')"> odustani</a>
+                                    <a class="dugme" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Proizvod/index/<?php echo $IDProizvod; ?>', '_parent')"> odustani</a>
                                 </td>
                             </tr> 
                             <tr>               

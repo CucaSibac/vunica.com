@@ -19,7 +19,7 @@
                                                             <script>
 
         <?php
-        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarVideo/$message->IDKomentar";
+        $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiKomentarVideo/$message->IDKomentar";
         if ($this->session->UserName != '' && $this->session->UserName == $userkom) {
             ?> //ako je trenutno prijavljeni korisnik ostavio komentar
                                                                 </script>

@@ -57,7 +57,7 @@
                 var loaded_messages = 0;
                 $("#more_button").click(function () {
                     loaded_messages += 3;
-                    $.get("http://localhost/vunica.com/vunica/index.php/proizvod/get_messages/" + "<?php
+                    $.get("http://vunica.azurewebsites.net/vunica/index.php/proizvod/get_messages/" + "<?php
 foreach ($podacip as $red) {
     echo $red->IDProizvod;
 }
@@ -112,21 +112,21 @@ $usersession = $this->session->userdata('UserName');
              sessionStorage.setItem("Laka", "Cekirano");
              $.ajax({
              type: "POST",
-             url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall1"
+             url: "http://vunica.azurewebsites.net/vunica/index.php/Video/unsetall1"
              }).done(function () {
              });
              } else if ($src === 'Srednja') {
              sessionStorage.setItem("Srednja", "Cekirano");
              $.ajax({
              type: "POST",
-             url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall2"
+             url: "http://vunica.azurewebsites.net/vunica/index.php/Video/unsetall2"
              }).done(function () {
              });
              } else if ($src === 'Teska') {
              sessionStorage.setItem("Teska", "Cekirano");
              $.ajax({
              type: "POST",
-             url: "http://localhost/vunica.com/vunica/index.php/Video/unsetall3"
+             url: "http://vunica.azurewebsites.net/vunica/index.php/Video/unsetall3"
              }).done(function () {
              });
              }
@@ -154,21 +154,21 @@ $usersession = $this->session->userdata('UserName');
                         sessionStorage.setItem("Vunica", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Proizvod/unsetall1"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Proizvod/unsetall1"
                         }).done(function () {
                         });
                     } else if ($src === 'Konci') {
                         sessionStorage.setItem("Konci", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Proizvod/unsetall2"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Proizvod/unsetall2"
                         }).done(function () {
                         });
                     } else if ($src === 'Igle') {
                         sessionStorage.setItem("Igle", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Proizvod/unsetall3"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Proizvod/unsetall3"
                         }).done(function () {
                         });
                     }
@@ -176,7 +176,7 @@ $usersession = $this->session->userdata('UserName');
                         sessionStorage.setItem("MatOstalo", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Proizvod/unsetall4"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Proizvod/unsetall4"
                         }).done(function () {
                         });
                     }
@@ -184,7 +184,7 @@ $usersession = $this->session->userdata('UserName');
                         sessionStorage.setItem("PGarderoba", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Proizvod/unsetall5"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Proizvod/unsetall5"
                         }).done(function () {
                         });
                     }
@@ -192,7 +192,7 @@ $usersession = $this->session->userdata('UserName');
                         sessionStorage.setItem("PDodaci", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Proizvod/unsetall6"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Proizvod/unsetall6"
                         }).done(function () {
                         });
                     }
@@ -200,7 +200,7 @@ $usersession = $this->session->userdata('UserName');
                         sessionStorage.setItem("PIgracke", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Proizvod/unsetall7"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Proizvod/unsetall7"
                         }).done(function () {
                         });
                     }
@@ -208,7 +208,7 @@ $usersession = $this->session->userdata('UserName');
                         sessionStorage.setItem("POstalo", "Cekirano");
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost/vunica.com/vunica/index.php/Proizvod/unsetall8"
+                            url: "http://vunica.azurewebsites.net/vunica/index.php/Proizvod/unsetall8"
                         }).done(function () {
                         });
                     }
@@ -281,7 +281,7 @@ $usersession = $this->session->userdata('UserName');
                                                 
                                             }
                                             ?>
-                                <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $idkorisnik?>" class="linkovi"><?php
+                                <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $idkorisnik?>" class="linkovi"><?php
                                             foreach ($podacip as $red) {
                                                 ?>
                                                 <?php
@@ -424,7 +424,7 @@ $usersession = $this->session->userdata('UserName');
 
 
                                 </td><td align="right">
-                                    <br /><font class="tekstObican">Kategorija: <a href="http://localhost/vunica.com/vunica/index.php/Pijaca"i id="kategorija" class="linkovi"><?php
+                                    <br /><font class="tekstObican">Kategorija: <a href="http://vunica.azurewebsites.net/vunica/index.php/Pijaca"i id="kategorija" class="linkovi"><?php
                                             foreach ($podacip as $red) {
                                                 ?>
                                                 <?php
@@ -438,7 +438,7 @@ $usersession = $this->session->userdata('UserName');
                                <?php if ($this->session->UserName != '' && $this->session->UserName == $user) {
                                         ?>
                                           
-                                            <a    class="prijaviVideo" href="http://localhost/vunica.com/vunica/index.php/ProizvodEditovanje/index/<?php echo $idProizvod?>" >Izmeni proizvod</a>
+                                            <a    class="prijaviVideo" href="http://vunica.azurewebsites.net/vunica/index.php/ProizvodEditovanje/index/<?php echo $idProizvod?>" >Izmeni proizvod</a>
                                     <?php } ?>
                                 </td>
                                 <td  align="right">
@@ -446,7 +446,7 @@ $usersession = $this->session->userdata('UserName');
 
 
                                     <?php
-                                    $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiProizvod/$idProizvod";
+                                    $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiProizvod/$idProizvod";
                                     if ($this->session->UserName != '' && $this->session->UserName == $user) {
                                         ?>
                                         <a  id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')" class="prijaviVideo" >Obrisi proizvod</a>   
@@ -565,7 +565,7 @@ $usersession = $this->session->userdata('UserName');
                                                                     <script>
 
         <?php
-        $kontroler = "http://localhost/vunica.com/vunica/index.php/Obrisi/obrisiKomentarProizvod/$message->IDKomentar";
+        $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiKomentarProizvod/$message->IDKomentar";
         if ($this->session->UserName != '' && $this->session->UserName == $userkom) {
             ?> //ako je trenutno prijavljeni korisnik ostavio komentar
                                                                         </script>

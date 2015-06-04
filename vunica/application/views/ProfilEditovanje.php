@@ -95,7 +95,7 @@
                             
               <br/> <br/>
               
-              <a class="link" href="http://localhost/vunica.com/vunica/index.php/Pocetna/premiumProfil">
+              <a class="link" href="http://vunica.azurewebsites.net/vunica/index.php/Pocetna/premiumProfil">
               <table id = "banerPolje" align = "center">
               	<tr>
                     <td width = "50%" align = "left" style = "padding-left:8%;">
@@ -362,7 +362,7 @@
                             > 
                                 Sacuvaj
                             </a>
-                            <a class = "dugme" href="http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>"> 
+                            <a class = "dugme" href="http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>"> 
                                 Odustani
                             </a>
                         </td>

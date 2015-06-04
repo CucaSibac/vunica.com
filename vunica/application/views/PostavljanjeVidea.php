@@ -155,7 +155,7 @@
                     <a class="dugme"  onclick="option('2');document.forms['PostavljanjeVidea'].submit();"> Postavi video</a>                   
                   </td>
                   <td align="center" width="50%">
-                    <a class="dugme" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Strikarnica', '_parent')"> Odustani </a>
+                    <a class="dugme" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Strikarnica', '_parent')"> Odustani </a>
                   </td>
                 </tr>
               </table>

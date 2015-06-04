@@ -19,7 +19,7 @@
                                                        
                                                     <div class="mask"> 
                                                          <p><?php echo $videos->Opis; ?></p> 
-                                                        <a href='http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
+                                                        <a href='http://vunica.azurewebsites.net/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>' class="info">Detaljnije</a>  
                                                         <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                     </div>  
                                                 </div> 
@@ -42,7 +42,7 @@
                                                        <div class="mask"> 
 
                                                          <p><?php echo $videos->Opis; ?></p> 
-                                                        <a href="http://localhost/vunica.com/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
+                                                        <a href="http://vunica.azurewebsites.net/vunica/index.php/video/index/<?php echo $videos->IDVideo; ?>" class="info">Detaljnije</a>  
                                                         <font   class="datumNaSlici">OBJAVLJENO <?php echo $videos->Datum; ?></font>
                                                     </div>  
                                                 </div>  
