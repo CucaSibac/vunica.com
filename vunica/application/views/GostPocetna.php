@@ -31,7 +31,7 @@
                         <hr width = "100%" class = "linija"/>
                 </td>
                 <td width = "8%" align="center">
-                        <img src = "http://vunica.azurewebsites.net/vunica/index.php/Linija/Ikonica.png" class = "ikonica">
+                        <img src = "http://vunica.azurewebsites.net/vunica/application/Slike/Linija/Ikonica.png" class = "ikonica">
                 </td>
                 <td width = "46%">
                         <hr width = "100%" class = "linija"/>
@@ -90,7 +90,7 @@
                         <a class = "link" target = "_parent"
                            href = "http://vunica.azurewebsites.net/vunica/index.php/Strikarnica"
                         >
-                            <img class="reklamaSlika" src="http://vunica.azurewebsites.net/vunica/index.php/Strikarnica/slika.jpg">
+                            <img class="reklamaSlika" src="http://vunica.azurewebsites.net/vunica/application/Slike/Strikarnica/slika.jpg">
                         
                         <div class="reklamaSenka">        
                         </div>
@@ -114,7 +114,7 @@
                         <a class = "link" target = "_parent"
                            href = "http://vunica.azurewebsites.net/vunica/index.php/Pijaca"
                         >
-                            <img class="reklamaSlika" src="http://vunica.azurewebsites.net/vunica/index.php/Materijali/vuna.jpg">
+                            <img class="reklamaSlika" src="http://vunica.azurewebsites.net/vunica/application/Slike/Materijali/vuna.jpg">
                         <div class="reklamaSenka">        
                         </div>
                         </a>
