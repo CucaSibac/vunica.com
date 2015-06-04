@@ -43,6 +43,7 @@ class PostavljanjeProizvoda extends CI_Controller {
        $duzina = sizeof($url);
        $novi_url = "";
        echo $duzina;
+       echo $url;
        for ($i = 56; $i < $duzina; $i++) {
            $novi_url .= $url[i];
        }
