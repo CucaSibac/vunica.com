@@ -1,7 +1,5 @@
 <?php
 
-namespace vunica\application\controllers;
-
 
 class PostavljanjeVideaTest extends PostavljanjeVidea {
     
