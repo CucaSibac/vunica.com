@@ -42,6 +42,7 @@ class PostavljanjeProizvoda extends CI_Controller {
     function adresa($url) {
        $duzina = sizeof($url);
        $novi_url = "";
+       echo $duzina;
        for ($i = 56; $i < $duzina; $i++) {
            $novi_url .= $url[i];
        }
@@ -79,7 +80,7 @@ class PostavljanjeProizvoda extends CI_Controller {
             $url =$this->adresa($this->session->userdata('proSlika'));
             $data = array('slika' => $url);
             $this->PostavljanjeProizvoda_model->postavi_sliku($url); 
-            echo $url;
+      //      echo $url;
         //    $this->load->view('PostavljanjeProizvoda', $data);
         }
     }
