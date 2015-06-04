@@ -72,18 +72,17 @@ class ProfilEditovanje extends CI_Controller {
         $niz = explode('/', $url);
         $duzina = sizeof($niz);
         $novi_url = "";
-        for ($i = $duzina - 3; $i < $duzina; $i++) {
+        for ($i = $duzina - 2; $i < $duzina; $i++) {
             $novi_url .= $niz[$i];
-            if ($i != $duzina - 1){
+            if ($i != $duzina - 1)
                 $novi_url .= '/';
-            }
         }
-        return 'http://localhost/' . $novi_url;
+        return 'http://vunica.azurewebsites.net/vunica/application/Slike/' . $novi_url;
     }
 
     // Uploaduje sliku
     protected function postaviSliku(){    
-        $config['upload_path'] = '../../Slike/Profilna/';
+        $config['upload_path'] = 'D:/home/site/wwwroot/vunica/application/Slike/Proizvodi';
         $config['allowed_types'] = 'gif|jpg|png';  
         $this->load->library('upload', $config);
         
