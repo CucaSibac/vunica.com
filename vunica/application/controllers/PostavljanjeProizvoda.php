@@ -45,7 +45,7 @@ class PostavljanjeProizvoda extends CI_Controller {
         $this->load->helper('file');
         delete_files($this->session->userdata('proSlika'));
         $this->PostavljanjeProizvoda_model->postavi_sliku('');
-        $config['upload_path'] = '../Slike/Proizvodi/';
+        $config['upload_path'] = 'https://vunicafolder.blob.core.windows.net/';
         $config['allowed_types'] = 'gif|jpg|png';
         //        $config['max_size']             = 100;
         //        $config['max_width']            = 1024;
