@@ -33,7 +33,7 @@ class Pijaca_model extends CI_Model {
             $this->db->where('Cena <=', $CenaDo);
         }
         $this->db->where('BrojArtikala >', 0);
-        
+        $this->db->where('IDProizvod >', 1);
         //Proverava da li su neki od materijala cekirani, i ako jesu, selektuje cekirane
         if ($Vunica == "Cekirano") {
             array_push($kategorija, "Vunica");
