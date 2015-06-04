@@ -52,14 +52,17 @@ class PostavljanjeProizvoda extends CI_Controller {
         //        $config['max_height']           = 768;
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload()) {
-            /*
+            
               $error = array('error' => $this->upload->display_errors());
-              $this->load->view('upload_form', $error);
-             */
+              //$this->load->view('upload_form', $error);
+              foreach ($error as $red){
+                    echo $red;
+                }
+                
             $this->session->set_flashdata('proGreska1',1);
             $this->PostavljanjeProizvoda_model->postavi_sliku('');
             $data = array('slika' => '');
-            $this->load->view('PostavljanjeProizvoda', $data);
+        //    $this->load->view('PostavljanjeProizvoda', $data);
         } else {              
             $url = $this->adresa($this->upload->data('full_path'));
             $data = array('slika' => $url);
