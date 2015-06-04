@@ -1,5 +1,8 @@
 <?php
 
+namespace SourceFiles\application\controllers\Testovi;
+namespace SourceFiles\application\controllers;
+
 
 class PostavljanjeVideaTest extends PostavljanjeVidea {
     
