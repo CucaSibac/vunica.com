@@ -2,7 +2,7 @@
 
 // Teodora Aleksic, 391/12
 
-class PostavljanjeKomentaraTest {
+class PostavljanjeKomentaraTest extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
