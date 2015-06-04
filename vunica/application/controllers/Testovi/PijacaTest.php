@@ -16,7 +16,7 @@ class PijacaTest extends CI_Controller {
     
     // (1) Funkcija koja testira
     public function get_proizvod_Test(){
-        $this->unit->run($this->get_proizvod(0), TRUE, 'Testiranje postavljanja komentara');
+        $this->unit->run($this->get_proizvod(0), TRUE, 'Testiranje ucitavanja jednog dela proizvoda');
         echo $this->unit->report();
     }
     
@@ -31,7 +31,7 @@ class PijacaTest extends CI_Controller {
     
     // (2) Funkcija koja testira
     public function index_Pijaca_Test(){
-        $this->unit->run($this->index_Pijaca(), TRUE, 'Testiranje postavljanja komentara');
+        $this->unit->run($this->index_Pijaca(), TRUE, 'Testiranje pozivanja index strane');
         echo $this->unit->report();
     }
     
