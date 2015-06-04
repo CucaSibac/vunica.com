@@ -10,8 +10,8 @@ class PijacaTest extends CI_Controller {
     
     public function index() {
         $this->load->library('unit_test');
-        $this->get_proizvod_Test();
-        //$this->index_Pijaca_Test();
+        //$this->get_proizvod_Test();
+        $this->index_Pijaca_Test();
     }
     
     // (1) Funkcija koja testira
