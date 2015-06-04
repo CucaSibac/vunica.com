@@ -24,17 +24,17 @@ class PostavljanjeVidea extends CI_Controller {
     
     public function ucitaj_video(){
         $this->PostavljanjeVidea_model->postavi_video('');
-        $config['upload_path'] = '../../Video/';
+        $config['upload_path'] = 'D:/home/site/wwwroot/vunica/application/Video';
         $config['allowed_types'] = 'avi|mkv|mp4';
         $config['max_size'] = 102400;       
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload()) {
-            /*
+            
             $error = array('error' => $this->upload->display_errors());           
             foreach ($error as $red){
                 echo $red;
             }
-             */
+             
             $this->session->set_flashdata('videoGreska1',1);
             $this->PostavljanjeVidea_model->postavi_video('');
             $date = array('video' => '');
