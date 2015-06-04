@@ -9,7 +9,7 @@ class KupovinaProizvodaTest extends CI_Controller {
     
     public function index() {
         $this->load->library('unit_test');
-        $this->adresa_Test();
+        $this->test1();
     }
       
     public function test1(){
