@@ -81,12 +81,12 @@ class PostavljanjeVidea extends CI_Controller {
         $niz = explode('/', $url);
         $duzina = sizeof($niz);
         $novi_url = "";
-        for ($i = $duzina - 2; $i < $duzina; $i++) {
+        for ($i = $duzina - 1; $i < $duzina; $i++) {
             $novi_url .= $niz[$i];
             if ($i != $duzina - 1)
                 $novi_url .= '/';
         }
-        return 'http://localhost/' . $novi_url;
+        return 'http://vunica.azurewebsites.net/vunica/application/Video/' . $novi_url;
     }
     
     function VidGreska_check($str){
