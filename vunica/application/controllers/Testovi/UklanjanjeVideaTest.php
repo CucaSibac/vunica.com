@@ -5,6 +5,7 @@ class UklanjanjeVideaTest extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
+        $this->load->model('Obrisi_model');
     }
     
     public function index() {
@@ -13,7 +14,12 @@ class UklanjanjeVideaTest extends CI_Controller {
     }
     
     // (1) Funkcija koja testira
-    public function adresa_Test(){
+    public function test1(){
+        $this->unit->run($this->obrisiVideo(''), 'http://vunica.azurewebsites.net/vunica/index.php/application/Video/auto.jpg', 'brisanje videa test');
+        echo $this->unit->report();
+    }
+    
+    public function test2(){
         $this->unit->run($this->obrisiVideo(''), 'http://vunica.azurewebsites.net/vunica/index.php/application/Video/auto.jpg', 'brisanje videa test');
         echo $this->unit->report();
     }
