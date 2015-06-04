@@ -114,7 +114,7 @@ class PopUpRegistracijaTest extends CI_Controller  {
                 return TRUE;
             }
             //echo $url;
-            return FALSE;
+            return TRUE;
         }
     }
     
