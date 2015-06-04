@@ -24,9 +24,9 @@ class KupovinaProizvodaTest extends CI_Controller {
     }
     
     public function test2(){
-        $niz[1] = "MIS";
-        $niz[2] = 25;
-        $niz[3] = 1;
+        $niz[1][1] = "MIS";
+        $niz[1][2] = 25;
+        $niz[1][3] = 1;
         echo $this->tekstPoruke($niz);
         $this->unit->run($this->tekstPoruke($niz), true, 'test kupovine');
         
