@@ -24,7 +24,7 @@ class PostavljanjeKomentaraTest extends CI_Controller {
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         if ($tekst !== "") {
             $this->load->model('Video_model');
-            $this->Video_model->novikomentar();
+            //$this->Video_model->novikomentar();
             $this->session->unset_userdata('tekstGreska');
             return TRUE;
         } else {
