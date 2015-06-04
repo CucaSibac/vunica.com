@@ -415,8 +415,8 @@ $this->session->unset_userdata('Naziv');
                     $src1 = $("#i1").html();
 
                     if ($src1 === "Datum") {
-                        sessionStorage.setItem("Datum", "Najnovije");
-                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Datump", "Najnovije");
+                        sessionStorage.setItem("Nazivp", "");
                         sessionStorage.setItem("Cena", "");
                         $('#id1').attr("class", "active");
                         $('#i1').html("Najnovije");
@@ -431,8 +431,8 @@ $this->session->unset_userdata('Naziv');
                         }).done(function () {
                         });
                     } else if ($src1 === "Najnovije") {
-                        sessionStorage.setItem("Datum", "Najstarije");
-                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Datump", "Najstarije");
+                        sessionStorage.setItem("Nazivp", "");
                         sessionStorage.setItem("Cena", "");
                         $('#id1').attr("class", "dblclick");
                         $('#i1').html("Najstarije");
@@ -447,8 +447,8 @@ $this->session->unset_userdata('Naziv');
                         }).done(function () {
                         });
                     } else {
-                        sessionStorage.setItem("Datum", "");
-                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Datump", "");
+                        sessionStorage.setItem("Nazivp", "");
                         sessionStorage.setItem("Cena", "");
                         $('#id1').attr("class", "btn");
                         $('#i1').html("Datum");
@@ -467,7 +467,7 @@ $this->session->unset_userdata('Naziv');
                 });
             });
             $(document).ready(function () {
-                $sId = sessionStorage.Datum;
+                $sId = sessionStorage.Datump;
                 if ($sId === "Najnovije") {
                     $('#id1').attr("class", "active");
                     $('#i1').html("Najnovije");
@@ -494,8 +494,8 @@ $this->session->unset_userdata('Naziv');
                     $src1 = $("#i2").html();
 
                     if ($src1 === "Naziv") {
-                        sessionStorage.setItem("Datum", "");
-                        sessionStorage.setItem("Naziv", "A-Z");
+                        sessionStorage.setItem("Datump", "");
+                        sessionStorage.setItem("Nazivp", "A-Z");
                         sessionStorage.setItem("Cena", "");
                         $('#id1').attr("class", "btn");
                         $('#i1').html("Datum");
@@ -510,8 +510,8 @@ $this->session->unset_userdata('Naziv');
                         }).done(function () {
                         });
                     } else if ($src1 === "A-Z") {
-                        sessionStorage.setItem("Datum", "");
-                        sessionStorage.setItem("Naziv", "Z-A");
+                        sessionStorage.setItem("Datump", "");
+                        sessionStorage.setItem("Nazivp", "Z-A");
                         sessionStorage.setItem("Cena", "");
                         $('#id1').attr("class", "btn");
                         $('#i1').html("Datum");
@@ -526,8 +526,8 @@ $this->session->unset_userdata('Naziv');
                         }).done(function () {
                         });
                     } else {
-                        sessionStorage.setItem("Datum", "");
-                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Datump", "");
+                        sessionStorage.setItem("Nazivp", "");
                         sessionStorage.setItem("Cena", "");
                         $('#id1').attr("class", "btn");
                         $('#i1').html("Datum");
@@ -546,7 +546,7 @@ $this->session->unset_userdata('Naziv');
                 });
             });
             $(document).ready(function () {
-                $sId = sessionStorage.Naziv;
+                $sId = sessionStorage.Nazivp;
                 if ($sId === "A-Z") {
                     $('#id2').attr("class", "active");
                     $('#i2').html("A-Z");
@@ -569,8 +569,8 @@ $this->session->unset_userdata('Naziv');
                     $src1 = $("#i3").html();
 
                     if ($src1 === "Cena") {
-                        sessionStorage.setItem("Datum", "");
-                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Datump", "");
+                        sessionStorage.setItem("Nazivp", "");
                         sessionStorage.setItem("Cena", "Najvisa");
                         $('#id1').attr("class", "btn");
                         $('#i1').html("Datum");
@@ -585,8 +585,8 @@ $this->session->unset_userdata('Naziv');
                         }).done(function () {
                         });
                     } else if ($src1 === "Najvisa") {
-                        sessionStorage.setItem("Datum", "");
-                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Datump", "");
+                        sessionStorage.setItem("Nazivp", "");
                         sessionStorage.setItem("Cena", "Najniza");
                         $('#id1').attr("class", "btn");
                         $('#i1').html("Datum");
@@ -601,8 +601,8 @@ $this->session->unset_userdata('Naziv');
                         }).done(function () {
                         });
                     } else {
-                        sessionStorage.setItem("Datum", "");
-                        sessionStorage.setItem("Naziv", "");
+                        sessionStorage.setItem("Datump", "");
+                        sessionStorage.setItem("Nazivp", "");
                         sessionStorage.setItem("Cena", "");
                         $('#id1').attr("class", "btn");
                         $('#i1').html("Datum");
