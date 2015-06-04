@@ -14,7 +14,7 @@ class PostavljanjeVideaTest extends CI_Controller {
     
     // (1) Funkcija koja testira
     public function adresa_Test(){
-        $this->unit->run($this->adresa("C:/Users/IcySch/Pictures/Bzvz/auto.jpg"), 'http://localhost/vunica/index.php/Slike/auto.jpg', 'Testiranje putanje slike');
+        $this->unit->run($this->adresa("C:/Users/IcySch/Pictures/Bzvz/auto.jpg"), 'http://vunica.azurewebsites.net/vunica/index.php/application/Video/auto.jpg', 'Testiranje putanje slike');
         echo $this->unit->report();
     }
     
