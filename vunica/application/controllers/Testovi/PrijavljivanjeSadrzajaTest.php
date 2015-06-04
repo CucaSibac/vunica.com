@@ -5,6 +5,7 @@ class PrijavljivanjeSadrzajaTest extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
+        $this->load->model('Test_model');
     }
     
     public function index() {
@@ -30,7 +31,7 @@ class PrijavljivanjeSadrzajaTest extends CI_Controller {
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         $this->load->model('PrijavaSadrzaja_model');    
         echo $this->session->videoId;
-        $this->PrijavaSadrzaja_model->prijaviVideo();     
+        $this->Test_model->prijaviVideo();     
         return true;
     }
     
@@ -39,7 +40,7 @@ class PrijavljivanjeSadrzajaTest extends CI_Controller {
         $this->session->set_flashdata('proizvodId',5);
         $refering_url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         $this->load->model('PrijavaSadrzaja_model');
-        $this->PrijavaSadrzaja_model->prijaviProizvod();     
+        $this->Test_model->prijaviProizvod();     
         return true;
     }
 
