@@ -87,7 +87,8 @@ class PostavljanjeProizvoda extends CI_Controller {
             $url =$this->adresa($this->session->userdata('proSlika'));           
             $date = array('slika' => $url); 
             $this->PostavljanjeProizvoda_model->postavi_sliku($url);
-            $this->load->view('PostavljanjeProizvoda', $date); 
+            echo $url;
+            //    $this->load->view('PostavljanjeProizvoda', $date); 
         }
            
     }
