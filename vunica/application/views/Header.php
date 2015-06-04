@@ -9,21 +9,21 @@
                   <!-- Prazna celija-->
             </td>
             <td id = "logoPolje">
-                <img src="http://localhost/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('http://localhost/vunica.com/vunica/index.php/IndexStrana', '_parent')">
+                <img src="http://localhost/Slike/Vunica/vunica.png" id = "logo" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/IndexStrana', '_parent')">
             </td>
-            <td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pocetna', '_parent')">
+            <td width = "8%" class = "poljeMenija" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Pocetna', '_parent')">
                 <font class = "opcijeMenija"> Početna </font>
             </td>
             <td width = "1%" class="poljeMenija">
               <font color="#605951" face="Tahoma, Geneva, sans-serif" size="3"> | </font>
             </td>
-			<td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Strikarnica', '_parent')">
+			<td width = "8%" class = "poljeMenija" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Strikarnica', '_parent')">
                 <font class = "opcijeMenija"> Štrikarnica </font>
             </td>
             <td width = "1%" class = "poljeMenija">
               <font color="#605951" face="Tahoma, Geneva, sans-serif" size="3"> | </font>
             </td>
-			<td width = "8%" class = "poljeMenija" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Pijaca', '_parent')">
+			<td width = "8%" class = "poljeMenija" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Pijaca', '_parent')">
                 <font class = "opcijeMenija"> Pijaca </font>
             </td>
             <td>
@@ -33,7 +33,7 @@
             <?php if($this->session->UserName != ''){ ?>
             <td id = "poljePrijava" style="width: 7%; text-align: right;">
                 <font class = "opcijeMenija">
-                    <font onclick = "window.open('http://localhost/vunica.com/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>', '_parent')">
+                    <font onclick = "window.open('http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $this->session->IDKorisnik?>', '_parent')">
                         <?php echo $this->session->UserName; ?>
                     </font>
                     /
@@ -60,7 +60,7 @@
             <td id = "cegerPolje">
                 <div class="cegerPoljeDiv">
                   <?php if($this->session->UserName != ''){ ?>
-                    <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://localhost/vunica.com/vunica/index.php/Ceger', '_parent')"/>
+                    <img src="http://localhost/Slike/Ceger/Ceger.png" id = "ceger" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/Ceger', '_parent')"/>
                     <?php
                         $niz = $this->session->Proizvodi;
                         
