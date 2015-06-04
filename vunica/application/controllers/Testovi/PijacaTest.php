@@ -24,7 +24,7 @@ class PijacaTest extends CI_Controller {
     function get_proizvod($offset) {
         $this->load->model('Pijaca_model');
         $niz['latest_proizvod'] = $this->Pijaca_model->get_proizvod($offset);
-        $this->load->view('get_proizvod', $niz);
+        //$this->load->view('get_proizvod', $niz);
         return TRUE;
     }
     
