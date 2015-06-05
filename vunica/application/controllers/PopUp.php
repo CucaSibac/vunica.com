@@ -269,7 +269,7 @@ class PopUp extends CI_Controller {
         $email = $this->input->post('email1');
         $password = ($this->input->post('password1'));
         $result = $this->PopUp_model->login($email, $password);
-        $this->form_validation->set_message('email1_check', 'nesto nije ok!');
+        $this->form_validation->set_message('email1_check', 'Cveticu ne poklapaju ti se email i sifra!');
         return $result;
     }
 
