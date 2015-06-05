@@ -43,10 +43,11 @@ class Proizvod_model extends CI_Model{
     }
     */
     function get_messages($vrednost, $offset = 0 ){
-        $this->db->select('komentarproizvod.IDKomentar, komentarproizvod.UserName, komentarproizvod.Datum, komentarproizvod.Vreme, komentarproizvod.Tekst, komentarproizvod.IDProizvod, prijavakomentarproizvod.Komentar');
+        $this->db->select('komentarproizvod.IDKomentar, komentarproizvod.UserName, komentarproizvod.Datum, komentarproizvod.Vreme, komentarproizvod.Tekst, komentarproizvod.IDProizvod, prijavakomentarproizvod.Komentar, korisnik.IDKorisnik');
         $this->db->where('IDProizvod', $vrednost);
         $this->db->order_by('komentarproizvod.IDKomentar', 'desc');
         $this->db->join('prijavakomentarproizvod', 'prijavakomentarproizvod.IDKomentar = komentarproizvod.IDKomentar', 'left');
+        $thus->db->join('korisnik', 'komentarproizvod.UserName = korisnik.UserName');
         $this->db->group_by('komentarproizvod.IDKomentar');
 	$query = $this->db->get('komentarproizvod', 3, $offset);
 	return $query->result();

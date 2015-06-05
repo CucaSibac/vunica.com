@@ -547,6 +547,7 @@ $usersession = $this->session->userdata('UserName');
                                                             <?php
                                                             foreach ($latest_messagesp as $message) {
                                                                 $idkomentar = $message->IDKomentar;
+                                                                $idkorisnikkomentar = $message->IDKorisnik;
                                                                 ?>
 
 
@@ -558,7 +559,7 @@ $usersession = $this->session->userdata('UserName');
                                                             <div class="view view-third"  align="left" >
                                                         <?php }?>
                                                                     <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
-                                                                    <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
+                                                                    <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $idkorisnikkomentar?>"><?php echo $message->UserName; ?></a></font>
                                                                     <br /><br />
                                                                     <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
                                                                     <?php $userkom = $message->UserName; ?>
