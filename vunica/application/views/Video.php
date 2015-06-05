@@ -438,6 +438,7 @@ $this->session->unset_userdata('PCena');
                                                     <?php
                                                     foreach ($latest_messages as $message) {
                                                         $idkomentar = $message->IDKomentar;
+                                                        $idkorisnikkomentar = $message->IDKorisnik;
                                                         ?>
 
                                                         <?php if ($message->Komentar !== null && $this->session->UserName != '' && $this->session->Status == $status) { ?>
@@ -448,7 +449,7 @@ $this->session->unset_userdata('PCena');
                                                             <div class="view view-third"  align="left" >
                                                         <?php }?>
                                                             <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
-                                                            <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="#"><?php echo $message->UserName; ?></a></font>
+                                                            <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $idkorisnikkomentar?>"><?php echo $message->UserName; ?></a></font>
                                                             <br /><br />
                                                             <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
                                                             <?php $userkom = $message->UserName; ?>
