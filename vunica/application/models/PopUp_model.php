@@ -20,23 +20,31 @@ class PopUp_model extends CI_Model {
         );       
         $this->db->insert('korisnik', $data);
         
-        $data['IDKorisnik'] = '';
-        //$data = $this->idKorisnika($data);
+        $data = array(
+            'IDKorisnik' => $this->idKorisnika(),
+            'ImePrezime' => ($this->input->post('ImePrezime')),
+            'UserName' => $this->input->post('UserName'),
+            'Status' => ('Pletilja'),
+            'Email' => $this->input->post('Email'),
+            'Sifra' => ($this->input->post('Sifra')),
+            'DatumPoslednjegLogovanja' => (date("Y.m.d")),
+            'Slika' => ('http://vunica.azurewebsites.net/vunica/application/Slike/Profilna/Nedefinisano.jpg'),
+        );       
         $this->session->set_userdata($data);
     }
     
     // dohvata idKorisnika iz baze
-    function idKorisnika($data){
+    function idKorisnika(){
         $this->db->select('IDKorisnik');
-        $this->db->where('UserName', $this->session->UserName);
+        $this->db->where('UserName', $this->input->post('UserName'));
         
         $upit = $this->db->get('korisnik');        
         if($upit->num_rows() > 0) {
             $rezultat = $upit->result_array();
-            $data['IDKorisnik'] = $rezultat[0]['IDKorisnik'];
+            $id = $rezultat[0]['IDKorisnik'];
         }
         
-        return $data;
+        return $id;
     }
 
     function login($email, $sifra) { 
