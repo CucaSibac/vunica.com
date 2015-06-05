@@ -38,6 +38,7 @@ class PopUp extends CI_Controller {
                 'Slika' => 0,
                 'Email' => 0,
                 'Lozinka' => 0,
+                'Profilna' => $this->session->Slika,
             );
             $this->load->view('ProfilEditovanje', $greske);
         } else {
