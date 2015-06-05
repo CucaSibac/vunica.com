@@ -10,6 +10,7 @@ class PopUp_model extends CI_Model {
 
     public function dodaj_korisnika() {
         $data = array(
+            'IDKorisnik' => '',
             'ImePrezime' => ($this->input->post('ImePrezime')),
             'UserName' => $this->input->post('UserName'),
             'Status' => ('Pletilja'),

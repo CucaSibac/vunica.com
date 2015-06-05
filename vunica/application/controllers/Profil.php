@@ -22,8 +22,6 @@ class Profil extends CI_Controller{
         $this->load->model('NoviProizvodi');
         $this->load->model('Korisnici');
         
-        if($id == NULL){$id = '';}
-        
         if($id == $this->session->IDKorisnik){
             $this->podaci['Korisnik'] = array(
                 'IDKorisnik' => $this->session->IDKorisnik,
