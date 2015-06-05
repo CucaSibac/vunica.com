@@ -1,5 +1,5 @@
 <?php
-
+/* Milos Andric 206/12 */
 class PopUp extends CI_Controller {
 
     public function __construct() {

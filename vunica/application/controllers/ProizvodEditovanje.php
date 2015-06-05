@@ -1,5 +1,5 @@
 <?php
-
+/* Milos Andric 206/12 */
 class ProizvodEditovanje extends CI_Controller {
  
     public function __construct() {

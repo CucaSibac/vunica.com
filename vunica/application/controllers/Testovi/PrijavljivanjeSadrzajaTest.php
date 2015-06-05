@@ -1,5 +1,5 @@
 <?php
-
+/* Milos Andric 206/12 */
 
 class PrijavljivanjeSadrzajaTest extends CI_Controller {
     

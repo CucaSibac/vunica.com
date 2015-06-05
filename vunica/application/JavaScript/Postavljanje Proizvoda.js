@@ -1,5 +1,7 @@
 // JavaScript Document
 
+/* Milos Andric 206/12*/
+
 var kolicina = 1;
 var mouse = false;
 var brzina = 1000;

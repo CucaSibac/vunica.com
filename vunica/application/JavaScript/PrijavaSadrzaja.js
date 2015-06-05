@@ -1,4 +1,4 @@
-
+/* Milos Andric 206/12, Ivana Lisanin 531/12 */
 function prikazi_prijavu_komentara(id){
     sakrij_sve_prijave();
     document.getElementById('prazan').style.display = "block";

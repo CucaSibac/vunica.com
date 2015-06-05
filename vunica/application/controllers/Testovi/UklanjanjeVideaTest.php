@@ -1,5 +1,5 @@
 <?php
-
+/* Milos Andric 206/12 */
 
 class UklanjanjeVideaTest extends CI_Controller {
     
