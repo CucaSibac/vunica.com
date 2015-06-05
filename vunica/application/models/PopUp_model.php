@@ -20,6 +20,7 @@ class PopUp_model extends CI_Model {
         );
         $this->session->set_userdata($data);
         $this->db->insert('korisnik', $data);
+        $data['IDKorisnik'] = '';
     }
 
     function login($email, $sifra) { 
