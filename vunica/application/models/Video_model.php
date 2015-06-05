@@ -41,9 +41,9 @@ class Video_model extends CI_Model {
     
     function novikomentar() {
         $timezone = "Europe/Belgrade";
-        if(function_exists('date_default_timezone_set')) {
+      //  if(function_exists('date_default_timezone_set')) {
             date_default_timezone_set($timezone);
-        }
+      //  }
         $data = array (
             'UserName' => ($this->input->post('UserName')),
                     'Datum' => (date("Y.m.d")),
