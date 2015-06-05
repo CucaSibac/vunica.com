@@ -40,10 +40,11 @@ class Video_model extends CI_Model {
     
     
     function novikomentar() {
+        date_default_timezone_set("UP1");
         $data = array (
             'UserName' => ($this->input->post('UserName')),
-                    'Datum' => (date("Y.m.d")),
-                    'Vreme' => (date("H:i:s")),
+                    'Datum' => ("UP1:".date("Y.m.d")),
+                    'Vreme' => ("UP1:".date("H:i:s")),
                     'Tekst' => ($this->input->post('Tekst')),
                     'IDVideo' => ($this->input->post('IDVideo'))
     );
