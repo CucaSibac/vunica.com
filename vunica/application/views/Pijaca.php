@@ -1089,9 +1089,9 @@ if ($this->session->UserName != '' && $status !== "Klupko") {
                                                                                 $brojac = 0;
                                                                                 if($latest_proizvod == null){
                                                                                     ?><div align="center">
-                                                                                        <br/><br/><br/><br/><br/><br/>
+                                                                                        <br/><br/><br/><br/><br/><br/><br/><br/>
                                                                                         <font class="tekstObican" style="font-size: 25px; " align="center">Zao nam je. Nema proizvoda koji zadovoljavaju Vase kriterijume pretrage.</font>
-                                                                                    <br/><br/><br/><br/><br/><br/><br/><br/>
+                                                                                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                                                                                     </div> <?php
                                                                                 }
                                                                                     
