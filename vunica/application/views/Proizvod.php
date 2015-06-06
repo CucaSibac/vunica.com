@@ -39,7 +39,7 @@
 <?php include('/../JavaScript/Footer.js'); ?>
 <?php include('/../JavaScript/Checkbox.js'); ?>
 <?php include('/../JavaScript/Video.js'); ?>
-  <?php include('/../JavaScript/PrijavaSadrzaja.js'); ?>
+<?php include('/../JavaScript/PrijavaSadrzaja.js'); ?>
 <?php include('/../JavaScript/Proizvod.js'); ?>
         </script>
 
@@ -275,15 +275,14 @@ $usersession = $this->session->userdata('UserName');
                         <table id="video" width="60%" align="center" border="0" cellspacing="10">
                             <tr>
                                 <?php
-                                            foreach ($podacip as $red) {
-                                               
-                                                $idkorisnik = $red->IDKorisnik;
-                                                
-                                            }
-                                            ?>
-                                <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $idkorisnik?>" class="linkovi"><?php
-                                            foreach ($podacip as $red) {
-                                                ?>
+                                foreach ($podacip as $red) {
+
+                                    $idkorisnik = $red->IDKorisnik;
+                                }
+                                ?>
+                                <td width="50%"  align="left"><font class="tekstObican">Autor: <a href="http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $idkorisnik ?>" class="linkovi"><?php
+                                foreach ($podacip as $red) {
+                                    ?>
                                                 <?php
                                                 echo $red->UserName;
                                             }
@@ -302,8 +301,8 @@ $usersession = $this->session->userdata('UserName');
                                 <td rowspan="3" align="left" width="40%">
                                     &nbsp; &nbsp;
                                     <img height="400px" width="300px" src="<?php
-                                    foreach ($podacip as $red) {
-                                        ?>
+                                            foreach ($podacip as $red) {
+                                                ?>
                                         <?php
                                         echo $red->Slika;
                                     }
@@ -322,76 +321,74 @@ $usersession = $this->session->userdata('UserName');
                                         ?>
                                         <?php
                                         $broj = $red->BrojArtikala;
-                                        
-                                        
-                                          $niz = $this->session->Proizvodi;
-                    $ukupnoKolicina = 0;
-                    if($niz != ''){
-                        if(count($niz) > 0){
-                            $i = 0;
-                            $duzina = count($niz);
-                            for(;$i < $duzina;$i++){
-                                if (($niz[$i][0])=== $red->IDProizvod){
-                                    $ukupnoKolicina = $ukupnoKolicina + (int)($niz[$i][3]);
-                                }
-                                
-                            }
-                            $broj = $red->BrojArtikala - $ukupnoKolicina;
-                               
-                
-                    }}
-                                   
-                                        
-                                        
+
+
+                                        $niz = $this->session->Proizvodi;
+                                        $ukupnoKolicina = 0;
+                                        if ($niz != '') {
+                                            if (count($niz) > 0) {
+                                                $i = 0;
+                                                $duzina = count($niz);
+                                                for (; $i < $duzina; $i++) {
+                                                    if (($niz[$i][0]) === $red->IDProizvod) {
+                                                        $ukupnoKolicina = $ukupnoKolicina + (int) ($niz[$i][3]);
+                                                    }
+                                                }
+                                                $broj = $red->BrojArtikala - $ukupnoKolicina;
+                                            }
+                                        }
                                     }
                                     ?>
 
                                     <input type="button" class="dugme" value="-" onclick="minus()"/>
 
-
-                                    <font class="tekstObican" id="kolicina" name="Kolicina" >1</font>
+                                    <?php if ($broj == 0) { ?>
+                                        <font class="tekstObican" id="kolicina" name="Kolicina" >0</font>
+                                    <?php } else { ?>
+                                        <font class="tekstObican" id="kolicina" name="Kolicina" >1</font>
+<?php } ?>
 
 
                                     <input type="button" class="dugme" value="+" onclick="plus(<?php echo $broj; ?>)"/>
-                                    
-                                        
-                                        
-                                        
+
+
+
+
                                 </td>
 
                             </tr>
                             <tr>
                                 <td width="60%" align="center">
                                     <br /> <br /> <br />
-                                   <!--Forma za ceger-->
-                                        <?php
-                                    $attributes = array('id' => 'formaStaviUCeger');
-                                    echo form_open("Proizvod/StaviUCeger", $attributes);
-                                    ?>
+                                    <!--Forma za ceger-->
+<?php
+$attributes = array('id' => 'formaStaviUCeger');
+echo form_open("Proizvod/StaviUCeger", $attributes);
+?>
 
                                     <script>
                                     <?php if ($this->session->UserName != '') { ?>//ako je korisnik prijavljen
                                         </script>
 
-                                   <a  class = "dugme" onclick="document.forms['formaStaviUCeger'].submit();" style="cursor: pointer" > Stavi u ceger </a> 
+                                        <a  class = "dugme" onclick="document.forms['formaStaviUCeger'].submit();" style="cursor: pointer" > Stavi u ceger </a> 
 
                                         <script>
 
-                                          <?php } else { ?> //ako gost pristupa sajtu
+<?php } else { ?> //ako gost pristupa sajtu
                                         </script>
                                         <a onclick="prikazi_registraciju()" class = "dugme" > Stavi u ceger </a>
                                         <script>
-                                        <?php } ?></script>                           
+<?php } ?></script>                           
                                     <input type="hidden" name="IDProizvod" id="IDProizvod"  value="<?php echo $idProizvod ?>"/>
                                     <input type="hidden" name="Cena" id="Cena"  value="<?php echo $cena ?>"/>
-                                    
-                                    <?php if ($broj == 0) { ?>
-                                    <input type="hidden" name="KolicinaForma" id="KolicinaForma"  value="0"/>
-                                    <?php } else { ?>
+
+<?php if ($broj == 0) { ?>
+                                        <input type="hidden" name="KolicinaForma" id="KolicinaForma"  value="0"/>
+                                        <?php } else { ?>
                                         <input type="hidden" name="KolicinaForma" id="KolicinaForma"  value="1"/>
-                                    <?php} ?>
-                                    <input type="hidden" name="NazivProizvoda" id="NazivProizvoda"  value="<?php echo $nazivProizvoda?>"/>
-                                        <?php echo form_close(); ?>
+<?php } ?>
+                                    <input type="hidden" name="NazivProizvoda" id="NazivProizvoda"  value="<?php echo $nazivProizvoda ?>"/>
+                                    <?php echo form_close(); ?>
                                     <!--Kraj forme za ceger-->
                                 </td>
                             </tr>
@@ -400,22 +397,22 @@ $usersession = $this->session->userdata('UserName');
                             </tr>   
                             <tr>
                                 <td colspan="2" align="left" style="text-align: justify;"><font class="tekstIskosen" style="text-align: justify;"><?php
-                                        foreach ($podacip as $red) {
-                                            ?>
-                                            <?php
-                                            echo $red->Opis;
-                                        }
-                                        ?></font></td>
+                                    foreach ($podacip as $red) {
+                                        ?>
+    <?php
+    echo $red->Opis;
+}
+?></font></td>
                             </tr>
                             <tr>
                                 <td colspan="1" align="left">
                                     <br /><font class="tekstObican">Cena: <a  id="tezina" class="linkovi"><?php
-                                            foreach ($podacip as $red) {
-                                                ?>
-                                                <?php
-                                                echo $red->Cena;
-                                            }
-                                            ?>&#8364;</a>
+                                        foreach ($podacip as $red) {
+                                            ?>
+    <?php
+    echo $red->Cena;
+}
+?>&#8364;</a>
                                     </font>
                                     </br>
                                     <font class="tekstObican">Broj artikala: <a  id="tezina" class="linkovi"><?php
@@ -432,19 +429,19 @@ $usersession = $this->session->userdata('UserName');
                                     <br /><font class="tekstObican">Kategorija: <a href="http://vunica.azurewebsites.net/vunica/index.php/Pijaca"i id="kategorija" class="linkovi"><?php
                                             foreach ($podacip as $red) {
                                                 ?>
-                                                <?php
-                                                echo $red->Kategorija;
-                                            }
-                                            ?></a></font>
+    <?php
+    echo $red->Kategorija;
+}
+?></a></font>
                                 </td>
                             </tr>     
                             <tr>
-                                    <td align="left">
-                               <?php if ($this->session->UserName != '' && $this->session->UserName == $user) {
-                                        ?>
-                                          
-                                            <a    class="prijaviVideo" href="http://vunica.azurewebsites.net/vunica/index.php/ProizvodEditovanje/index/<?php echo $idProizvod?>" >Izmeni proizvod</a>
-                                    <?php } ?>
+                                <td align="left">
+                                            <?php if ($this->session->UserName != '' && $this->session->UserName == $user) {
+                                                ?>
+
+                                        <a    class="prijaviVideo" href="http://vunica.azurewebsites.net/vunica/index.php/ProizvodEditovanje/index/<?php echo $idProizvod ?>" >Izmeni proizvod</a>
+<?php } ?>
                                 </td>
                                 <td  align="right">
 
@@ -455,12 +452,12 @@ $usersession = $this->session->userdata('UserName');
                                     if ($this->session->UserName != '' && $this->session->UserName == $user) {
                                         ?>
                                         <a  id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')" class="prijaviVideo" >Obrisi proizvod</a>   
-                                           
+
                                     <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?>
                                         <a onclick="" id="prijaviobrisi" href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete proizvod?','<?php echo $kontroler; ?>')" class="prijaviVideo" > Obrisi proizvod </a>   
                                     <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $user) { ?>
                                         <a onclick="prikazi_prijavu_proizvod();" id="prijaviobrisi" class="prijaviVideo" > Prijavi proizvod </a>  
-                                    <?php } else { ?>
+<?php } else { ?>
                                         <a onclick="prikazi_registraciju()" id="prijaviobrisi" class="prijaviVideo" > Prijavi proizvod </a>  
                                     <?php } ?>
 
@@ -472,22 +469,22 @@ $usersession = $this->session->userdata('UserName');
 
 
                             <!-- PISANJE KOMENTARA-->
-                            <?php
-                            $attributes = array('id' => 'formaKomentarProizvod', 'UserName' => $user);
-                            echo form_open("Proizvod/komentarp", $attributes);
-                            ?>
+<?php
+$attributes = array('id' => 'formaKomentarProizvod', 'UserName' => $user);
+echo form_open("Proizvod/komentarp", $attributes);
+?>
                             <tr>
                                 <td colspan="2" align="center">
                                     <br />
-                                    <?php
-                                    if ($this->session->userdata('tekstpGreska')) {
-                                        ?>
+                            <?php
+                            if ($this->session->userdata('tekstpGreska')) {
+                                ?>
                                         <textarea  value="<?php echo set_value('Tekst'); ?>" name="Tekst" maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify; " placeholder="Morate da unesete tekst komentara" class="tekstPoljeKomentarGreska" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
-                                            <?php
-                                        } else {
-                                            ?>
+    <?php
+} else {
+    ?>
                                             <textarea  value="<?php echo set_value('Tekst'); ?>" name="Tekst" maxlength="400" style="width:80%; height:120px; resize:none;text-align: justify;" placeholder="Napisite komentar" class="tekstPoljeKomentar" id="limitedtextarea" onKeyDown="limitText(400);" onKeyUp="limitText(400);"></textarea><br>
-                                            <?php } ?>
+                                    <?php } ?>
                                             <font class="preostalokaraktera">Preostalo karaktera: <font id="ostatak">400</font></font>
 
                                             <tr>
@@ -499,7 +496,7 @@ $usersession = $this->session->userdata('UserName');
                                                         </script>
 
                                                         <a  class = "dugme" onclick="document.forms['formaKomentarProizvod'].submit();
-                                                                        " > Postavi </a> 
+                                                            " > Postavi </a> 
 
                                                         <script>
 
@@ -507,7 +504,7 @@ $usersession = $this->session->userdata('UserName');
                                                         </script>
                                                         <a onclick="prikazi_registraciju()" class = "dugme" > Postavi </a>
                                                         <script>
-                                                        <?php } ?></script>                             </td>
+<?php } ?></script>                             </td>
                                                 <td align="center"> <a  class="dugme"  onclick="odustani()"> Odustani </a> 
                                                 </td>
                                             </tr>
@@ -515,7 +512,7 @@ $usersession = $this->session->userdata('UserName');
                                             <input type="hidden" name="IDProizvod" id="IDProizvod"  value="<?php echo $idProizvod ?>"/>
                                             </td>
                                             </tr>
-                                            <?php echo form_close(); ?>
+<?php echo form_close(); ?>
                                             <!-- KRAJ PISANJA KOEMNTARA-->
 
 
@@ -549,115 +546,115 @@ $usersession = $this->session->userdata('UserName');
                                                     <td colspan="2" align="center" >
                                                         <div id="main_content">
                                                             <br/>
-                                                            <?php
-                                                            foreach ($latest_messagesp as $message) {
-                                                                $idkomentar = $message->IDKomentar;
-                                                                $idkorisnikkomentar = $message->IDKorisnik;
-                                                                ?>
+    <?php
+    foreach ($latest_messagesp as $message) {
+        $idkomentar = $message->IDKomentar;
+        $idkorisnikkomentar = $message->IDKorisnik;
+        ?>
 
 
                                                                 <?php if ($message->Komentar !== null && $this->session->UserName != '' && $this->session->Status == $status) { ?>
-                                                    <div class="view view-third" style="background-color: rgba(248, 154, 164, 0.1);" align="left" >  
-                                                        <?php } else if ($message->Komentar === null && $this->session->UserName != '' && $this->session->Status == $status) { ?>
-                                                        <div class="view view-third" style="background-color: rgba(172, 206, 192, 0.1);	" align="left" > 
-                                                        <?php }else {?>
-                                                            <div class="view view-third"  align="left" >
-                                                        <?php }?>
-                                                                    <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
-                                                                    <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $idkorisnikkomentar?>"><?php echo $message->UserName; ?></a></font>
-                                                                    <br /><br />
-                                                                    <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
-                                                                    <?php $userkom = $message->UserName; ?>
-                                                                    <script>
+                                                                    <div class="view view-third" style="background-color: rgba(248, 154, 164, 0.1);" align="left" >  
+                                                                <?php } else if ($message->Komentar === null && $this->session->UserName != '' && $this->session->Status == $status) { ?>
+                                                                        <div class="view view-third" style="background-color: rgba(172, 206, 192, 0.1);	" align="left" > 
+        <?php } else { ?>
+                                                                            <div class="view view-third"  align="left" >
+                                                                <?php } ?>
+                                                                            <a class="komentarDatum"><?php echo $message->Vreme; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $message->Datum; ?></a>
+                                                                            <font class="tekstObicanAutorKomentar"  ><a class="linkovi" href="http://vunica.azurewebsites.net/vunica/index.php/Profil/index/<?php echo $idkorisnikkomentar ?>"><?php echo $message->UserName; ?></a></font>
+                                                                            <br /><br />
+                                                                            <font class="tekstIskosenTekstKomentar" ><?php echo $message->Tekst; ?><br /><br /></font>
+                                                                            <?php $userkom = $message->UserName; ?>
+                                                                            <script>
 
         <?php
         $kontroler = "http://vunica.azurewebsites.net/vunica/index.php/Obrisi/obrisiKomentarProizvod/$message->IDKomentar";
         if ($this->session->UserName != '' && $this->session->UserName == $userkom) {
             ?> //ako je trenutno prijavljeni korisnik ostavio komentar
-                                                                        </script>
-                                                                        <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
-                                                                        <script>
+                                                                                </script>
+                                                                                <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                                <script>
 
         <?php } else if ($this->session->UserName != '' && $this->session->Status == $status) { ?> // ako je trenutno prijavljen admin
-                                                                        </script>
-                                                                        <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
-                                                                        <script>
+                                                                                </script>
+                                                                                <a href="javascript:upozorenje('Da li ste sigurni da zelite da obrisete komentar?','<?php echo $kontroler; ?>')" class = "prijaviKomentar" > Obrisi komentar </a>
+                                                                                <script>
         <?php } else if ($this->session->UserName != '' && $this->session->UserName !== $userkom) { ?>//ako prijavljeni korisnik nije ostavio dati komentar
             <?php include("PrijavaKomentarVideo.php"); ?>
-                                                                        </script>
+                                                                                </script>
 
-                                                                        <a onclick="prikazi_prijavu_komentara_proizvod('<?php echo $idkomentar; ?>')" class = "prijaviKomentar" > Prijavi komentar </a>
-                                                                        <script>
-                                                                            
+                                                                                <a onclick="prikazi_prijavu_komentara_proizvod('<?php echo $idkomentar; ?>')" class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                                <script>
+
         <?php } else { ?> //ako gost pristupa sajtu
-                                                                        </script>
-                                                                        <a onclick="prikazi_registraciju()" class = "prijaviKomentar" > Prijavi komentar </a>
-                                                                        <script>
+                                                                                </script>
+                                                                                <a onclick="prikazi_registraciju()" class = "prijaviKomentar" > Prijavi komentar </a>
+                                                                                <script>
         <?php } ?>
 
-                                                                        //< a  class = "prijaviKomentar" > Prijavi komentar < /a>
+                                                                                //< a  class = "prijaviKomentar" > Prijavi komentar < /a>
 
-                                                                    </script>
-                                                                </div>  <br /><br />
+                                                                            </script>
+                                                                        </div>  <br /><br />
 
+    <?php } ?>
+
+
+                                                                    <!--Donja linija i ucitaj jos-->
+                                                                </div>
+                                                                <hr width = "100%" class = "linija"/>
+                                                                    <?php
+                                                                    if (count($latest_messagesp) == 3) {
+                                                                        ?>
+                                                                    <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
+                                                                        <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
+                                                                            <i >
+                                                                                Ucitaj jos
+                                                                            </i>
+                                                                        </a>
+                                                                    </div>
+    <?php } ?>
+                                                                <!--Kraj donje linije i ucitaj jos-->
+
+                                                                </td>
+                                                                </tr>
+                                                                <!--Kraj komentara i ucitaj jos-->
                                                             <?php } ?>
 
 
-                                                            <!--Donja linija i ucitaj jos-->
+
+
+                                                            </table>
+                                                            <br/><br/> <br/> <br/> <br/>        
+
+                                                            </td>
+                                                            </tr>
+                                                            </table>
                                                         </div>
-                                                        <hr width = "100%" class = "linija"/>
+
+                                                        <!--Kraj tela strane-->
+
+<?php
+if ($this->session->flashdata('reg') == 1) {
+    echo "<script language=\"javascript\">prikazi_registraciju();</script>";
+    $this->session->set_flashdata('reg', 0);
+}
+?>
                                                         <?php
-                                                        if (count($latest_messagesp) == 3) {
-                                                            ?>
-                                                            <div id="more_button" class="morebox" target="_blank" align="center" width="100%">
-                                                                <a id="" class="btnUcitajJos" style="display:block; "  onClick="ucitajjos()" >
-                                                                    <i >
-                                                                        Ucitaj jos
-                                                                    </i>
-                                                                </a>
-                                                            </div>
-                                                        <?php } ?>
-                                                        <!--Kraj donje linije i ucitaj jos-->
+                                                        if ($this->session->flashdata('pri') == 1) {
+                                                            echo "<script language=\"javascript\">prikazi_prijavu();</script>";
+                                                            $this->session->set_flashdata('pri', 0);
+                                                        }
+                                                        ?>
+                                                        <?php
+                                                        if ($this->session->flashdata('zl') == 1) {
+                                                            echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
+                                                            $this->session->set_flashdata('zl', 0);
+                                                        }
+                                                        ?>
 
-                                                    </td>
-                                                </tr>
-                                                <!--Kraj komentara i ucitaj jos-->
-                                            <?php } ?>
-
-
-
-
-                                            </table>
-                                            <br/><br/> <br/> <br/> <br/>        
-
-                                            </td>
-                                            </tr>
-                                            </table>
-                                            </div>
-
-                                            <!--Kraj tela strane-->
-
-                                            <?php
-                                            if ($this->session->flashdata('reg') == 1) {
-                                                echo "<script language=\"javascript\">prikazi_registraciju();</script>";
-                                                $this->session->set_flashdata('reg', 0);
-                                            }
-                                            ?>
-                                            <?php
-                                            if ($this->session->flashdata('pri') == 1) {
-                                                echo "<script language=\"javascript\">prikazi_prijavu();</script>";
-                                                $this->session->set_flashdata('pri', 0);
-                                            }
-                                            ?>
-                                            <?php
-                                            if ($this->session->flashdata('zl') == 1) {
-                                                echo "<script language=\"javascript\">prikazi_zaboravljenu_lozinku();</script>";
-                                                $this->session->set_flashdata('zl', 0);
-                                            }
-                                            ?>
-
-                                            </body>
-                                            <!-- InstanceEnd -->
-                                            </html>
+                                                        </body>
+                                                        <!-- InstanceEnd -->
+                                                        </html>
 
 
