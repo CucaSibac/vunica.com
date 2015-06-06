@@ -297,8 +297,10 @@ class Proizvod extends CI_Controller {
         if (!$this->session->Proizvodi) {
             $duzina = 0;
         }
+        if($KolicinaForma!=0) {
         $nizProizvoda[$duzina] = $data;
         $this->session->set_userdata('Proizvodi', $nizProizvoda);
+        }
         redirect($refering_url, 'refresh');
     }
 }
