@@ -40,10 +40,7 @@
                 </font>
             </td>
             <td id = "poljePrijava" style="width: 5%; text-align: left; padding-right: 3%;">
-                
-                    <!--<input class = "odjava" type = "submit" value = "Odjava"/>-->
-                <font class = "opcijeMenija" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/PopUp/logout/','_parent')"> Odjava </font>
-                
+                <font class = "opcijeMenija" onclick="window.open('http://vunica.azurewebsites.net/vunica/index.php/PopUp/logout/','_parent')"> Odjava </font>             
             </td>
             <?php }else{ ?>
             <td id = "poljePrijava" style="width: 12%; text-align: center; padding-right: 3%;">
