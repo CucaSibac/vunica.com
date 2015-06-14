@@ -30,7 +30,7 @@
           <tr class="inputRed">
             <td class="praznaCelijaPopUp">&nbsp;</td>
             <td colspan="2">
-                <input type="text" maxlength="20" name="ImePrezime" id="ImePrezime" placeholder="Ime i prezime" class="inputPopUp" value="<?php echo set_value('ImePrezime'); ?>"/>
+                <input type="text" maxlength="40" name="ImePrezime" id="ImePrezime" placeholder="Ime i prezime" class="inputPopUp" value="<?php echo set_value('ImePrezime'); ?>"/>
                 <?php echo form_error('ImePrezime', '<div class="error">', '</div>'); ?>
             </td>
             <td class="praznaCelijaPopUp">&nbsp;</td>
