@@ -40,10 +40,7 @@
                 </font>
             </td>
             <td id = "poljePrijava" style="width: 5%; text-align: left; padding-right: 3%;">
-                <?php 
-                //    $attributes = array('id' => 'formaOdjava');
-                //    echo form_open("PopUp/logout", $attributes); 
-                ?>
+                
                     <!--<input class = "odjava" type = "submit" value = "Odjava"/>-->
                 <font class = "opcijeMenija" onclick="http://vunica.azurewebsites.net/vunica/index.php/PopUp/logout/"> Odjava </font>
                 
