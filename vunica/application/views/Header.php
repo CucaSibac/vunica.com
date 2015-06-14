@@ -46,7 +46,7 @@
                 ?>
                     <!--<input class = "odjava" type = "submit" value = "Odjava"/>-->
                 <font class = "opcijeMenija" onclick="http://vunica.azurewebsites.net/vunica/index.php/PopUp/logout/"> Odjava </font>
-                <?php// echo form_close();?>
+                
             </td>
             <?php }else{ ?>
             <td id = "poljePrijava" style="width: 12%; text-align: center; padding-right: 3%;">
