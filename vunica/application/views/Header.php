@@ -41,11 +41,12 @@
             </td>
             <td id = "poljePrijava" style="width: 5%; text-align: left; padding-right: 3%;">
                 <?php 
-                    $attributes = array('id' => 'formaOdjava');
-                    echo form_open("PopUp/logout", $attributes); 
+                //    $attributes = array('id' => 'formaOdjava');
+                //    echo form_open("PopUp/logout", $attributes); 
                 ?>
-                    <input class = "odjava" type = "submit" value = "Odjava"/>
-                <?php echo form_close();?>
+                    <!--<input class = "odjava" type = "submit" value = "Odjava"/>-->
+                <font class = "opcijeMenija" onclick="http://vunica.azurewebsites.net/vunica/index.php/PopUp/logout/"> Odjava </font>
+                <?php// echo form_close();?>
             </td>
             <?php }else{ ?>
             <td id = "poljePrijava" style="width: 12%; text-align: center; padding-right: 3%;">
