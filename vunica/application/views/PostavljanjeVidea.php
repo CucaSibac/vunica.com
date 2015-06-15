@@ -85,16 +85,13 @@
               <table id="postavkaVidea" border="0">
                 <tr style="height:500px;">
                   <td colspan="2"> 
-                    <!--<video style="width:100%;"  src="<?php echo $video;?>" controls></video> -->
-                      <video style="width:100%;" controls>
-                        <source src="<?php echo $video;?>" type="video/mp4">
-                      </video>
+                    <video style="width:100%;"  src="<?php echo $video;?>" controls></video>                   
                       <video>
                   </td>
                 </tr>
                  <tr>
                   <td colspan="2" align="center">
-                    <br/> <br/>
+                    <br/> <br/><?php echo $video;?>
                     <label class="dugme">
                         <input type="file" class="dugme"  name="userfile" onchange="option('1');document.forms['PostavljanjeVidea'].submit();"/>
                         Postavite video
